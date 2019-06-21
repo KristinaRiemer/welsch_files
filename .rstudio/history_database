@@ -1,0 +1,810 @@
+1560186299111:#     start = ipft,
+1560186299112:#     count = 1,
+1560186299113:#     vals = as.numeric(pft.trait.values[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar)
+1560186299114:#   )
+1560186299115:# }
+1560186299116:} ## end loop over VARIABLES
+1560186308950:for (v in seq_along(pft_pecan_vals)) {
+1560186308951:pecan_var <- names(pft_pecan_vals)[v]
+1560186308954:### ----- Leaf physiological parameters
+1560186308955:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560186308956:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560186308957:}
+1560186308959:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])}
+1560186308961:if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pecan_pft_vals[v], "m2 kg-1", "m2 g-1") / leafC))}
+1560186308962:# if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])}
+1560186308963:# if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])}
+1560186308964:# if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft.trait.values[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))}
+1560186308966:# if (var == "sla") {
+1560186308968:#   ## default 0.03846
+1560186308969:#   ncdf4::ncvar_put(
+1560186308970:#     nc = ctsm.param.nc,
+1560186308971:#     varid = "slatop",
+1560186308972:#     start = ipft,
+1560186308973:#     count = 1,
+1560186308975:#     vals = udunits2::ud.convert(pft.trait.values[v], "m2 kg-1", "m2 g-1") / leafC
+1560186308976:#   )
+1560186308977:# }
+1560186308978:# if (var == "c2n_leaf"){
+1560186308979:#   ## default 35.36068
+1560186308980:#   ncdf4::ncvar_put(
+1560186308981:#     nc = ctsm.param.nc,
+1560186308983:#     varid = "leafcn",
+1560186308984:#     start = ipft,
+1560186308985:#     count = 1,
+1560186308986:#     vals = pft.trait.values[v]
+1560186308987:#   )
+1560186308988:# }
+1560186308990:# if (var == "stom_slope"){
+1560186308991:#   ## default 9.757532
+1560186308992:#   ncdf4::ncvar_put(
+1560186308993:#     nc = ctsm.param.nc,
+1560186308994:#     varid = "mbbopt",
+1560186308995:#     start = ipft,
+1560186308996:#     count = 1,
+1560186308998:#     vals = pft.trait.values[v]
+1560186308999:#   )
+1560186309000:# }
+1560186309001:# if (var == "fineroot2leaf"){
+1560186309002:#   ## default 1.5
+1560186309003:#   ncdf4::ncvar_put(
+1560186309004:#     nc = ctsm.param.nc,
+1560186309006:#     varid = "froot_leaf",
+1560186309007:#     start = ipft,
+1560186309008:#     count = 1,
+1560186309009:#     vals = pft.trait.values[v]
+1560186309010:#   )
+1560186309011:# }
+1560186309012:# if (var == "vcmax"){
+1560186309014:#   ## default 0.09
+1560186309015:#   ncdf4::ncvar_put(
+1560186309016:#     nc = ctsm.param.nc,
+1560186309017:#     varid = "flnr",
+1560186309018:#     start = ipft,
+1560186309019:#     count = 1,
+1560186309020:#     vals = as.numeric(pft.trait.values[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar)
+1560186309022:#   )
+1560186309023:# }
+1560186309024:} ## end loop over VARIABLES
+1560186350542:for (v in seq_along(pft_pecan_vals)) {
+1560186350545:pecan_var <- names(pft_pecan_vals)[v]
+1560186350549:### ----- Leaf physiological parameters
+1560186350550:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560186350552:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560186350553:}
+1560186350555:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])}
+1560186350556:# if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pecan_pft_vals[v], "m2 kg-1", "m2 g-1") / leafC))}
+1560186350557:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])}
+1560186350559:# if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])}
+1560186350560:# if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft.trait.values[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))}
+1560186350562:} ## end loop over VARIABLES
+1560186365742:for (v in seq_along(pft_pecan_vals)) {
+1560186365744:pecan_var <- names(pft_pecan_vals)[v]
+1560186365747:### ----- Leaf physiological parameters
+1560186365749:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560186365750:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560186365752:}
+1560186365755:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])}
+1560186365756:# if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pecan_pft_vals[v], "m2 kg-1", "m2 g-1") / leafC))}
+1560186365757:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])}
+1560186365758:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])}
+1560186365759:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft.trait.values[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))}
+1560186365761:} ## end loop over VARIABLES
+1560186387454:for (v in seq_along(pft_pecan_vals)) {
+1560186387455:pecan_var <- names(pft_pecan_vals)[v]
+1560186387458:### ----- Leaf physiological parameters
+1560186387459:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560186387460:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560186387461:}
+1560186387463:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])}
+1560186387464:# if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pecan_pft_vals[v], "m2 kg-1", "m2 g-1") / leafC))}
+1560186387465:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])}
+1560186387466:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])}
+1560186387468:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))}
+1560186387470:} ## end loop over VARIABLES
+1560186413898:for (v in seq_along(pft_pecan_vals)) {
+1560186413900:pecan_var <- names(pft_pecan_vals)[v]
+1560186413903:### ----- Leaf physiological parameters
+1560186413905:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560186413907:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560186413909:}
+1560186413911:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])}
+1560186413912:if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pecan_pft_vals[v], "m2 kg-1", "m2 g-1") / leafC)}
+1560186413914:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])}
+1560186413915:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])}
+1560186413916:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))}
+1560186413918:} ## end loop over VARIABLES
+1560186444909:for (v in seq_along(pft_pecan_vals)) {
+1560186444912:pecan_var <- names(pft_pecan_vals)[v]
+1560186444915:### ----- Leaf physiological parameters
+1560186444917:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560186444919:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560186444921:}
+1560186444923:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])}
+1560186444924:if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pft_pecan_vals[v], "m2 kg-1", "m2 g-1") / leafC)}
+1560186444925:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])}
+1560186444926:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])}
+1560186444928:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))}
+1560186444930:} ## end loop over VARIABLES
+1560186475932:.libPaths("~/R_libs/") #delete
+1560186476478:library(PEcAn.CTSM) #delete
+1560186476614:trait.values <- list(c4_grass = list(sla = 0.03, c2n_leaf = 35, stom_slope = 10, fineroot2leaf = 2, vcmax = 50)) #delete
+1560186477035:## Copy and open default parameter files
+1560186477037:ctsm.param.default <-
+1560186477039:system.file('clm5_params.c171117_0001.nc', package = 'PEcAn.CTSM')
+1560186478460:if (!exists('local.rundir'))
+1560186479710:local.rundir <- tempdir()
+1560186479922:if (!exists('run.id'))
+1560186480129:run.id <- 1
+1560186480417:ctsm.param.file <-
+1560186480419:file.path(local.rundir, paste0("ctsm_params.", run.id, ".nc"))
+1560186480631:file.copy(ctsm.param.default, ctsm.param.file)
+1560186480990:ctsm.param.nc <- ncdf4::nc_open(ctsm.param.file, write = TRUE)
+1560186481380:## Loop over PFTS
+1560186481382:npft <- length(trait.values)
+1560186481776:PEcAn.logger::logger.debug('there are ',
+1560186481778:npft,
+1560186481780:'PFTs in this run, they are named:',
+1560186481782:names(trait.values))
+1560186482485:ctsm_pftnames <-
+1560186482486:stringr::str_trim(tolower(ncdf4::ncvar_get(ctsm.param.nc, "pftname")))
+1560186482896:i <- 1 #delete
+1560186483347:#for (i in seq_len(npft)) {
+1560186483349:pft.name <- names(trait.values)[i]
+1560186483778:if (is.null(pft.name) | is.na(pft.name)) {
+1560186483780:PEcAn.logger::logger.error("pft.name missing")
+1560186483783:} else {
+1560186483785:PEcAn.logger::logger.info(paste("PFT =", pft.name))
+1560186483787:PEcAn.logger::logger.debug(paste0("ctsm PFT number: ", which(ctsm_pftnames == pft.name)))
+1560186483789:}
+1560186484095:if (pft.name == 'env')
+1560186484488:next   ## HACK, need to remove env from default
+1560186484950:## Match PFT name to COLUMN
+1560186484952:ipft <- match(tolower(pft.name), ctsm_pftnames)
+1560186485274:PEcAn.logger::logger.debug(paste0("CTSM pft index number: ", ipft))
+1560186485700:if (is.na(ipft)) {
+1560186485702:PEcAn.logger::logger.severe(
+1560186485704:paste(
+1560186485706:"Unmatched PFT",
+1560186485708:pft.name,
+1560186485710:"in CTSM PEcAn does not yet support non-default PFTs for this model"
+1560186485712:)
+1560186485714:)
+1560186485715:}
+1560186487246:## Special variables used in conversions
+1560186487248:leafC <- 0.48
+1560186487458:fnr <- 7.16 #mass ratio of total Rubisco molecular mass to nitrogen in Rubisco (g Rubisco g-1 N in Rubisco)
+1560186487872:ar <- 60 #specific activity of Rubisco (µmol CO2 g-1 Rubisco s-1)
+1560186488211:sla_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop") #delete
+1560186488459:c2n_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn") #delete
+1560186488657:sto_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "mbbopt") #delete
+1560186488862:frl_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "froot_leaf") #delete
+1560186489128:flnr_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "flnr") #delete
+1560186489612:## Loop over VARIABLES
+1560186489613:pft_pecan_vals <- trait.values[[i]]
+1560186489971:for (v in seq_along(pft_pecan_vals)) {
+1560186489973:pecan_var <- names(pft_pecan_vals)[v]
+1560186489977:### ----- Leaf physiological parameters
+1560186489979:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560186489981:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560186489982:}
+1560186489983:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])}
+1560186489984:if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pft_pecan_vals[v], "m2 kg-1", "m2 g-1") / leafC)}
+1560186489985:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])}
+1560186489986:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])}
+1560186489987:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))}
+1560186489988:} ## end loop over VARIABLES
+1560186492414:write_params_ctsm <-
+1560186492416:function(defaults = system.file('clm5_params.c171117_0001.nc', package = 'PEcAn.CTSM'),
+1560186492417:trait.values,
+1560186492419:settings,
+1560186492420:run.id) {
+1560186492422:.libPaths("~/R_libs/") #delete
+1560186492424:library(PEcAn.CTSM) #delete
+1560186492425:trait.values <- list(c4_grass = list(sla = 0.03, c2n_leaf = 35, stom_slope = 10, fineroot2leaf = 2, vcmax = 50)) #delete
+1560186492426:## Copy and open default parameter files
+1560186492427:ctsm.param.default <-
+1560186492428:system.file('clm5_params.c171117_0001.nc', package = 'PEcAn.CTSM')
+1560186492429:if (!exists('local.rundir'))
+1560186492430:local.rundir <- tempdir()
+1560186492431:if (!exists('run.id'))
+1560186492432:run.id <- 1
+1560186492433:ctsm.param.file <-
+1560186492435:file.path(local.rundir, paste0("ctsm_params.", run.id, ".nc"))
+1560186492436:file.copy(ctsm.param.default, ctsm.param.file)
+1560186492437:ctsm.param.nc <- ncdf4::nc_open(ctsm.param.file, write = TRUE)
+1560186492439:## Loop over PFTS
+1560186492440:npft <- length(trait.values)
+1560186492441:PEcAn.logger::logger.debug('there are ',
+1560186492442:npft,
+1560186492443:'PFTs in this run, they are named:',
+1560186492444:names(trait.values))
+1560186492445:ctsm_pftnames <-
+1560186492446:stringr::str_trim(tolower(ncdf4::ncvar_get(ctsm.param.nc, "pftname")))
+1560186492447:i <- 1 #delete
+1560186492448:#for (i in seq_len(npft)) {
+1560186492449:pft.name <- names(trait.values)[i]
+1560186492450:if (is.null(pft.name) | is.na(pft.name)) {
+1560186492451:PEcAn.logger::logger.error("pft.name missing")
+1560186492452:} else {
+1560186492454:PEcAn.logger::logger.info(paste("PFT =", pft.name))
+1560186492455:PEcAn.logger::logger.debug(paste0("ctsm PFT number: ", which(ctsm_pftnames == pft.name)))
+1560186492456:}
+1560186492457:if (pft.name == 'env')
+1560186492458:next   ## HACK, need to remove env from default
+1560186492460:## Match PFT name to COLUMN
+1560186492461:ipft <- match(tolower(pft.name), ctsm_pftnames)
+1560186492463:PEcAn.logger::logger.debug(paste0("CTSM pft index number: ", ipft))
+1560186492465:if (is.na(ipft)) {
+1560186492466:PEcAn.logger::logger.severe(
+1560186492467:paste(
+1560186492468:"Unmatched PFT",
+1560186492470:pft.name,
+1560186492471:"in CTSM PEcAn does not yet support non-default PFTs for this model"
+1560186492472:)
+1560186492473:)
+1560186492474:}
+1560186492476:## Special variables used in conversions
+1560186492478:leafC <- 0.48
+1560186492479:fnr <- 7.16 #mass ratio of total Rubisco molecular mass to nitrogen in Rubisco (g Rubisco g-1 N in Rubisco)
+1560186492480:ar <- 60 #specific activity of Rubisco (µmol CO2 g-1 Rubisco s-1)
+1560186492481:sla_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop") #delete
+1560186492482:c2n_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn") #delete
+1560186492484:sto_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "mbbopt") #delete
+1560186492485:frl_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "froot_leaf") #delete
+1560186492486:flnr_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "flnr") #delete
+1560186492489:## Loop over VARIABLES
+1560186492490:pft_pecan_vals <- trait.values[[i]]
+1560186492491:for (v in seq_along(pft_pecan_vals)) {
+1560186492493:pecan_var <- names(pft_pecan_vals)[v]
+1560186492495:### ----- Leaf physiological parameters
+1560186492497:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560186492498:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560186492499:}
+1560186492501:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])}
+1560186492502:if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pft_pecan_vals[v], "m2 kg-1", "m2 g-1") / leafC)}
+1560186492503:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])}
+1560186492505:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])}
+1560186492506:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))}
+1560186492508:} ## end loop over VARIABLES
+1560186492509:} ## end loop over PFTs
+1560186493186:}
+1560186499239:sla_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")
+1560186499244:c2n_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")
+1560186499249:sto_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "mbbopt")
+1560186499253:frl_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "froot_leaf")
+1560186499257:flnr_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "flnr")
+1560186499261:sla_old[15]
+1560186499262:sla_new[15]
+1560186499264:c2n_old[15]
+1560186499265:c2n_new[15]
+1560186499267:sto_old[15]
+1560186499268:sto_new[15]
+1560186499270:frl_old[15]
+1560186499271:frl_new[15]
+1560186499273:flnr_old[15]
+1560186499274:flnr_new[15]
+1560186940694:ctsm_pftnames
+1560186949403:ncdf4::ncvar_get(ctsm.param.nc, "pftname")
+1560186991406:trimws(tolower(ncdf4::ncvar_get(ctsm.param.nc, "pftname")))
+1560187006037:bla <- head(trimws(tolower(ncdf4::ncvar_get(ctsm.param.nc, "pftname"))))
+1560187017227:bla <- trimws(tolower(ncdf4::ncvar_get(ctsm.param.nc, "pftname")))
+1560187030639:bla == ctsm_pftnames
+1560187115573:pft.name
+1560187128024:names(trait.values)[1]
+1560187131447:names(trait.values)[[1]]
+1560187145124:trait.values <- list(c4_grass = list(sla = 0.03, c2n_leaf = 35, stom_slope = 10, fineroot2leaf = 2, vcmax = 50))
+1560187152336:.libPaths("~/R_libs/")
+1560187152893:library(PEcAn.CTSM)
+1560187160384:## Copy and open default parameter files
+1560187160385:ctsm.param.default <-
+1560187160387:system.file('clm5_params.c171117_0001.nc', package = 'PEcAn.CTSM')
+1560187160584:if (!exists('local.rundir'))
+1560187160689:local.rundir <- tempdir()
+1560187160738:if (!exists('run.id'))
+1560187160959:run.id <- 1
+1560187161114:ctsm.param.file <-
+1560187161116:file.path(local.rundir, paste0("ctsm_params.", run.id, ".nc"))
+1560187161230:file.copy(ctsm.param.default, ctsm.param.file)
+1560187161473:ctsm.param.nc <- ncdf4::nc_open(ctsm.param.file, write = TRUE)
+1560187162480:## Loop over PFTS
+1560187162482:npft <- length(trait.values)
+1560187162928:PEcAn.logger::logger.debug('there are ',
+1560187162929:npft,
+1560187162931:'PFTs in this run, they are named:',
+1560187162933:names(trait.values))
+1560187163692:ctsm_pftnames <-
+1560187163694:trimws(tolower(ncdf4::ncvar_get(ctsm.param.nc, "pftname")))
+1560187167912:i <- 1
+1560187170440:pft.name <- names(trait.values)[[i]]
+1560187171033:if (is.null(pft.name) || is.na(pft.name)) {
+1560187171035:PEcAn.logger::logger.error("pft.name missing")
+1560187171037:} else {
+1560187171039:PEcAn.logger::logger.info(paste("PFT =", pft.name))
+1560187171041:PEcAn.logger::logger.debug(paste0("ctsm PFT number: ", which(ctsm_pftnames == pft.name)))
+1560187171044:}
+1560187174803:if (pft.name == 'env')
+1560187175659:next   ## HACK, need to remove env from default
+1560187179315:## Match PFT name to COLUMN
+1560187179317:ipft <- match(tolower(pft.name), ctsm_pftnames)
+1560187180314:PEcAn.logger::logger.debug(paste0("CTSM pft index number: ", ipft))
+1560187180971:if (is.na(ipft)) {
+1560187180973:PEcAn.logger::logger.severe(
+1560187180974:paste(
+1560187180975:"Unmatched PFT",
+1560187180976:pft.name,
+1560187180977:"in CTSM PEcAn does not yet support non-default PFTs for this model"
+1560187180978:)
+1560187180980:)
+1560187180981:}
+1560187181783:## Special variables used in conversions
+1560187181785:leafC <- 0.48
+1560187181970:fnr <- 7.16 # mass ratio of total Rubisco molecular mass to nitrogen in Rubisco (g Rubisco g-1 N in Rubisco)
+1560187182356:ar <- 60 # specific activity of Rubisco (µmol CO2 g-1 Rubisco s-1)
+1560187183414:## Loop over VARIABLES
+1560187183416:pft_pecan_vals <- trait.values[[i]]
+1560187187143:for (v in seq_along(pft_pecan_vals)) {
+1560187187145:pecan_var <- names(pft_pecan_vals)[v]
+1560187187148:### ----- Leaf physiological parameters
+1560187187150:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560187187151:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560187187152:}
+1560187187153:if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pft_pecan_vals[v], "m2 kg-1", "m2 g-1") / leafC)} ## default 0.03846
+1560187187154:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])} ## default 35.36068
+1560187187155:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])} ## default 9.757532
+1560187187156:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])} ## default 1.5
+1560187187157:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))} ## default 0.09
+1560187187158:}
+1560187189993:for (i in seq_len(npft)) {
+1560187189995:pft.name <- names(trait.values)[[i]]
+1560187189997:if (is.null(pft.name) || is.na(pft.name)) {
+1560187189998:PEcAn.logger::logger.error("pft.name missing")
+1560187190000:} else {
+1560187190002:PEcAn.logger::logger.info(paste("PFT =", pft.name))
+1560187190004:PEcAn.logger::logger.debug(paste0("ctsm PFT number: ", which(ctsm_pftnames == pft.name)))
+1560187190005:}
+1560187190006:if (pft.name == 'env')
+1560187190007:next   ## HACK, need to remove env from default
+1560187190009:## Match PFT name to COLUMN
+1560187190010:ipft <- match(tolower(pft.name), ctsm_pftnames)
+1560187190011:PEcAn.logger::logger.debug(paste0("CTSM pft index number: ", ipft))
+1560187190013:if (is.na(ipft)) {
+1560187190014:PEcAn.logger::logger.severe(
+1560187190015:paste(
+1560187190016:"Unmatched PFT",
+1560187190017:pft.name,
+1560187190018:"in CTSM PEcAn does not yet support non-default PFTs for this model"
+1560187190019:)
+1560187190020:)
+1560187190021:}
+1560187190022:## Special variables used in conversions
+1560187190023:leafC <- 0.48
+1560187190024:fnr <- 7.16 # mass ratio of total Rubisco molecular mass to nitrogen in Rubisco (g Rubisco g-1 N in Rubisco)
+1560187190025:ar <- 60 # specific activity of Rubisco (µmol CO2 g-1 Rubisco s-1)
+1560187190027:## Loop over VARIABLES
+1560187190028:pft_pecan_vals <- trait.values[[i]]
+1560187190029:for (v in seq_along(pft_pecan_vals)) {
+1560187190030:pecan_var <- names(pft_pecan_vals)[v]
+1560187190032:### ----- Leaf physiological parameters
+1560187190033:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560187190034:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560187190035:}
+1560187190036:if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pft_pecan_vals[v], "m2 kg-1", "m2 g-1") / leafC)} ## default 0.03846
+1560187190037:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])} ## default 35.36068
+1560187190038:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])} ## default 9.757532
+1560187190039:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])} ## default 1.5
+1560187190040:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))} ## default 0.09
+1560187190042:}
+1560187190043:}
+1560187190811:write_params_ctsm <-
+1560187190813:function(defaults = system.file('clm5_params.c171117_0001.nc', package = 'PEcAn.CTSM'),
+1560187190814:trait.values,
+1560187190815:settings,
+1560187190817:run.id) {
+1560187190819:## Copy and open default parameter files
+1560187190820:ctsm.param.default <-
+1560187190821:system.file('clm5_params.c171117_0001.nc', package = 'PEcAn.CTSM')
+1560187190822:if (!exists('local.rundir'))
+1560187190823:local.rundir <- tempdir()
+1560187190824:if (!exists('run.id'))
+1560187190825:run.id <- 1
+1560187190826:ctsm.param.file <-
+1560187190827:file.path(local.rundir, paste0("ctsm_params.", run.id, ".nc"))
+1560187190828:file.copy(ctsm.param.default, ctsm.param.file)
+1560187190828:ctsm.param.nc <- ncdf4::nc_open(ctsm.param.file, write = TRUE)
+1560187190830:## Loop over PFTS
+1560187190831:npft <- length(trait.values)
+1560187190832:PEcAn.logger::logger.debug('there are ',
+1560187190833:npft,
+1560187190834:'PFTs in this run, they are named:',
+1560187190835:names(trait.values))
+1560187190836:ctsm_pftnames <-
+1560187190837:trimws(tolower(ncdf4::ncvar_get(ctsm.param.nc, "pftname")))
+1560187190838:for (i in seq_len(npft)) {
+1560187190839:pft.name <- names(trait.values)[[i]]
+1560187190840:if (is.null(pft.name) || is.na(pft.name)) {
+1560187190841:PEcAn.logger::logger.error("pft.name missing")
+1560187190842:} else {
+1560187190843:PEcAn.logger::logger.info(paste("PFT =", pft.name))
+1560187190844:PEcAn.logger::logger.debug(paste0("ctsm PFT number: ", which(ctsm_pftnames == pft.name)))
+1560187190845:}
+1560187190846:if (pft.name == 'env')
+1560187190847:next   ## HACK, need to remove env from default
+1560187190849:## Match PFT name to COLUMN
+1560187190851:ipft <- match(tolower(pft.name), ctsm_pftnames)
+1560187190852:PEcAn.logger::logger.debug(paste0("CTSM pft index number: ", ipft))
+1560187190854:if (is.na(ipft)) {
+1560187190855:PEcAn.logger::logger.severe(
+1560187190856:paste(
+1560187190857:"Unmatched PFT",
+1560187190858:pft.name,
+1560187190859:"in CTSM PEcAn does not yet support non-default PFTs for this model"
+1560187190860:)
+1560187190861:)
+1560187190862:}
+1560187190866:## Special variables used in conversions
+1560187190867:leafC <- 0.48
+1560187190868:fnr <- 7.16 # mass ratio of total Rubisco molecular mass to nitrogen in Rubisco (g Rubisco g-1 N in Rubisco)
+1560187190869:ar <- 60 # specific activity of Rubisco (µmol CO2 g-1 Rubisco s-1)
+1560187190871:## Loop over VARIABLES
+1560187190873:pft_pecan_vals <- trait.values[[i]]
+1560187190874:for (v in seq_along(pft_pecan_vals)) {
+1560187190875:pecan_var <- names(pft_pecan_vals)[v]
+1560187190877:### ----- Leaf physiological parameters
+1560187190878:update_vars <- function(nc = ctsm.param.nc, ctsm_var, ctsm_vals, start = ipft, count = 1){
+1560187190879:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560187190881:}
+1560187190882:if (pecan_var == "sla") {update_vars(ctsm_var = "slatop", ctsm_vals = udunits2::ud.convert(pft_pecan_vals[v], "m2 kg-1", "m2 g-1") / leafC)} ## default 0.03846
+1560187190883:if (pecan_var == "c2n_leaf") {update_vars(ctsm_var = "leafcn", ctsm_vals = pft_pecan_vals[v])} ## default 35.36068
+1560187190884:if (pecan_var == "stom_slope") {update_vars(ctsm_var = "mbbopt", ctsm_vals = pft_pecan_vals[v])} ## default 9.757532
+1560187190886:if (pecan_var == "fineroot2leaf") {update_vars(ctsm_var = "froot_leaf", ctsm_vals = pft_pecan_vals[v])} ## default 1.5
+1560187190887:if (pecan_var == "vcmax") {update_vars(ctsm_var = "flnr", ctsm_vals = as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))} ## default 0.09
+1560187190888:}
+1560187190890:}
+1560187190891:}
+1560265844001:library(pecanapi)
+1560265880284:library(devtools)
+1560265972342:build()
+1560265986983:getwd()
+1560265990765:setwd("~/pecan/api")
+1560265993462:getwd()
+1560265996239:build()
+1560266011400:library(pecanapi)
+1560266025185:install()
+1560266038135:library(pecanapi)
+1560266074403:.libPaths("~/R_libs/")
+1560266082939:install()
+1560266452258:library(pecanapi)
+1560266461991:?pecanapi::get_model_id
+1560266626832:?DBI::dbConnect
+1560266770007:#options(pecanapi.user_id = 99000000002)
+1560266770008:con <- DBI::dbConnect(
+1560266770009:RPostgres::Postgres(),
+1560266770010:user = "bety",
+1560266770011:password = "bety",
+1560266770012:host = "postgres"
+1560266770013:#port = 5432
+1560266770014:)
+1560266770919:model_id <- get_model_id(con, "ED2")  #, "136")
+1560266800965:model_id <- get_model_id(con, "ED2", "git")
+1560266825530:#options(pecanapi.user_id = 99000000002)
+1560266825532:con <- DBI::dbConnect(
+1560266825534:RPostgres::Postgres(),
+1560266825536:user = "bety",
+1560266825538:password = "bety",
+1560266825539:host = "postgres"
+1560266825541:#port = 5432
+1560266825542:)
+1560266826710:model_id <- get_model_id(con, "ED2", "git")
+1560266833653:model_id
+1560266922504:1000000020
+1560267046524:model_id <- get_model_id(con, "ED2", "rgit")
+1560268797431:model_id <- get_model_id(con, "ED2", "git")
+1560268809394:model_id <- get_model_id(con, "ED2", "git", multi_action = "all")
+1560268817250:model_id
+1560269723939:search_models(con, "ED")
+1560277413066:model_id
+1560277427547:get_model_id(con, "ED2", "git", multi_action = "all")
+1560279084285:get_model_id(con, "ED2.2", "git")
+1560279099565:get_model_id(con, "ED2", "ED2.2")
+1560279151260:get_model_id(con, "ED2.2", "git")
+1560279392249:get_model_id(con, "ED2", "git", multi_action = "all")
+1560279398447:.libPaths("~/R_libs/")
+1560279399122:library(pecanapi)
+1560279399166:#options(pecanapi.user_id = 99000000002)
+1560279399167:con <- DBI::dbConnect(
+1560279399168:RPostgres::Postgres(),
+1560279399169:user = "bety",
+1560279399170:password = "bety",
+1560279399171:host = "postgres"
+1560279399172:#port = 5432
+1560279399173:)
+1560279401086:get_model_id(con, "ED2", "git", multi_action = "all")
+1560279403423:get_model_id(con, "ED2.2", "git")
+1560282321001:.libPaths("~/R_libs/")
+1560282321713:library(PEcAn.CTSM)
+1560454645331:.libPaths("~/R_libs/")
+1560454651567:library(pecanapi)
+1560454651578:#options(pecanapi.user_id = 99000000002)
+1560454651579:con <- DBI::dbConnect(
+1560454651580:RPostgres::Postgres(),
+1560454651581:user = "bety",
+1560454651582:password = "bety",
+1560454651583:host = "postgres"
+1560454651584:#port = 5432
+1560454651585:)
+1560454653217:get_model_id(con, "ED2", "git", multi_action = "all")
+1560454654326:get_model_id(con, "ED2.2", "git")
+1560539275753:.libPaths("~/R_libs/")
+1560539283603:library(pecanapi)
+1560539297087:#options(pecanapi.user_id = 99000000002)
+1560539297088:con <- DBI::dbConnect(
+1560539297090:RPostgres::Postgres(),
+1560539297091:user = "bety",
+1560539297092:password = "bety",
+1560539297093:host = "postgres"
+1560539297094:#port = 5432
+1560539297095:)
+1560539298862:get_model_id(con, "ED2", "git", multi_action = "all")
+1560539301462:get_model_id(con, "ED2.2", "git")
+1560539302833:search_models(con, "ED")
+1560540062298:.libPaths("~/R_libs/")
+1560540062946:library(pecanapi)
+1560540063798:#options(pecanapi.user_id = 99000000002)
+1560540063799:con <- DBI::dbConnect(
+1560540063800:RPostgres::Postgres(),
+1560540063801:user = "bety",
+1560540063802:password = "bety",
+1560540063803:host = "postgres"
+1560540063804:#port = 5432
+1560540063805:)
+1560540065079:get_model_id(con, "ED2", "git", multi_action = "all")
+1560540066827:get_model_id(con, "ED2.2", "git")
+1560540067830:search_models(con, "ED")
+1560540498049:search_models(con, "ED")
+1560778500380:.libPaths("~/R_libs/")
+1560778504319:library(pecanapi)
+1560778505081:#options(pecanapi.user_id = 99000000002)
+1560778505082:con <- DBI::dbConnect(
+1560778505083:RPostgres::Postgres(),
+1560778505084:user = "bety",
+1560778505085:password = "bety",
+1560778505086:host = "postgres"
+1560778505087:#port = 5432
+1560778505088:)
+1560778506352:get_model_id(con, "ED2", "git", multi_action = "all")
+1560778508321:get_model_id(con, "ED2.2", "git")
+1560778509956:search_models(con, "ED")
+1560778890943:pecanapi::get_model_id(con, "ED2.2", "git")
+1560864146870:.libPaths("~/R_libs/")
+1560864147536:library(pecanapi)
+1560864149061:#options(pecanapi.user_id = 99000000002)
+1560864149063:con <- DBI::dbConnect(
+1560864149064:RPostgres::Postgres(),
+1560864149065:user = "bety",
+1560864149066:password = "bety",
+1560864149068:host = "postgres"
+1560864149069:#port = 5432
+1560864149070:)
+1560864151628:get_model_id(con, "ED2", "git", multi_action = "all")
+1560864151999:get_model_id(con, "ED2.2", "git")
+1560864153216:search_models(con, "ED")
+1560864358523:tbl(con, 'pfts')
+1560864369652:library(dplyr)
+1560864374133:tbl(con, 'pfts')
+1560864389408:pfts <- tbl(con, 'pfts')
+1560864394150:View(pfts)
+1560864410225:pfts <- tbl(con, 'pfts') %>%
+1560864410227:collect()
+1560864412579:View(pfts)
+1560864427898:sort(pfts$name)
+1560864539335:pfts <- tbl(con, 'pfts') %>%
+1560864539337:collect() %>%
+1560864539339:filter(name == "ebifarm.c4grass.doe_vd")
+1560864542160:View(pfts)
+1560864760295:pfts <- tbl(con, 'pfts') %>%
+1560864760297:collect() %>%
+1560864760299:filter(name == "c4grass")
+1560864762230:View(pfts)
+1560865424839:pfts <- tbl(con, 'pfts') %>%
+1560865424841:collect() %>%
+1560865424843:filter(modeltype_id == "5000000001")
+1560865428225:View(pfts)
+1560865441779:pfts <- tbl(con, 'pfts') %>%
+1560865441780:collect()
+1560865443126:View(pfts)
+1560865453852:table(pfts$modeltype_id)
+1560865500764:pfts <- tbl(con, 'pfts') %>%
+1560865500766:collect() %>%
+1560865500768:filter(modeltype_id == "1")
+1560865502098:View(pfts)
+1560865511917:sort(pfts$name)
+1560869049349:.libPaths("~/R_libs/")
+1560869050044:library(PEcAn.CTSM)
+1560869059679:trait.values <- list(c4_grass = list(sla = 0.03, c2n_leaf = 35, stom_slope = 10, fineroot2leaf = 2, vcmax = 50))
+1560869091963:run.id = 1
+1560869096165:local.rundir = tempdir()
+1560869100031:leafC = 0.48
+1560869103643:fnr = 7.16
+1560869107252:ar = 60
+1560869112637:## Copy and open default parameter files
+1560869112639:ctsm.param.default <-
+1560869112641:system.file('clm5_params.c171117_0001.nc', package = 'PEcAn.CTSM')
+1560869114172:ctsm.param.file <-
+1560869114174:file.path(local.rundir, paste0("ctsm_params.", run.id, ".nc"))
+1560869114909:file.copy(ctsm.param.default, ctsm.param.file)
+1560869115609:ctsm.param.nc <- ncdf4::nc_open(ctsm.param.file, write = TRUE)
+1560869116904:## Loop over PFTS
+1560869116906:npft <- length(trait.values)
+1560869117460:PEcAn.logger::logger.debug('there are ',
+1560869117462:npft,
+1560869117465:'PFTs in this run, they are named:',
+1560869117467:names(trait.values))
+1560869118287:ctsm_pftnames <-
+1560869118290:trimws(tolower(ncdf4::ncvar_get(ctsm.param.nc, "pftname")))
+1560869122768:i <- 1
+1560869125428:pft.name <- names(trait.values)[[i]]
+1560869126546:if (is.null(pft.name) || is.na(pft.name)) {
+1560869126548:PEcAn.logger::logger.error("pft.name missing")
+1560869126550:} else {
+1560869126553:PEcAn.logger::logger.info(paste("PFT =", pft.name))
+1560869126555:PEcAn.logger::logger.debug(paste0("ctsm PFT number: ", which(ctsm_pftnames == pft.name)))
+1560869126556:}
+1560869127953:if (pft.name == 'env')
+1560869128656:next   ## HACK, need to remove env from default
+1560869129451:## Match PFT name to COLUMN
+1560869129454:ipft <- match(tolower(pft.name), ctsm_pftnames)
+1560869129973:PEcAn.logger::logger.debug(paste0("CTSM pft index number: ", ipft))
+1560869130644:if (is.na(ipft)) {
+1560869130646:PEcAn.logger::logger.severe(
+1560869130648:paste(
+1560869130649:"Unmatched PFT",
+1560869130651:pft.name,
+1560869130653:"in CTSM PEcAn does not yet support non-default PFTs for this model"
+1560869130654:)
+1560869130656:)
+1560869130658:}
+1560869131963:## Loop over VARIABLES
+1560869131965:pft_pecan_vals <- trait.values[[i]]
+1560869136704:for (v in seq_along(pft_pecan_vals)) {
+1560869136706:pecan_var <- names(pft_pecan_vals)[v]
+1560869136709:### ----- Leaf physiological parameters
+1560869136711:update_vars <- function(ctsm_var, ctsm_vals, nc = ctsm.param.nc, start = ipft, count = 1){
+1560869136733:ncdf4::ncvar_put(nc, varid = ctsm_var, vals = ctsm_vals, start, count)
+1560869136735:}
+1560869136737:if (pecan_var == "sla") {update_vars("slatop", udunits2::ud.convert(pft_pecan_vals[v], "m2 kg-1", "m2 g-1") / leafC)} ## default 0.03846
+1560869136739:if (pecan_var == "c2n_leaf") {update_vars("leafcn", pft_pecan_vals[v])} ## default 35.36068
+1560869136742:if (pecan_var == "stom_slope") {update_vars("mbbopt", pft_pecan_vals[v])} ## default 9.757532
+1560869136743:if (pecan_var == "fineroot2leaf") {update_vars("froot_leaf", pft_pecan_vals[v])} ## default 1.5
+1560869136744:if (pecan_var == "vcmax") {update_vars("flnr", as.numeric(pft_pecan_vals[v]) / ((1/(ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")[ipft] * ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")[ipft])) * fnr * ar))} ## default 0.09
+1560869136746:}
+1560869145409:sla_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")
+1560869145554:c2n_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")
+1560869145615:sto_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "mbbopt")
+1560869145863:frl_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "froot_leaf")
+1560869146029:flnr_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "flnr")
+1560869146421:sla_old[15]
+1560869146593:sla_new[15]
+1560869146778:c2n_old[15]
+1560869146875:c2n_new[15]
+1560869147063:sto_old[15]
+1560869148837:sto_new[15]
+1560869148975:frl_old[15]
+1560869149051:frl_new[15]
+1560869149273:flnr_old[15]
+1560869149515:flnr_new[15]
+1560956731998:# ----------------------------------------------------------------------
+1560956731999:# Load required libraries
+1560956732001:# ----------------------------------------------------------------------
+1560956732002:library(PEcAn.all)
+1560956736765:library(PEcAn.utils)
+1560956736766:library(RCurl)
+1560956738267:# make sure always to call status.end
+1560956738268:options(warn=1)
+1560956738585:options(error=quote({
+1560956738586:PEcAn.utils::status.end("ERROR")
+1560956738588:PEcAn.remote::kill.tunnel(settings)
+1560956738590:if (!interactive()) {
+1560956738592:q(status = 1)
+1560956738594:}
+1560956738595:}))
+1560956745261:# ----------------------------------------------------------------------
+1560956745263:# PEcAn Workflow
+1560956745264:# ----------------------------------------------------------------------
+1560956745266:# Open and read in settings file for PEcAn run.
+1560956745268:args <- commandArgs(trailingOnly = TRUE)
+1560956746075:if (is.na(args[1])){
+1560956746077:settings <- PEcAn.settings::read.settings("pecan.xml")
+1560956746078:} else {
+1560956746079:settings.file <- args[1]
+1560956746080:settings <- PEcAn.settings::read.settings(settings.file)
+1560956746081:}
+1560956762067:getwd()
+1560956777361:setwd("/home/kristinariemer/")
+1560956778962:getwd()
+1560956797402:# ----------------------------------------------------------------------
+1560956797403:# Load required libraries
+1560956797404:# ----------------------------------------------------------------------
+1560956797405:library(PEcAn.all)
+1560956801853:library(PEcAn.utils)
+1560956801855:library(RCurl)
+1560956803078:# make sure always to call status.end
+1560956803080:options(warn=1)
+1560956803261:options(error=quote({
+1560956803263:PEcAn.utils::status.end("ERROR")
+1560956803265:PEcAn.remote::kill.tunnel(settings)
+1560956803267:if (!interactive()) {
+1560956803269:q(status = 1)
+1560956803270:}
+1560956803271:}))
+1560956806743:# ----------------------------------------------------------------------
+1560956806745:# PEcAn Workflow
+1560956806747:# ----------------------------------------------------------------------
+1560956806749:# Open and read in settings file for PEcAn run.
+1560956806751:args <- commandArgs(trailingOnly = TRUE)
+1560956807656:if (is.na(args[1])){
+1560956807658:settings <- PEcAn.settings::read.settings("ed2_files/pecan64.ed2.xml")
+1560956807660:} else {
+1560956807662:settings.file <- args[1]
+1560956807664:settings <- PEcAn.settings::read.settings(settings.file)
+1560956807666:}
+1560956809086:# Check for additional modules that will require adding settings
+1560956809119:if("benchmarking" %in% names(settings)){
+1560956809121:library(PEcAn.benchmark)
+1560956809122:settings <- papply(settings, read_settings_BRR)
+1560956809124:}
+1560956810063:if("sitegroup" %in% names(settings)){
+1560956810065:if(is.null(settings$sitegroup$nSite)){
+1560956810066:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1560956810068:sitegroupId = settings$sitegroup$id)
+1560956810070:} else {
+1560956810072:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1560956810074:sitegroupId = settings$sitegroup$id,
+1560956810075:nSite = settings$sitegroup$nSite)
+1560956810076:}
+1560956810077:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1560956810078:}
+1560956811474:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1560956811476:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1560956818922:# Write pecan.CHECKED.xml
+1560956818924:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1560956820661:# start from scratch if no continue is passed in
+1560956820664:statusFile <- file.path(settings$outdir, "STATUS")
+1560956821652:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1560956821654:file.remove(statusFile)
+1560956821655:}
+1560956822794:# Do conversions
+1560956822796:settings <- PEcAn.workflow::do_conversions(settings)
+1560956825961:# Query the trait database for data and priors
+1560956825963:if (PEcAn.utils::status.check("TRAIT") == 0){
+1560956825964:PEcAn.utils::status.start("TRAIT")
+1560956825965:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1560956825967:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1560956825968:PEcAn.utils::status.end()
+1560956825969:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1560956825970:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1560956825972:}
+1560956831533:# Run the PEcAn meta.analysis
+1560956831535:if(!is.null(settings$meta.analysis)) {
+1560956831537:if (PEcAn.utils::status.check("META") == 0){
+1560956831538:PEcAn.utils::status.start("META")
+1560956831540:PEcAn.MA::runModule.run.meta.analysis(settings)
+1560956831541:PEcAn.utils::status.end()
+1560956831542:}
+1560956831543:}
+1560956839779:# Write model specific configs
+1560956839781:if (PEcAn.utils::status.check("CONFIG") == 0){
+1560956839783:PEcAn.utils::status.start("CONFIG")
+1560956839785:settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+1560956839787:PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+1560956839789:PEcAn.utils::status.end()
+1560956839791:} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+1560956839792:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+1560956839793:}
+1560957852614:traceback()
+1560958044523:traceback()
+1561043512396:library(reticulate)
+1561043526515:install.packages("reticulate")
+1561043906611:.libPaths("~/R_libs/")
+1561043914705:install.packages("reticulate")
+1561044046270:library(reticulate)

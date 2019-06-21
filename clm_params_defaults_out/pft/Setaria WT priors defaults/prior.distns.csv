@@ -1,0 +1,16 @@
+"","distn","parama","paramb","n"
+"Jmax","norm",101.65,10,0
+"Vcmax25","norm",28.4,2.84,0
+"leaf_respiration_rate_m2","norm",0.342,0.0342,NA
+"leafN - area","norm",1.33,0.133,0
+"c2n_leaf","norm",35.3607,3.53607,0
+"leaf_nitrogen_rubisco","norm",0.09,0.009,0
+"mass_nitrogen_rubisco","norm",7.16,0.716,0
+"SLA","norm",18.4803,1.84803,0
+"minimum_stomatal_conductance","norm",100,10,0
+"stomatal_slope.g1","norm",1.64,0.164,0
+"fineroot2leaf","norm",1.5,0.15,0
+"growth_respiration","norm",0.3,0.03,0
+"target_c2n_leaf","norm",25,2.5,0
+"target_c2n_fineroot","norm",42,4.2,0
+"root_dist_ratio","norm",0.9,0.09,0

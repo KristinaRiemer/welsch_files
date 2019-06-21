@@ -1,0 +1,15 @@
+help/library/PEcAn.ED2/html/create_css.html,"R: Create css, pss, and site files from examples"
+help/library/PEcAn.ED2/html/example_css.html,"R: Example css, pss, and site objects"
+help/library/PEcAn.logger/html/logger.info.html,R: Prints an informational message.
+help/library/base/html/getwd.html,R: Get or Set Working Directory
+help/library/base/html/tempfile.html,R: Create Names for Temporary Files
+help/library/base/html/libPaths.html,R: Search Paths for Packages
+help/library/devtools/html/install.html,R: Install a local development package.
+help/library/base/html/rm.html,R: Remove Objects from a Specified Environment
+help/library/ncdf4/html/ncvar_add.html,R: Add New netCDF Variable to Existing File
+help/library/base/html/files.html,R: File Manipulation
+help/library/ncdf4/html/ncvar_get.html,R: Read data from a netCDF file
+help/library/stats/html/model.frame.html,R: Extracting the Model Frame from a Formula or Fit
+help/library/ncdf4/html/ancvar_put.html,R: Write data to a netCDF file
+help/library/DBI/html/dbConnect.html,R: Create a connection to a DBMS
+help/library/pecanapi/html/get_model_id.html,R: Retrieve database ID of a particular version of a model

@@ -1,0 +1,18 @@
+```{r}
+.libPaths("~/R_libs/")
+library(reticulate)
+```
+
+```{python}
+from terrautils.products import get_sensor_list, unique_sensor_names
+```
+
+```{python}
+url = 'https://terraref.ncsa.illinois.edu/clowder/'
+key = ''
+
+sensors = get_sensor_list(None, url, key)
+names = unique_sensor_names(sensors)
+
+```
+

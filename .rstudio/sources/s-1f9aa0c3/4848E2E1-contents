@@ -1,0 +1,28 @@
+library(dplyr)
+
+# Open up a connection to BETY
+bety <-dplyr::src_postgres(host = "postgres", 
+                           user = "bety", 
+                           password = "bety", 
+                           dbname = "bety")
+
+# Pull down new parameters distribution from BETY
+pfts <- tbl(bety, 'pfts') %>% 
+  transmute(pft_id = id)
+models <- tbl(bety, 'modeltypes') %>% 
+  left_join(pfts) %>% 
+  collect()
+
+biocros <- tbl(bety, 'modeltypes') %>% 
+collect
+new_pfts <- tbl(bety, 'pfts') %>% 
+  filter(modeltype_id %in% biocros$id) %>% 
+  data.frame()
+
+new_priors <- tbl(bety, 'priors') %>% 
+  filter(id >= 99000000001 & id <= 99000000016) %>% 
+  data.frame()
+new_priors <- tbl(bety, 'priors')
+
+new_model <- tbl(bety, 'models') %>% 
+  filter(id == 9000000001)

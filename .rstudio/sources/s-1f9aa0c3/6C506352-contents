@@ -1,0 +1,60 @@
+### This runs in Welsch UA RStudio instance
+
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+
+theme_set(theme_bw())
+
+# Open up a connection to BETY
+bety <-dplyr::src_postgres(host = "postgres", 
+                           user = "bety", 
+                           password = "bety", 
+                           dbname = "bety")
+
+
+# Get all priors data for CLM50 PFTs
+clm_pfts <- tbl(bety, 'pfts') %>% 
+  filter(modeltype_id == 9000000001) %>% 
+  select(id, name) %>% 
+  collect()
+
+pft_prior_link <- tbl(bety, 'pfts_priors') %>% 
+  filter(pft_id %in% clm_pfts$id) %>% 
+  collect()
+
+pft_prior_combined <- left_join(pft_prior_link, clm_pfts, by = c("pft_id" = "id"))
+
+clm_priors <- tbl(bety, 'priors') %>% 
+  filter(id %in% pft_prior_link$prior_id) %>% 
+  collect()
+
+clm_priors_extended <- left_join(clm_priors, pft_prior_combined, by = c("id" = "prior_id"))
+
+clm_variables <- tbl(bety, 'variables') %>% 
+  select(id, name, units) %>% 
+  collect()
+
+clm_priors_full <- left_join(clm_priors_extended, clm_variables, by = c("variable_id" = "id")) %>% 
+  mutate(distn_r = paste0("d", distn), 
+       pft_col = case_when(name.x == "Setaria WT priors defaults" ~ "black", 
+                           name.x == "Setaria WT priors data" ~ "red"))
+
+# check variable names matching (growth respiration, Vcmax)
+var_plot <- list()
+for(var_name in sort(unique(clm_priors_full$name.y))){
+  clm_priors_by_var <- filter(clm_priors_full, name.y == var_name)
+  plot_center <- mean(c(clm_priors_by_var$parama[1], clm_priors_by_var$parama[2]), na.rm = TRUE)
+  var_plot[[var_name]] <- ggplot(data = data.frame(x = c(plot_center + (5 * plot_center), plot_center - (5 * plot_center))), aes(x)) + 
+    stat_function(fun = clm_priors_by_var$distn_r[1], n = 101, 
+                  args = list(clm_priors_by_var$parama[1], clm_priors_by_var$paramb[1]), 
+                  col = clm_priors_by_var$pft_col[1]) +
+    stat_function(fun = clm_priors_by_var$distn_r[2], n = 101, 
+                  args = list(clm_priors_by_var$parama[2], clm_priors_by_var$paramb[2]), 
+                  color = clm_priors_by_var$pft_col[2]) +
+    labs(x = paste0(var_name, " (", clm_priors_by_var$units[1], ")"), y = "") +
+    theme(axis.title.y = element_blank(),
+          axis.text.y = element_blank(),
+          axis.ticks.y = element_blank())
+}
+do.call(grid.arrange, var_plot)

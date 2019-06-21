@@ -1,0 +1,9 @@
+#!/bin/bash
+mkdir -p /home/kristinariemer/clm_params/out/SA-median
+cd /home/kristinariemer/clm_params/run/SA-median
+ /home/kristinariemer/clm_params/run/SA-median /home/kristinariemer/clm_params/out/SA-median
+if [ $? -ne 0 ]; then
+    echo ERROR IN MODEL RUN >&2
+    exit 1
+fi
+cp  /home/kristinariemer/clm_params/run/SA-median/README.txt /home/kristinariemer/clm_params/out/SA-median/README.txt

@@ -1,0 +1,9 @@
+library(ggplot2)
+
+load("clm_results/samples.Rdata")
+ls()
+
+ensemble_values <- data.frame(ensemble.samples$`Setaria WT priors defaults`)
+ggplot(ensemble_values, aes(x = Vcmax25)) +
+  geom_density()
+

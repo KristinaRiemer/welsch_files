@@ -1,0 +1,1002 @@
+
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:57 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-mort2-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-mort2-0.159' already exists
+2019-05-13 19:32:57 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:57 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-mort2-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-mort2-0.841' already exists
+2019-05-13 19:32:57 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:57 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-growth_resp_factor-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-growth_resp_factor-0.159' already exists
+2019-05-13 19:32:57 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:57 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-growth_resp_factor-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-growth_resp_factor-0.841' already exists
+2019-05-13 19:32:57 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:58 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-fineroot2leaf-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-fineroot2leaf-0.159' already exists
+2019-05-13 19:32:58 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:58 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-fineroot2leaf-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-fineroot2leaf-0.841' already exists
+2019-05-13 19:32:58 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:58 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-root_turnover_rate-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-root_turnover_rate-0.159' already exists
+2019-05-13 19:32:58 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:58 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-root_turnover_rate-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-root_turnover_rate-0.841' already exists
+2019-05-13 19:32:58 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:59 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-stomatal_slope-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-stomatal_slope-0.159' already exists
+2019-05-13 19:32:59 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:59 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-stomatal_slope-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-stomatal_slope-0.841' already exists
+2019-05-13 19:32:59 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:59 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-r_fract-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-r_fract-0.159' already exists
+2019-05-13 19:32:59 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:59 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-r_fract-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-r_fract-0.841' already exists
+2019-05-13 19:32:59 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:32:59 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-root_respiration_rate-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-root_respiration_rate-0.159' already exists
+2019-05-13 19:32:59 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:00 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-root_respiration_rate-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-root_respiration_rate-0.841' already exists
+2019-05-13 19:33:00 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:00 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-SLA-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-SLA-0.159' already exists
+2019-05-13 19:33:00 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:00 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-SLA-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-SLA-0.841' already exists
+2019-05-13 19:33:00 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:00 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-Vcmax-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-Vcmax-0.159' already exists
+2019-05-13 19:33:00 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:01 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-Vcmax-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-Vcmax-0.841' already exists
+2019-05-13 19:33:01 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:01 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-water_conductance-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-water_conductance-0.159' already exists
+2019-05-13 19:33:01 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:01 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-water_conductance-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-water_conductance-0.841' already exists
+2019-05-13 19:33:01 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:01 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-quantum_efficiency-0.159' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-quantum_efficiency-0.159' already exists
+2019-05-13 19:33:01 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:01 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/SA-ebifarm.c4grass.doe_vd-quantum_efficiency-0.841' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/SA-ebifarm.c4grass.doe_vd-quantum_efficiency-0.841' already exists
+2019-05-13 19:33:01 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+2019-05-13 19:33:02 DEBUG  [write.config.ED2] : 
+   Running with only these PFTs (set by config.xml): 14 
+Warning in dir.create(file.path(settings$rundir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/run/ENS-00001-76' already exists
+Warning in dir.create(file.path(settings$modeloutdir, run.id), recursive = TRUE) :
+  '/home/kristinariemer/ed2_results/out/ENS-00001-76' already exists
+2019-05-13 19:33:02 DEBUG  [write.config.xml.ED2] : 
+   --- Using ED2 History File: history.rgit 
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Warning in lapply(values_list[numeric_values], as.numeric) :
+  NAs introduced by coercion
+Error in if (!grepl("/$", thsum)) { : argument is of length zero
+Calls: <Anonymous> ... <Anonymous> -> <Anonymous> -> do.call -> write.config.ED2
+kristinariemer@e8355ca5d558:~$ 

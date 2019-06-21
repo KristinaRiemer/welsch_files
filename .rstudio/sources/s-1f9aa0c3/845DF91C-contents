@@ -1,0 +1,6 @@
+Logging on 2019/05/22_22:25:42
+/home/kristinariemer/ed2_results/run/9000000144/job.sh: line 27: /home/kristinariemer/ed2_files/ed2.git: Permission denied
+ERROR IN MODEL RUN
+Logfile is located at '/home/kristinariemer/ed2_results/out/9000000144/logfile.txt'
+************************************************* End Log 2019/05/22_22:25:42
+

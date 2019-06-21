@@ -1,0 +1,57 @@
+### This runs in Welsch UA RStudio instance
+
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+
+theme_set(theme_bw())
+
+# Open up a connection to BETY
+bety <-dplyr::src_postgres(host = "postgres", 
+                           user = "bety", 
+                           password = "bety", 
+                           dbname = "bety")
+
+
+# Get all priors data for CLM50 PFTs
+clm_pfts <- tbl(bety, 'pfts') %>% 
+  filter(modeltype_id == 9000000001) %>% 
+  select(id, name) %>% 
+  collect()
+
+pft_prior_link <- tbl(bety, 'pfts_priors') %>% 
+  filter(pft_id %in% clm_pfts$id) %>% 
+  collect()
+
+pft_prior_combined <- left_join(pft_prior_link, clm_pfts, by = c("pft_id" = "id"))
+
+clm_priors <- tbl(bety, 'priors') %>% 
+  filter(id %in% pft_prior_link$prior_id) %>% 
+  collect()
+
+clm_priors_extended <- left_join(clm_priors, pft_prior_combined, by = c("id" = "prior_id"))
+
+clm_variables <- tbl(bety, 'variables') %>% 
+  select(id, name, units) %>% 
+  collect()
+
+clm_priors_full <- left_join(clm_priors_extended, clm_variables, by = c("variable_id" = "id")) %>% 
+  mutate(distn_r = paste0("d", distn))
+
+# Plot distributions
+for(pft_name in unique(clm_priors_full$name.x)){
+  clm_priors_by_pft = filter(clm_priors_full, name.x == pft_name)
+  p = list()
+  for(i in 1:nrow(clm_priors_by_pft)){
+    p[[i]] <- ggplot(data = data.frame(x = c(clm_priors_by_pft$parama[i] - (0.35 * clm_priors_by_pft$parama[i]),
+                                   clm_priors_by_pft$parama[i] + (0.35 * clm_priors_by_pft$parama[i]))), aes(x)) +
+      stat_function(fun = clm_priors_by_pft$distn_r[i], n = 101, args = list(clm_priors_by_pft$parama[i],
+                                                      clm_priors_by_pft$paramb[i])) +
+      labs(x = paste0(clm_priors_by_pft$name.y[i], " (", clm_priors_by_pft$units[i], ")"), 
+           y = "", title = paste0(clm_priors_by_pft$distn[i], "(", clm_priors_by_pft$parama[i], ", ", clm_priors_by_pft$paramb[i], ")")) +
+      theme(axis.title.y = element_blank(),
+            axis.text.y = element_blank(),
+            axis.ticks.y = element_blank())
+  }
+  do.call(grid.arrange, p)
+}

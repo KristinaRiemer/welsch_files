@@ -1,0 +1,21 @@
+.libPaths("~/R_libs/")
+library(pecanapi)
+
+#options(pecanapi.user_id = 99000000002)
+con <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  user = "bety",
+  password = "bety",
+  host = "postgres"
+  #port = 5432
+)
+
+get_model_id(con, "ED2", "git", multi_action = "all")
+get_model_id(con, "ED2.2", "git")
+
+search_models(con, "ED")
+
+library(dplyr)
+ed2_pfts <- tbl(con, 'pfts') %>% 
+  collect() %>% 
+  filter(modeltype_id == "1")

@@ -1,0 +1,11 @@
+var_types <- read.table("photosynthesis_pkg/data/licor_example_aci.txt", skip = 12, nrows = 1)
+ncol(var_types)
+vars <- read.table("photosynthesis_pkg/data/licor_example_aci.txt", skip = 13, nrows = 1)
+ncol(vars)
+var_units <- read.table("photosynthesis_pkg/data/licor_example_aci.txt", skip = 14, nrows = 1)
+ncol(var_units)
+all_data <- read.table("photosynthesis_pkg/data/licor_example_aci.txt", skip = 15)
+ncol(all_data)
+
+test <- read.table("photosynthesis_pkg/data/licor_example_aci.txt", nrows = 1)
+test2 <- read.table("photosynthesis_pkg/data/licor_example_aci.txt", skip = 1, nrows = 4)

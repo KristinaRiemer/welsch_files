@@ -1,0 +1,15 @@
+&shr_strdata_nml
+ datamode = 'CLMNCEP'
+ domainfile = '/home/kristinariemer/clm_params_defaults_out/run/SA-median/input/share/domains/domain.clm/domain.lnd.0-753.nc'
+ dtlimit = 1.5,1.5,1.5
+ fillalgo = 'nn','nn','nn'
+ fillmask = 'nomask','nomask','nomask'
+ mapalgo = 'bilinear','bilinear','bilinear'
+ mapmask = 'nomask','nomask','nomask'
+ streams = "datm.streams.txt.PEcAn_met 1 2004 2004  ", 
+           "datm.streams.txt.presaero.clim_2000 1 1 1",
+           "datm.streams.txt.topo.observed 1 1 1"
+ taxmode = 'cycle','cycle','cycle'
+ tintalgo = 'linear','linear','lower'
+ vectors = 'null'
+/

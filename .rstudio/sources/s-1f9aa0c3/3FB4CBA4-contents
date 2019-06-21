@@ -1,0 +1,70 @@
+.libPaths("~/R_libs/")
+library(PEcAn.CTSM)
+
+sla_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")
+c2n_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")
+sto_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "mbbopt")
+frl_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "froot_leaf")
+flnr_old <- ncdf4::ncvar_get(ctsm.param.nc, varid = "flnr")
+
+sla_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "slatop")
+c2n_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "leafcn")
+sto_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "mbbopt")
+frl_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "froot_leaf")
+flnr_new <- ncdf4::ncvar_get(ctsm.param.nc, varid = "flnr")
+sla_old[15]
+sla_new[15]
+c2n_old[15]
+c2n_new[15]
+sto_old[15]
+sto_new[15]
+frl_old[15]
+frl_new[15]
+flnr_old[15]
+flnr_new[15]
+
+trait.values <- list(c4_grass = list(sla = 0.03, c2n_leaf = 35, stom_slope = 10, fineroot2leaf = 2, vcmax = 50))
+write_params_ctsm(trait.values = trait.values, run.id = 1)
+
+
+######
+
+.libPaths("~/R_libs/")
+library(PEcAn.CTSM)
+ctsm.param.default <-
+  system.file('clm5_params.c171117_0001.nc', package = 'PEcAn.CTSM')
+if (!exists('local.rundir'))
+  local.rundir <- tempdir()
+if (!exists('run.id'))
+  run.id <- 1
+ctsm.param.file <-
+  file.path(local.rundir, paste0("ctsm_params.", run.id, ".nc"))
+file.copy(ctsm.param.default, ctsm.param.file)
+ctsm.param.nc <- ncdf4::nc_open(ctsm.param.file, write = TRUE)
+
+var <- "sla"
+update_vars <- function(nc, varid, vals, start = ipft, count = 1){
+  ncdf4::ncvar_put(nc, varid, vals)  
+}
+
+leafC <- 0.48
+trait.values <- list(c4_grass = list(sla = 0.03, c2n_leaf = 35, stom_slope = 10, fineroot2leaf = 2, vcmax = 50))
+pft.trait.values <- trait.values[[1]][1]
+
+if(var == "sla") {update_vars(ctsm.param.nc, "slatop", udunits2::ud.convert(pft.trait.values, "m2 kg-1", "m2 g-1") / leafC)}
+#if(var == "c2n_leaf") {update_vars(ctsm.param.nc, "leafcn", vals = pft.trait.values[v])}
+
+if (var == "sla") {
+  ncdf4::ncvar_put(
+    nc = ctsm.param.nc,
+    varid = "slatop",
+    start = ipft,
+    count = 1,
+    vals = udunits2::ud.convert(pft.trait.values, "m2 kg-1", "m2 g-1") / leafC
+  )
+}
+
+
+
+
+
