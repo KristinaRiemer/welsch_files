@@ -387,3 +387,28 @@ ls -R helpers*.R
 ls fdjsklfjds
 pip install terrautils
 terrautils
+pwd
+cd welsch_rstudio_data/
+git status
+cd
+pwd
+ls
+git status
+git init
+git status
+git add .
+git status
+git add .
+git status
+git commit -m "Add all current files in Welsch RStudio"
+git status
+git log --oneline
+git remote -v
+git remote add origin https://github.com/KristinaRiemer/welsch_files.git
+git remote -v
+git push -u origin master
+git status
+git rm -r pecan/
+git pull
+pwd
+ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
