@@ -1,5 +1,3 @@
-help/library/PEcAn.ED2/html/create_css.html,"R: Create css, pss, and site files from examples"
-help/library/PEcAn.ED2/html/example_css.html,"R: Example css, pss, and site objects"
 help/library/PEcAn.logger/html/logger.info.html,R: Prints an informational message.
 help/library/base/html/getwd.html,R: Get or Set Working Directory
 help/library/base/html/tempfile.html,R: Create Names for Temporary Files
@@ -13,3 +11,5 @@ help/library/stats/html/model.frame.html,R: Extracting the Model Frame from a Fo
 help/library/ncdf4/html/ancvar_put.html,R: Write data to a netCDF file
 help/library/DBI/html/dbConnect.html,R: Create a connection to a DBMS
 help/library/pecanapi/html/get_model_id.html,R: Retrieve database ID of a particular version of a model
+help/library/PEcAn.remote/html/start.model.runs.html,R: Start selected ecosystem model runs within PEcAn workflow
+help/library/PEcAn.remote/html/start_serial.html,R: Start model execution in serial mode

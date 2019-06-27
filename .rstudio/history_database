@@ -808,3 +808,205 @@
 1561043906611:.libPaths("~/R_libs/")
 1561043914705:install.packages("reticulate")
 1561044046270:library(reticulate)
+1561562648656:# ----------------------------------------------------------------------
+1561562648692:# Load required libraries
+1561562648693:# ----------------------------------------------------------------------
+1561562648695:library(PEcAn.all)
+1561562653555:library(PEcAn.utils)
+1561562653556:library(RCurl)
+1561562653720:# make sure always to call status.end
+1561562653721:options(warn=1)
+1561562653722:options(error=quote({
+1561562653723:PEcAn.utils::status.end("ERROR")
+1561562653724:PEcAn.remote::kill.tunnel(settings)
+1561562653725:if (!interactive()) {
+1561562653726:q(status = 1)
+1561562653727:}
+1561562653728:}))
+1561562655116:# ----------------------------------------------------------------------
+1561562655118:# PEcAn Workflow
+1561562655120:# ----------------------------------------------------------------------
+1561562655122:# Open and read in settings file for PEcAn run.
+1561562655123:args <- commandArgs(trailingOnly = TRUE)
+1561562655928:if (is.na(args[1])){
+1561562655930:settings <- PEcAn.settings::read.settings("ed2_files/pecan64.ed2.xml")
+1561562655932:} else {
+1561562655934:settings.file <- args[1]
+1561562655936:settings <- PEcAn.settings::read.settings(settings.file)
+1561562655938:}
+1561562658054:# Check for additional modules that will require adding settings
+1561562658056:if("benchmarking" %in% names(settings)){
+1561562658057:library(PEcAn.benchmark)
+1561562658058:settings <- papply(settings, read_settings_BRR)
+1561562658059:}
+1561562659259:if("sitegroup" %in% names(settings)){
+1561562659261:if(is.null(settings$sitegroup$nSite)){
+1561562659263:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1561562659265:sitegroupId = settings$sitegroup$id)
+1561562659266:} else {
+1561562659268:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1561562659270:sitegroupId = settings$sitegroup$id,
+1561562659271:nSite = settings$sitegroup$nSite)
+1561562659272:}
+1561562659273:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1561562659274:}
+1561562660448:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1561562660449:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1561562662977:# Write pecan.CHECKED.xml
+1561562662978:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1561562664133:# start from scratch if no continue is passed in
+1561562664136:statusFile <- file.path(settings$outdir, "STATUS")
+1561562665748:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1561562665750:file.remove(statusFile)
+1561562665752:}
+1561562666869:# Do conversions
+1561562666871:settings <- PEcAn.workflow::do_conversions(settings)
+1561562669540:# Query the trait database for data and priors
+1561562669542:if (PEcAn.utils::status.check("TRAIT") == 0){
+1561562669544:PEcAn.utils::status.start("TRAIT")
+1561562669546:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1561562669548:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1561562669549:PEcAn.utils::status.end()
+1561562669550:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1561562669551:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1561562669552:}
+1561562681493:# Run the PEcAn meta.analysis
+1561562681495:if(!is.null(settings$meta.analysis)) {
+1561562681497:if (PEcAn.utils::status.check("META") == 0){
+1561562681500:PEcAn.utils::status.start("META")
+1561562681502:PEcAn.MA::runModule.run.meta.analysis(settings)
+1561562681504:PEcAn.utils::status.end()
+1561562681505:}
+1561562681506:}
+1561562706629:# Write model specific configs
+1561562706631:if (PEcAn.utils::status.check("CONFIG") == 0){
+1561562706632:PEcAn.utils::status.start("CONFIG")
+1561562706633:settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+1561562706634:PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+1561562706635:PEcAn.utils::status.end()
+1561562706636:} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+1561562706637:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+1561562706638:}
+1561562752926:if ((length(which(commandArgs() == "--advanced")) != 0) && (PEcAn.utils::status.check("ADVANCED") == 0)) {
+1561562752928:PEcAn.utils::status.start("ADVANCED")
+1561562752929:q();
+1561562752931:}
+1561562754977:# Start ecosystem model runs
+1561562754979:if (PEcAn.utils::status.check("MODEL") == 0) {
+1561562754981:PEcAn.utils::status.start("MODEL")
+1561562754984:PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+1561562754986:PEcAn.utils::status.end()
+1561562754988:}
+1561562775661:traceback()
+1561639757381:?start.model.runs
+1561639916238:settings$host
+1561639927293:start_serial()
+1561639929464:?start_serial()
+1561639946016:settings$rundir
+1561639988573:settings$host$rundir
+1561640097562:run_list
+1561640116510:run_file <- file.path(settings$rundir, "runs.txt")
+1561640119108:run_file
+1561640145406:run_list <- readLines(con = run_file)
+1561640151778:run_list
+1561640210232:for(run in run_list){print(run)}
+1561640220381:run = run_list[1]
+1561640221399:run
+1561640244209:start_serial(run = run, host = settings$host, rundir = settings$rundir,
+1561640244211:host_rundir = settings$host$rundir, job_script = "job.sh")
+1561640262268:traceback()
+1561640311173:settings$host
+1561640322708:settings$rundir
+1561640330677:settings$host$rundir
+1561640357962:# ----------------------------------------------------------------------
+1561640357963:# Load required libraries
+1561640357964:# ----------------------------------------------------------------------
+1561640357965:library(PEcAn.all)
+1561640363046:library(PEcAn.utils)
+1561640363048:library(RCurl)
+1561640364799:# make sure always to call status.end
+1561640364801:options(warn=1)
+1561640372298:options(error=quote({
+1561640372299:PEcAn.utils::status.end("ERROR")
+1561640372300:PEcAn.remote::kill.tunnel(settings)
+1561640372301:if (!interactive()) {
+1561640372303:q(status = 1)
+1561640372304:}
+1561640372306:}))
+1561640376931:# ----------------------------------------------------------------------
+1561640376933:# PEcAn Workflow
+1561640376935:# ----------------------------------------------------------------------
+1561640376937:# Open and read in settings file for PEcAn run.
+1561640376939:args <- commandArgs(trailingOnly = TRUE)
+1561640377945:if (is.na(args[1])){
+1561640377947:settings <- PEcAn.settings::read.settings("ed2_files/pecan64.ed2.xml")
+1561640377949:} else {
+1561640377951:settings.file <- args[1]
+1561640377953:settings <- PEcAn.settings::read.settings(settings.file)
+1561640377956:}
+1561640381482:# Check for additional modules that will require adding settings
+1561640381484:if("benchmarking" %in% names(settings)){
+1561640381485:library(PEcAn.benchmark)
+1561640381486:settings <- papply(settings, read_settings_BRR)
+1561640381488:}
+1561640382367:if("sitegroup" %in% names(settings)){
+1561640382368:if(is.null(settings$sitegroup$nSite)){
+1561640382369:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1561640382370:sitegroupId = settings$sitegroup$id)
+1561640382372:} else {
+1561640382373:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1561640382375:sitegroupId = settings$sitegroup$id,
+1561640382376:nSite = settings$sitegroup$nSite)
+1561640382377:}
+1561640382378:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1561640382379:}
+1561640384719:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1561640384720:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1561640394537:# Write pecan.CHECKED.xml
+1561640394538:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1561640396482:# start from scratch if no continue is passed in
+1561640396483:statusFile <- file.path(settings$outdir, "STATUS")
+1561640397452:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1561640397453:file.remove(statusFile)
+1561640397455:}
+1561640399145:# Do conversions
+1561640399147:settings <- PEcAn.workflow::do_conversions(settings)
+1561640403554:# Query the trait database for data and priors
+1561640403556:if (PEcAn.utils::status.check("TRAIT") == 0){
+1561640403557:PEcAn.utils::status.start("TRAIT")
+1561640403558:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1561640403559:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1561640403560:PEcAn.utils::status.end()
+1561640403561:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1561640403562:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1561640403563:}
+1561640415740:# Run the PEcAn meta.analysis
+1561640415741:if(!is.null(settings$meta.analysis)) {
+1561640415742:if (PEcAn.utils::status.check("META") == 0){
+1561640415743:PEcAn.utils::status.start("META")
+1561640415744:PEcAn.MA::runModule.run.meta.analysis(settings)
+1561640415745:PEcAn.utils::status.end()
+1561640415746:}
+1561640415747:}
+1561640433018:# Write model specific configs
+1561640433019:if (PEcAn.utils::status.check("CONFIG") == 0){
+1561640433020:PEcAn.utils::status.start("CONFIG")
+1561640433021:settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+1561640433022:PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+1561640433023:PEcAn.utils::status.end()
+1561640433024:} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+1561640433025:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+1561640433026:}
+1561642559653:if ((length(which(commandArgs() == "--advanced")) != 0) && (PEcAn.utils::status.check("ADVANCED") == 0)) {
+1561642559655:PEcAn.utils::status.start("ADVANCED")
+1561642559657:q();
+1561642559659:}
+1561642562060:# Start ecosystem model runs
+1561642562061:if (PEcAn.utils::status.check("MODEL") == 0) {
+1561642562062:PEcAn.utils::status.start("MODEL")
+1561642562063:PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+1561642562064:PEcAn.utils::status.end()
+1561642562065:}
+1561642619843:traceback()
+1561644499539:settings$host
+1561645071266:host

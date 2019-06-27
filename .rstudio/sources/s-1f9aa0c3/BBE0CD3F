@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561562633217.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BBE0CD3F",
+    "lastKnownWriteTime" : 1561562345,
+    "last_content_update" : 1561645558469,
+    "path" : "~/ed2_files/workflow.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "38,51",
+        "scrollLine" : "22"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

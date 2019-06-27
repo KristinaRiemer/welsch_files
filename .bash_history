@@ -412,3 +412,21 @@ git rm -r pecan/
 git pull
 pwd
 ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
+pwd
+git status
+git add .
+git status
+git commit -m "Commit all file changes"
+git branch
+git remote -v
+git push
+ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
+git status
+git checkout -- ed2_files/workflow.R
+git status
+git checkout -- ed2_files/ED2IN.git
+git checkout -- ed2_files/ED2IN.rgit
+git checkout -- ed2_files/pecan64.ed2.xml
+git checkout -- ed2_files/ed2.git
+git status
+ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 

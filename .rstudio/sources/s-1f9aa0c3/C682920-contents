@@ -75,6 +75,7 @@
   
   <host>
     <name>welsch.cyverse.org</name>
+    <outdir>ed2_files</outdir>
   </host>
 
 </pecan>
