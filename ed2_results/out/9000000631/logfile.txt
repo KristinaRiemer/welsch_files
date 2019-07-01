@@ -1,0 +1,6 @@
+Logging on 2019/06/27_14:28:29
+/home/kristinariemer/ed2_results/run/9000000631/job.sh: line 27: /usr/local/bin/ed2.git: No such file or directory
+ERROR IN MODEL RUN
+Logfile is located at '/home/kristinariemer/ed2_results/out/9000000631/logfile.txt'
+************************************************* End Log 2019/06/27_14:28:29
+

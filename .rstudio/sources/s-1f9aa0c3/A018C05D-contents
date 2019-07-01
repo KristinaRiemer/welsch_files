@@ -1,0 +1,60 @@
+# TODO: create function to plot single set, then how to overlay multiple sets on same figure? 
+
+# TODO: download parameters using pecanapi R package? 
+load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+
+library(ggplot2)
+.libPaths("~/R_libs/")
+library(ggridges)
+library(RColorBrewer)
+library(gridExtra)
+
+plot_db_distns <- function(prior.distns){
+  # set up empty matrix to hold values for each parameter from distribution
+  parnames <- rownames(prior.distns)
+  dist_matrix <- matrix(NA, nrow = 1000000, ncol = length(parnames))
+  colnames(dist_matrix) <- parnames
+  
+  # generate 1 million values for each parameter and put into matrix
+  for(i in seq_along(parnames)){
+    post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+    dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000000,", 
+                                                prior.distns$parama[i], ",", 
+                                                prior.distns$paramb[i],")")))
+  }
+  
+  # manipulate into long dataframe
+  dist_df <- reshape::melt(dist_matrix)
+  colnames(dist_df) <- c("dist", "parameter", "value")
+  # TODO: adapt name for prior + data/default
+  dist_df$dist <- "prior"
+  
+  # get colors for each distribution
+  n <- length(parnames)
+  qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
+  col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+  plot_colors =sample(col_vector, n)
+  
+  # plot distribution using dataframe of parameter values
+  # TODO: be able to input single color for all values
+  # TODO: replace ggridges function with geom_density if possible
+  plot.list <- list()
+  for(i in  seq_along(parnames)){
+    sub_df <- dist_df[dist_df$parameter == parnames[i],]
+    plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) + 
+      geom_density_ridges( fill=plot_colors[i]) + 
+      theme(legend.position="none",
+            axis.title.y=element_blank(),
+            axis.text.y=element_blank(),
+            axis.ticks.y=element_blank()) + ggtitle(parnames[i])
+  }
+  
+  
+  nplots <- length(plot.list)
+  nCol <- floor(sqrt(nplots))
+  do.call("grid.arrange", c(plot.list, ncol=nCol))
+}
+
+
+plot_db_distns(prior.distns)
+

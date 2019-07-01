@@ -92,6 +92,8 @@
 ~%2Fphotosynthesis_pkg%2Fscripts%2Fexplore_pkg.R="9425A3F2"
 ~%2Fphotosynthesis_pkg%2Fscripts%2Flicor_cleaning.R="6066F01B"
 ~%2Fplot_clm_dists.R="12E3F4F"
+~%2Fsentinel-detection%2Fparameter_dists%2Fplot_clm_priors.R="837AC439"
+~%2Fsentinel-detection%2Fparameter_dists%2Fplot_priors_istem.R="71F3743F"
 ~%2Ftest.R="85C3EA3C"
 ~%2Ftest.xml="E59A9E16"
 ~%2Ftesting_db.R="7B870229"

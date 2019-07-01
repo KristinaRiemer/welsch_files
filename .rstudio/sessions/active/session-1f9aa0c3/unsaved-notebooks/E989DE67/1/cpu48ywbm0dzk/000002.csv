@@ -1,6 +1,0 @@
-"0","import terrautils"
-"2","Traceback (most recent call last):
-  File ""/tmp/RtmpUZ8cCk/chunk-code-27839cbcd40.txt"", line 1, in <module>
-    import terrautils
-ImportError: No module named terrautils
-"

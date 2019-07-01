@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561999446859.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AEF17BE4",
+    "lastKnownWriteTime" : 1561999790,
+    "last_content_update" : 1561999790680,
+    "path" : "~/sentinel-detection/parameter_dists/plot_clm_priors.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "43,43",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

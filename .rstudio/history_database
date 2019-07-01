@@ -1010,3 +1010,267 @@
 1561642619843:traceback()
 1561644499539:settings$host
 1561645071266:host
+1561999240964:library(dplyr)
+1561999241634:library(ggplot2)
+1561999241800:library(gridExtra)
+1561999243034:theme_set(theme_bw())
+1561999244235:# Open up a connection to BETY
+1561999244237:bety <-dplyr::src_postgres(host = "postgres",
+1561999244239:user = "bety",
+1561999244241:password = "bety",
+1561999244243:dbname = "bety")
+1561999450629:library(dplyr)
+1561999451217:library(ggplot2)
+1561999453088:library(gridExtra)
+1561999454250:theme_set(theme_bw())
+1561999455429:# Open up a connection to BETY
+1561999455431:bety <-dplyr::src_postgres(host = "postgres",
+1561999455434:user = "bety",
+1561999455436:password = "bety",
+1561999455438:dbname = "bety")
+1561999457871:# Get all priors data for CLM50 PFTs
+1561999457872:clm_pfts <- tbl(bety, 'pfts') %>%
+1561999457874:filter(modeltype_id == 9000000001) %>%
+1561999457876:select(id, name) %>%
+1561999457878:collect()
+1561999459591:pft_prior_link <- tbl(bety, 'pfts_priors') %>%
+1561999459593:filter(pft_id %in% clm_pfts$id) %>%
+1561999459595:collect()
+1561999460523:pft_prior_combined <- left_join(pft_prior_link, clm_pfts, by = c("pft_id" = "id"))
+1561999461353:clm_priors <- tbl(bety, 'priors') %>%
+1561999461354:filter(id %in% pft_prior_link$prior_id) %>%
+1561999461356:collect()
+1561999462112:clm_priors_extended <- left_join(clm_priors, pft_prior_combined, by = c("id" = "prior_id"))
+1561999462791:clm_variables <- tbl(bety, 'variables') %>%
+1561999462793:select(id, name, units) %>%
+1561999462795:collect()
+1561999464101:clm_priors_full <- left_join(clm_priors_extended, clm_variables, by = c("variable_id" = "id")) %>%
+1561999464103:mutate(distn_r = paste0("d", distn),
+1561999464105:pft_col = case_when(name.x == "Setaria WT priors defaults" ~ "black",
+1561999464107:name.x == "Setaria WT priors data" ~ "red"))
+1561999466309:# check variable names matching (growth respiration, Vcmax)
+1561999466311:var_plot <- list()
+1561999483828:for(var_name in sort(unique(clm_priors_full$name.y))){
+1561999483830:clm_priors_by_var <- filter(clm_priors_full, name.y == var_name)
+1561999483832:plot_center <- mean(c(clm_priors_by_var$parama[1], clm_priors_by_var$parama[2]), na.rm = TRUE)
+1561999483833:var_plot[[var_name]] <- ggplot(data = data.frame(x = c(plot_center + (5 * plot_center), 0)), aes(x)) +
+1561999483835:stat_function(fun = clm_priors_by_var$distn_r[1], n = 101,
+1561999483836:args = list(clm_priors_by_var$parama[1], clm_priors_by_var$paramb[1]),
+1561999483837:col = clm_priors_by_var$pft_col[1]) +
+1561999483838:stat_function(fun = clm_priors_by_var$distn_r[2], n = 101,
+1561999483839:args = list(clm_priors_by_var$parama[2], clm_priors_by_var$paramb[2]),
+1561999483840:color = clm_priors_by_var$pft_col[2]) +
+1561999483842:labs(x = paste0(var_name, " (", clm_priors_by_var$units[1], ")"), y = "") +
+1561999483843:theme(axis.title.y = element_blank(),
+1561999483844:axis.text.y = element_blank(),
+1561999483845:axis.ticks.y = element_blank())
+1561999483846:}
+1561999484731:do.call(grid.arrange, var_plot)
+1561999698907:warnings()
+1561999757099:View(clm_priors_full)
+1561999917127:getwd()
+1561999980313:#load("/your_own_path/to_the_prior_distns/prior.distns.Rdata")
+1561999980315:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562000000015:#load("/your_own_path/to_the_prior_distns/prior.distns.Rdata")
+1562000000017:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562000002962:View(prior.distns)
+1562000011749:library(ggplot2)
+1562000012449:library(ggridges)
+1562000012451:library(RColorBrewer)
+1562000012660:library(gridExtra)
+1562000020254:install.packages("ggridges")
+1562000036992:.libPaths()
+1562000062554:.libPaths("R_libs/")
+1562000066514:install.packages("ggridges")
+1562000079069:library(ggridges)
+1562000089369:#load("/your_own_path/to_the_prior_distns/prior.distns.Rdata")
+1562000089372:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562000090213:library(ggplot2)
+1562000090973:library(ggridges)
+1562000090975:library(RColorBrewer)
+1562000091251:library(gridExtra)
+1562000119704:#load("/your_own_path/to_the_prior_distns/prior.distns.Rdata")
+1562000119705:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562000120582:library(ggplot2)
+1562000121331:.libPaths("~/R_libs/")
+1562000122387:library(ggridges)
+1562000123731:library(RColorBrewer)
+1562000124104:library(gridExtra)
+1562000126923:plot_db_distns <- function(prior.distns){
+1562000126925:parnames <- rownames(prior.distns)
+1562000126928:dist_matrix <- matrix(NA, nrow = 1000000, ncol = length(parnames))
+1562000126930:colnames(dist_matrix) <- parnames
+1562000126933:for(i in seq_along(parnames)){
+1562000126934:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562000126935:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000000,", prior.distns$parama[i], ",", prior.distns$paramb[i],")")))
+1562000126936:}
+1562000126939:dist_df <- reshape::melt(dist_matrix)
+1562000126941:colnames(dist_df) <- c("dist", "parameter", "value")
+1562000126942:dist_df$dist <- "prior"
+1562000126945:n <- length(parnames)
+1562000126946:qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
+1562000126947:col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+1562000126949:plot_colors =sample(col_vector, n)
+1562000126952:plot.list <- list()
+1562000126953:for(i in  seq_along(parnames)){
+1562000126954:sub_df <- dist_df[dist_df$parameter == parnames[i],]
+1562000126955:plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) +
+1562000126957:geom_density_ridges( fill=plot_colors[i]) +
+1562000126958:theme(legend.position="none",
+1562000126959:axis.title.y=element_blank(),
+1562000126961:axis.text.y=element_blank(),
+1562000126962:axis.ticks.y=element_blank()) + ggtitle(parnames[i])
+1562000126963:}
+1562000126966:nplots <- length(plot.list)
+1562000126968:nCol <- floor(sqrt(nplots))
+1562000126969:do.call("grid.arrange", c(plot.list, ncol=nCol))
+1562000126970:}
+1562000128788:plot_db_distns(prior.distns)
+1562000197378:#load("/your_own_path/to_the_prior_distns/prior.distns.Rdata")
+1562000197379:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562000197382:library(ggplot2)
+1562000198136:.libPaths("~/R_libs/")
+1562000198137:library(ggridges)
+1562000198168:library(RColorBrewer)
+1562000198180:library(gridExtra)
+1562000205318:prior.distns
+1562000209447:parnames <- rownames(prior.distns)
+1562000216782:dist_matrix <- matrix(NA, nrow = 1000000, ncol = length(parnames))
+1562000222404:View(dist_matrix)
+1562000230708:colnames(dist_matrix) <- parnames
+1562000233188:View(dist_matrix)
+1562000277587:for(i in seq_along(parnames)){
+1562000277588:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562000277590:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000000,", prior.distns$parama[i], ",", prior.distns$paramb[i],")")))
+1562000277591:}
+1562009347090:View(dist_matrix)
+1562009420493:#load("/your_own_path/to_the_prior_distns/prior.distns.Rdata")
+1562009420495:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562009421489:library(ggplot2)
+1562009422218:.libPaths("~/R_libs/")
+1562009422978:library(ggridges)
+1562009423701:library(RColorBrewer)
+1562009424085:library(gridExtra)
+1562009427189:parnames <- rownames(prior.distns)
+1562009428077:dist_matrix <- matrix(NA, nrow = 1000000, ncol = length(parnames))
+1562009428912:colnames(dist_matrix) <- parnames
+1562009429924:for(i in seq_along(parnames)){
+1562009429925:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562009429927:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000000,", prior.distns$parama[i], ",", prior.distns$paramb[i],")")))
+1562009429929:}
+1562009440493:head(dist_matrix)
+1562009460877:seq_along(parnames)
+1562009473357:i <- 1
+1562009495234:prior.distns$distn[i]
+1562009505447:prior.distns$parama[i]
+1562009520823:prior.distns$paramb[i]
+1562009541942:paste0("r", prior.distns$distn[i],"(1000000,", prior.distns$parama[i], ",", prior.distns$paramb[i],")")
+1562009576511:rlnorm(1000000,0.811,0.843)
+1562009579824:paste0("r", prior.distns$distn[i],"(1000000,", prior.distns$parama[i], ",", prior.distns$paramb[i],")")
+1562009585010:head(rlnorm(1000000,0.811,0.843))
+1562009596767:View(prior.distns)
+1562009694083:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562009694091:library(ggplot2)
+1562009694822:.libPaths("~/R_libs/")
+1562009694824:library(ggridges)
+1562009694854:library(RColorBrewer)
+1562009694865:library(gridExtra)
+1562009697099:# set up empty matrix to hold values for each parameter from distribution
+1562009697101:parnames <- rownames(prior.distns)
+1562009698151:dist_matrix <- matrix(NA, nrow = 1000, ncol = length(parnames))
+1562009699047:colnames(dist_matrix) <- parnames
+1562009700412:# generate 1 million values for each parameter and put into matrix
+1562009700414:for(i in seq_along(parnames)){
+1562009700416:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562009700418:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000000,",
+1562009700420:prior.distns$parama[i], ",",
+1562009700421:prior.distns$paramb[i],")")))
+1562009700422:}
+1562009710375:# generate 1 million values for each parameter and put into matrix
+1562009710377:for(i in seq_along(parnames)){
+1562009710379:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562009710380:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000,",
+1562009710382:prior.distns$parama[i], ",",
+1562009710384:prior.distns$paramb[i],")")))
+1562009710385:}
+1562009714518:View(dist_matrix)
+1562009747527:dist_df <- reshape::melt(dist_matrix)
+1562009750260:View(dist_df)
+1562009760897:colnames(dist_df) <- c("dist", "parameter", "value")
+1562009762033:dist_df$dist <- "prior"
+1562009764866:View(dist_df)
+1562009812700:n <- length(parnames)
+1562009816739:n
+1562009819568:qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
+1562009829696:qual_col_pals
+1562009837139:col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+1562009838010:plot_colors =sample(col_vector, n)
+1562009842937:plot_colors
+1562009858269:col_vector
+1562009881621:plot.list <- list()
+1562009914535:for(i in  seq_along(parnames)){
+1562009914536:sub_df <- dist_df[dist_df$parameter == parnames[i],]
+1562009914538:plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) +
+1562009914540:geom_density_ridges( fill=plot_colors[i]) +
+1562009914542:theme(legend.position="none",
+1562009914544:axis.title.y=element_blank(),
+1562009914546:axis.text.y=element_blank(),
+1562009914547:axis.ticks.y=element_blank()) + ggtitle(parnames[i])
+1562009914548:}
+1562009921736:plot.list[1]
+1562009926256:plot.list
+1562009942280:parnames
+1562009958713:nplots <- length(plot.list)
+1562009959867:nCol <- floor(sqrt(nplots))
+1562009966641:nplots
+1562009968963:nCol
+1562009972341:do.call("grid.arrange", c(plot.list, ncol=nCol))
+1562009995659:?geom_density_ridges
+1562010023113:sub_df
+1562010028456:head(sub_df)
+1562010183079:# TODO: download parameters using pecanapi R package?
+1562010183082:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562010220843:getwd()
+1562010233733:source("sentinel-detection/parameter_dists/plot_priors_istem.R")
+1562011264573:?geom_density_ridges
+1562011329052:# set up empty matrix to hold values for each parameter from distribution
+1562011329053:parnames <- rownames(prior.distns)
+1562011330282:dist_matrix <- matrix(NA, nrow = 1000000, ncol = length(parnames))
+1562011330446:colnames(dist_matrix) <- parnames
+1562011330592:# generate 1 million values for each parameter and put into matrix
+1562011330593:for(i in seq_along(parnames)){
+1562011330594:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562011330595:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000000,",
+1562011330596:prior.distns$parama[i], ",",
+1562011330597:prior.distns$paramb[i],")")))
+1562011330598:}
+1562011332121:# manipulate into long dataframe
+1562011332122:dist_df <- reshape::melt(dist_matrix)
+1562011333787:colnames(dist_df) <- c("dist", "parameter", "value")
+1562011333788:# TODO: adapt name for prior + data/default
+1562011333789:dist_df$dist <- "prior"
+1562011334138:# get colors for each distribution
+1562011334140:n <- length(parnames)
+1562011334142:qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
+1562011334166:col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+1562011334172:plot_colors =sample(col_vector, n)
+1562011334176:# plot distribution using dataframe of parameter values
+1562011334177:# TODO: be able to input single color for all values
+1562011334178:plot.list <- list()
+1562011334180:for(i in  seq_along(parnames)){
+1562011334181:sub_df <- dist_df[dist_df$parameter == parnames[i],]
+1562011334182:plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) +
+1562011334183:geom_density_ridges( fill=plot_colors[i]) +
+1562011334184:theme(legend.position="none",
+1562011334185:axis.title.y=element_blank(),
+1562011334186:axis.text.y=element_blank(),
+1562011334187:axis.ticks.y=element_blank()) + ggtitle(parnames[i])
+1562011334188:}
+1562011335700:nplots <- length(plot.list)
+1562011335701:nCol <- floor(sqrt(nplots))
+1562011335702:do.call("grid.arrange", c(plot.list, ncol=nCol))
+1562011377507:?geom_density
+1562011408641:View(dist_df)
+1562011441891:ggplot(dist_df, aes(value)) + geom_density() + facet_wrap(~parameter)
+1562011499973:ggplot(dist_df, aes(value)) + geom_density() + facet_wrap(~parameter, scales = "free")
+1562011564971:plot_db_distns(prior.distns)

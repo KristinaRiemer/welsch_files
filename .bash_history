@@ -430,3 +430,12 @@ git checkout -- ed2_files/pecan64.ed2.xml
 git checkout -- ed2_files/ed2.git
 git status
 ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
+pwd
+git status
+git add -a
+git add -A
+git status
+git log --oneline
+git commit -m "Commit all files changes"
+git push
+ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 

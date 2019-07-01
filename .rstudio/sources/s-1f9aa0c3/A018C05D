@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561999871481.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A018C05D",
+    "lastKnownWriteTime" : 1562012681,
+    "last_content_update" : 1562012681577,
+    "path" : "~/sentinel-detection/parameter_dists/plot_priors_istem.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "39,65",
+        "scrollLine" : "31"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

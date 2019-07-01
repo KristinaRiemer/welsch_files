@@ -1,0 +1,13 @@
+### This runs in Welsch UA RStudio instance
+
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+
+theme_set(theme_bw())
+
+# Open up a connection to BETY
+bety <-dplyr::src_postgres(host = "postgres", 
+                           user = "bety", 
+                           password = "bety", 
+                           dbname = "bety")

@@ -1,3 +1,5 @@
+~/sentinel-detection/parameter_dists/plot_priors_istem.R
+~/sentinel-detection/parameter_dists/plot_clm_priors.R
 ~/pecan/web/config.example.php
 ~/ed2_results/run/9000000607/job.sh
 ~/ed2_results/STATUS
@@ -11,5 +13,3 @@
 ~/ed2_helper.R
 ~/write_params_helper.R
 ~/pecan_dlebauer/pecan/models/ctsm/R/write_params-clm.R
-~/testing_db.R
-~/clm_params_data_out/pft/Setaria WT priors data/prior.distns.csv
