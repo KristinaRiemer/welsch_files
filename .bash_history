@@ -439,3 +439,151 @@ git log --oneline
 git commit -m "Commit all files changes"
 git push
 ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
+pwd
+cd
+pwd
+git status
+git add -A
+git status
+git log --oneline
+git commit -m "Commit all file changes"
+git push
+get_sites()  echo D1C941FD && /usr/bin/env && echo FB1E0EA
+pwd
+cd ../../data/test
+cd ../../data/test_files/
+ls
+pwd
+cd ..
+ls
+pwd
+rmdir ed2_files/
+man rmdir
+rm -rf ed2_files/
+rmdir ed2_files/
+ls
+cd test_files/
+ls
+cd ed2_Fi
+cd ed2_files/
+ls
+pwd
+cd
+ls cd ../../data/test_files/ed2_files/workflow.R 
+ ../../data/test_files/ed2_files/workflow.R 
+ls ../../data/test_files/ed2_files/pecan64.ed2.xml 
+pwd
+cd /data/test_files/ed2_files/
+ls
+pwd
+cd /data/test_files/ed2_results
+cd
+cd /data/test_files/ed2_results
+ls /data/test_files/ed2_files/ED2IN.rgit
+cat /data/test_files/ed2_files/ED2IN.rgit
+cd
+pwd
+ls /data/test_files/ed2_files/ed2_input_files/ebifarm/ED_MET_DRIVER_HEADER
+ls /data/test_files/ed2_files/workflow.R --settings
+ls /data/test_files/ed2_files/pecan64.ed2.xml 
+/data/test_files/ed2_files/workflow.R --settings /data/test_files/ed2_files/pecan64.ed2.xml 
+ls /usr/local/bin/ed2.git
+ls /usr/local/bin/
+ls /usr/local/lib/R/site-library/PEcAn.BIOCRO/
+pwd
+git status
+ls -a
+pwd
+cd ../..
+ls
+pwd
+git status
+git init
+cd
+pwd
+ls -a
+ls .git
+ls .git/hooks/
+pwd
+cd
+cd ../..
+ls
+ls data/
+cd
+ls
+copy_data_folder.sh
+bash copy_data_folder.sh 
+bash copy_test_files.sh 
+pwd
+git status
+git add copy_test_files.sh
+git add data_test_files/*
+git commit -m "Add script and copied files from data folder"
+git push
+pwd
+cd
+cd pecan/
+pwd
+git status
+git branch
+git log --oneline
+pwd
+git remot -v
+git remote -v
+pwd
+cd ..
+ls
+cd pecan_riemer_fork/
+ls
+git clone https://github.com/KristinaRiemer/pecan.git
+ls
+cd pecan/
+git status
+git log --oneline
+git branch
+git remote -v
+git remote add upstream https://github.com/PecanProject/pecan.git
+git remote -v
+git fetch upstream
+git merge upstream/master
+git push
+git log --oneline
+git fetch upstream
+git merge upstream/develop
+git push
+git log --oneline
+git branch
+git checkout -b param_plots
+git branch
+git checkout develop
+git branch
+git branch -d param_plots
+git branch
+make
+git checkout -b param_plots
+git branch
+pwd
+cd pecan_riemer_fork/pecan/
+pwd
+git status
+pwd
+cd pecan_riemer_fork/pecan/
+git status
+git add base/visualization/R/plot_parameter_dists.R 
+git commit -m "Start function for plotting single parameter distribution"
+git branch
+git remote -v
+git push origin param_plots
+pwd
+cd pecan_riemer_fork/pecan/
+git status
+pwd
+cd ../..
+pwd
+/data/test_files/ed2_files/workflow.R --settings /data/test_files/ed2_files/pecan64.ed2.xml 
+rm -rf /data/test_files/ed2_results/
+/data/test_files/ed2_files/workflow.R --settings /data/test_files/ed2_files/pecan64.ed2.xml 
+rm -rf /data/test_files/ed2_results/
+/data/test_files/ed2_files/workflow.R --settings /data/test_files/ed2_files/pecan64.ed2.web.xml 
+pwd
+cd pecan_riemer_fork/

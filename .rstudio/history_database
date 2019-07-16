@@ -1274,3 +1274,1142 @@
 1562011441891:ggplot(dist_df, aes(value)) + geom_density() + facet_wrap(~parameter)
 1562011499973:ggplot(dist_df, aes(value)) + geom_density() + facet_wrap(~parameter, scales = "free")
 1562011564971:plot_db_distns(prior.distns)
+1562079101497:con <- DBI::dbConnect(RPostgres::Postgres(), user = "bety", password = "bety", host = "postgres")
+1562079194895:library(RPostgres)
+1562079212715:.libPaths("~/R_libs/")
+1562079216101:con <- DBI::dbConnect(RPostgres::Postgres(), user = "bety", password = "bety", host = "postgres")
+1562079218647:DBI::dbListTables(con)
+1562093769839:getwd()
+1562093784521:list.files("../../data/")
+1562170905554:library(dplyr)
+1562170960006:.libPaths("~/R_libs/")
+1562170964117:DBI::dbConnect(RPostgreSQL::PostgreSQL(),
+1562170964118:user = "bety",
+1562170964119:password = "bety",
+1562170964120:host = "postgres")
+1562170969820:con <- DBI::dbConnect(RPostgreSQL::PostgreSQL(),
+1562170969823:user = "bety",
+1562170969825:password = "bety",
+1562170969826:host = "postgres")
+1562170971990:tbl(con, "dbfiles") %>%
+1562170971992:filter(file_name %like% "OGE%", file_path %like% "/data%") %>%
+1562170971994:select(id, file_name, file_path, machine_id, container_type, container_id)
+1562170995740:machine_values <- tbl(con, "dbfiles") %>%
+1562170995742:filter(file_name %like% "OGE%", file_path %like% "/data%") %>%
+1562170995744:select(id, file_name, file_path, machine_id, container_type, container_id)
+1562170997642:View(machine_values)
+1562171005561:machine_values$id
+1562171028563:machine_values <- tbl(con, "dbfiles") %>%
+1562171028566:filter(file_name %like% "OGE%", file_path %like% "/data%") %>%
+1562171028568:select(id, file_name, file_path, machine_id, container_type, container_id) %>%
+1562171028570:collect()
+1562171032159:View(machine_values)
+1562171134625:machine_id <- tbl(con, "dbfiles") %>%
+1562171134627:filter(file_name == "OGE2_", file_path == "/data/oge2OLD") %>%
+1562171134629:pull(machine_id)
+1562171139933:machine_id
+1562171149311:options(scipen = 999)
+1562171150495:machine_id
+1562171155705:tbl(con, "machines") %>%
+1562171155707:filter(id == !!machine_id)
+1562171170703:View(tbl(con, "machines") %>%
+1562171170705:filter(id == !!machine_id))
+1562171179759:View(tbl(con, "machines") %>%
+1562171179761:filter(id == !!machine_id) %>%
+1562171179762:collect())
+1562174224667:options(scipen = 999)
+1562174228658:library(dplyr)
+1562174229290:con <- DBI::dbConnect(RPostgreSQL::PostgreSQL(), user = "bety", password = "bety", host = "postgres")
+1562174229816:tbl(con, "dbfiles") %>%
+1562174229817:filter(file_name %like% "OGE%", file_path %like% "/data%") %>%
+1562174229819:select(id, file_name, file_path, machine_id, container_type, container_id)
+1562174328630:machine_id <- tbl(con, "dbfiles") %>%
+1562174328633:filter(file_name == "OGE2_", file_path == "/data/oge2OLD") %>%
+1562174328634:pull(machine_id)
+1562174331483:tbl(con, "machines") %>%
+1562174331485:filter(id == !!machine_id)
+1562174383096:machine_id
+1562174387538:!!machine_id
+1562174427171:source('~/.active-rstudio-document', echo=TRUE)
+1562174460612:tbl(con, "machines") %>%
+1562174460614:filter(id == !!machine_id) %>%
+1562174460616:select(hostname)
+1562174938710:machine_id2 <- "25"
+1562174947629:machine_id
+1562174949761:machine_id2
+1562174961432:machine_id2 <- c(25)
+1562174963612:machine_id2
+1562174973779:tbl(con, "machines") %>%
+1562174973780:filter(id == !!machine_id2) %>%
+1562174973781:select(hostname)
+1562174983237:tbl(con, "machines") %>%
+1562174983238:filter(id == !!machine_id2)
+1562176250168:# Retrieve the models associated with the "old" welsch.cyverse.org machine,
+1562176250170:# which was machine ID 25
+1562176250172:models <- tbl(con, "dbfiles") %>%
+1562176250173:filter(machine_id == 25, container_type == "Model") %>%
+1562176250176:collect()
+1562176254044:models
+1562176263916:View(models)
+1562176305088:machine_id
+1562176312312:models2 <- tbl(con, "dbfiles") %>%
+1562176312313:filter(machine_id == 9000000003, container_type == "Model") %>%
+1562176312314:collect()
+1562176313851:models2
+1562176355708:machine_id
+1562176363485:# It should have ED2 and BioCro. If not, there's a problem.
+1562176363486:# Assuming that worked OK, just create new identical records, but under the new machine ID
+1562176363488:DBI::dbExecute(con, "INSERT INTO dbfiles (machine_id, file_name, file_path, container_type, container_id) VALUES ($1, $2, $3, $4, $5)",
+1562176363490:list(machine_id, models$file_name, models$file_path, models$container_type, models$container_id))
+1562176391852:models2 <- tbl(con, "dbfiles") %>%
+1562176391854:filter(machine_id == 9000000003, container_type == "Model") %>%
+1562176391856:collect()
+1562176392154:models2
+1562176409043:library(DBI)
+1562176412889:# It should have ED2 and BioCro. If not, there's a problem.
+1562176412890:# Assuming that worked OK, just create new identical records, but under the new machine ID
+1562176412892:DBI::dbExecute(con, "INSERT INTO dbfiles (machine_id, file_name, file_path, container_type, container_id) VALUES ($1, $2, $3, $4, $5)",
+1562176412894:list(machine_id, models$file_name, models$file_path, models$container_type, models$container_id))
+1562176446295:list(machine_id, models$file_name, models$file_path, models$container_type, models$container_id)
+1562176769682:machine_id
+1562176979565:library(dplyr)
+1562176980497:con <- DBI::dbConnect(RPostgre::Postgre(),
+1562176980498:user = "bety",
+1562176980499:password = "bety",
+1562176980500:host = "postgres")
+1562176996948:con <- DBI::dbConnect(RPostgres::Postgres(),
+1562176996949:user = "bety",
+1562176996950:password = "bety",
+1562176996951:host = "postgres")
+1562177024639:.libPaths("~/R_libs/")
+1562177030796:.libPaths("~/R_libs/")
+1562177032029:library(dplyr)
+1562177033712:con <- DBI::dbConnect(RPostgres::Postgres(),
+1562177033713:user = "bety",
+1562177033714:password = "bety",
+1562177033715:host = "postgres")
+1562177036365:tbl(con, "dbfiles") %>%
+1562177036366:filter(file_name %like% "OGE%", file_path %like% "/data%") %>%
+1562177036367:select(id, file_name, file_path, machine_id, container_type, container_id)
+1562177038176:machine_id <- tbl(con, "dbfiles") %>%
+1562177038177:filter(file_name == "OGE2_", file_path == "/data/oge2OLD") %>%
+1562177038178:pull(machine_id)
+1562177039656:tbl(con, "machines") %>%
+1562177039659:filter(id == !!machine_id) %>%
+1562177039660:select(hostname)
+1562177045106:machine_id2 <- c(25)
+1562177046568:tbl(con, "machines") %>%
+1562177046569:filter(id == !!machine_id2) %>%
+1562177046570:select(hostname)
+1562177048214:# Retrieve the models associated with the "old" welsch.cyverse.org machine,
+1562177048215:# which was machine ID 25
+1562177048216:models <- tbl(con, "dbfiles") %>%
+1562177048217:filter(machine_id == 25, container_type == "Model") %>%
+1562177048217:collect()
+1562177049071:models
+1562177050458:models2 <- tbl(con, "dbfiles") %>%
+1562177050459:filter(machine_id == 9000000003, container_type == "Model") %>%
+1562177050460:collect()
+1562177051680:models2
+1562177053791:# It should have ED2 and BioCro. If not, there's a problem.
+1562177053792:# Assuming that worked OK, just create new identical records, but under the new machine ID
+1562177053793:DBI::dbExecute(con, "INSERT INTO dbfiles (machine_id, file_name, file_path, container_type, container_id) VALUES ($1, $2, $3, $4, $5)",
+1562177053793:list(machine_id, models$file_name, models$file_path, models$container_type, models$container_id))
+1562177081728:list(machine_id, models$file_name, models$file_path, models$container_type, models$container_id)
+1562177106427:models$file_name
+1562177118070:list(machine_id, models$file_name[1], models$file_path, models$container_type, models$container_id)
+1562177137108:list(machine_id, models$file_name[1], models$file_path[1], models$container_type[1], models$container_id[1])
+1562177140664:# It should have ED2 and BioCro. If not, there's a problem.
+1562177140667:# Assuming that worked OK, just create new identical records, but under the new machine ID
+1562177140669:DBI::dbExecute(con, "INSERT INTO dbfiles (machine_id, file_name, file_path, container_type, container_id) VALUES ($1, $2, $3, $4, $5)",
+1562177140671:list(machine_id, models$file_name[1], models$file_path[1], models$container_type[1], models$container_id[1]))
+1562177147042:models2 <- tbl(con, "dbfiles") %>%
+1562177147044:filter(machine_id == 9000000003, container_type == "Model") %>%
+1562177147046:collect()
+1562177147966:models2
+1562177167351:# It should have ED2 and BioCro. If not, there's a problem.
+1562177167352:# Assuming that worked OK, just create new identical records, but under the new machine ID
+1562177167353:DBI::dbExecute(con, "INSERT INTO dbfiles (machine_id, file_name, file_path, container_type, container_id) VALUES ($1, $2, $3, $4, $5)",
+1562177167355:list(machine_id, models$file_name[2], models$file_path[2], models$container_type[2], models$container_id[2]))
+1562177171246:models2 <- tbl(con, "dbfiles") %>%
+1562177171248:filter(machine_id == 9000000003, container_type == "Model") %>%
+1562177171250:collect()
+1562177171987:models2
+1562177176459:models
+1562177192089:# It should have ED2 and BioCro. If not, there's a problem.
+1562177192091:# Assuming that worked OK, just create new identical records, but under the new machine ID
+1562177192093:DBI::dbExecute(con, "INSERT INTO dbfiles (machine_id, file_name, file_path, container_type, container_id) VALUES ($1, $2, $3, $4, $5)",
+1562177192095:list(machine_id, models$file_name[3], models$file_path[3], models$container_type[3], models$container_id[3]))
+1562177195730:models2 <- tbl(con, "dbfiles") %>%
+1562177195731:filter(machine_id == 9000000003, container_type == "Model") %>%
+1562177195733:collect()
+1562177197186:models2
+1562179001566:getwd()
+1562181283378:# ----------------------------------------------------------------------
+1562181283380:# Load required libraries
+1562181283381:# ----------------------------------------------------------------------
+1562181283382:library(PEcAn.all)
+1562181288119:library(PEcAn.utils)
+1562181288121:library(RCurl)
+1562181291403:# make sure always to call status.end
+1562181291404:options(warn=1)
+1562181292824:options(error=quote({
+1562181292825:PEcAn.utils::status.end("ERROR")
+1562181292826:PEcAn.remote::kill.tunnel(settings)
+1562181292827:if (!interactive()) {
+1562181292829:q(status = 1)
+1562181292830:}
+1562181292832:}))
+1562181294414:# ----------------------------------------------------------------------
+1562181294415:# PEcAn Workflow
+1562181294416:# ----------------------------------------------------------------------
+1562181294417:# Open and read in settings file for PEcAn run.
+1562181294418:args <- commandArgs(trailingOnly = TRUE)
+1562181295432:if (is.na(args[1])){
+1562181295433:settings <- PEcAn.settings::read.settings("/data/test_files/ed2_files/pecan64.ed2.xml")
+1562181295434:} else {
+1562181295435:settings.file <- args[1]
+1562181295436:settings <- PEcAn.settings::read.settings(settings.file)
+1562181295437:}
+1562181296622:# Check for additional modules that will require adding settings
+1562181296624:if("benchmarking" %in% names(settings)){
+1562181296625:library(PEcAn.benchmark)
+1562181296627:settings <- papply(settings, read_settings_BRR)
+1562181296629:}
+1562181297834:if("sitegroup" %in% names(settings)){
+1562181297835:if(is.null(settings$sitegroup$nSite)){
+1562181297837:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1562181297838:sitegroupId = settings$sitegroup$id)
+1562181297840:} else {
+1562181297841:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1562181297843:sitegroupId = settings$sitegroup$id,
+1562181297844:nSite = settings$sitegroup$nSite)
+1562181297846:}
+1562181297847:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1562181297849:}
+1562181298940:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1562181298942:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1562181301892:# Write pecan.CHECKED.xml
+1562181301894:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1562181303563:# start from scratch if no continue is passed in
+1562181303564:statusFile <- file.path(settings$outdir, "STATUS")
+1562181306343:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1562181306344:file.remove(statusFile)
+1562181306345:}
+1562181307535:# Do conversions
+1562181307536:settings <- PEcAn.workflow::do_conversions(settings)
+1562181309922:# Query the trait database for data and priors
+1562181309924:if (PEcAn.utils::status.check("TRAIT") == 0){
+1562181309926:PEcAn.utils::status.start("TRAIT")
+1562181309928:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1562181309931:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1562181309932:PEcAn.utils::status.end()
+1562181309934:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1562181309935:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1562181309936:}
+1562181331571:# Run the PEcAn meta.analysis
+1562181331573:if(!is.null(settings$meta.analysis)) {
+1562181331575:if (PEcAn.utils::status.check("META") == 0){
+1562181331577:PEcAn.utils::status.start("META")
+1562181331579:PEcAn.MA::runModule.run.meta.analysis(settings)
+1562181331580:PEcAn.utils::status.end()
+1562181331581:}
+1562181331582:}
+1562181339803:# Write model specific configs
+1562181339805:if (PEcAn.utils::status.check("CONFIG") == 0){
+1562181339807:PEcAn.utils::status.start("CONFIG")
+1562181339809:settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+1562181339811:PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+1562181339812:PEcAn.utils::status.end()
+1562181339814:} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+1562181339815:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+1562181339816:}
+1562181675262:if ((length(which(commandArgs() == "--advanced")) != 0) && (PEcAn.utils::status.check("ADVANCED") == 0)) {
+1562181675264:PEcAn.utils::status.start("ADVANCED")
+1562181675265:q();
+1562181675267:}
+1562181679633:# Start ecosystem model runs
+1562181679634:if (PEcAn.utils::status.check("MODEL") == 0) {
+1562181679635:PEcAn.utils::status.start("MODEL")
+1562181679636:PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+1562181679637:PEcAn.utils::status.end()
+1562181679638:}
+1562181688095:traceback()
+1562183763256:getOption("pecanapi.rabbitmq_user")
+1562350053798:# TODO: download parameters using pecanapi R package?
+1562350053861:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562350056583:View(prior.distns)
+1562350108067:load("~/biocro_results/pft/salix/prior.distns.Rdata")
+1562350112769:View(prior.distns)
+1562350563869:# TODO: download parameters using pecanapi R package?
+1562350563871:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562350567227:View(prior.distns)
+1562350864636:source("sentinel-detection/parameter_dists/plot_priors_istem.R")
+1562355937686:?create_status_page
+1562355959624:library(PEcAn.visualization)
+1562355965429:?create_status_page
+1562356044312:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562356049236:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562356089143:View(prior.distns)
+1562356123720:library(dplyr)
+1562356135243:prior.distns
+1562356154654:row.names(prior.distns)
+1562356202136:single_param <- prior.distns %>%
+1562356202138:filter(row.names == "fineroot2leaf")
+1562356220605:single_param <- prior.distns %>%
+1562356220608:filter(dist == "gamma")
+1562356230925:single_param <- prior.distns[1]
+1562356237475:single_param
+1562356243626:single_param <- prior.distns[1,]
+1562356245883:single_param
+1562356301342:single_param <- data.frame(prior.distns[1,])
+1562356304288:single_param
+1562356767084:# TODO: download parameters using pecanapi R package?
+1562356767086:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562356771004:library(ggplot2)
+1562356771748:.libPaths("~/R_libs/")
+1562356771749:library(ggridges)
+1562356771780:library(RColorBrewer)
+1562356772501:library(gridExtra)
+1562356774414:# set up empty matrix to hold values for each parameter from distribution
+1562356774415:parnames <- rownames(prior.distns)
+1562356776072:dist_matrix <- matrix(NA, nrow = 1000000, ncol = length(parnames))
+1562356777918:colnames(dist_matrix) <- parnames
+1562356783086:# generate 1 million values for each parameter and put into matrix
+1562356783088:for(i in seq_along(parnames)){
+1562356783090:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562356783092:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000000,",
+1562356783094:prior.distns$parama[i], ",",
+1562356783095:prior.distns$paramb[i],")")))
+1562356783096:}
+1562356787764:View(dist_matrix)
+1562356800939:class(dist_matrix)
+1562356811936:# manipulate into long dataframe
+1562356811937:dist_df <- reshape::melt(dist_matrix)
+1562356817922:colnames(dist_df) <- c("dist", "parameter", "value")
+1562356821798:dist_df
+1562356984940:# TODO: download parameters using pecanapi R package?
+1562356984941:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562356985131:library(ggplot2)
+1562356985963:.libPaths("~/R_libs/")
+1562356985964:library(ggridges)
+1562356985996:library(RColorBrewer)
+1562356986040:library(gridExtra)
+1562356987782:# set up empty matrix to hold values for each parameter from distribution
+1562356987784:parnames <- rownames(prior.distns)
+1562356988792:dist_matrix <- matrix(NA, nrow = 1000000, ncol = length(parnames))
+1562356989968:colnames(dist_matrix) <- parnames
+1562356991663:# generate 1 million values for each parameter and put into matrix
+1562356991665:for(i in seq_along(parnames)){
+1562356991666:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562356991668:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000000,",
+1562356991669:prior.distns$parama[i], ",",
+1562356991671:prior.distns$paramb[i],")")))
+1562356991672:}
+1562357018031:# TODO: download parameters using pecanapi R package?
+1562357018032:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562357018694:library(ggplot2)
+1562357019514:.libPaths("~/R_libs/")
+1562357019516:library(ggridges)
+1562357019546:library(RColorBrewer)
+1562357019558:library(gridExtra)
+1562357021925:# set up empty matrix to hold values for each parameter from distribution
+1562357021926:parnames <- rownames(prior.distns)
+1562357022824:dist_matrix <- matrix(NA, nrow = 1000, ncol = length(parnames))
+1562357023644:colnames(dist_matrix) <- parnames
+1562357024824:# generate 1 million values for each parameter and put into matrix
+1562357024825:for(i in seq_along(parnames)){
+1562357024826:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562357024827:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000,",
+1562357024828:prior.distns$parama[i], ",",
+1562357024829:prior.distns$paramb[i],")")))
+1562357024830:}
+1562357027134:# manipulate into long dataframe
+1562357027135:dist_df <- reshape::melt(dist_matrix)
+1562357029292:colnames(dist_df) <- c("dist", "parameter", "value")
+1562357038299:head(dist_df)
+1562357057650:# TODO: adapt name for prior + data/default
+1562357057652:dist_df$dist <- "prior"
+1562357059955:head(dist_df)
+1562357191852:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562357192940:single_param <- prior.distns[1,]
+1562357198166:single_param
+1562357203881:class(single_param)
+1562357233765:row.names(single_param)
+1562357344336:single_param_values <- data.frame(values = eval(parse(text = paste0("r",
+1562357348031:)
+1562357361841:single_param_values <- data.frame(values = eval(parse(text = paste0("r",
+1562357361843:single_param$distn,
+1562357361844:"(1000,",
+1562357361846:single_param$parama,
+1562357361848:",",
+1562357361850:single_param$paramb))))
+1562357377713:paste0("r",
+1562357377716:single_param$distn,
+1562357377718:"(1000,",
+1562357377720:single_param$parama,
+1562357377722:",",
+1562357377724:single_param$paramb)
+1562357391807:single_param_values <- data.frame(values = eval(parse(text = paste0("r",
+1562357391809:single_param$distn,
+1562357391811:"(1000,",
+1562357391813:single_param$parama,
+1562357391815:",",
+1562357391816:single_param$paramb,
+1562357391818:")"))))
+1562357396570:single_param_values
+1562357420778:paste0("r",
+1562357420779:single_param$distn,
+1562357420780:"(1000,",
+1562357420781:single_param$parama,
+1562357420782:",",
+1562357420783:single_param$paramb,
+1562357420784:")")
+1562357461065:expression <- paste0("r",
+1562357461068:single_param$distn,
+1562357461069:"(1000,",
+1562357461071:single_param$parama,
+1562357461073:",",
+1562357461075:single_param$paramb,
+1562357461076:")")
+1562357465290:expression
+1562357489670:parse(expression)
+1562357497078:eval(parse(expression))
+1562357553057:values = eval(parse(text = paste0("r",
+1562357553059:single_param$distn,
+1562357553061:"(1000,",
+1562357553062:single_param$parama,
+1562357553064:",",
+1562357553065:single_param$paramb,
+1562357553066:")")))
+1562357558488:values
+1562357583636:values <- eval(parse(text = expression))
+1562357586842:values
+1562357594689:?parse
+1562357703313:num_values <- 1000
+1562357704109:expression <- paste0("r", single_param$distn, "(,", num_values, single_param$parama, ",", single_param$paramb, ")")
+1562357707659:expression
+1562357729755:num_values <- 1000
+1562357730076:expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
+1562357733088:expression
+1562357737682:values <- eval(parse(text = expression))
+1562357740518:values
+1562357868664:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562357869274:num_values <- 1000
+1562357870384:single_param <- prior.distns[1,]
+1562357871523:expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
+1562357872507:single_param_values <- data.frame(values <- eval(parse(text = expression)))
+1562357879552:single_param_values
+1562357888686:head(single_param_values)
+1562357903397:colnames(single_param_values)
+1562357914008:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562357916545:colnames(single_param_values)
+1562357919532:head(single_param_values)
+1562357972353:library(ggridges)
+1562357981749:.libPaths("~/R_libs/")
+1562357982820:library(ggridges)
+1562358031913:row.names(single_param)
+1562358051241:ggplot(single_param_values, aes(x = values, y = 0)) +
+1562358051243:geom_density_ridges() +
+1562358051245:theme(legend.position="none",
+1562358051246:axis.title.y=element_blank(),
+1562358051248:axis.text.y=element_blank(),
+1562358051249:axis.ticks.y=element_blank())
+1562358051255:ggtitle(row.names(single_param))
+1562358067764:library(ggplot2)
+1562358072312:ggplot(single_param_values, aes(x = values, y = 0)) +
+1562358072314:geom_density_ridges() +
+1562358072316:theme(legend.position="none",
+1562358072318:axis.title.y=element_blank(),
+1562358072320:axis.text.y=element_blank(),
+1562358072321:axis.ticks.y=element_blank())
+1562358072608:ggtitle(row.names(single_param))
+1562358117932:ggplot(single_param_values, aes(x = values, y = 0)) +
+1562358117934:geom_density_ridges()
+1562358124671:ggplot(single_param_values, aes(x = values, y = 0)) +
+1562358124673:geom_density_ridges() +
+1562358124676:ggtitle(row.names(single_param))
+1562358130287:single_param_plot <-
+1562358130289:ggplot(single_param_values, aes(x = values, y = 0)) +
+1562358130291:geom_density_ridges() +
+1562358130293:ggtitle(row.names(single_param)) +
+1562358130295:theme(legend.position="none",
+1562358130297:axis.title.y=element_blank(),
+1562358130298:axis.text.y=element_blank(),
+1562358130299:axis.ticks.y=element_blank())
+1562359883797:single_param_plot <- ggplot(single_param_values, aes(x = values, y = 0)) +
+1562359883800:geom_density_ridges() +
+1562359883802:ggtitle(row.names(single_param))
+1562359890740:single_param_plot
+1562360025732:plot_parameter_dist <- function(param_data, num_values = 1000000){
+1562360025734:expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
+1562360025736:print(expression)
+1562360025738:}
+1562360041806:library(ggplot2)
+1562360042552:.libPaths("~/R_libs/")
+1562360043081:library(ggridges)
+1562360052101:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562360052678:num_values <- 1000
+1562360055114:single_param <- prior.distns[1,]
+1562360058796:expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
+1562360060280:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360069718:ggplot(single_param_values, aes(x = values, y = 0)) +
+1562360069720:geom_density_ridges() +
+1562360069722:ggtitle(row.names(single_param))
+1562360078122:ggplot(single_param_values, aes(x = values, y = 0)) +
+1562360078124:geom_density() +
+1562360078126:ggtitle(row.names(single_param))
+1562360140119:ggplot(single_param_values, aes(x = values)) +
+1562360140121:geom_density() +
+1562360140123:ggtitle(row.names(single_param))
+1562360231849:plot_parameter_dist <- function(param_data, num_values = 1000000){
+1562360231851:expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
+1562360231854:print(expression)
+1562360231856:}
+1562360232464:plot_parameter_dist(ex_single_param)
+1562360236365:ex_single_param <- prior.distns[1,]
+1562360237492:plot_parameter_dist <- function(param_data, num_values = 1000000){
+1562360237494:expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
+1562360237496:print(expression)
+1562360237498:}
+1562360238353:plot_parameter_dist(ex_single_param)
+1562360252878:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360283544:plot_parameter_dist <- function(param_data, num_values = 1000000){
+1562360283546:expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
+1562360283549:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360283551:single_param_plot <- ggplot(single_param_values, aes(x = values)) +
+1562360283553:geom_density() +
+1562360283555:ggtitle(row.names(single_param))
+1562360283556:print(single_param_plot)
+1562360283557:}
+1562360292256:plot_parameter_dist <- function(param_data, num_values = 1000000){
+1562360292258:expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
+1562360292261:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360292263:single_param_plot <- ggplot(single_param_values, aes(x = values)) +
+1562360292265:geom_density() +
+1562360292267:ggtitle(row.names(single_param))
+1562360292268:print(single_param_plot)
+1562360292269:}
+1562360292865:plot_parameter_dist(ex_single_param)
+1562360327899:library(ggplot2)
+1562360330178:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562360333808:ex_single_param <- prior.distns[1,]
+1562360335191:plot_parameter_dist <- function(param_data, num_values = 1000000){
+1562360335193:expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
+1562360335195:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360335197:single_param_plot <- ggplot(single_param_values, aes(x = values)) +
+1562360335198:geom_density() +
+1562360335199:ggtitle(row.names(single_param))
+1562360335200:print(single_param_plot)
+1562360335202:}
+1562360336188:plot_parameter_dist(ex_single_param)
+1562360376627:plot_parameter_dist <- function(param_data, num_values = 1000000){
+1562360376629:expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
+1562360376631:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360376633:single_param_plot <- ggplot(single_param_values, aes(x = values)) +
+1562360376635:geom_density() +
+1562360376637:ggtitle(row.names(param_data))
+1562360376638:print(single_param_plot)
+1562360376639:}
+1562360377598:plot_parameter_dist(ex_single_param)
+1562360470871:library(ggplot2)
+1562360471514:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562360474536:single_param <- prior.distns[1,]
+1562360475563:num_values <- 1000000
+1562360476741:expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
+1562360477741:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360478943:single_param_plot <- ggplot(single_param_values, aes(x = values)) +
+1562360478944:geom_density() +
+1562360478945:ggtitle(row.names(single_param))
+1562360480143:single_param_plot
+1562360492841:library(ggplot2)
+1562360493637:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562360496759:single_param <- prior.distns[1,]
+1562360499016:num_values <- 1000
+1562360499857:expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
+1562360500357:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360500808:single_param_plot <- ggplot(single_param_values, aes(x = values)) +
+1562360500809:geom_density() +
+1562360500810:ggtitle(row.names(single_param))
+1562360501764:single_param_plot
+1562360560736:library(ggplot2)
+1562360561526:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562360566690:.libPaths("~/R_libs/")
+1562360566693:library(ggridges)
+1562360569697:single_param <- prior.distns[1,]
+1562360570345:num_values <- 1000
+1562360571073:expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
+1562360571591:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360574663:single_param_plot <- ggplot(single_param_values, aes(x = values, y = 0)) +
+1562360574664:geom_density_ridges() +
+1562360574665:ggtitle(row.names(single_param))
+1562360575670:single_param_plot
+1562360622958:source("sentinel-detection/parameter_dists/plot_priors_istem.R")
+1562360673141:library(ggplot2)
+1562360673922:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562360676967:.libPaths("~/R_libs/")
+1562360678524:library(ggridges)
+1562360682047:single_param <- prior.distns[1,]
+1562360683170:num_values <- 1000000
+1562360685587:expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
+1562360686539:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562360691703:single_param_plot <- ggplot(single_param_values, aes(x = values, y = 0)) +
+1562360691705:geom_density_ridges() +
+1562360691707:ggtitle(row.names(single_param))
+1562360696252:single_param_plot
+1562360752482:single_param_plot <- ggplot(single_param_values, aes(x = values, y = 0)) +
+1562360752484:geom_density_ridges() +
+1562360752486:ggtitle(row.names(single_param)) +
+1562360752487:theme(legend.position="none",
+1562360752489:axis.title.y=element_blank(),
+1562360752490:axis.text.y=element_blank(),
+1562360752492:axis.ticks.y=element_blank())
+1562360752624:single_param_plot
+1562361133294:# TODO: download parameters using pecanapi R package?
+1562361133296:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562361134515:library(ggplot2)
+1562361135272:.libPaths("~/R_libs/")
+1562361135273:library(ggridges)
+1562361135305:library(RColorBrewer)
+1562361135317:library(gridExtra)
+1562361135331:plot_db_distns <- function(prior.distns){
+1562361135332:# set up empty matrix to hold values for each parameter from distribution
+1562361135333:parnames <- rownames(prior.distns)
+1562361135334:dist_matrix <- matrix(NA, nrow = 1000, ncol = length(parnames))
+1562361135335:colnames(dist_matrix) <- parnames
+1562361135337:# generate 1 million values for each parameter and put into matrix
+1562361135338:for(i in seq_along(parnames)){
+1562361135339:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562361135340:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000,",
+1562361135341:prior.distns$parama[i], ",",
+1562361135342:prior.distns$paramb[i],")")))
+1562361135343:}
+1562361135345:# manipulate into long dataframe
+1562361135347:dist_df <- reshape::melt(dist_matrix)
+1562361135348:colnames(dist_df) <- c("dist", "parameter", "value")
+1562361135349:# TODO: adapt name for prior + data/default
+1562361135350:dist_df$dist <- "prior"
+1562361135352:# get colors for each distribution
+1562361135353:n <- length(parnames)
+1562361135354:qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
+1562361135355:col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+1562361135356:plot_colors =sample(col_vector, n)
+1562361135358:# plot distribution using dataframe of parameter values
+1562361135359:# TODO: be able to input single color for all values
+1562361135361:# TODO: replace ggridges function with geom_density if possible
+1562361135362:plot.list <- list()
+1562361135363:for(i in  seq_along(parnames)){
+1562361135364:sub_df <- dist_df[dist_df$parameter == parnames[i],]
+1562361135365:plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) +
+1562361135366:geom_density_ridges( fill=plot_colors[i]) +
+1562361135367:theme(legend.position="none",
+1562361135369:axis.title.y=element_blank(),
+1562361135370:axis.text.y=element_blank(),
+1562361135371:axis.ticks.y=element_blank()) + ggtitle(parnames[i])
+1562361135372:}
+1562361135375:nplots <- length(plot.list)
+1562361135377:nCol <- floor(sqrt(nplots))
+1562361135378:do.call("grid.arrange", c(plot.list, ncol=nCol))
+1562361135379:}
+1562361136499:plot_db_distns(prior.distns)
+1562361155861:plot.list
+1562361310820:# TODO: download parameters using pecanapi R package?
+1562361310822:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562361310938:library(ggplot2)
+1562361311764:.libPaths("~/R_libs/")
+1562361311766:library(ggridges)
+1562361311796:library(RColorBrewer)
+1562361312346:library(gridExtra)
+1562361315288:# set up empty matrix to hold values for each parameter from distribution
+1562361315290:parnames <- rownames(prior.distns)
+1562361316048:dist_matrix <- matrix(NA, nrow = 1000, ncol = length(parnames))
+1562361316772:colnames(dist_matrix) <- parnames
+1562361317660:# generate 1 million values for each parameter and put into matrix
+1562361317662:for(i in seq_along(parnames)){
+1562361317664:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562361317666:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000,",
+1562361317668:prior.distns$parama[i], ",",
+1562361317670:prior.distns$paramb[i],")")))
+1562361317672:}
+1562361318520:# manipulate into long dataframe
+1562361318522:dist_df <- reshape::melt(dist_matrix)
+1562361318949:colnames(dist_df) <- c("dist", "parameter", "value")
+1562361319533:# TODO: adapt name for prior + data/default
+1562361319536:dist_df$dist <- "prior"
+1562361320339:# get colors for each distribution
+1562361320341:n <- length(parnames)
+1562361320682:qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
+1562361321078:col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+1562361321456:plot_colors =sample(col_vector, n)
+1562361322128:# plot distribution using dataframe of parameter values
+1562361322130:# TODO: be able to input single color for all values
+1562361322132:# TODO: replace ggridges function with geom_density if possible
+1562361322134:plot.list <- list()
+1562361322993:for(i in  seq_along(parnames)){
+1562361322995:sub_df <- dist_df[dist_df$parameter == parnames[i],]
+1562361322997:plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) +
+1562361323000:geom_density_ridges( fill=plot_colors[i]) +
+1562361323002:theme(legend.position="none",
+1562361323004:axis.title.y=element_blank(),
+1562361323006:axis.text.y=element_blank(),
+1562361323007:axis.ticks.y=element_blank()) + ggtitle(parnames[i])
+1562361323008:}
+1562361324039:nplots <- length(plot.list)
+1562361324832:nCol <- floor(sqrt(nplots))
+1562361326215:do.call("grid.arrange", c(plot.list, ncol=nCol))
+1562361339359:View(dist_df)
+1562361389397:dist_df[dist_df$parameter == "fineroot2leaf",]
+1562361401141:dist_df$values[dist_df$parameter == "fineroot2leaf"]
+1562361412647:dist_df$value[dist_df$parameter == "fineroot2leaf"]
+1562361420605:right_values <- dist_df$value[dist_df$parameter == "fineroot2leaf"]
+1562361427260:hist(right_values)
+1562361461011:library(ggplot2)
+1562361461255:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562361465964:single_param <- prior.distns[1,]
+1562361466340:num_values <- 1000000
+1562361469106:expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
+1562361469912:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562361477245:head(single_param_values)
+1562361490978:hist(single_param_values)
+1562361497009:hist(single_param_values$values)
+1562361521399:max(single_param_values$values)
+1562361525300:max(right_values)
+1562361587065:plot_db_distns <- function(prior.distns){
+1562361587067:# set up empty matrix to hold values for each parameter from distribution
+1562361587069:parnames <- rownames(prior.distns)
+1562361587071:dist_matrix <- matrix(NA, nrow = 1000, ncol = length(parnames))
+1562361587073:colnames(dist_matrix) <- parnames
+1562361587075:# generate 1 million values for each parameter and put into matrix
+1562361587076:for(i in seq_along(parnames)){
+1562361587077:post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
+1562361587079:print(paste0("r", prior.distns$distn[i],"(1000,",
+1562361587080:prior.distns$parama[i], ",",
+1562361587081:prior.distns$paramb[i],")"))
+1562361587082:dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000,",
+1562361587083:prior.distns$parama[i], ",",
+1562361587084:prior.distns$paramb[i],")")))
+1562361587086:}
+1562361587088:# manipulate into long dataframe
+1562361587089:dist_df <- reshape::melt(dist_matrix)
+1562361587091:colnames(dist_df) <- c("dist", "parameter", "value")
+1562361587092:# TODO: adapt name for prior + data/default
+1562361587093:dist_df$dist <- "prior"
+1562361587095:# get colors for each distribution
+1562361587096:n <- length(parnames)
+1562361587098:qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
+1562361587099:col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+1562361587100:plot_colors =sample(col_vector, n)
+1562361587103:# plot distribution using dataframe of parameter values
+1562361587104:# TODO: be able to input single color for all values
+1562361587105:# TODO: replace ggridges function with geom_density if possible
+1562361587106:plot.list <- list()
+1562361587108:for(i in  seq_along(parnames)){
+1562361587109:sub_df <- dist_df[dist_df$parameter == parnames[i],]
+1562361587111:plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) +
+1562361587112:geom_density_ridges( fill=plot_colors[i]) +
+1562361587113:theme(legend.position="none",
+1562361587114:axis.title.y=element_blank(),
+1562361587116:axis.text.y=element_blank(),
+1562361587117:axis.ticks.y=element_blank()) + ggtitle(parnames[i])
+1562361587119:}
+1562361587122:nplots <- length(plot.list)
+1562361587124:nCol <- floor(sqrt(nplots))
+1562361587125:do.call("grid.arrange", c(plot.list, ncol=nCol))
+1562361587126:}
+1562361588196:plot_db_distns(prior.distns)
+1562361604769:prior.distns
+1562361639998:expression
+1562361664923:rlnorm(1000,0.811,0.843)
+1562361681307:max(rlnorm(1000,0.811,0.843))
+1562361704986:max(rlnorm(1e+06,0.811,0.843))
+1562361719090:1e+06
+1562361731472:max(rlnorm(1e+06,0.811,0.843))
+1562361742956:options(scipen = 999)
+1562361744403:1e+06
+1562361758730:max(rlnorm(1e+06,0.811,0.843))
+1562361769998:max(rlnorm(1000000,0.811,0.843))
+1562361775194:max(rlnorm(1000,0.811,0.843))
+1562361813753:source("sentinel-detection/parameter_dists/plot_priors_istem.R")
+1562361900596:source("pecan_riemer_fork/pecan/base/visualization/R/plot_parameter_dists.R")
+1562615699258:library(shiny)
+1562615750910:shiny::shinyApp(ui, server)
+1562615942980:library(shiny)
+1562615956871:getwd()
+1562615963113:setwd("~/pecan/shiny")
+1562615965022:getwd()
+1562615992628:runApp("workflowPlot")
+1562616011359:library(plotly)
+1562616025052:install.packages("plotly")
+1562616062609:.libPaths("~/R_libs/")
+1562616066371:install.packages("plotly")
+1562616097086:library(plotly)
+1562616111319:.libPaths("~/R_libs/")
+1562616119451:library(shiny)
+1562616126747:setwd("~/pecan/shiny")
+1562616132189:runApp("workflowPlot")
+1562616153398:install.packages("shinythemes")
+1562616163984:runApp("workflowPlot")
+1562616175282:runApp("workflowPlot")
+1562616187904:install.packages("shinyjs")
+1562616194907:runApp("workflowPlot")
+1562683355824:getwd()
+1562683385195:setwd("/home/kristinariemer/")
+1562684071108:trait.mcmc <- load("biocro_results/pft/salix/trait.mcmc.Rdata")
+1562684081429:trait.mcmc
+1562684148926:head(trait.mcmc)
+1562684179912:load("biocro_results/pft/salix/trait.mcmc.Rdata")
+1562684183730:View(trait.mcmc)
+1562684200642:head(trait.mcmc$stomatal_slope.BB)
+1562684216329:trait.mcmc$stomatal_slope.BB[[1]]
+1562684221550:head(trait.mcmc$stomatal_slope.BB[[1]])
+1562684226730:head(trait.mcmc$stomatal_slope.BB[[2]])
+1562684229209:head(trait.mcmc$stomatal_slope.BB[[3]])
+1562684281098:load("biocro_results/pft/salix/prior.distns.Rdata")
+1562684283974:View(prior.distns)
+1562684310513:priors <- prior.distns
+1562684428467:do.plot <- !is.null(outdir)
+1562684437340:filename.flag = ""
+1562684440595:outdir = NULL
+1562684443606:trait.data = NULL
+1562684447329:do.plot <- !is.null(outdir)
+1562684448318:if (do.plot == TRUE) {
+1562684448320:pdf(file.path(outdir, paste("posteriors", filename.flag, ".pdf", sep = "")))
+1562684448322:}
+1562684467385:do.plot
+1562684476895:names(trait.mcmc)
+1562684514456:names(trait.mcmc)[1]
+1562684519268:trait <- names(trait.mcmc)[1]
+1562684528645:dat <- trait.mcmc[[trait]]
+1562684532001:vname <- colnames(dat[[1]])
+1562684534985:dat
+1562684540451:vname
+1562684543825:if ("beta.o" %in% vname) {
+1562684543827:dat <- as.matrix(dat)[, "beta.o"]
+1562684543829:}
+1562684558278:pdist <- priors[trait, "distn"]
+1562684560206:pparm <- as.numeric(priors[trait, 2:3])
+1562684561510:ptrait <- trait
+1562684566476:## first determine the candidate set of models based on any range restrictions
+1562684566496:zerobound <- c("exp", "gamma", "lnorm", "weibull")
+1562684609106:pdist
+1562684620443:if (pdist %in% "beta") {
+1562684620445:m   <- mean(dat)
+1562684620446:v   <- var(dat)
+1562684620449:k   <- (1 - m)/m
+1562684620450:a   <- (k / ((1 + k) ^ 2 * v) - 1) / (1 + k)
+1562684620452:b   <- a * k
+1562684620454:fit <- try(suppressWarnings(fitdistr(dat, "beta", list(shape1 = a, shape2 = b))), silent = TRUE)
+1562684620456:if (do.plot) {
+1562684620457:x <- seq(0, 1, length = 1000)
+1562684620458:plot(density(dat), col = 2, lwd = 2, main = trait)
+1562684620461:if (!is.null(trait.data)) {
+1562684620462:rug(trait.data[[trait]]$Y, lwd = 2, col = "purple")
+1562684620463:}
+1562684620464:lines(x, dbeta(x, fit$estimate[1], fit$estimate[2]), lwd = 2, type = "l")
+1562684620465:lines(x, dbeta(x, pparm[1], pparm[2]), lwd = 3, type = "l", col = 3)
+1562684620466:legend("topleft",
+1562684620467:legend = c("data", "prior", "post", "approx"),
+1562684620468:col = c("purple", 3, 2, 1), lwd = 2)
+1562684620470:}
+1562684620471:posteriors[trait, "parama"] <- fit$estimate[1]
+1562684620472:posteriors[trait, "paramb"] <- fit$estimate[2]
+1562684620473:} else if (pdist %in% zerobound | (pdist == "unif" & pparm[1] > 0)) {
+1562684620474:dist.names <- c("exp", "lnorm", "weibull", "norm")
+1562684620475:fit <- list()
+1562684620476:fit[[1]] <- try(suppressWarnings(fitdistr(dat, "exponential")), silent = TRUE)
+1562684620478:## fit[[2]] <- fitdistr(dat,'f',list(df1=10,df2=2*mean(dat)/(max(mean(dat)-1,1))))
+1562684620479:fit[[2]] <- try(suppressWarnings(fitdistr(dat, "lognormal")), silent = TRUE)
+1562684620480:fit[[3]] <- try(suppressWarnings(fitdistr(dat, "weibull")), silent = TRUE)
+1562684620481:fit[[4]] <- try(suppressWarnings(fitdistr(dat, "normal")), silent = TRUE)
+1562684620484:if (!trait == "cuticular_cond") {
+1562684620485:fit[[5]] <- try(suppressWarnings(fitdistr(dat, "gamma")), silent = TRUE)
+1562684620486:dist.names <- c(dist.names, "gamma")
+1562684620487:}
+1562684620489:failfit.bool <- sapply(fit, class) == "try-error"
+1562684620490:fit[failfit.bool] <- NULL
+1562684620491:dist.names <- dist.names[!failfit.bool]
+1562684620493:fparm <- lapply(fit, function(x) { as.numeric(x$estimate) })
+1562684620495:fAIC <- lapply(fit, AIC)
+1562684620497:bestfit <- which.min(fAIC)
+1562684620499:posteriors[ptrait, "distn"] <- dist.names[bestfit]
+1562684620500:posteriors[ptrait, "parama"] <- fit[[bestfit]]$estimate[1]
+1562684620501:if (bestfit == 1) {
+1562684620503:posteriors[ptrait, "paramb"] <- NA
+1562684620504:} else {
+1562684620505:posteriors[ptrait, "paramb"] <- fit[[bestfit]]$estimate[2]
+1562684620507:}
+1562684620509:if (do.plot) {
+1562684620511:.dens_plot(posteriors, priors, ptrait, dat, trait, trait.data)
+1562684620512:}
+1562684620513:} else {
+1562684620515:## default: NORMAL
+1562684620516:posteriors[trait, "distn"] <- "norm"
+1562684620518:posteriors[trait, "parama"] <- mean(dat)
+1562684620519:posteriors[trait, "paramb"] <- sd(dat)
+1562684620521:if (do.plot) {
+1562684620522:.dens_plot(posteriors, priors, ptrait, dat, trait, trait.data)
+1562684620524:}
+1562684620525:}
+1562684643646:posteriors
+1562684647333:## initialization
+1562684647334:posteriors <- priors
+1562684650366:posteriors
+1562684657490:if (pdist %in% "beta") {
+1562684657492:m   <- mean(dat)
+1562684657493:v   <- var(dat)
+1562684657494:k   <- (1 - m)/m
+1562684657495:a   <- (k / ((1 + k) ^ 2 * v) - 1) / (1 + k)
+1562684657497:b   <- a * k
+1562684657520:fit <- try(suppressWarnings(fitdistr(dat, "beta", list(shape1 = a, shape2 = b))), silent = TRUE)
+1562684657522:if (do.plot) {
+1562684657523:x <- seq(0, 1, length = 1000)
+1562684657525:plot(density(dat), col = 2, lwd = 2, main = trait)
+1562684657526:if (!is.null(trait.data)) {
+1562684657527:rug(trait.data[[trait]]$Y, lwd = 2, col = "purple")
+1562684657528:}
+1562684657529:lines(x, dbeta(x, fit$estimate[1], fit$estimate[2]), lwd = 2, type = "l")
+1562684657530:lines(x, dbeta(x, pparm[1], pparm[2]), lwd = 3, type = "l", col = 3)
+1562684657531:legend("topleft",
+1562684657532:legend = c("data", "prior", "post", "approx"),
+1562684657533:col = c("purple", 3, 2, 1), lwd = 2)
+1562684657534:}
+1562684657535:posteriors[trait, "parama"] <- fit$estimate[1]
+1562684657537:posteriors[trait, "paramb"] <- fit$estimate[2]
+1562684657538:} else if (pdist %in% zerobound | (pdist == "unif" & pparm[1] > 0)) {
+1562684657539:dist.names <- c("exp", "lnorm", "weibull", "norm")
+1562684657540:fit <- list()
+1562684657541:fit[[1]] <- try(suppressWarnings(fitdistr(dat, "exponential")), silent = TRUE)
+1562684657542:## fit[[2]] <- fitdistr(dat,'f',list(df1=10,df2=2*mean(dat)/(max(mean(dat)-1,1))))
+1562684657543:fit[[2]] <- try(suppressWarnings(fitdistr(dat, "lognormal")), silent = TRUE)
+1562684657545:fit[[3]] <- try(suppressWarnings(fitdistr(dat, "weibull")), silent = TRUE)
+1562684657546:fit[[4]] <- try(suppressWarnings(fitdistr(dat, "normal")), silent = TRUE)
+1562684657548:if (!trait == "cuticular_cond") {
+1562684657550:fit[[5]] <- try(suppressWarnings(fitdistr(dat, "gamma")), silent = TRUE)
+1562684657551:dist.names <- c(dist.names, "gamma")
+1562684657552:}
+1562684657553:failfit.bool <- sapply(fit, class) == "try-error"
+1562684657555:fit[failfit.bool] <- NULL
+1562684657556:dist.names <- dist.names[!failfit.bool]
+1562684657558:fparm <- lapply(fit, function(x) { as.numeric(x$estimate) })
+1562684657560:fAIC <- lapply(fit, AIC)
+1562684657562:bestfit <- which.min(fAIC)
+1562684657564:posteriors[ptrait, "distn"] <- dist.names[bestfit]
+1562684657565:posteriors[ptrait, "parama"] <- fit[[bestfit]]$estimate[1]
+1562684657566:if (bestfit == 1) {
+1562684657568:posteriors[ptrait, "paramb"] <- NA
+1562684657569:} else {
+1562684657571:posteriors[ptrait, "paramb"] <- fit[[bestfit]]$estimate[2]
+1562684657572:}
+1562684657575:if (do.plot) {
+1562684657576:.dens_plot(posteriors, priors, ptrait, dat, trait, trait.data)
+1562684657577:}
+1562684657579:} else {
+1562684657580:## default: NORMAL
+1562684657581:posteriors[trait, "distn"] <- "norm"
+1562684657583:posteriors[trait, "parama"] <- mean(dat)
+1562684657584:posteriors[trait, "paramb"] <- sd(dat)
+1562684657585:if (do.plot) {
+1562684657587:.dens_plot(posteriors, priors, ptrait, dat, trait, trait.data)
+1562684657588:}
+1562684657590:}
+1562684756821:if (do.plot) {
+1562684756824:dev.off()
+1562684756826:}
+1562684765315:do.plot
+1562684795829:!is.null(outdir)
+1562684819207:outdir <- ""
+1562684821896:do.plot <- !is.null(outdir)
+1562684827815:do.plot
+1562684832121:if (do.plot == TRUE) {
+1562684832124:pdf(file.path(outdir, paste("posteriors", filename.flag, ".pdf", sep = "")))
+1562684832126:}
+1562771039394:# ----------------------------------------------------------------------
+1562771039422:# Load required libraries
+1562771039423:# ----------------------------------------------------------------------
+1562771039424:library(PEcAn.all)
+1562771043976:library(PEcAn.utils)
+1562771044002:library(RCurl)
+1562771044142:# make sure always to call status.end
+1562771044143:options(warn=1)
+1562771044144:options(error=quote({
+1562771044145:PEcAn.utils::status.end("ERROR")
+1562771044145:PEcAn.remote::kill.tunnel(settings)
+1562771044146:if (!interactive()) {
+1562771044147:q(status = 1)
+1562771044148:}
+1562771044149:}))
+1562771047091:# ----------------------------------------------------------------------
+1562771047093:# PEcAn Workflow
+1562771047094:# ----------------------------------------------------------------------
+1562771047097:# Open and read in settings file for PEcAn run.
+1562771047099:args <- commandArgs(trailingOnly = TRUE)
+1562771048074:if (is.na(args[1])){
+1562771048076:settings <- PEcAn.settings::read.settings("pecan.xml")
+1562771048078:} else {
+1562771048080:settings.file <- args[1]
+1562771048081:settings <- PEcAn.settings::read.settings(settings.file)
+1562771048083:}
+1562771079635:# ----------------------------------------------------------------------
+1562771079636:# Load required libraries
+1562771079637:# ----------------------------------------------------------------------
+1562771079638:library(PEcAn.all)
+1562771084880:library(PEcAn.utils)
+1562771084881:library(RCurl)
+1562771085077:# make sure always to call status.end
+1562771085078:options(warn=1)
+1562771085080:options(error=quote({
+1562771085081:PEcAn.utils::status.end("ERROR")
+1562771085081:PEcAn.remote::kill.tunnel(settings)
+1562771085082:if (!interactive()) {
+1562771085083:q(status = 1)
+1562771085084:}
+1562771085085:}))
+1562771085087:# ----------------------------------------------------------------------
+1562771085088:# PEcAn Workflow
+1562771085089:# ----------------------------------------------------------------------
+1562771085090:# Open and read in settings file for PEcAn run.
+1562771085090:args <- commandArgs(trailingOnly = TRUE)
+1562771085092:if (is.na(args[1])){
+1562771085093:settings <- PEcAn.settings::read.settings("/data/test_files/ed2_files/pecan64.ed2.xml")
+1562771085094:} else {
+1562771085095:settings.file <- args[1]
+1562771085096:settings <- PEcAn.settings::read.settings(settings.file)
+1562771085097:}
+1562771086949:# Check for additional modules that will require adding settings
+1562771086950:if("benchmarking" %in% names(settings)){
+1562771086953:library(PEcAn.benchmark)
+1562771086954:settings <- papply(settings, read_settings_BRR)
+1562771086957:}
+1562771087714:if("sitegroup" %in% names(settings)){
+1562771087716:if(is.null(settings$sitegroup$nSite)){
+1562771087718:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1562771087720:sitegroupId = settings$sitegroup$id)
+1562771087722:} else {
+1562771087724:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1562771087725:sitegroupId = settings$sitegroup$id,
+1562771087726:nSite = settings$sitegroup$nSite)
+1562771087727:}
+1562771087728:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1562771087729:}
+1562771089076:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1562771089078:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1562771089969:# Write pecan.CHECKED.xml
+1562771089970:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1562771092416:# start from scratch if no continue is passed in
+1562771092418:statusFile <- file.path(settings$outdir, "STATUS")
+1562771093359:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1562771093361:file.remove(statusFile)
+1562771093363:}
+1562771094373:# Do conversions
+1562771094374:settings <- PEcAn.workflow::do_conversions(settings)
+1562771095374:# Query the trait database for data and priors
+1562771095376:if (PEcAn.utils::status.check("TRAIT") == 0){
+1562771095378:PEcAn.utils::status.start("TRAIT")
+1562771095380:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1562771095382:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1562771095384:PEcAn.utils::status.end()
+1562771095386:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1562771095387:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1562771095388:}
+1562771126014:library(PEcAn.all)
+1562771131232:library(PEcAn.utils)
+1562771131234:library(RCurl)
+1562771131430:#system('rm -rf ~/ed2_results')
+1562771131432:# make sure always to call status.end
+1562771131433:options(warn=1)
+1562771131434:options(error=quote({
+1562771131435:PEcAn.utils::status.end("ERROR")
+1562771131436:PEcAn.remote::kill.tunnel(settings)
+1562771131437:if (!interactive()) {
+1562771131437:q(status = 1)
+1562771131438:}
+1562771131439:}))
+1562771131441:#options(warning.expression=status.end("ERROR"))
+1562771131444:# ----------------------------------------------------------------------
+1562771131445:# PEcAn Workflow
+1562771131445:# ----------------------------------------------------------------------
+1562771131446:# Open and read in settings file for PEcAn run.
+1562771131447:args <- commandArgs(trailingOnly = TRUE)
+1562771131449:if (is.na(args[1])){
+1562771131450:settings <- PEcAn.settings::read.settings("/data/test_files/ed2_files/pecan64.ed2.xml")
+1562771131450:} else {
+1562771131451:settings.file <- args[1]
+1562771131452:settings <- PEcAn.settings::read.settings(settings.file)
+1562771131453:}
+1562771131490:# Check for additional modules that will require adding settings
+1562771131491:if("benchmarking" %in% names(settings)){
+1562771131492:library(PEcAn.benchmark)
+1562771131493:settings <- papply(settings, read_settings_BRR)
+1562771131494:}
+1562771131496:if("sitegroup" %in% names(settings)){
+1562771131497:if(is.null(settings$sitegroup$nSite)){
+1562771131498:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1562771131499:sitegroupId = settings$sitegroup$id)
+1562771131500:} else {
+1562771131501:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1562771131502:sitegroupId = settings$sitegroup$id,
+1562771131502:nSite = settings$sitegroup$nSite)
+1562771131503:}
+1562771131504:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1562771131505:}
+1562771131508:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1562771131508:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1562771132502:# Write pecan.CHECKED.xml
+1562771132503:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1562771132601:# start from scratch if no continue is passed in
+1562771132602:statusFile <- file.path(settings$outdir, "STATUS")
+1562771132604:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1562771132605:file.remove(statusFile)
+1562771132606:}
+1562771132608:# Do conversions
+1562771132609:settings <- PEcAn.workflow::do_conversions(settings)
+1562771132720:# Query the trait database for data and priors
+1562771132721:if (PEcAn.utils::status.check("TRAIT") == 0){
+1562771132722:PEcAn.utils::status.start("TRAIT")
+1562771132723:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1562771132724:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1562771132725:PEcAn.utils::status.end()
+1562771132726:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1562771132727:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1562771132728:}
+1562771150052:# Run the PEcAn meta.analysis
+1562771150053:if(!is.null(settings$meta.analysis)) {
+1562771150054:if (PEcAn.utils::status.check("META") == 0){
+1562771150055:PEcAn.utils::status.start("META")
+1562771150056:PEcAn.MA::runModule.run.meta.analysis(settings)
+1562771150058:PEcAn.utils::status.end()
+1562771150059:}
+1562771150060:}
+1562771161763:# Write model specific configs
+1562771161765:if (PEcAn.utils::status.check("CONFIG") == 0){
+1562771161767:PEcAn.utils::status.start("CONFIG")
+1562771161769:settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+1562771161771:PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+1562771161773:PEcAn.utils::status.end()
+1562771161774:} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+1562771161775:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+1562771161776:}
+1562771198994:if ((length(which(commandArgs() == "--advanced")) != 0) && (PEcAn.utils::status.check("ADVANCED") == 0)) {
+1562771198997:PEcAn.utils::status.start("ADVANCED")
+1562771198998:q();
+1562771199001:}
+1562771201008:# Start ecosystem model runs
+1562771201010:if (PEcAn.utils::status.check("MODEL") == 0) {
+1562771201012:PEcAn.utils::status.start("MODEL")
+1562771201014:PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+1562771201016:PEcAn.utils::status.end()
+1562771201017:}
+1562771223370:traceback()
+1562773506392:library(ggplot2)
+1562773507429:load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+1562773509579:ex_single_param <- prior.distns[1,]
+1562773510417:plot_parameter_dist <- function(param_data, num_values = 1000000){
+1562773510419:expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
+1562773510421:single_param_values <- data.frame(values = eval(parse(text = expression)))
+1562773510423:single_param_plot <- ggplot(single_param_values, aes(x = values)) +
+1562773510425:geom_density() +
+1562773510428:ggtitle(row.names(param_data))
+1562773510429:print(single_param_plot)
+1562773510431:}
+1562773511626:plot_parameter_dist(ex_single_param)
+1562958541825:sessionInfo()

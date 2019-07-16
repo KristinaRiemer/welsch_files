@@ -74,10 +74,10 @@
   </run>
 
   <host>
+    <name>localhost</name>
     <rabbitmq>
-      <uri>amqp://guest:guest@rabbitmq:5672/%2F</uri>
       <uri>amqp://guest:guest@rabbitmq/%2F</uri>
-      <queue>ED2.2</queue>
+      <queue>ED2_git</queue>
     </rabbitmq>
   </host>
 

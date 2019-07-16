@@ -1,5 +1,3 @@
-help/library/base/html/tempfile.html,R: Create Names for Temporary Files
-help/library/base/html/libPaths.html,R: Search Paths for Packages
 help/library/devtools/html/install.html,R: Install a local development package.
 help/library/base/html/rm.html,R: Remove Objects from a Specified Environment
 help/library/ncdf4/html/ncvar_add.html,R: Add New netCDF Variable to Existing File
@@ -13,3 +11,5 @@ help/library/PEcAn.remote/html/start.model.runs.html,R: Start selected ecosystem
 help/library/PEcAn.remote/html/start_serial.html,R: Start model execution in serial mode
 help/library/ggridges/html/geom_density_ridges.html,R: Create ridgeline plot
 help/library/ggplot2/html/geom_density.html,R: Smoothed density estimates
+help/library/PEcAn.visualization/html/create_status_page.html,R: Create PEcAn Network status page.
+help/library/base/html/parse.html,R: Parse Expressions

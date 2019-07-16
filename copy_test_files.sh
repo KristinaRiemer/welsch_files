@@ -1,1 +1,0 @@
-cp -a /data/test_files/. /home/kristinariemer/data_test_files/
