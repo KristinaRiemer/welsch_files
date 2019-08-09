@@ -1,0 +1,49 @@
+.libPaths("~/R_libs/")
+
+library(dplyr)
+con <- DBI::dbConnect(RPostgres::Postgres(), 
+                      user = "bety", 
+                      password = "bety", 
+                      host = "postgres")
+tbl(con, "dbfiles") %>%
+  filter(file_name %like% "OGE%", file_path %like% "/data%") %>%
+  select(id, file_name, file_path, machine_id, container_type, container_id)
+
+#Machine ID is 90, not 99
+
+machine_id <- tbl(con, "dbfiles") %>%
+  filter(file_name == "OGE2_", file_path == "/data/oge2OLD") %>%
+  pull(machine_id)
+
+tbl(con, "machines") %>%
+  filter(id == !!machine_id) %>%
+  select(hostname)
+
+#hostname is welsch.cyverse.org
+
+#web interface host is UA
+
+machine_id2 <- c(25)
+tbl(con, "machines") %>%
+  filter(id == !!machine_id2) %>%
+  select(hostname)
+
+
+# Retrieve the models associated with the "old" welsch.cyverse.org machine, 
+# which was machine ID 25
+models <- tbl(con, "dbfiles") %>%
+  filter(machine_id == 25, container_type == "Model") %>%
+  collect()
+models
+
+models2 <- tbl(con, "dbfiles") %>%
+  filter(machine_id == 9000000003, container_type == "Model") %>%
+  collect()
+models2
+
+# It should have ED2 and BioCro. If not, there's a problem.
+# Assuming that worked OK, just create new identical records, but under the new machine ID
+DBI::dbExecute(con, "INSERT INTO dbfiles (machine_id, file_name, file_path, container_type, container_id) VALUES ($1, $2, $3, $4, $5)",
+               list(machine_id, models$file_name[3], models$file_path[3], models$container_type[3], models$container_id[3]))
+
+# machine didn't have correct name (?), and models needed to be associated with that machine

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1565362792471.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3427737567",
+    "id" : "1100A9E",
+    "lastKnownWriteTime" : 1565362810,
+    "last_content_update" : 1565362810237,
+    "path" : "~/biocro_darpa_files/workflow.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "182,54",
+        "scrollLine" : "99",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

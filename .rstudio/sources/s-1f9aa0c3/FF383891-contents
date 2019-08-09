@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pecan>
+
+  <database>
+    <bety>
+      <user>bety</user>
+      <password>bety</password>
+      <host>postgres</host>
+      <dbname>bety</dbname>
+      <driver>PostgreSQL</driver>
+      <write>true</write>
+    </bety>
+    <dbfiles>/data/dbfiles</dbfiles>
+  </database>
+
+  <pfts>
+    <pft>
+      <name>tempconif</name> 
+    </pft>
+  </pfts>
+
+  <ensemble>
+   <size>1</size>
+   <variable>NPP</variable>
+   <samplingspace>
+   <parameters>
+    <method>uniform</method>
+   </parameters>
+   <met>
+    <method>sampling</method>
+ 	</met>
+   </samplingspace>
+  </ensemble>
+
+  <meta.analysis>
+    <iter>3000</iter>
+    <random.effects>FALSE</random.effects>
+  </meta.analysis>
+
+  <model>
+    <id>5000000001</id>
+    <edin>ED2IN.rgit</edin>
+    <config.header>
+      <radiation>
+        <lai_min>0.01</lai_min>
+      </radiation>
+      <ed_misc>
+        <output_month>12</output_month>      
+      </ed_misc> 
+    </config.header>
+    <phenol.scheme>0</phenol.scheme>
+  </model>
+
+  <run>
+    <site>
+      <id>678</id>
+      <met.start>1995-01-01 06:00:00</met.start>
+      <met.end>2005-12-31 06:00:00</met.end>
+    </site>
+    <inputs>
+      <met>
+        <id>130</id>
+      </met>
+      <lu>
+        <id>294</id>
+      </lu>
+      <soil>
+        <id>297</id>
+      </soil>
+      <thsum>
+        <id>295</id>
+      </thsum>
+      <veg>
+        <id>296</id>
+      </veg>
+    </inputs>
+    <start.date>2004/01/01</start.date>
+    <end.date>2004/12/31</end.date>
+  </run>
+
+  <host>
+    <name>localhost</name>
+    <rabbitmq>
+      <uri>amqp://guest:guest@rabbitmq/%2F</uri>
+      <queue>ED2_git</queue>
+    </rabbitmq>
+  </host>
+
+</pecan>

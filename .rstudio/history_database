@@ -2413,3 +2413,6 @@
 1562773510431:}
 1562773511626:plot_parameter_dist(ex_single_param)
 1562958541825:sessionInfo()
+1564080809232:sessionInfo()
+1565367482239:PEcAn.visualization::plot.netcdf("biocro_darpa_results/out/SA-salix-chi_leaf-0.159/2004.nc", "LAI")
+1565367739746:PEcAn.visualization::plot.netcdf("biocro_darpa_results/out/SA-salix-chi_leaf-0.159/2004.nc", "LAI")

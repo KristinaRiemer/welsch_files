@@ -587,3 +587,47 @@ rm -rf /data/test_files/ed2_results/
 /data/test_files/ed2_files/workflow.R --settings /data/test_files/ed2_files/pecan64.ed2.web.xml 
 pwd
 cd pecan_riemer_fork/
+pwd
+cd pecan_riemer_fork/
+git status
+git ls-tree
+ls
+cd pecan/
+git status
+cd
+pwd
+git status
+git add -u
+git status
+git add R_libs/*
+git status
+git add pecan_riemer_fork/* trash/*
+git status
+cp -a /data/test_files/. /home/kristinariemer/data_test_files/
+git status
+git add data_test_files/ed2_files/pecan64.ed2.xml data_test_files/ed2_files/pecan64.ed2.web.xml
+git status
+git log --oneline
+git commit -m "Commit all file changes"
+git branch
+git remote -v
+git push
+git status
+git add copy_test_files.sh 
+git commit -m "Recreate missing data folder copy shell script"
+git push
+git status
+pwd
+biocro_files/workflow.R --settings biocro_files/pecan64.biocro.xml
+passwd
+pwd
+mkdir biocro_darpa_files
+
+chmod u+x biocro_darpa_files/workflow.R 
+chmod u+x biocro_darpa_files/pecan.biocro.darpa.xml 
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
+pwd
+rm -r biocro_darpa_results/
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
+rm -r biocro_darpa_results/
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 

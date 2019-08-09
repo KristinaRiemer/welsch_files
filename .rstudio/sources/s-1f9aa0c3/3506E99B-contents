@@ -1,0 +1,6 @@
+library(ggplot2)
+load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
+ex_single_param <- prior.distns[1,]
+
+
+plot_parameter_dist(ex_single_param)

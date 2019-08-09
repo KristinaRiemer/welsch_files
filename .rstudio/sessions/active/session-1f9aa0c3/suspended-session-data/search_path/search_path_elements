@@ -1,4 +1,6 @@
 .GlobalEnv
+package:grid
+package:png
 tools:rstudio
 package:stats
 package:graphics

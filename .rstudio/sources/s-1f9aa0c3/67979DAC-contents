@@ -1,0 +1,3 @@
+.libPaths("~/R_libs/")
+con <- DBI::dbConnect(RPostgres::Postgres(), user = "bety", password = "bety", host = "postgres")
+DBI::dbListTables(con)

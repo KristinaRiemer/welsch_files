@@ -1,6 +1,8 @@
 datasets="/usr/local/lib/R/library/datasets"
 grDevices="/usr/local/lib/R/library/grDevices"
 graphics="/usr/local/lib/R/library/graphics"
+grid="/usr/local/lib/R/library/grid"
 methods="/usr/local/lib/R/library/methods"
+png="/usr/local/lib/R/site-library/png"
 stats="/usr/local/lib/R/library/stats"
 utils="/usr/local/lib/R/library/utils"

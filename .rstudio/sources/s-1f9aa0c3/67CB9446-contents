@@ -1,0 +1,8 @@
+"","distn","parama","paramb","n"
+"fineroot2leaf","lnorm",0.811,0.843,0
+"Vcmax","lnorm",3.75,0.3,12
+"c2n_leaf","gamma",4.18,0.13,95
+"SLA","weibull",2.06,19,125
+"leaf_respiration_rate_m2","lnorm",0.632,0.65,32
+"growth_respiration_coefficient","beta",26,48,NA
+"Jmax","norm",101.65,10,0
