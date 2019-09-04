@@ -1,0 +1,64 @@
+BADM_IC_process         BADM_IC_process
+Clean_Tucson            Clean_Tucson
+EPA_ecoregion_finder    EPA_ecoregion_finder
+InventoryGrowthFusion   InventoryGrowthFusion
+InventoryGrowthFusionDiagnostics
+                        InventoryGrowthFusionDiagnostics
+Read.IC.info.BADM       Read.IC.info.BADM
+Read_Tucson             Read_Tucson
+buildJAGSdata_InventoryRings
+                        Format ring & plot data for JAGA
+cohort2pool             cohort2pool function Calculates total biomass
+                        using veg cohort file.
+dataone_download        DataONE download
+download_package_rm     download_packages
+ens_veg_module          Sampling/ensemble module
+extract.stringCode      extract.string.code
+extract_FIA             extract_FIA
+extract_soil_gssurgo    Extract soil data from gssurgo
+extract_soil_nc         Extract soil data
+extract_veg             load_veg
+fia.to.psscss           fia.to.psscss
+find.land               find.land
+format_identifier       format_identifier
+from.Tag                from.Tag
+from.TreeCode           from.TreeCode
+gSSURGO.Query           This function queries the gSSURGO database for
+                        a series of map unit keys
+get.attributes          Retrieve attribute information from a vector or
+                        raster layer
+get.soil                get.soil
+get_resource_map        get_resource_map
+get_veg_module          Load/extract + match species module
+ic_process              ic_process
+id_resolveable          id_resolveable
+load_veg                load_veg
+matchInventoryRings     matchInventoryRings
+match_pft               Match model PFTs
+match_species_id        Match BETY species ID.
+mpot2smoist             Convert a matric potential to a soil moisture
+netcdf.writer.BADM      netcdf.writer.BADAM
+parse.MatrixNames       parse.MatrixNames
+partition_roots         partition_roots
+plot2AGB                plot2AGB
+pool_ic_list2netcdf     pool_ic_list2netcdf
+pool_ic_netcdf2list     pool_ic_netcdf2list
+prepare_pools           prepare_pools
+put_veg_module          Match species to PFTs + veg2model module
+sample_ic               sample_ic
+sclass                  This function determines the soil class number
+                        based on the fraction of sand, clay, and silt
+shp2kml                 Convert shapefile to KML
+soil.units              Get standard units for a soil variable
+soil2netcdf             Save soil texture & parameters in PEcAn
+                        standard netCDF CF
+soil_params             Estimate soil parameters from texture class or
+                        sand/silt/clay
+soil_process            Module for managing soil texture extraction
+subset.layer            Function to subset and clip a GIS vector or
+                        raster layer by a bounding box or clip/subset
+                        layer (e.g. shapefile/KML)
+to.Tag                  to.Tag
+to.TreeCode             to.TreeCode
+write_ic                write_ic
+write_veg               write_veg

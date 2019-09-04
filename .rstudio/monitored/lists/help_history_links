@@ -1,11 +1,3 @@
-help/library/devtools/html/install.html,R: Install a local development package.
-help/library/base/html/rm.html,R: Remove Objects from a Specified Environment
-help/library/ncdf4/html/ncvar_add.html,R: Add New netCDF Variable to Existing File
-help/library/base/html/files.html,R: File Manipulation
-help/library/ncdf4/html/ncvar_get.html,R: Read data from a netCDF file
-help/library/stats/html/model.frame.html,R: Extracting the Model Frame from a Formula or Fit
-help/library/ncdf4/html/ancvar_put.html,R: Write data to a netCDF file
-help/library/DBI/html/dbConnect.html,R: Create a connection to a DBMS
 help/library/pecanapi/html/get_model_id.html,R: Retrieve database ID of a particular version of a model
 help/library/PEcAn.remote/html/start.model.runs.html,R: Start selected ecosystem model runs within PEcAn workflow
 help/library/PEcAn.remote/html/start_serial.html,R: Start model execution in serial mode
@@ -13,3 +5,11 @@ help/library/ggridges/html/geom_density_ridges.html,R: Create ridgeline plot
 help/library/ggplot2/html/geom_density.html,R: Smoothed density estimates
 help/library/PEcAn.visualization/html/create_status_page.html,R: Create PEcAn Network status page.
 help/library/base/html/parse.html,R: Parse Expressions
+help/library/base/html/list.files.html,R: List the Files in a Directory/Folder
+help/library/base/html/libPaths.html,R: Search Paths for Packages
+help/library/NULL/help/load_all,load_all
+help/library/devtools/html/load_all.html,R: Load complete package.
+help/library/dplyr/html/pull.html,R: Pull out a single variable
+help/library/NULL/help/length,length
+help/library/dplyr/html/tbl.html,R: Create a table from a data source
+help/library/dplyr/html/compute.html,R: Force computation of a database query

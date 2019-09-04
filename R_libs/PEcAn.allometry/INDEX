@@ -1,0 +1,8 @@
+AllomAve                AllomAve
+AllomUnitCoef           AllomUnitCoef
+allom.BayesFit          allom.BayesFit
+allom.predict           allom.predict
+load.allom              load.allom
+nu                      nu
+query.allom.data        query.allom.data
+read.allom.data         read.allom.data

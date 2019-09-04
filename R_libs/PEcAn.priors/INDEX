@@ -1,0 +1,14 @@
+create.density.df       Create Density Data Frame from Sample
+fit.dist                Fit distribution to data
+get.quantiles.from.density
+                        Get the quantiles from prior density
+get.sample              Get Samples
+plot.densities          Plot Trait Probability Densities
+plot.posterior.density
+                        Add posterior density.
+plot.prior.density      Add Prior Density
+plot.trait              Plot trait density
+pr.dens                 Calculate densities
+pr.samp                 Sample from prior
+prior.fn                prior.fn
+priorfig                Prior Figure

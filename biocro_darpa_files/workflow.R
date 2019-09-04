@@ -11,7 +11,12 @@
 # ----------------------------------------------------------------------
 # Load required libraries
 # ----------------------------------------------------------------------
+#.libPaths()
+devtools::load_all("pecan/base/db/")
+devtools::load_all("pecan/base/all/")
 library(PEcAn.all)
+#debugonce(PEcAn.DB::get.trait.data.pft)
+debugonce(PEcAn.remote::runModule.start.model.runs)
 library(PEcAn.utils)
 library(RCurl)
 
@@ -34,7 +39,7 @@ options(error=quote({
 # Open and read in settings file for PEcAn run.
 args <- commandArgs(trailingOnly = TRUE)
 if (is.na(args[1])){
-  settings <- PEcAn.settings::read.settings("pecan.xml") 
+  settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml") 
 } else {
   settings.file <- args[1]
   settings <- PEcAn.settings::read.settings(settings.file)
@@ -83,7 +88,6 @@ if (PEcAn.utils::status.check("TRAIT") == 0){
   settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
 }
 
-
 # Run the PEcAn meta.analysis
 if(!is.null(settings$meta.analysis)) {
   if (PEcAn.utils::status.check("META") == 0){
@@ -109,6 +113,7 @@ if ((length(which(commandArgs() == "--advanced")) != 0) &&
   q();
 }
 
+library(PEcAn.settings)
 # Start ecosystem model runs
 if (PEcAn.utils::status.check("MODEL") == 0) {
   PEcAn.utils::status.start("MODEL")

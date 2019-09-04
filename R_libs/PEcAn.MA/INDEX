@@ -1,0 +1,16 @@
+approx.posterior        Approximate posterior
+jagify                  Prepare trait data for JAGS meta-analysis
+p.point.in.prior        find quantile of point within prior
+                        distribution
+pecan.ma                Trait Meta-analysis
+pecan.ma.summary        Generate summary statistics and diagnostics for
+                        PEcAn meta.analysis
+run.meta.analysis       Invoke PEcAn meta.analysis This will use the
+                        following items from setings: • settings$pfts •
+                        settings$database$bety •
+                        settings$database$dbfiles •
+                        settings$meta.analysis$update
+single.MA               Single MA
+transform.nas           Function to remove NA values from database
+                        queries
+write.ma.model          write.ma.model

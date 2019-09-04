@@ -1,0 +1,34 @@
+Analysis.sda            Analysis.sda
+Construc_H              Construc_H
+Construct.H.multisite   Construct.H.multisite
+Construct.R             Construct.R
+Contruct.Pf             Contruct.Pf
+EnKF                    EnKF
+EnKF.MultiSite          EnKF.MultiSite
+GEF                     GEF
+Local.support           Local.support
+Obs.data.prepare.MultiSite
+                        Obs.data.prepare.MultiSite
+Remote.Sync.launcher    Remote.Sync.launcher
+SDA_control             SDA_control
+SDA_remote_launcher     SDA_remote_launcher
+adj.ens                 adj.ens
+alltocs                 alltocs
+assess.params           assess.params
+block_matrix            block_matrix
+generate_colors_sda     generate_colors_sda
+get_ensemble_weights    get_ensemble_weights
+hop_test                hop_test
+interactive.plotting.sda
+                        Internal functions for plotting SDA outputs.
+                        Interactive, post analysis time-series and bias
+                        plots in base plotting system and ggplot
+load_data_paleon_sda    load_data_paleon_sda
+load_nimble             load_nimble
+outlier.detector.boxplot
+                        outlier.detector.boxplot
+piecew.poly.local       piecew.poly.local
+sample.parameters       sample parameters
+sda.enkf                sda.enkf
+sda.enkf.multisite      sda.enkf.multisite
+simple.local            simple.local

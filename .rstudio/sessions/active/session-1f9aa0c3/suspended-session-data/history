@@ -1,414 +1,19 @@
-axis.text.y=element_blank(),
-axis.ticks.y=element_blank()) + ggtitle(parnames[i])
 }
-nplots <- length(plot.list)
-nCol <- floor(sqrt(nplots))
-do.call("grid.arrange", c(plot.list, ncol=nCol))
-}
-plot_db_distns(prior.distns)
-plot.list
-# TODO: download parameters using pecanapi R package?
-load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
-library(ggplot2)
-.libPaths("~/R_libs/")
-library(ggridges)
-library(RColorBrewer)
-library(gridExtra)
-# set up empty matrix to hold values for each parameter from distribution
-parnames <- rownames(prior.distns)
-dist_matrix <- matrix(NA, nrow = 1000, ncol = length(parnames))
-colnames(dist_matrix) <- parnames
-# generate 1 million values for each parameter and put into matrix
-for(i in seq_along(parnames)){
-post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
-dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000,",
-prior.distns$parama[i], ",",
-prior.distns$paramb[i],")")))
-}
-# manipulate into long dataframe
-dist_df <- reshape::melt(dist_matrix)
-colnames(dist_df) <- c("dist", "parameter", "value")
-# TODO: adapt name for prior + data/default
-dist_df$dist <- "prior"
-# get colors for each distribution
-n <- length(parnames)
-qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
-col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
-plot_colors =sample(col_vector, n)
-# plot distribution using dataframe of parameter values
-# TODO: be able to input single color for all values
-# TODO: replace ggridges function with geom_density if possible
-plot.list <- list()
-for(i in  seq_along(parnames)){
-sub_df <- dist_df[dist_df$parameter == parnames[i],]
-plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) +
-geom_density_ridges( fill=plot_colors[i]) +
-theme(legend.position="none",
-axis.title.y=element_blank(),
-axis.text.y=element_blank(),
-axis.ticks.y=element_blank()) + ggtitle(parnames[i])
-}
-nplots <- length(plot.list)
-nCol <- floor(sqrt(nplots))
-do.call("grid.arrange", c(plot.list, ncol=nCol))
-View(dist_df)
-dist_df[dist_df$parameter == "fineroot2leaf",]
-dist_df$values[dist_df$parameter == "fineroot2leaf"]
-dist_df$value[dist_df$parameter == "fineroot2leaf"]
-right_values <- dist_df$value[dist_df$parameter == "fineroot2leaf"]
-hist(right_values)
-library(ggplot2)
-load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
-single_param <- prior.distns[1,]
-num_values <- 1000000
-expression <- paste0("r", single_param$distn, "(", num_values, ",", single_param$parama, ",", single_param$paramb, ")")
-single_param_values <- data.frame(values = eval(parse(text = expression)))
-head(single_param_values)
-hist(single_param_values)
-hist(single_param_values$values)
-max(single_param_values$values)
-max(right_values)
-plot_db_distns <- function(prior.distns){
-# set up empty matrix to hold values for each parameter from distribution
-parnames <- rownames(prior.distns)
-dist_matrix <- matrix(NA, nrow = 1000, ncol = length(parnames))
-colnames(dist_matrix) <- parnames
-# generate 1 million values for each parameter and put into matrix
-for(i in seq_along(parnames)){
-post <- dist_matrix[rownames(dist_matrix) == parnames[i],]
-print(paste0("r", prior.distns$distn[i],"(1000,",
-prior.distns$parama[i], ",",
-prior.distns$paramb[i],")"))
-dist_matrix[,i] <- eval(parse(text = paste0("r", prior.distns$distn[i],"(1000,",
-prior.distns$parama[i], ",",
-prior.distns$paramb[i],")")))
-}
-# manipulate into long dataframe
-dist_df <- reshape::melt(dist_matrix)
-colnames(dist_df) <- c("dist", "parameter", "value")
-# TODO: adapt name for prior + data/default
-dist_df$dist <- "prior"
-# get colors for each distribution
-n <- length(parnames)
-qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
-col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
-plot_colors =sample(col_vector, n)
-# plot distribution using dataframe of parameter values
-# TODO: be able to input single color for all values
-# TODO: replace ggridges function with geom_density if possible
-plot.list <- list()
-for(i in  seq_along(parnames)){
-sub_df <- dist_df[dist_df$parameter == parnames[i],]
-plot.list[[i]] <- ggplot(sub_df, aes(x = value, y = 0)) +
-geom_density_ridges( fill=plot_colors[i]) +
-theme(legend.position="none",
-axis.title.y=element_blank(),
-axis.text.y=element_blank(),
-axis.ticks.y=element_blank()) + ggtitle(parnames[i])
-}
-nplots <- length(plot.list)
-nCol <- floor(sqrt(nplots))
-do.call("grid.arrange", c(plot.list, ncol=nCol))
-}
-plot_db_distns(prior.distns)
-prior.distns
-expression
-rlnorm(1000,0.811,0.843)
-max(rlnorm(1000,0.811,0.843))
-max(rlnorm(1e+06,0.811,0.843))
-1e+06
-max(rlnorm(1e+06,0.811,0.843))
-options(scipen = 999)
-1e+06
-max(rlnorm(1e+06,0.811,0.843))
-max(rlnorm(1000000,0.811,0.843))
-max(rlnorm(1000,0.811,0.843))
-source("sentinel-detection/parameter_dists/plot_priors_istem.R")
-source("pecan_riemer_fork/pecan/base/visualization/R/plot_parameter_dists.R")
-library(shiny)
-shiny::shinyApp(ui, server)
-library(shiny)
-getwd()
-setwd("~/pecan/shiny")
-getwd()
-runApp("workflowPlot")
-library(plotly)
-install.packages("plotly")
-.libPaths("~/R_libs/")
-install.packages("plotly")
-library(plotly)
-.libPaths("~/R_libs/")
-library(shiny)
-setwd("~/pecan/shiny")
-runApp("workflowPlot")
-install.packages("shinythemes")
-runApp("workflowPlot")
-runApp("workflowPlot")
-install.packages("shinyjs")
-runApp("workflowPlot")
-getwd()
-setwd("/home/kristinariemer/")
-trait.mcmc <- load("biocro_results/pft/salix/trait.mcmc.Rdata")
-trait.mcmc
-head(trait.mcmc)
-load("biocro_results/pft/salix/trait.mcmc.Rdata")
-View(trait.mcmc)
-head(trait.mcmc$stomatal_slope.BB)
-trait.mcmc$stomatal_slope.BB[[1]]
-head(trait.mcmc$stomatal_slope.BB[[1]])
-head(trait.mcmc$stomatal_slope.BB[[2]])
-head(trait.mcmc$stomatal_slope.BB[[3]])
-load("biocro_results/pft/salix/prior.distns.Rdata")
-View(prior.distns)
-priors <- prior.distns
-do.plot <- !is.null(outdir)
-filename.flag = ""
-outdir = NULL
-trait.data = NULL
-do.plot <- !is.null(outdir)
-if (do.plot == TRUE) {
-pdf(file.path(outdir, paste("posteriors", filename.flag, ".pdf", sep = "")))
-}
-do.plot
-names(trait.mcmc)
-names(trait.mcmc)[1]
-trait <- names(trait.mcmc)[1]
-dat <- trait.mcmc[[trait]]
-vname <- colnames(dat[[1]])
-dat
-vname
-if ("beta.o" %in% vname) {
-dat <- as.matrix(dat)[, "beta.o"]
-}
-pdist <- priors[trait, "distn"]
-pparm <- as.numeric(priors[trait, 2:3])
-ptrait <- trait
-## first determine the candidate set of models based on any range restrictions
-zerobound <- c("exp", "gamma", "lnorm", "weibull")
-pdist
-if (pdist %in% "beta") {
-m   <- mean(dat)
-v   <- var(dat)
-k   <- (1 - m)/m
-a   <- (k / ((1 + k) ^ 2 * v) - 1) / (1 + k)
-b   <- a * k
-fit <- try(suppressWarnings(fitdistr(dat, "beta", list(shape1 = a, shape2 = b))), silent = TRUE)
-if (do.plot) {
-x <- seq(0, 1, length = 1000)
-plot(density(dat), col = 2, lwd = 2, main = trait)
-if (!is.null(trait.data)) {
-rug(trait.data[[trait]]$Y, lwd = 2, col = "purple")
-}
-lines(x, dbeta(x, fit$estimate[1], fit$estimate[2]), lwd = 2, type = "l")
-lines(x, dbeta(x, pparm[1], pparm[2]), lwd = 3, type = "l", col = 3)
-legend("topleft",
-legend = c("data", "prior", "post", "approx"),
-col = c("purple", 3, 2, 1), lwd = 2)
-}
-posteriors[trait, "parama"] <- fit$estimate[1]
-posteriors[trait, "paramb"] <- fit$estimate[2]
-} else if (pdist %in% zerobound | (pdist == "unif" & pparm[1] > 0)) {
-dist.names <- c("exp", "lnorm", "weibull", "norm")
-fit <- list()
-fit[[1]] <- try(suppressWarnings(fitdistr(dat, "exponential")), silent = TRUE)
-## fit[[2]] <- fitdistr(dat,'f',list(df1=10,df2=2*mean(dat)/(max(mean(dat)-1,1))))
-fit[[2]] <- try(suppressWarnings(fitdistr(dat, "lognormal")), silent = TRUE)
-fit[[3]] <- try(suppressWarnings(fitdistr(dat, "weibull")), silent = TRUE)
-fit[[4]] <- try(suppressWarnings(fitdistr(dat, "normal")), silent = TRUE)
-if (!trait == "cuticular_cond") {
-fit[[5]] <- try(suppressWarnings(fitdistr(dat, "gamma")), silent = TRUE)
-dist.names <- c(dist.names, "gamma")
-}
-failfit.bool <- sapply(fit, class) == "try-error"
-fit[failfit.bool] <- NULL
-dist.names <- dist.names[!failfit.bool]
-fparm <- lapply(fit, function(x) { as.numeric(x$estimate) })
-fAIC <- lapply(fit, AIC)
-bestfit <- which.min(fAIC)
-posteriors[ptrait, "distn"] <- dist.names[bestfit]
-posteriors[ptrait, "parama"] <- fit[[bestfit]]$estimate[1]
-if (bestfit == 1) {
-posteriors[ptrait, "paramb"] <- NA
-} else {
-posteriors[ptrait, "paramb"] <- fit[[bestfit]]$estimate[2]
-}
-if (do.plot) {
-.dens_plot(posteriors, priors, ptrait, dat, trait, trait.data)
-}
-} else {
-## default: NORMAL
-posteriors[trait, "distn"] <- "norm"
-posteriors[trait, "parama"] <- mean(dat)
-posteriors[trait, "paramb"] <- sd(dat)
-if (do.plot) {
-.dens_plot(posteriors, priors, ptrait, dat, trait, trait.data)
-}
-}
-posteriors
-## initialization
-posteriors <- priors
-posteriors
-if (pdist %in% "beta") {
-m   <- mean(dat)
-v   <- var(dat)
-k   <- (1 - m)/m
-a   <- (k / ((1 + k) ^ 2 * v) - 1) / (1 + k)
-b   <- a * k
-fit <- try(suppressWarnings(fitdistr(dat, "beta", list(shape1 = a, shape2 = b))), silent = TRUE)
-if (do.plot) {
-x <- seq(0, 1, length = 1000)
-plot(density(dat), col = 2, lwd = 2, main = trait)
-if (!is.null(trait.data)) {
-rug(trait.data[[trait]]$Y, lwd = 2, col = "purple")
-}
-lines(x, dbeta(x, fit$estimate[1], fit$estimate[2]), lwd = 2, type = "l")
-lines(x, dbeta(x, pparm[1], pparm[2]), lwd = 3, type = "l", col = 3)
-legend("topleft",
-legend = c("data", "prior", "post", "approx"),
-col = c("purple", 3, 2, 1), lwd = 2)
-}
-posteriors[trait, "parama"] <- fit$estimate[1]
-posteriors[trait, "paramb"] <- fit$estimate[2]
-} else if (pdist %in% zerobound | (pdist == "unif" & pparm[1] > 0)) {
-dist.names <- c("exp", "lnorm", "weibull", "norm")
-fit <- list()
-fit[[1]] <- try(suppressWarnings(fitdistr(dat, "exponential")), silent = TRUE)
-## fit[[2]] <- fitdistr(dat,'f',list(df1=10,df2=2*mean(dat)/(max(mean(dat)-1,1))))
-fit[[2]] <- try(suppressWarnings(fitdistr(dat, "lognormal")), silent = TRUE)
-fit[[3]] <- try(suppressWarnings(fitdistr(dat, "weibull")), silent = TRUE)
-fit[[4]] <- try(suppressWarnings(fitdistr(dat, "normal")), silent = TRUE)
-if (!trait == "cuticular_cond") {
-fit[[5]] <- try(suppressWarnings(fitdistr(dat, "gamma")), silent = TRUE)
-dist.names <- c(dist.names, "gamma")
-}
-failfit.bool <- sapply(fit, class) == "try-error"
-fit[failfit.bool] <- NULL
-dist.names <- dist.names[!failfit.bool]
-fparm <- lapply(fit, function(x) { as.numeric(x$estimate) })
-fAIC <- lapply(fit, AIC)
-bestfit <- which.min(fAIC)
-posteriors[ptrait, "distn"] <- dist.names[bestfit]
-posteriors[ptrait, "parama"] <- fit[[bestfit]]$estimate[1]
-if (bestfit == 1) {
-posteriors[ptrait, "paramb"] <- NA
-} else {
-posteriors[ptrait, "paramb"] <- fit[[bestfit]]$estimate[2]
-}
-if (do.plot) {
-.dens_plot(posteriors, priors, ptrait, dat, trait, trait.data)
-}
-} else {
-## default: NORMAL
-posteriors[trait, "distn"] <- "norm"
-posteriors[trait, "parama"] <- mean(dat)
-posteriors[trait, "paramb"] <- sd(dat)
-if (do.plot) {
-.dens_plot(posteriors, priors, ptrait, dat, trait, trait.data)
-}
-}
-if (do.plot) {
-dev.off()
-}
-do.plot
-!is.null(outdir)
-outdir <- ""
-do.plot <- !is.null(outdir)
-do.plot
-if (do.plot == TRUE) {
-pdf(file.path(outdir, paste("posteriors", filename.flag, ".pdf", sep = "")))
-}
-# ----------------------------------------------------------------------
-# Load required libraries
-# ----------------------------------------------------------------------
-library(PEcAn.all)
-library(PEcAn.utils)
-library(RCurl)
-# make sure always to call status.end
-options(warn=1)
-options(error=quote({
-PEcAn.utils::status.end("ERROR")
-PEcAn.remote::kill.tunnel(settings)
-if (!interactive()) {
-q(status = 1)
-}
-}))
-# ----------------------------------------------------------------------
-# PEcAn Workflow
-# ----------------------------------------------------------------------
-# Open and read in settings file for PEcAn run.
-args <- commandArgs(trailingOnly = TRUE)
-if (is.na(args[1])){
-settings <- PEcAn.settings::read.settings("pecan.xml")
-} else {
-settings.file <- args[1]
-settings <- PEcAn.settings::read.settings(settings.file)
-}
-# ----------------------------------------------------------------------
-# Load required libraries
-# ----------------------------------------------------------------------
-library(PEcAn.all)
-library(PEcAn.utils)
-library(RCurl)
-# make sure always to call status.end
-options(warn=1)
-options(error=quote({
-PEcAn.utils::status.end("ERROR")
-PEcAn.remote::kill.tunnel(settings)
-if (!interactive()) {
-q(status = 1)
-}
-}))
-# ----------------------------------------------------------------------
-# PEcAn Workflow
-# ----------------------------------------------------------------------
-# Open and read in settings file for PEcAn run.
-args <- commandArgs(trailingOnly = TRUE)
-if (is.na(args[1])){
-settings <- PEcAn.settings::read.settings("/data/test_files/ed2_files/pecan64.ed2.xml")
-} else {
-settings.file <- args[1]
-settings <- PEcAn.settings::read.settings(settings.file)
-}
-# Check for additional modules that will require adding settings
-if("benchmarking" %in% names(settings)){
-library(PEcAn.benchmark)
-settings <- papply(settings, read_settings_BRR)
-}
-if("sitegroup" %in% names(settings)){
-if(is.null(settings$sitegroup$nSite)){
-settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
-sitegroupId = settings$sitegroup$id)
-} else {
-settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
-sitegroupId = settings$sitegroup$id,
-nSite = settings$sitegroup$nSite)
-}
-settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
-}
-# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
-settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
-# Write pecan.CHECKED.xml
-PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
-# start from scratch if no continue is passed in
-statusFile <- file.path(settings$outdir, "STATUS")
-if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
-file.remove(statusFile)
-}
-# Do conversions
-settings <- PEcAn.workflow::do_conversions(settings)
-# Query the trait database for data and priors
-if (PEcAn.utils::status.check("TRAIT") == 0){
-PEcAn.utils::status.start("TRAIT")
-settings <- PEcAn.workflow::runModule.get.trait.data(settings)
-PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+# Write model specific configs
+if (PEcAn.utils::status.check("CONFIG") == 0){
+PEcAn.utils::status.start("CONFIG")
+settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
 PEcAn.utils::status.end()
-} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
-settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
 }
-library(PEcAn.all)
+devtools::load_all("pecan/base/db/")
+devtools::load_all("pecan/base/all/")
+#library(PEcAn.all)
+#debugonce(PEcAn.DB::get.trait.data.pft)
 library(PEcAn.utils)
 library(RCurl)
-#system('rm -rf ~/ed2_results')
 # make sure always to call status.end
 options(warn=1)
 options(error=quote({
@@ -425,7 +30,7 @@ q(status = 1)
 # Open and read in settings file for PEcAn run.
 args <- commandArgs(trailingOnly = TRUE)
 if (is.na(args[1])){
-settings <- PEcAn.settings::read.settings("/data/test_files/ed2_files/pecan64.ed2.xml")
+settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml")
 } else {
 settings.file <- args[1]
 settings <- PEcAn.settings::read.settings(settings.file)
@@ -483,7 +88,8 @@ PEcAn.utils::status.end()
 } else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
 settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
 }
-if ((length(which(commandArgs() == "--advanced")) != 0) && (PEcAn.utils::status.check("ADVANCED") == 0)) {
+if ((length(which(commandArgs() == "--advanced")) != 0) &&
+(PEcAn.utils::status.check("ADVANCED") == 0)) {
 PEcAn.utils::status.start("ADVANCED")
 q();
 }
@@ -494,19 +100,413 @@ PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
 PEcAn.utils::status.end()
 }
 traceback()
-library(ggplot2)
-load("clm_params_data_out/pft/Setaria WT priors data/prior.distns.Rdata")
-ex_single_param <- prior.distns[1,]
-plot_parameter_dist <- function(param_data, num_values = 1000000){
-expression <- paste0("r", param_data$distn, "(", num_values, ",", param_data$parama, ",", param_data$paramb, ")")
-single_param_values <- data.frame(values = eval(parse(text = expression)))
-single_param_plot <- ggplot(single_param_values, aes(x = values)) +
-geom_density() +
-ggtitle(row.names(param_data))
-print(single_param_plot)
+?is.MultiSettings
+PEcAn.settings::is.MultiSettings
+# ----------------------------------------------------------------------
+# Load required libraries
+# ----------------------------------------------------------------------
+#.libPaths()
+devtools::load_all("pecan/base/db/")
+devtools::load_all("pecan/base/all/")
+#library(PEcAn.all)
+#debugonce(PEcAn.DB::get.trait.data.pft)
+debugonce(PEcAn.remote::runModule.start.model.runs)
+library(PEcAn.utils)
+library(RCurl)
+# make sure always to call status.end
+options(warn=1)
+options(error=quote({
+PEcAn.utils::status.end("ERROR")
+PEcAn.remote::kill.tunnel(settings)
+if (!interactive()) {
+q(status = 1)
 }
-plot_parameter_dist(ex_single_param)
+}))
+# ----------------------------------------------------------------------
+# PEcAn Workflow
+# ----------------------------------------------------------------------
+# Open and read in settings file for PEcAn run.
+args <- commandArgs(trailingOnly = TRUE)
+if (is.na(args[1])){
+settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml")
+} else {
+settings.file <- args[1]
+settings <- PEcAn.settings::read.settings(settings.file)
+}
+# Check for additional modules that will require adding settings
+if("benchmarking" %in% names(settings)){
+library(PEcAn.benchmark)
+settings <- papply(settings, read_settings_BRR)
+}
+if("sitegroup" %in% names(settings)){
+if(is.null(settings$sitegroup$nSite)){
+settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+sitegroupId = settings$sitegroup$id)
+} else {
+settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+sitegroupId = settings$sitegroup$id,
+nSite = settings$sitegroup$nSite)
+}
+settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+}
+# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+# Write pecan.CHECKED.xml
+PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+# start from scratch if no continue is passed in
+statusFile <- file.path(settings$outdir, "STATUS")
+if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+file.remove(statusFile)
+}
+# Do conversions
+settings <- PEcAn.workflow::do_conversions(settings)
+# Query the trait database for data and priors
+if (PEcAn.utils::status.check("TRAIT") == 0){
+PEcAn.utils::status.start("TRAIT")
+settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+PEcAn.utils::status.end()
+} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+}
+# Run the PEcAn meta.analysis
+if(!is.null(settings$meta.analysis)) {
+if (PEcAn.utils::status.check("META") == 0){
+PEcAn.utils::status.start("META")
+PEcAn.MA::runModule.run.meta.analysis(settings)
+PEcAn.utils::status.end()
+}
+}
+#!/usr/bin/env Rscript
+#-------------------------------------------------------------------------------
+# Copyright (c) 2012 University of Illinois, NCSA.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the
+# University of Illinois/NCSA Open Source License
+# which accompanies this distribution, and is available at
+# http://opensource.ncsa.illinois.edu/license.html
+#-------------------------------------------------------------------------------
+# ----------------------------------------------------------------------
+# Load required libraries
+# ----------------------------------------------------------------------
+#.libPaths()
+devtools::load_all("pecan/base/db/")
+devtools::load_all("pecan/base/all/")
+#library(PEcAn.all)
+#debugonce(PEcAn.DB::get.trait.data.pft)
+debugonce(PEcAn.remote::runModule.start.model.runs)
+library(PEcAn.utils)
+library(RCurl)
+# make sure always to call status.end
+options(warn=1)
+options(error=quote({
+PEcAn.utils::status.end("ERROR")
+PEcAn.remote::kill.tunnel(settings)
+if (!interactive()) {
+q(status = 1)
+}
+}))
+#options(warning.expression=status.end("ERROR"))
+# ----------------------------------------------------------------------
+# PEcAn Workflow
+# ----------------------------------------------------------------------
+# Open and read in settings file for PEcAn run.
+args <- commandArgs(trailingOnly = TRUE)
+if (is.na(args[1])){
+settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml")
+} else {
+settings.file <- args[1]
+settings <- PEcAn.settings::read.settings(settings.file)
+}
+# Check for additional modules that will require adding settings
+if("benchmarking" %in% names(settings)){
+library(PEcAn.benchmark)
+settings <- papply(settings, read_settings_BRR)
+}
+if("sitegroup" %in% names(settings)){
+if(is.null(settings$sitegroup$nSite)){
+settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+sitegroupId = settings$sitegroup$id)
+} else {
+settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+sitegroupId = settings$sitegroup$id,
+nSite = settings$sitegroup$nSite)
+}
+settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+}
+# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+# Write pecan.CHECKED.xml
+PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+# start from scratch if no continue is passed in
+statusFile <- file.path(settings$outdir, "STATUS")
+if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+file.remove(statusFile)
+}
+# Do conversions
+settings <- PEcAn.workflow::do_conversions(settings)
+# Query the trait database for data and priors
+if (PEcAn.utils::status.check("TRAIT") == 0){
+PEcAn.utils::status.start("TRAIT")
+settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+PEcAn.utils::status.end()
+} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+}
+# Run the PEcAn meta.analysis
+if(!is.null(settings$meta.analysis)) {
+if (PEcAn.utils::status.check("META") == 0){
+PEcAn.utils::status.start("META")
+PEcAn.MA::runModule.run.meta.analysis(settings)
+PEcAn.utils::status.end()
+}
+}
+# Write model specific configs
+if (PEcAn.utils::status.check("CONFIG") == 0){
+PEcAn.utils::status.start("CONFIG")
+settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+PEcAn.utils::status.end()
+} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+}
+if ((length(which(commandArgs() == "--advanced")) != 0) &&
+(PEcAn.utils::status.check("ADVANCED") == 0)) {
+PEcAn.utils::status.start("ADVANCED")
+q();
+}
+# Start ecosystem model runs
+if (PEcAn.utils::status.check("MODEL") == 0) {
+PEcAn.utils::status.start("MODEL")
+PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+PEcAn.utils::status.end()
+}
+#!/usr/bin/env Rscript
+#-------------------------------------------------------------------------------
+# Copyright (c) 2012 University of Illinois, NCSA.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the
+# University of Illinois/NCSA Open Source License
+# which accompanies this distribution, and is available at
+# http://opensource.ncsa.illinois.edu/license.html
+#-------------------------------------------------------------------------------
+# ----------------------------------------------------------------------
+# Load required libraries
+# ----------------------------------------------------------------------
+#.libPaths()
+devtools::load_all("pecan/base/db/")
+devtools::load_all("pecan/base/all/")
+#library(PEcAn.all)
+#debugonce(PEcAn.DB::get.trait.data.pft)
+debugonce(PEcAn.remote::runModule.start.model.runs)
+library(PEcAn.utils)
+library(RCurl)
+# make sure always to call status.end
+options(warn=1)
+options(error=quote({
+PEcAn.utils::status.end("ERROR")
+PEcAn.remote::kill.tunnel(settings)
+if (!interactive()) {
+q(status = 1)
+}
+}))
+#options(warning.expression=status.end("ERROR"))
+# ----------------------------------------------------------------------
+# PEcAn Workflow
+# ----------------------------------------------------------------------
+# Open and read in settings file for PEcAn run.
+args <- commandArgs(trailingOnly = TRUE)
+if (is.na(args[1])){
+settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml")
+} else {
+settings.file <- args[1]
+settings <- PEcAn.settings::read.settings(settings.file)
+}
+# Check for additional modules that will require adding settings
+if("benchmarking" %in% names(settings)){
+library(PEcAn.benchmark)
+settings <- papply(settings, read_settings_BRR)
+}
+if("sitegroup" %in% names(settings)){
+if(is.null(settings$sitegroup$nSite)){
+settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+sitegroupId = settings$sitegroup$id)
+} else {
+settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+sitegroupId = settings$sitegroup$id,
+nSite = settings$sitegroup$nSite)
+}
+settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+}
+# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+# Write pecan.CHECKED.xml
+PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+# start from scratch if no continue is passed in
+statusFile <- file.path(settings$outdir, "STATUS")
+if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+file.remove(statusFile)
+}
+# Do conversions
+settings <- PEcAn.workflow::do_conversions(settings)
+# Query the trait database for data and priors
+if (PEcAn.utils::status.check("TRAIT") == 0){
+PEcAn.utils::status.start("TRAIT")
+settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+PEcAn.utils::status.end()
+} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+}
+# Run the PEcAn meta.analysis
+if(!is.null(settings$meta.analysis)) {
+if (PEcAn.utils::status.check("META") == 0){
+PEcAn.utils::status.start("META")
+PEcAn.MA::runModule.run.meta.analysis(settings)
+PEcAn.utils::status.end()
+}
+}
+# Write model specific configs
+if (PEcAn.utils::status.check("CONFIG") == 0){
+PEcAn.utils::status.start("CONFIG")
+settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+PEcAn.utils::status.end()
+} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+}
+if ((length(which(commandArgs() == "--advanced")) != 0) &&
+(PEcAn.utils::status.check("ADVANCED") == 0)) {
+PEcAn.utils::status.start("ADVANCED")
+q();
+}
+# Start ecosystem model runs
+if (PEcAn.utils::status.check("MODEL") == 0) {
+PEcAn.utils::status.start("MODEL")
+PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+PEcAn.utils::status.end()
+}
+settings
+is.MultiSettings(settings)
+is.Settings(settings)
+PEcAn.settings::is.MultiSettings(settings)
+PEcAn.settings::is.Settings(settings)
 sessionInfo()
-sessionInfo()
-PEcAn.visualization::plot.netcdf("biocro_darpa_results/out/SA-salix-chi_leaf-0.159/2004.nc", "LAI")
-PEcAn.visualization::plot.netcdf("biocro_darpa_results/out/SA-salix-chi_leaf-0.159/2004.nc", "LAI")
+#!/usr/bin/env Rscript
+#-------------------------------------------------------------------------------
+# Copyright (c) 2012 University of Illinois, NCSA.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the
+# University of Illinois/NCSA Open Source License
+# which accompanies this distribution, and is available at
+# http://opensource.ncsa.illinois.edu/license.html
+#-------------------------------------------------------------------------------
+# ----------------------------------------------------------------------
+# Load required libraries
+# ----------------------------------------------------------------------
+#.libPaths()
+devtools::load_all("pecan/base/db/")
+devtools::load_all("pecan/base/all/")
+#library(PEcAn.all)
+#debugonce(PEcAn.DB::get.trait.data.pft)
+debugonce(PEcAn.remote::runModule.start.model.runs)
+library(PEcAn.utils)
+library(RCurl)
+# make sure always to call status.end
+options(warn=1)
+options(error=quote({
+PEcAn.utils::status.end("ERROR")
+PEcAn.remote::kill.tunnel(settings)
+if (!interactive()) {
+q(status = 1)
+}
+}))
+#options(warning.expression=status.end("ERROR"))
+# ----------------------------------------------------------------------
+# PEcAn Workflow
+# ----------------------------------------------------------------------
+# Open and read in settings file for PEcAn run.
+args <- commandArgs(trailingOnly = TRUE)
+if (is.na(args[1])){
+settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml")
+} else {
+settings.file <- args[1]
+settings <- PEcAn.settings::read.settings(settings.file)
+}
+# Check for additional modules that will require adding settings
+if("benchmarking" %in% names(settings)){
+library(PEcAn.benchmark)
+settings <- papply(settings, read_settings_BRR)
+}
+if("sitegroup" %in% names(settings)){
+if(is.null(settings$sitegroup$nSite)){
+settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+sitegroupId = settings$sitegroup$id)
+} else {
+settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+sitegroupId = settings$sitegroup$id,
+nSite = settings$sitegroup$nSite)
+}
+settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+}
+# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+# Write pecan.CHECKED.xml
+PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+# start from scratch if no continue is passed in
+statusFile <- file.path(settings$outdir, "STATUS")
+if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+file.remove(statusFile)
+}
+# Do conversions
+settings <- PEcAn.workflow::do_conversions(settings)
+# Query the trait database for data and priors
+if (PEcAn.utils::status.check("TRAIT") == 0){
+PEcAn.utils::status.start("TRAIT")
+settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+PEcAn.utils::status.end()
+} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+}
+# Run the PEcAn meta.analysis
+if(!is.null(settings$meta.analysis)) {
+if (PEcAn.utils::status.check("META") == 0){
+PEcAn.utils::status.start("META")
+PEcAn.MA::runModule.run.meta.analysis(settings)
+PEcAn.utils::status.end()
+}
+}
+# Write model specific configs
+if (PEcAn.utils::status.check("CONFIG") == 0){
+PEcAn.utils::status.start("CONFIG")
+settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+PEcAn.utils::status.end()
+} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+}
+if ((length(which(commandArgs() == "--advanced")) != 0) &&
+(PEcAn.utils::status.check("ADVANCED") == 0)) {
+PEcAn.utils::status.start("ADVANCED")
+q();
+}
+library(PEcAn.settings)
+devtools::load_all("pecan/base/settings/")
+# Start ecosystem model runs
+if (PEcAn.utils::status.check("MODEL") == 0) {
+PEcAn.utils::status.start("MODEL")
+PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+PEcAn.utils::status.end()
+}
+.libPaths
+.libPaths()
+library(PEcAn.all)
+library(PEcAn.all)
+get.trait.data.pft
+# ----------------------------------------------------------------------
+# Load required libraries
+# ----------------------------------------------------------------------
+#.libPaths()
+devtools::load_all("pecan/base/db/")

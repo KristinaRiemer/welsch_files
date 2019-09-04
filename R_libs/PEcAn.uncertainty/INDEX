@@ -1,0 +1,35 @@
+ensemble.ts             Plots an ensemble time-series from PEcAn for
+                        the selected target variable
+flux.uncertainty        Calculate parameters for heteroskedastic flux
+                        uncertainty
+get.change              Get delta between sequential flux datapoints
+get.coef.var            Get coefficient of variance
+get.elasticity          Get Elasticity
+get.ensemble.samples    Get Ensemble Samples
+get.gi.phii             Get g_i(phi_i)
+get.parameter.samples   Sample from priors or posteriors
+get.sensitivity         Calculate Sensitivity
+input.ens.gen           Function for generating samples based on
+                        sampling method, parent or etc
+kurtosis                Calculate excess kurtosis from a vector
+plot_flux_uncertainty   Plot fit for heteroskedastic flux uncertainty
+plot_sensitivities      Plot Sensitivities
+plot_sensitivity        Sensitivity plot
+plot_variance_decomposition
+                        Variance Decomposition Plots
+prep.data.assim         prep.data.assim
+read.ameriflux.L2       Read Ameriflux L2 Data
+read.ensemble.output    Read ensemble output
+read.ensemble.ts        Reads an ensemble time-series from PEcAn for
+                        the selected target variable
+run.ensemble.analysis   run ensemble.analysis
+run.sensitivity.analysis
+                        run sensitivity.analysis
+sa.splinefun            Sensitivity spline function
+sd.var                  Standard deviation of sample variance
+sensitivity.analysis    Sensitivity Analysis
+spline.ensemble         Spline Ensemble
+spline.truncate         Truncate spline
+variance.stats          variance statistics
+write.ensemble.configs
+                        Write ensemble config files

@@ -1,0 +1,3 @@
+BADM
+soil_class: .Random.seed .extract.nc.module .getRunSettings .met2model.module air.cond air.hcap clay.cond clay.hcap clay.now fieldcp.K grav h2o.cond kair kclay ksand ksilt n nstext.lines nstext.polygon sand.cond sand.hcap sand.now silt.cond silt.hcap soil.key soil.name soilcp.MPa soilld.MPa soilwp.MPa stext.lines stext.polygon texture theta.crit xclay.def xsand.def
+texture

@@ -1,0 +1,101 @@
+PEcAn                   R package to support PEcAn, the Predictive
+                        Ecosystem Analyzer
+arrhenius.scaling       Arrhenius scaling
+as.sequence             as.sequence
+bibtexify               bibtexify
+bugs.rdist              bugs.rdist
+capitalize              Capitalize a string
+cf2datetime             Convert CF-style date-time to POSIXct date-time
+clear.scratch           Clear EBI-CLUSTER worker node local scratch
+                        directories of old PEcAn output
+convert.expr            convert.expr
+convert.input           Convert between formats, reusing existing files
+                        where possible
+create.base.plot        Create Base Plot
+datetime2cf             Convert POSIXct date-time to CF-style date-time
+datetime2doy            Extract Julian day from CF or POSIXct
+                        date-times
+days_in_year            Number of days in a year
+dhist                   Diagonally Cut Histogram
+distn.stats             Distribution Stats
+distn.table.stats       return mean and standard deviation of a
+                        distribution for each distribution in a table
+                        with 'colnames = c('distn', 'a', 'b')', e.g. in
+                        a table of priors
+do_conversions          do_conversions
+download.file           download.file
+download.url            Download file from the url.
+ensemble.filename       Generate ensemble filenames
+full.path               Creates an absolute path to a folder
+get.ensemble.inputs     get.ensemble.inputs
+get.ensemble.samples    Get Ensemble Samples
+get.model.output        Retrieve model output
+get.parameter.stat      Get Parameter Statistics
+get.quantiles           Get Quantiles
+get.results             Generate model output for PEcAn analyses
+get.run.id              Get Run ID
+get.sa.sample.list      get.sa.sample.list
+get.sa.samples          get sensitivity analysis samples
+get.stats.mcmc          Get stats for parameters in MCMC output
+grid2netcdf             grid2netcdf
+iqr                     Interquartile range
+left.pad.zeros          Left Pad Zeros
+listToArgString         format a list of arguments as one
+                        comma-separated string
+load.modelpkg           Load model package
+load_local              Load an 'RData' file into a list
+logger.debug            Logger functions (imported temporarily from
+                        PEcAn.logger)
+match_file              Match a file
+mcmc.list2init          Convert mcmc.list to initial condition list
+met2model.exists        met2model.exists
+misc.are.convertible    misc.are.convertible
+misc.convert            misc.convert
+mstmipvar               MstMIP variable
+n_leap_day              n_leap_day
+need_packages           Check if required packages are installed, and
+                        throw an informative error if not.
+newxtable               newxtable
+paste.stats             Paste Stats
+pdf.stats               Probability Distirbution Function Statistics
+plot_data               Add data to plot
+r2bugs.distributions    convert R parameterizations to BUGS
+                        paramaterizations
+read.ensemble.output    Read ensemble output
+read.output             Read model output
+read.sa.output          Read Sensitivity Analysis output
+read_web_config         Read 'config.php' file into an R list
+regrid                  regrid
+retry.func              retry.func
+rsync                   rsync
+run.write.configs       Run model specific write configuration
+                        functions
+seconds_in_year         Number of seconds in a given year
+sendmail                Clear EBI-CLUSTER worker node local scratch
+                        directories of old PEcAn output
+sensitivity.filename    Generate sensitivity analysis filenames
+ssh                     SSH
+standard_vars           Standardized variable names and units for PEcAn
+status.check            status.check
+status.end              status.end
+status.skip             status.skip
+status.start            status.start
+summarize.result        Summarize Results
+tabnum                  Table numbers
+temp.settings           temp.settings
+theme_border            Theme border for plot
+timezone_hour           timezone_hour
+to_ncdim                Make some values into an NCDF dimension
+                        variable
+to_ncvar                Define an NCDF variable
+trait.lookup            Dictionary of terms used to identify traits in
+                        ed, filenames, and figures
+transformstats          Transform Stats
+tryl                    tryl
+units_are_equivalent    Check if two unit strings are equivalent
+vecpaste                vecpaste
+write.ensemble.configs
+                        Write ensemble configs
+write.sa.configs        Write sensitivity analysis config files
+zero.bounded.density    Zero Bounded Density
+zero.truncate           Zero Truncate

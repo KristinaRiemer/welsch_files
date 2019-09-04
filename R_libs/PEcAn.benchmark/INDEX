@@ -1,0 +1,53 @@
+add_workflow_info       Add workflow specific info to settings list for
+                        benchmarking
+align_by_first_observation
+                        align_first_observation
+align_data              Align timeseries data
+align_data_to_data_pft
+                        align_data_to_data_pft
+align_pft               align_pft
+bm_settings2pecan_settings
+                        Move benchmarking settings back in to original
+                        pecan settings object
+calc_benchmark          Calculate benchmarking statistics
+calc_metrics            calc_metrics
+check_BRR               Check whether a run has been registered as a
+                        reference run in BETY
+check_if_legal_table    check_if_legal_table
+check_if_list_of_pfts   check_if_list_of_pfts
+check_if_species_list   check_if_species_list
+clean_settings_BRR      Cleans PEcAn settings file and prepares the
+                        settings to be saved in a reference run record
+                        in BETY
+create_BRR              Create benchmark reference run and ensemble
+define_benchmark        Benchmark Definition: Retrieve or Create Bety
+                        Benchmarking Records
+format_wide2long        format_wide2long
+get_species_list_standard
+                        get_species_list_standard
+load_csv                load_csv
+load_data               load_data
+load_rds                load_rds
+load_tab_separated_values
+                        load_tab_separated_values
+load_x_netcdf           load_x_netcdf
+match_timestep          Match time step
+mean_over_larger_timestep
+                        Calculate benchmarking statistics
+metric_AME              Absolute Maximum Error
+metric_Frechet          Frechet Distance
+metric_MAE              Mean Absolute Error
+metric_MSE              Mean Square Error
+metric_PPMC             Pearson Product Moment Correlation
+metric_R2               Coefficient of Determination (R2)
+metric_RAE              Relative Absolute Error
+metric_RMSE             Root Mean Square Error
+metric_cor              Correlation Coefficient
+metric_lmDiag_plot      Linear Regression Diagnostic Plot
+metric_residual_plot    Residual Plot
+metric_run              Model Run Check
+metric_scatter_plot     Scatter Plot
+metric_timeseries_plot
+                        Timeseries Plot
+read_settings_BRR       Read settings from database using reference run
+                        id

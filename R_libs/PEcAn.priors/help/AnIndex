@@ -1,0 +1,12 @@
+create.density.df	create.density.df
+fit.dist	fit.dist
+get.quantiles.from.density	get.quantiles.from.density
+get.sample	get.sample
+plot.densities	plot.densities
+plot.posterior.density	plot.posterior.density
+plot.prior.density	plot.prior.density
+plot.trait	plot.trait
+pr.dens	pr.dens
+pr.samp	pr.samp
+prior.fn	prior.fn
+priorfig	priorfig

@@ -1,0 +1,140 @@
+AirDens                 Air Density
+align.met               align.met
+browndog.met            get met data from browndog
+build_cf_variables_table_url
+                        Construct a URL to a specific version of the CF
+                        variables table XML
+cfmet.downscale.daily   daily to subdaily downscaling
+cfmet.downscale.subdaily
+                        subdaily downscaling
+cfmet.downscale.time    Downscale CF met data
+check_met_input_file    Check a meteorology data file for compliance
+                        with the PEcAn standard
+check_unit              Check that the unit of a variable in a NetCDF
+                        file is equivalent to the expected unit.
+closest_xy              closest_xy
+col2ncvar               Create 'ncvar' object from variable name
+cos_solar_zenith_angle
+                        Cosine of solar zenith angle
+daygroup                Assign daygroup tag for a given date
+db.site.lat.lon         db.site.lat.lon
+debias.met.regression   debias.met.regression
+debias_met              debias_met
+download.Ameriflux      download.Ameriflux
+download.AmerifluxLBL   Download Ameriflux LBL CSV files
+download.CRUNCEP        Download CRUNCEP data
+download.ERA5.old       Download ERA 5 data
+download.FACE           download.FACE
+download.Fluxnet2015    download.Fluxnet2015
+download.FluxnetLaThuile
+                        download.FluxnetLaThuile
+download.GFDL           Download GFDL CMIP5 outputs for a single grid
+                        point using OPeNDAP and convert to CF
+download.GLDAS          Download GLDAS data
+download.Geostreams     Download Geostreams data from Clowder API
+download.MACA           download.MACA
+download.MsTMIP_NARR    download.MsTMIP_NARR
+download.NARR           Download NARR files
+download.NARR_site      Download NARR time series for a single site
+download.NEONmet        Download NEON Site Met CSV files
+download.NLDAS          Download NLDAS met data
+download.NOAA_GEFS      Download NOAA GEFS Weather Data
+download.NOAA_GEFS_downscale
+                        Downscale NOAA GEFS Weather Data
+download.PalEON         download.PalEON
+download.PalEON_ENS     Download PalEON met ensemble files
+download.US_Syv         download.US-Syv
+download.US_WCr         download.US-WCr
+download.US_Wlef        download.US_Wlef
+downscale_ShortWave_to_hrly
+                        Downscale shortwave to hourly
+downscale_repeat_6hr_to_hrly
+                        Downscale repeat to hourly
+downscale_spline_to_hourly
+                        Downscale spline to hourly
+equation_of_time        Equation of time: Eccentricity and obliquity
+exner                   Exner function
+extract.local.CMIP5     extract.local.CMIP5
+extract.local.NLDAS     extract.local.NLDAS
+extract.nc              extract.nc
+extract.nc.ERA5         ERA5_extract
+gen.subdaily.models     gen.subdaily.models
+generate_narr_url       Generate NARR url from a vector of dates
+get.es                  get es
+get.lv                  Latent heat of vaporization
+get.ncvector            Get time series vector from netCDF file
+get.rh                  get RH
+get.vpd                 VPD
+get_NARR_thredds        Retrieve NARR data using thredds
+get_cf_variables_table
+                        Retrieve the current CF variables table from
+                        'cfconventions.org' and convert it into a
+                        'data.frame'
+get_clowderauth         Authentication lookup helper
+get_narr_url            Retrieve NARR data from a given URL
+latlon2lcc              Convert latitude and longitude to x-y
+                        coordinates (in km) in Lambert conformal conic
+                        projection (used by NARR)
+latlon2narr             Convert latitude and longitude coordinates to
+                        NARR indices
+lightME                 Simulates the light macro environment
+lm_ensemble_sims        lm_ensemble_sims
+load.cfmet              load CF met
+merge_met_variable      Merge a new met variable from an external file
+                        (e.g. CO2) into existing met files
+met.process             met.process
+met.process.stage       met.process.stage
+met2CF.ALMA             met2CF.ALMA
+met2CF.Ameriflux        met2CF.Ameriflux
+met2CF.AmerifluxLBL     met2CF.AmerifluxLBL
+met2CF.ERA5             met2cf.ERA5
+met2CF.FACE             convert FACE files to CF files
+met2CF.Geostreams       Convert geostreams JSON to CF met file
+met2CF.NARR             met2CF.NARR
+met2CF.PalEON           met2CF.PalEON
+met2CF.PalEONregional   met2CF.PalEONregional
+met2CF.csv              met2CF.csv
+met_temporal_downscale.Gaussian_ensemble
+                        met_temporal_downscale.Gaussian_ensemble
+metgapfill              Take an Ameriflux NetCDF file Fill missing met
+                        values using MDS approach using MPI-BGC
+                        REddyProc library Currently Future version:
+                        Choose which variables to gap fill Future
+                        version will first downscale and fill with
+                        NARR, then REddyProc
+metgapfill.NOAA_GEFS    Gapfill NOAA_GEFS weather data
+model.train             model.train
+narr_flx_vars           NARR flux and sfc variables
+nc.merge                nc.merge
+need_packages           Check if required packages are installed, and
+                        throw an informative error if not.
+par2ppfd                par2ppfd
+pecan_standard_met_table
+                        Conversion table for PEcAn standard meteorology
+permute.nc              permute.nc
+post_process            Post process raw NARR downloaded data frame
+predict_subdaily_met    predict_subdaily_met
+prepare_narr_year       Write NetCDF file for a single year of data
+qair2rh                 qair2rh
+read.register           read.register
+read_narr_var           Read a specific variable from a NARR NetCDF
+                        file
+rh2qair                 RH to SH
+robustly                Adverb to try calling a function 'n' times
+                        before giving up
+save.betas              save.betas
+save.model              save.model
+site.lst                site.lst
+site_from_tag           site_from_tag
+solarMJ2ppfd            MJ to PPFD
+spin.met                Spin-up meteorology
+split_wind              Split wind_speed into eastward_wind and
+                        northward_wind
+step_means              take mean at fixed intervals along a vector
+subdaily_pred           subdaily_pred
+sw2par                  SW to PAR
+sw2ppfd                 SW to PPFD
+temporal.downscale.functions
+                        temporal_downscale_functions
+upscale_met             upscale_met
+wide2long               Wide to Long

@@ -1,0 +1,38 @@
+Package: PEcAn.utils
+Type: Package
+Title: PEcAn functions used for ecological forecasts and reanalysis
+Version: 1.7.0
+Date: 2018-12-03
+Authors@R: c(person("Mike","Dietze"),
+             person("David","LeBauer"),
+             person("Xiaohui", "Feng"),
+             person("Dan"," Wang"),
+             person("Carl", "Davidson"),
+             person("Rob","Kooper"),
+             person("Shawn", "Serbin"))
+Author: David LeBauer, Mike Dietze, Xiaohui Feng, Dan Wang,
+        Carl Davidson, Rob Kooper, Shawn Serbin
+Maintainer: David LeBauer <dlebauer@illinois.edu>
+Description: The Predictive Ecosystem Carbon Analyzer
+    (PEcAn) is a scientific workflow management tool that
+    is designed to simplify the management of model
+    parameterization, execution, and analysis. The goal of
+    PEcAn is to streamline the interaction between data and
+    models, and to improve the efficacy of scientific
+    investigation.
+Imports: abind (>= 1.4.5), dplyr, lubridate (>= 1.6.0), magrittr, ncdf4
+        (>= 1.15), PEcAn.logger, PEcAn.remote, purrr, RCurl, stringi,
+        udunits2 (>= 0.11), XML
+Suggests: coda (>= 0.18), data.table, ggplot2, MASS,
+        PEcAn.data.atmosphere, PEcAn.data.land, PEcAn.emulator,
+        PEcAn.settings, PEcAn.DB, randtoolbox, raster, rjags, sp,
+        testthat (>= 2.0.0), xtable
+License: FreeBSD + file LICENSE
+Copyright: Authors
+LazyData: true
+Encoding: UTF-8
+RoxygenNote: 6.1.1
+Roxygen: list(markdown = TRUE)
+NeedsCompilation: no
+Packaged: 2019-09-04 18:56:16 UTC; kristinariemer
+Built: R 3.5.2; ; 2019-09-04 18:56:17 UTC; unix

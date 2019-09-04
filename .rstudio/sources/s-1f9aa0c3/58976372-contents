@@ -1,0 +1,165 @@
+if (!forceupdate) {
+  if (is.null(pft$posteriorid)) {
+    pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>% 
+      dplyr::filter(pft_id == !!pftid) %>% dplyr::arrange(dplyr::desc(created_at)) %>% 
+      head(1) %>% dplyr::pull(id)
+  }
+
+  
+
+  if (!forceupdate) {
+    if (is.null(pft$posteriorid)) {
+      recent_posterior <- dplyr::tbl(dbcon, "posteriors") %>%
+        dplyr::filter(pft_id == !!pftid) %>%
+        dplyr::arrange(dplyr::desc(created_at)) %>%
+        head(1) %>%
+        dplyr::pull(id)
+      if (length(recent_posterior) > 0) {
+        pft$posteriorid <- recent_posterior
+      } else {
+        PEcAn.logger::logger.info("No previous posterior found. Forcing update")
+      }     
+    }
+    
+
+    if (!forceupdate) {
+      if (is.null(pft$posteriorid)) {
+        # pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>% 
+        #   dplyr::filter(pft_id == !!pftid) %>% dplyr::arrange(dplyr::desc(created_at)) %>% 
+        #   head(1) %>% dplyr::pull(id)
+        recent_posterior <- dplyr::tbl(dbcon, "posteriors") %>%
+          dplyr::filter(pft_id == !!pftid) %>%
+          dplyr::arrange(dplyr::desc(created_at)) %>%
+          head(1) %>%
+          dplyr::pull(id)
+        if (length(recent_posterior) > 0) {
+          pft$posteriorid <- recent_posterior
+        } else {
+          PEcAn.logger::logger.info("No previous posterior found. Forcing update")
+        } 
+      }
+      if (!is.null(pft$posteriorid)) {
+        files <- dbfile.check(type = "Posterior", container.id = pft$posteriorid, 
+                              con = dbcon, return.all = TRUE)
+        need_files <- c(trait_data = "trait.data.Rdata", 
+                        priors = "prior.distns.Rdata", pft_membership = pft_member_filename)
+        ids <- match(need_files, files$file_name)
+        names(ids) <- names(need_files)
+        if (any(is.na(ids))) {
+          missing_files <- need_files[is.na(ids)]
+          PEcAn.logger::logger.info(paste0("Forcing meta-analysis update because ", 
+                                           "the following files are missing from the posterior: ", 
+                                           paste0(shQuote(missing_files), collapse = ", ")))
+          PEcAn.logger::logger.debug("\n `dbfile.check` returned the following output:\n", 
+                                     PEcAn.logger::print2string(files), wrap = FALSE)
+        }
+        else {
+          PEcAn.logger::logger.debug("All posterior files are present. Performing additional checks ", 
+                                     "to determine if meta-analysis needs to be updated.")
+          need_paths <- file.path(files$file_path[ids], 
+                                  need_files)
+          names(need_paths) <- names(need_files)
+          files_exist <- file.exists(need_paths)
+          foundallfiles <- all(files_exist)
+          if (!foundallfiles) {
+            PEcAn.logger::logger.warn("The following files are in database but not found on disk: ", 
+                                      paste(shQuote(need_files[!files_exist]), 
+                                            collapse = ", "), ". ", "Re-running meta-analysis.")
+          }
+          else {
+            PEcAn.logger::logger.debug("Checking if PFT membership has changed.")
+            existing_membership <- utils::read.csv(need_paths[["pft_membership"]], 
+                                                   colClasses = c("double", "character", "character", 
+                                                                  "character"), stringsAsFactors = FALSE, 
+                                                   na.strings = "")
+            diff_membership <- symmetric_setdiff(existing_membership, 
+                                                 pft_members, xname = "existing", yname = "current")
+            if (nrow(diff_membership) > 0) {
+              PEcAn.logger::logger.error("\n PFT membership has changed. \n", 
+                                         "Difference is:\n", PEcAn.logger::print2string(diff_membership), 
+                                         wrap = FALSE)
+              foundallfiles <- FALSE
+            }
+            PEcAn.logger::logger.debug("Checking if priors have changed")
+            existing_prior <- PEcAn.utils::load_local(need_paths[["priors"]])[["prior.distns"]]
+            diff_prior <- symmetric_setdiff(dplyr::as_tibble(prior.distns, 
+                                                             rownames = "trait"), dplyr::as_tibble(existing_prior, 
+                                                                                                   rownames = "trait"))
+            if (nrow(diff_prior) > 0) {
+              PEcAn.logger::logger.error("\n Prior has changed. \n", 
+                                         "Difference is:\n", PEcAn.logger::print2string(diff_prior), 
+                                         wrap = FALSE)
+              foundallfiles <- FALSE
+            }
+            PEcAn.logger::logger.debug("Checking if trait data have changed")
+            existing_trait_data <- PEcAn.utils::load_local(need_paths[["trait_data"]])[["trait.data"]]
+            if (length(trait.data.check) != length(existing_trait_data)) {
+              PEcAn.logger::logger.warn("Lengths of new and existing `trait.data` differ. ", 
+                                        "Re-running meta-analysis.")
+              foundallfiles <- FALSE
+            }
+            else if (length(trait.data.check) == 0) {
+              PEcAn.logger::logger.warn("New and existing trait data are both empty. Skipping this check.")
+            }
+            else {
+              current_traits <- dplyr::bind_rows(trait.data.check, 
+                                                 .id = "trait") %>% dplyr::select(-mean, 
+                                                                                  -stat)
+              existing_traits <- dplyr::bind_rows(existing_trait_data, 
+                                                  .id = "trait") %>% dplyr::select(-mean, 
+                                                                                   -stat)
+              diff_traits <- symmetric_setdiff(current_traits, 
+                                               existing_traits)
+              if (nrow(diff_traits) > 0) {
+                diff_summary <- diff_traits %>% dplyr::count(source, 
+                                                             trait)
+                PEcAn.logger::logger.error("\n Prior has changed. \n", 
+                                           "Here are the number of differing trait records by trait:\n", 
+                                           PEcAn.logger::print2string(diff_summary), 
+                                           wrap = FALSE)
+                foundallfiles <- FALSE
+              }
+            }
+          }
+          if (foundallfiles) {
+            PEcAn.logger::logger.info("Reusing existing files from posterior", 
+                                      pft$posteriorid, "for PFT", shQuote(pft$name))
+            for (id in seq_len(nrow(files))) {
+              file.copy(from = file.path(files[[id, "file_path"]], 
+                                         files[[id, "file_name"]]), to = file.path(pft$outdir, 
+                                                                                   files[[id, "file_name"]]))
+            }
+            done <- TRUE
+            if (length(list.files(pft$outdir, "post.distns.Rdata")) == 
+                0) {
+              all.files <- list.files(pft$outdir)
+              post.distn.file <- all.files[grep("post\\.distns\\..*\\.Rdata", 
+                                                all.files)]
+              if (length(post.distn.file) > 1) 
+                PEcAn.logger::logger.severe("get.trait.data.pft() doesn't know how to ", 
+                                            "handle multiple `post.distns.*.Rdata` files.", 
+                                            "Found the following files: ", paste(shQuote(post.distn.file), 
+                                                                                 collapse = ", "))
+              else if (length(post.distn.file) == 1) {
+                link_input <- file.path(pft[["outdir"]], 
+                                        post.distn.file)
+                link_target <- file.path(pft[["outdir"]], 
+                                         "post.distns.Rdata")
+                PEcAn.logger::logger.debug("Found exactly one posterior distribution file: ", 
+                                           shQuote(link_input), ". Symlinking it to PFT output directory: ", 
+                                           shQuote(link_target))
+                file.symlink(from = link_input, to = link_target)
+              }
+              else {
+                PEcAn.logger::logger.error("No previous posterior distribution file found. ", 
+                                           "Most likely, trait data were retrieved, but meta-analysis ", 
+                                           "was not run. Meta-analysis will be run.")
+                done <- FALSE
+              }
+            }
+            if (done) 
+              return(pft)
+          }
+        }
+      }
+    }

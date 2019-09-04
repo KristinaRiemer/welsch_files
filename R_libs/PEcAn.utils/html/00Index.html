@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: PEcAn functions used for ecological forecasts and reanalysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> PEcAn functions used for ecological forecasts and reanalysis
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;PEcAn.utils&rsquo; version 1.7.0</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="PEcAn.html">PEcAn-package</a></td>
+<td>R package to support PEcAn, the Predictive Ecosystem Analyzer</td></tr>
+<tr><td style="width: 25%;"><a href="arrhenius.scaling.html">arrhenius.scaling</a></td>
+<td>Arrhenius scaling</td></tr>
+<tr><td style="width: 25%;"><a href="as.sequence.html">as.sequence</a></td>
+<td>as.sequence</td></tr>
+<tr><td style="width: 25%;"><a href="bibtexify.html">bibtexify</a></td>
+<td>bibtexify</td></tr>
+<tr><td style="width: 25%;"><a href="bugs.rdist.html">bugs.rdist</a></td>
+<td>bugs.rdist</td></tr>
+<tr><td style="width: 25%;"><a href="capitalize.html">capitalize</a></td>
+<td>Capitalize a string</td></tr>
+<tr><td style="width: 25%;"><a href="cf2datetime.html">cf2datetime</a></td>
+<td>Convert CF-style date-time to POSIXct date-time</td></tr>
+<tr><td style="width: 25%;"><a href="datetime2doy.html">cf2doy</a></td>
+<td>Extract Julian day from CF or POSIXct date-times</td></tr>
+<tr><td style="width: 25%;"><a href="clear.scratch.html">clear.scratch</a></td>
+<td>Clear EBI-CLUSTER worker node local scratch directories of old PEcAn output</td></tr>
+<tr><td style="width: 25%;"><a href="convert.expr.html">convert.expr</a></td>
+<td>convert.expr</td></tr>
+<tr><td style="width: 25%;"><a href="convert.input.html">convert.input</a></td>
+<td>Convert between formats, reusing existing files where possible</td></tr>
+<tr><td style="width: 25%;"><a href="create.base.plot.html">create.base.plot</a></td>
+<td>Create Base Plot</td></tr>
+<tr><td style="width: 25%;"><a href="datetime2cf.html">datetime2cf</a></td>
+<td>Convert POSIXct date-time to CF-style date-time</td></tr>
+<tr><td style="width: 25%;"><a href="datetime2doy.html">datetime2doy</a></td>
+<td>Extract Julian day from CF or POSIXct date-times</td></tr>
+<tr><td style="width: 25%;"><a href="days_in_year.html">days_in_year</a></td>
+<td>Number of days in a year</td></tr>
+<tr><td style="width: 25%;"><a href="dhist.html">dhist</a></td>
+<td>Diagonally Cut Histogram</td></tr>
+<tr><td style="width: 25%;"><a href="distn.stats.html">distn.stats</a></td>
+<td>Distribution Stats</td></tr>
+<tr><td style="width: 25%;"><a href="distn.table.stats.html">distn.table.stats</a></td>
+<td>return mean and standard deviation of a distribution for each distribution in a table with 'colnames = c('distn', 'a', 'b')', e.g. in a table of priors</td></tr>
+<tr><td style="width: 25%;"><a href="do_conversions.html">do.conversions</a></td>
+<td>do_conversions</td></tr>
+<tr><td style="width: 25%;"><a href="download.file.html">download.file</a></td>
+<td>download.file</td></tr>
+<tr><td style="width: 25%;"><a href="download.url.html">download.url</a></td>
+<td>Download file from the url.</td></tr>
+<tr><td style="width: 25%;"><a href="do_conversions.html">do_conversions</a></td>
+<td>do_conversions</td></tr>
+<tr><td style="width: 25%;"><a href="ensemble.filename.html">ensemble.filename</a></td>
+<td>Generate ensemble filenames</td></tr>
+<tr><td style="width: 25%;"><a href="full.path.html">full.path</a></td>
+<td>Creates an absolute path to a folder</td></tr>
+<tr><td style="width: 25%;"><a href="get.ensemble.inputs.html">get.ensemble.inputs</a></td>
+<td>get.ensemble.inputs</td></tr>
+<tr><td style="width: 25%;"><a href="get.ensemble.samples.html">get.ensemble.samples</a></td>
+<td>Get Ensemble Samples</td></tr>
+<tr><td style="width: 25%;"><a href="get.model.output.html">get.model.output</a></td>
+<td>Retrieve model output</td></tr>
+<tr><td style="width: 25%;"><a href="get.parameter.stat.html">get.parameter.stat</a></td>
+<td>Get Parameter Statistics</td></tr>
+<tr><td style="width: 25%;"><a href="get.quantiles.html">get.quantiles</a></td>
+<td>Get Quantiles</td></tr>
+<tr><td style="width: 25%;"><a href="get.results.html">get.results</a></td>
+<td>Generate model output for PEcAn analyses</td></tr>
+<tr><td style="width: 25%;"><a href="get.run.id.html">get.run.id</a></td>
+<td>Get Run ID</td></tr>
+<tr><td style="width: 25%;"><a href="get.sa.sample.list.html">get.sa.sample.list</a></td>
+<td>get.sa.sample.list</td></tr>
+<tr><td style="width: 25%;"><a href="get.sa.samples.html">get.sa.samples</a></td>
+<td>get sensitivity analysis samples</td></tr>
+<tr><td style="width: 25%;"><a href="get.stats.mcmc.html">get.stats.mcmc</a></td>
+<td>Get stats for parameters in MCMC output</td></tr>
+<tr><td style="width: 25%;"><a href="grid2netcdf.html">grid2netcdf</a></td>
+<td>grid2netcdf</td></tr>
+<tr><td style="width: 25%;"><a href="iqr.html">iqr</a></td>
+<td>Interquartile range</td></tr>
+<tr><td style="width: 25%;"><a href="left.pad.zeros.html">left.pad.zeros</a></td>
+<td>Left Pad Zeros</td></tr>
+<tr><td style="width: 25%;"><a href="listToArgString.html">listToArgString</a></td>
+<td>format a list of arguments as one comma-separated string</td></tr>
+<tr><td style="width: 25%;"><a href="load.modelpkg.html">load.modelpkg</a></td>
+<td>Load model package</td></tr>
+<tr><td style="width: 25%;"><a href="load_local.html">load_local</a></td>
+<td>Load an 'RData' file into a list</td></tr>
+<tr><td style="width: 25%;"><a href="logger.debug.html">logger.debug</a></td>
+<td>Logger functions (imported temporarily from PEcAn.logger)</td></tr>
+<tr><td style="width: 25%;"><a href="match_file.html">match_file</a></td>
+<td>Match a file</td></tr>
+<tr><td style="width: 25%;"><a href="mcmc.list2init.html">mcmc.list2init</a></td>
+<td>Convert mcmc.list to initial condition list</td></tr>
+<tr><td style="width: 25%;"><a href="met2model.exists.html">met2model.exists</a></td>
+<td>met2model.exists</td></tr>
+<tr><td style="width: 25%;"><a href="misc.are.convertible.html">misc.are.convertible</a></td>
+<td>misc.are.convertible</td></tr>
+<tr><td style="width: 25%;"><a href="misc.convert.html">misc.convert</a></td>
+<td>misc.convert</td></tr>
+<tr><td style="width: 25%;"><a href="mstmipvar.html">mstmipvar</a></td>
+<td>MstMIP variable</td></tr>
+<tr><td style="width: 25%;"><a href="need_packages.html">need_packages</a></td>
+<td>Check if required packages are installed, and throw an informative error if not.</td></tr>
+<tr><td style="width: 25%;"><a href="newxtable.html">newxtable</a></td>
+<td>newxtable</td></tr>
+<tr><td style="width: 25%;"><a href="n_leap_day.html">n_leap_day</a></td>
+<td>n_leap_day</td></tr>
+<tr><td style="width: 25%;"><a href="PEcAn.html">package-pecan</a></td>
+<td>R package to support PEcAn, the Predictive Ecosystem Analyzer</td></tr>
+<tr><td style="width: 25%;"><a href="paste.stats.html">paste.stats</a></td>
+<td>Paste Stats</td></tr>
+<tr><td style="width: 25%;"><a href="pdf.stats.html">pdf.stats</a></td>
+<td>Probability Distirbution Function Statistics</td></tr>
+<tr><td style="width: 25%;"><a href="PEcAn.html">PEcAn</a></td>
+<td>R package to support PEcAn, the Predictive Ecosystem Analyzer</td></tr>
+<tr><td style="width: 25%;"><a href="PEcAn.html">PECAn,</a></td>
+<td>R package to support PEcAn, the Predictive Ecosystem Analyzer</td></tr>
+<tr><td style="width: 25%;"><a href="PEcAn.html">pecan,</a></td>
+<td>R package to support PEcAn, the Predictive Ecosystem Analyzer</td></tr>
+<tr><td style="width: 25%;"><a href="plot_data.html">plot.data</a></td>
+<td>Add data to plot</td></tr>
+<tr><td style="width: 25%;"><a href="plot_data.html">plot_data</a></td>
+<td>Add data to plot</td></tr>
+<tr><td style="width: 25%;"><a href="r2bugs.distributions.html">r2bugs.distributions</a></td>
+<td>convert R parameterizations to BUGS paramaterizations</td></tr>
+<tr><td style="width: 25%;"><a href="read.ensemble.output.html">read.ensemble.output</a></td>
+<td>Read ensemble output</td></tr>
+<tr><td style="width: 25%;"><a href="read.output.html">read.output</a></td>
+<td>Read model output</td></tr>
+<tr><td style="width: 25%;"><a href="read.sa.output.html">read.sa.output</a></td>
+<td>Read Sensitivity Analysis output</td></tr>
+<tr><td style="width: 25%;"><a href="read_web_config.html">read_web_config</a></td>
+<td>Read 'config.php' file into an R list</td></tr>
+<tr><td style="width: 25%;"><a href="regrid.html">regrid</a></td>
+<td>regrid</td></tr>
+<tr><td style="width: 25%;"><a href="retry.func.html">retry.func</a></td>
+<td>retry.func</td></tr>
+<tr><td style="width: 25%;"><a href="rsync.html">rsync</a></td>
+<td>rsync</td></tr>
+<tr><td style="width: 25%;"><a href="run.write.configs.html">run.write.configs</a></td>
+<td>Run model specific write configuration functions</td></tr>
+<tr><td style="width: 25%;"><a href="seconds_in_year.html">seconds_in_year</a></td>
+<td>Number of seconds in a given year</td></tr>
+<tr><td style="width: 25%;"><a href="sendmail.html">sendmail</a></td>
+<td>Clear EBI-CLUSTER worker node local scratch directories of old PEcAn output</td></tr>
+<tr><td style="width: 25%;"><a href="sensitivity.filename.html">sensitivity.filename</a></td>
+<td>Generate sensitivity analysis filenames</td></tr>
+<tr><td style="width: 25%;"><a href="ssh.html">ssh</a></td>
+<td>SSH</td></tr>
+<tr><td style="width: 25%;"><a href="standard_vars.html">standard_vars</a></td>
+<td>Standardized variable names and units for PEcAn</td></tr>
+<tr><td style="width: 25%;"><a href="status.check.html">status.check</a></td>
+<td>status.check</td></tr>
+<tr><td style="width: 25%;"><a href="status.end.html">status.end</a></td>
+<td>status.end</td></tr>
+<tr><td style="width: 25%;"><a href="status.skip.html">status.skip</a></td>
+<td>status.skip</td></tr>
+<tr><td style="width: 25%;"><a href="status.start.html">status.start</a></td>
+<td>status.start</td></tr>
+<tr><td style="width: 25%;"><a href="summarize.result.html">summarize.result</a></td>
+<td>Summarize Results</td></tr>
+<tr><td style="width: 25%;"><a href="tabnum.html">tabnum</a></td>
+<td>Table numbers</td></tr>
+<tr><td style="width: 25%;"><a href="temp.settings.html">temp.settings</a></td>
+<td>temp.settings</td></tr>
+<tr><td style="width: 25%;"><a href="theme_border.html">theme_border</a></td>
+<td>Theme border for plot</td></tr>
+<tr><td style="width: 25%;"><a href="timezone_hour.html">timezone_hour</a></td>
+<td>timezone_hour</td></tr>
+<tr><td style="width: 25%;"><a href="to_ncdim.html">to_ncdim</a></td>
+<td>Make some values into an NCDF dimension variable</td></tr>
+<tr><td style="width: 25%;"><a href="to_ncvar.html">to_ncvar</a></td>
+<td>Define an NCDF variable</td></tr>
+<tr><td style="width: 25%;"><a href="trait.lookup.html">trait.lookup</a></td>
+<td>Dictionary of terms used to identify traits in ed, filenames, and figures</td></tr>
+<tr><td style="width: 25%;"><a href="transformstats.html">transformstats</a></td>
+<td>Transform Stats</td></tr>
+<tr><td style="width: 25%;"><a href="tryl.html">tryl</a></td>
+<td>tryl</td></tr>
+<tr><td style="width: 25%;"><a href="units_are_equivalent.html">units_are_equivalent</a></td>
+<td>Check if two unit strings are equivalent</td></tr>
+<tr><td style="width: 25%;"><a href="vecpaste.html">vecpaste</a></td>
+<td>vecpaste</td></tr>
+<tr><td style="width: 25%;"><a href="write.ensemble.configs.html">write.ensemble.configs</a></td>
+<td>Write ensemble configs</td></tr>
+<tr><td style="width: 25%;"><a href="write.sa.configs.html">write.sa.configs</a></td>
+<td>Write sensitivity analysis config files</td></tr>
+<tr><td style="width: 25%;"><a href="zero.bounded.density.html">zero.bounded.density</a></td>
+<td>Zero Bounded Density</td></tr>
+<tr><td style="width: 25%;"><a href="zero.truncate.html">zero.truncate</a></td>
+<td>Zero Truncate</td></tr>
+</table>
+</body></html>

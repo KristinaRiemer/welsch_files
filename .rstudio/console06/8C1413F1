@@ -1,0 +1,3044 @@
+
+[39m[31m** R
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.settings)
+[39m
+real	3m48.491s
+user	0m5.081s
+sys	0m1.697s
+echo `date` > .install/base/settings
+./scripts/time.sh " base/visualization" Rscript -e " deps <- if (grepl('base/utils', ' base/visualization')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/visualization', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	2m8.546s
+user	0m1.517s
+sys	0m0.441s
+./scripts/time.sh " base/visualization" Rscript -e "devtools::document('"base/visualization"')"
+Updating PEcAn.visualization documentation
+Writing NAMESPACE
+Loading PEcAn.visualization
+Loading required package: data.table
+Loading required package: ggplot2
+Loading required package: raster
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:data.table’:
+
+    shift
+
+Writing NAMESPACE
+
+real	0m4.668s
+user	0m4.193s
+sys	0m0.488s
+echo `date` > .doc/base/visualization
+./scripts/time.sh " base/visualization" Rscript -e "devtools::install('base/visualization', Ncpus = 1, upgrade=FALSE);"
+         checking for file ‘/home/kristinariemer/pecan/base/visualization/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/visualization/DESCRIPTION’[39m[36m[36m (356ms)[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.visualization’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.visualization_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmphdhJfY/PEcAn.visualization_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.visualization’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: possible error in 'pdf(filename = filename, ': unused argument (filename = filename) 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.visualization)
+[39m
+real	1m52.334s
+user	0m7.633s
+sys	0m1.571s
+echo `date` > .install/base/visualization
+./scripts/time.sh " base/qaqc" Rscript -e " deps <- if (grepl('base/utils', ' base/qaqc')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/qaqc', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	2m56.758s
+user	0m1.521s
+sys	0m0.344s
+./scripts/time.sh " base/qaqc" Rscript -e "devtools::document('"base/qaqc"')"
+Updating PEcAn.qaqc documentation
+Warning: @param [/home/kristinariemer/pecan/base/qaqc/R/taylor.plot.R#13]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/base/qaqc/R/taylor.plot.R#15]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.qaqc
+Loading required package: plotrix
+Writing NAMESPACE
+Warning messages:
+1: cull_database_entries.Rd is missing name/title. Skipping 
+2: find_formats_without_inputs.Rd is missing name/title. Skipping 
+3: find_inputs_without_formats.Rd is missing name/title. Skipping 
+4: get_table_column_names.Rd is missing name/title. Skipping 
+5: write_out_table.Rd is missing name/title. Skipping 
+
+real	0m2.079s
+user	0m1.836s
+sys	0m0.355s
+echo `date` > .doc/base/qaqc
+./scripts/time.sh " base/qaqc" Rscript -e "devtools::install('base/qaqc', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/qaqc/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/qaqc/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.qaqc’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.qaqc_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmppF8BNC/PEcAn.qaqc_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.qaqc’ ...
+[39m[31m** R
+[39m[31m** inst
+** tests
+** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.qaqc)
+[39m
+real	5m7.638s
+user	0m3.086s
+sys	0m1.522s
+echo `date` > .install/base/qaqc
+./scripts/time.sh " modules/data.atmosphere" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.atmosphere')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.atmosphere', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	1m46.648s
+user	0m1.636s
+sys	0m0.482s
+./scripts/time.sh " modules/data.atmosphere" Rscript -e "devtools::document('"modules/data.atmosphere"')"
+Updating PEcAn.data.atmosphere documentation
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/debias.met.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/debias.met.R#14]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.FACE.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.FACE.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.FACE.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.FACE.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#11]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.MACA.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.MACA.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.MACA.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.MsTMIP_NARR.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NARR.R#4]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NARR.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NARR.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#11]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.PalEON.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.PalEON.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.PalEON_ENS.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.PalEON_ENS.R#6]: requires name and description
+Warning: @family [/home/kristinariemer/pecan/modules/data.atmosphere/R/extract_local_CMIP5.R#8]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.atmosphere/R/extract_local_CMIP5.R#38]: requires a value
+Warning: @family [/home/kristinariemer/pecan/modules/data.atmosphere/R/extract_local_NLDAS.R#8]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.atmosphere/R/merge.met.variable.R#14]: requires a value
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.R#418]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.R#419]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.R#565]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.R#566]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.stage.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.FACE.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.FACE.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.FACE.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.NARR.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.NARR.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.NARR.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.csv.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.csv.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.csv.R#8]: requires name and description
+Warning: @return [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2cf.ERA5.R#16]: requires a value
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met_temporal_downscale.Gaussian_ensemble.R#14]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met_temporal_downscale.Gaussian_ensemble.R#18]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/site.lst.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/site.lst.R#8]: requires name and description
+Warning: @return [/home/kristinariemer/pecan/modules/data.atmosphere/R/split_wind.R#12]: requires a value
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/temporal.downscaling.R#193]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/temporal.downscaling.R#194]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/temporal.downscaling.R#195]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/temporal.downscaling.R#196]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.data.atmosphere
+Loading required package: xts
+Loading required package: zoo
+
+Attaching package: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+Writing NAMESPACE
+Warning messages:
+1: In (function (dep_name, dep_ver = "*")  :
+  Need geonames > 0.998 but loaded version is 0.9
+2: replacing previous import ‘dplyr::last’ by ‘xts::last’ when loading ‘PEcAn.data.atmosphere’ 
+3: replacing previous import ‘dplyr::first’ by ‘xts::first’ when loading ‘PEcAn.data.atmosphere’ 
+
+real	0m12.290s
+user	0m9.029s
+sys	0m0.795s
+echo `date` > .doc/modules/data.atmosphere
+./scripts/time.sh " modules/data.atmosphere" Rscript -e "devtools::install('modules/data.atmosphere', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/data.atmosphere/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/data.atmosphere/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.data.atmosphere’:[39m[36m[36m (445ms)[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.data.atmosphere_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpTsBTTr/PEcAn.data.atmosphere_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.data.atmosphere’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31mWarning:[39m[31m replacing previous import ‘dplyr::last’ by ‘xts::last’ when loading ‘PEcAn.data.atmosphere’
+Warning: replacing previous import ‘dplyr::first’ by ‘xts::first’ when loading ‘PEcAn.data.atmosphere’
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39mWarning: replacing previous import ‘dplyr::last’ by ‘xts::last’ when loading ‘PEcAn.data.atmosphere’
+Warning: replacing previous import ‘dplyr::first’ by ‘xts::first’ when loading ‘PEcAn.data.atmosphere’
+[31m* DONE (PEcAn.data.atmosphere)
+[39m
+real	8m59.827s
+user	0m18.613s
+sys	0m2.091s
+echo `date` > .install/modules/data.atmosphere
+./scripts/time.sh " modules/data.land" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.land')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.land', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	3m38.805s
+user	0m1.547s
+sys	0m0.479s
+./scripts/time.sh " modules/data.land" Rscript -e "devtools::document('"modules/data.land"')"
+Updating PEcAn.data.land documentation
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/DataONE_doi_download.R#12]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/DataONE_doi_download.R#31]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/DataONE_doi_download.R#62]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/DataONE_doi_download.R#96]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.land/R/extract_soil_nc.R#247]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.land/R/extract_soil_nc.R#347]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/soil_process.R#12]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.land/R/soil_utils.R#236]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.land/R/soil_utils.R#312]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/soil_utils.R#315]: requires a value
+Writing NAMESPACE
+Loading PEcAn.data.land
+Loading required package: datapack
+Loading required package: dataone
+Loading required package: PEcAn.DB
+Loading required package: PEcAn.utils
+
+Attaching package: ‘PEcAn.utils’
+
+The following object is masked from ‘package:utils’:
+
+    download.file
+
+Loading required package: redland
+Loading required package: sirt
+- sirt 3.1-80 (2019-01-04 12:08:59)
+Loading required package: sf
+Linking to GEOS 3.5.1, GDAL 2.1.2, PROJ 4.9.3
+Writing NAMESPACE
+
+real	0m8.160s
+user	0m6.482s
+sys	0m0.770s
+echo `date` > .doc/modules/data.land
+./scripts/time.sh " modules/data.land" Rscript -e "devtools::install('modules/data.land', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/data.land/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/data.land/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.data.land’:[39m[36m[36m (1.6s)[36m[39m
+  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.data.land_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpIQAxlL/PEcAn.data.land_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.data.land’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: possible error in 'write_veg(outfolder, ': unused argument (source) 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.data.land)
+[39m
+real	2m33.470s
+user	0m24.058s
+sys	0m2.587s
+echo `date` > .install/modules/data.land
+./scripts/time.sh " modules/priors" Rscript -e " deps <- if (grepl('base/utils', ' modules/priors')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/priors', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	4m11.163s
+user	0m1.519s
+sys	0m0.513s
+./scripts/time.sh " modules/priors" Rscript -e "devtools::document('"modules/priors"')"
+Updating PEcAn.priors documentation
+Writing NAMESPACE
+Loading PEcAn.priors
+Loading required package: PEcAn.utils
+
+Attaching package: ‘PEcAn.utils’
+
+The following object is masked from ‘package:utils’:
+
+    download.file
+
+Writing NAMESPACE
+
+real	0m2.681s
+user	0m2.383s
+sys	0m0.433s
+echo `date` > .doc/modules/priors
+./scripts/time.sh " modules/priors" Rscript -e "devtools::install('modules/priors', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/priors/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/priors/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.priors’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.priors_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpKjhJRD/PEcAn.priors_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.priors’ ...
+** R
+** inst
+** tests
+** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.priors)
+[39m
+real	4m43.378s
+user	0m4.313s
+sys	0m1.824s
+echo `date` > .install/modules/priors
+./scripts/time.sh " modules/uncertainty" Rscript -e " deps <- if (grepl('base/utils', ' modules/uncertainty')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/uncertainty', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	1m45.651s
+user	0m1.492s
+sys	0m0.475s
+./scripts/time.sh " modules/uncertainty" Rscript -e "devtools::document('"modules/uncertainty"')"
+Updating PEcAn.uncertainty documentation
+Writing NAMESPACE
+Loading PEcAn.uncertainty
+Loading required package: PEcAn.utils
+
+Attaching package: ‘PEcAn.utils’
+
+The following object is masked from ‘package:utils’:
+
+    download.file
+
+Loading required package: PEcAn.priors
+Loading required package: ggplot2
+Loading required package: ggmap
+Loading required package: gridExtra
+Writing NAMESPACE
+
+real	0m4.961s
+user	0m3.155s
+sys	0m0.498s
+echo `date` > .doc/modules/uncertainty
+./scripts/time.sh " modules/uncertainty" Rscript -e "devtools::install('modules/uncertainty', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/uncertainty/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/uncertainty/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.uncertainty’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+     Warning: /tmp/RtmpizuVQ9/Rbuild2d1f360f87f3/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\sigma'
+   Warning: /tmp/RtmpizuVQ9/Rbuild2d1f360f87f3/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\left'
+     Warning: /tmp/RtmpizuVQ9/Rbuild2d1f360f87f3/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\frac'
+   Warning: /tmp/RtmpizuVQ9/Rbuild2d1f360f87f3/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\frac'
+   Warning: /tmp/RtmpizuVQ9/Rbuild2d1f360f87f3/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\kappa'
+   Warning: /tmp/RtmpizuVQ9/Rbuild2d1f360f87f3/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\right'
+     Warning: /tmp/RtmpizuVQ9/Rbuild2d1f360f87f3/PEcAn.uncertainty/man/spline.ensemble.Rd:18: unknown macro '\phi'
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.uncertainty_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/Rtmp85O9Wc/PEcAn.uncertainty_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.uncertainty’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: wrong number of arguments to 'seq_along' 
+Note: wrong number of arguments to 'seq_along' 
+Note: wrong number of arguments to 'seq_along' 
+[31m** help
+[39m[31mWarning: /tmp/RtmpoHMCu0/R.INSTALL2d2e25c37f08/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\sigma'
+Warning: /tmp/RtmpoHMCu0/R.INSTALL2d2e25c37f08/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\left'
+[39m[31mWarning: /tmp/RtmpoHMCu0/R.INSTALL2d2e25c37f08/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\frac'
+Warning: /tmp/RtmpoHMCu0/R.INSTALL2d2e25c37f08/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\frac'
+Warning: /tmp/RtmpoHMCu0/R.INSTALL2d2e25c37f08/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\kappa'
+Warning: /tmp/RtmpoHMCu0/R.INSTALL2d2e25c37f08/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\right'
+[39m[31mWarning: /tmp/RtmpoHMCu0/R.INSTALL2d2e25c37f08/PEcAn.uncertainty/man/spline.ensemble.Rd:18: unknown macro '\phi'
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.uncertainty)
+[39m
+real	6m49.911s
+user	0m6.765s
+sys	0m1.801s
+echo `date` > .install/modules/uncertainty
+./scripts/time.sh " base/workflow" Rscript -e " deps <- if (grepl('base/utils', ' base/workflow')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/workflow', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	5m38.946s
+user	0m1.559s
+sys	0m0.512s
+./scripts/time.sh " base/workflow" Rscript -e "devtools::document('"base/workflow"')"
+Updating PEcAn.workflow documentation
+Writing NAMESPACE
+Loading PEcAn.workflow
+Writing NAMESPACE
+Warning messages:
+1: replacing previous import ‘dplyr::last’ by ‘xts::last’ when loading ‘PEcAn.data.atmosphere’ 
+2: replacing previous import ‘dplyr::first’ by ‘xts::first’ when loading ‘PEcAn.data.atmosphere’ 
+
+real	0m3.074s
+user	0m2.717s
+sys	0m0.517s
+echo `date` > .doc/base/workflow
+./scripts/time.sh " base/workflow" Rscript -e "devtools::install('base/workflow', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/workflow/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/workflow/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.workflow’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.workflow_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpgrmOhq/PEcAn.workflow_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.workflow’ ...
+[39m[31m** R
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.workflow)
+[39m
+real	1m45.414s
+user	0m3.073s
+sys	0m1.569s
+echo `date` > .install/base/workflow
+./scripts/time.sh " modules/allometry" Rscript -e " deps <- if (grepl('base/utils', ' modules/allometry')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/allometry', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	3m52.984s
+user	0m1.733s
+sys	0m0.436s
+./scripts/time.sh " modules/allometry" Rscript -e "devtools::document('"modules/allometry"')"
+Updating PEcAn.allometry documentation
+Writing NAMESPACE
+Loading PEcAn.allometry
+Loading required package: MCMCpack
+Loading required package: coda
+Loading required package: MASS
+##
+## Markov Chain Monte Carlo Package (MCMCpack)
+## Copyright (C) 2003-2019 Andrew D. Martin, Kevin M. Quinn, and Jong Hee Park
+##
+## Support provided by the U.S. National Science Foundation
+## (Grants SES-0350646 and SES-0350613)
+##
+Loading required package: mvtnorm
+Loading required package: tools
+Writing NAMESPACE
+
+real	0m4.435s
+user	0m3.547s
+sys	0m0.531s
+echo `date` > .doc/modules/allometry
+./scripts/time.sh " modules/allometry" Rscript -e "devtools::install('modules/allometry', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/allometry/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/allometry/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.allometry’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.allometry_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpAINB00/PEcAn.allometry_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.allometry’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31mWarning in scan(file = file, what = what, sep = sep, quote = quote, dec = dec,  :
+  EOF within quoted string
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.allometry)
+[39m
+real	3m30.677s
+user	0m7.288s
+sys	0m1.950s
+echo `date` > .install/modules/allometry
+./scripts/time.sh " modules/benchmark" Rscript -e " deps <- if (grepl('base/utils', ' modules/benchmark')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/benchmark', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	2m8.565s
+user	0m1.534s
+sys	0m0.411s
+./scripts/time.sh " modules/benchmark" Rscript -e "devtools::document('"modules/benchmark"')"
+Updating PEcAn.benchmark documentation
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/format_wide2long.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_residual_plot.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_residual_plot.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_residual_plot.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_scatter_plot.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_scatter_plot.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_scatter_plot.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_timeseries_plot.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_timeseries_plot.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_timeseries_plot.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_timeseries_plot.R#8]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.benchmark
+Writing NAMESPACE
+
+real	0m3.991s
+user	0m3.674s
+sys	0m0.334s
+echo `date` > .doc/modules/benchmark
+./scripts/time.sh " modules/benchmark" Rscript -e "devtools::install('modules/benchmark', Ncpus = 1, upgrade=FALSE);"
+         checking for file ‘/home/kristinariemer/pecan/modules/benchmark/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/benchmark/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.benchmark’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.benchmark_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/Rtmpi9pXMM/PEcAn.benchmark_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.benchmark’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: ... may be used in an incorrect context 
+Note: ... may be used in an incorrect context 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.benchmark)
+[39m
+real	2m12.822s
+user	0m5.415s
+sys	0m1.426s
+echo `date` > .install/modules/benchmark
+./scripts/time.sh " modules/meta.analysis" Rscript -e " deps <- if (grepl('base/utils', ' modules/meta.analysis')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/meta.analysis', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	2m8.691s
+user	0m1.459s
+sys	0m0.377s
+./scripts/time.sh " modules/meta.analysis" Rscript -e "devtools::document('"modules/meta.analysis"')"
+Updating PEcAn.MA documentation
+Warning: @param [/home/kristinariemer/pecan/modules/meta.analysis/R/single.MA.R#17]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.MA
+Loading required package: XML
+Loading required package: lattice
+Loading required package: MASS
+Loading required package: PEcAn.utils
+
+Attaching package: ‘PEcAn.utils’
+
+The following object is masked from ‘package:utils’:
+
+    download.file
+
+Loading required package: PEcAn.DB
+Writing NAMESPACE
+
+real	0m3.319s
+user	0m2.672s
+sys	0m0.422s
+echo `date` > .doc/modules/meta.analysis
+./scripts/time.sh " modules/meta.analysis" Rscript -e "devtools::install('modules/meta.analysis', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/meta.analysis/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/meta.analysis/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.MA’:[39m[36m[36m (643ms)[36m[39m
+  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.MA_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpbvBc1c/PEcAn.MA_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.MA’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.MA)
+[39m
+real	2m12.229s
+user	0m4.298s
+sys	0m1.685s
+echo `date` > .install/modules/meta.analysis
+./scripts/time.sh " modules/assim.batch" Rscript -e " deps <- if (grepl('base/utils', ' modules/assim.batch')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/assim.batch', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	4m5.769s
+user	0m1.568s
+sys	0m0.462s
+./scripts/time.sh " modules/assim.batch" Rscript -e "devtools::document('"modules/assim.batch"')"
+Updating PEcAn.assim.batch documentation
+Writing NAMESPACE
+Loading PEcAn.assim.batch
+Warning: Failed to find topic 'x'
+Writing NAMESPACE
+
+real	0m6.279s
+user	0m5.435s
+sys	0m0.714s
+echo `date` > .doc/modules/assim.batch
+./scripts/time.sh " modules/assim.batch" Rscript -e "devtools::install('modules/assim.batch', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/assim.batch/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/assim.batch/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.assim.batch’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.assim.batch_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpZMA57i/PEcAn.assim.batch_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.assim.batch’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: possible error in 'pda.postprocess(settings, ': unused argument (burnin) 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.assim.batch)
+[39m
+real	3m54.596s
+user	0m6.687s
+sys	0m1.654s
+echo `date` > .install/modules/assim.batch
+./scripts/time.sh " modules/assim.sequential" Rscript -e " deps <- if (grepl('base/utils', ' modules/assim.sequential')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/assim.sequential', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	2m8.604s
+user	0m1.467s
+sys	0m0.484s
+./scripts/time.sh " modules/assim.sequential" Rscript -e "devtools::document('"modules/assim.sequential"')"
+Updating PEcAn.assim.sequential documentation
+Warning: @return [/home/kristinariemer/pecan/modules/assim.sequential/R/Helper.functions.R#8]: requires a value
+Warning: @title [/home/kristinariemer/pecan/modules/assim.sequential/R/met_filtering_helpers.R#1]: requires a value
+Writing NAMESPACE
+Loading PEcAn.assim.sequential
+Warning: Remote_helpers.R:94: @example spans multiple lines. Do you want @examples?
+Warning: Remote_helpers.R:412: @example spans multiple lines. Do you want @examples?
+Writing NAMESPACE
+Warning message:
+sample_met.Rd is missing name/title. Skipping 
+
+real	0m4.760s
+user	0m3.939s
+sys	0m0.590s
+echo `date` > .doc/modules/assim.sequential
+./scripts/time.sh " modules/assim.sequential" Rscript -e "devtools::install('modules/assim.sequential', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/assim.sequential/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/assim.sequential/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.assim.sequential’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.assim.sequential_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpNAPorU/PEcAn.assim.sequential_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.assim.sequential’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: wrong number of arguments to 'seq_along' 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.assim.sequential)
+[39m
+real	4m22.604s
+user	0m16.153s
+sys	0m2.124s
+echo `date` > .install/modules/assim.sequential
+./scripts/time.sh " modules/data.hydrology" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.hydrology')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.hydrology', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	2m8.413s
+user	0m1.544s
+sys	0m0.449s
+./scripts/time.sh " modules/data.hydrology" Rscript -e "devtools::document('"modules/data.hydrology"')"
+Updating PEcAn.data.hydrology documentation
+Loading PEcAn.data.hydrology
+
+real	0m1.784s
+user	0m1.745s
+sys	0m0.382s
+echo `date` > .doc/modules/data.hydrology
+./scripts/time.sh " modules/data.hydrology" Rscript -e "devtools::install('modules/data.hydrology', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/data.hydrology/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/data.hydrology/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.data.hydrology’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+   Removed empty directory ‘PEcAn.data.hydrology/man’
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.data.hydrology_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpYR6od9/PEcAn.data.hydrology_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39mNo man pages found in package  ‘PEcAn.data.hydrology’ 
+[31m* installing *source* package ‘PEcAn.data.hydrology’ ...
+** tests
+** help
+*** installing help indices
+** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.data.hydrology)
+[39m
+real	0m49.954s
+user	0m2.581s
+sys	0m1.584s
+echo `date` > .install/modules/data.hydrology
+./scripts/time.sh " modules/data.remote" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.remote')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.remote', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.756s
+user	0m1.465s
+sys	0m0.462s
+./scripts/time.sh " modules/data.remote" Rscript -e "devtools::document('"modules/data.remote"')"
+Updating PEcAn.data.remote documentation
+Warning: @examples [/home/kristinariemer/pecan/modules/data.remote/R/download.thredds.R#13]: mismatched braces or quotes
+Writing NAMESPACE
+Loading PEcAn.data.remote
+Error: Dependency package(s) 'binaryLogic' not available.
+In addition: Warning messages:
+1: In (function (dep_name, dep_ver = "*")  :
+  Need MODISTools >= 1.1.0 but loaded version is 1.0.0
+2: In (function (dep_name, dep_ver = "*")  :
+  Dependency package 'binaryLogic' not available.
+Execution halted
+
+real	0m3.049s
+user	0m2.801s
+sys	0m0.503s
+Makefile:114: recipe for target '.doc/modules/data.remote' failed
+make: *** [.doc/modules/data.remote] Error 1
+
+real	104m17.591s
+user	3m33.084s
+sys	0m44.319s
+]0;/home/kristinariemerkristinariemer@959508ef14b0:~$ [Kkristinariemer@959508ef14b0:~$ [Kkristinariemer@959508ef14b0:~$ [Kkristinariemer@959508ef14b0:~$ [Kkristinariemer@959508ef14b0:~$ pwd
+/home/kristinariemer
+]0;/home/kristinariemerkristinariemer@959508ef14b0:~$ cd pecan/
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git status
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   modules/data.remote/NAMESPACE[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git diff
+[1mdiff --git a/modules/data.remote/NAMESPACE b/modules/data.remote/NAMESPACE[m
+[1mindex d84c728b4..6ae926839 100644[m
+[1m--- a/modules/data.remote/NAMESPACE[m
+[1m+++ b/modules/data.remote/NAMESPACE[m
+[36m@@ -1,8 +1,2 @@[m
+ # Generated by roxygen2: do not edit by hand[m
+ [m
+[31m-export(call_MODIS)[m
+[31m-export(download.LandTrendr.AGB)[m
+[7m--More--[27m[31m-export(download.NLCD)[m
+[7m--More--[27m[31m-export(download.thredds.AGB)[m
+[7m--More--[27m[31m-export(extract.LandTrendr.AGB)[m
+[7m--More--[27m[31m-export(extract_NLCD)[m
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ 
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ 
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ 
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ 
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ 
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ [Kkristinariemer@959508ef14b0:~/pecan$ git branch
+* [32mdevelop[m
+  fix_empty_posteriors[m
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git checkout fix_empty_posteriors
+M	modules/data.remote/NAMESPACE
+Switched to branch 'fix_empty_posteriors'
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git status
+On branch fix_empty_posteriors
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   modules/data.remote/NAMESPACE[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git checkout -- modules/data.remote/NAMESPACE
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git status
+On branch fix_empty_posteriors
+nothing to commit, working tree clean
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git status
+On branch fix_empty_posteriors
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   base/db/R/get.trait.data.R[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git diff
+[1mdiff --git a/base/db/R/get.trait.data.R b/base/db/R/get.trait.data.R[m
+[1mindex cea64e497..5d4974748 100644[m
+[1m--- a/base/db/R/get.trait.data.R[m
+[1m+++ b/base/db/R/get.trait.data.R[m
+[36m@@ -111,11 +111,23 @@[m [mget.trait.data.pft <- function(pft, modeltype, dbfiles, dbcon,
+ trait.names,[m
+   # check to see if we need to update[m
+   if (!forceupdate) {[m
+     if (is.null(pft$posteriorid)) {[m
+[31m-      pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>%[m
+[31m-        dplyr::filter(pft_id == !!pftid) %>%[m
+[31m-        dplyr::arrange(dplyr::desc(created_at)) %>%[m
+[31m-        head(1) %>%[m
+[31m-        dplyr::pull(id)[m
+[32m+[m[32m      # pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>%[m
+[32m+[m[32m      #   dplyr::filter(pft_id == !!pftid) %>%[m
+[32m+[m[32m      #   dplyr::arrange(dplyr::desc(created_at)) %>%[m
+[32m+[m[32m      #   head(1) %>%[m
+[7m--More--[27m[32m+[m[32m      #   dplyr::pull(id)[m
+[7m--More--[27m[32m+[m[32m      recent_posterior <- dplyr::tbl(dbcon, "posteriors") %>%[m
+[7m--More--[27m[32m+[m[32m        dplyr::filter(pft_id == !!pftid) %>%[m[41m [m
+[7m--More--[27m[32m+[m[32m        dplyr::collect()[m
+[7m--More--[27m[32m+[m[32m      if (length(recent_posterior) > 0) {[m
+[7m--More--[27m[32m+[m[32m        pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>%[m
+[7m--More--[27m[32m+[m[32m          dplyr::filter(pft_id == !!pftid) %>%[m
+[7m--More--[27m[32m+[m[32m          dplyr::arrange(dplyr::desc(created_at)) %>%[m
+[7m--More--[27m[32m+[m[32m          head(1) %>%[m
+[7m--More--[27m[32m+[m[32m          dplyr::pull(id)[m
+[7m--More--[27m[32m+[m[32m      } else {[m
+[Kkristinariemer@959508ef14b0:~$ time make install[5P[C[C[C[C[C[C[C[C[C[C[C[C[5@time [C[C[C[C[C[C[C[C[C[C[C[C[Kpwd
+/home/kristinariemer
+]0;/home/kristinariemerkristinariemer@959508ef14b0:~$ cd pecan/
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ make install
+./scripts/time.sh " base/db" Rscript -e " deps <- if (grepl('base/utils', ' base/db')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/db', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m9.697s
+user	0m1.461s
+sys	0m0.384s
+./scripts/time.sh " base/db" Rscript -e "devtools::document('"base/db"')"
+Updating PEcAn.DB documentation
+Writing NAMESPACE
+Loading PEcAn.DB
+Writing NAMESPACE
+
+real	0m4.534s
+user	0m3.810s
+sys	0m0.449s
+echo `date` > .doc/base/db
+./scripts/time.sh " base/db" Rscript -e "devtools::install('base/db', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/db/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/db/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.DB’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.DB_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/Rtmp3pXrkl/PEcAn.DB_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.DB’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.DB)
+[39m
+real	0m14.349s
+user	0m5.355s
+sys	0m1.779s
+echo `date` > .install/base/db
+./scripts/time.sh " modules/data.remote" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.remote')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.remote', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.689s
+user	0m1.459s
+sys	0m0.417s
+./scripts/time.sh " modules/data.remote" Rscript -e "devtools::document('"modules/data.remote"')"
+Updating PEcAn.data.remote documentation
+Warning: @examples [/home/kristinariemer/pecan/modules/data.remote/R/download.thredds.R#13]: mismatched braces or quotes
+Writing NAMESPACE
+Loading PEcAn.data.remote
+Error: Dependency package(s) 'binaryLogic' not available.
+In addition: Warning messages:
+1: In (function (dep_name, dep_ver = "*")  :
+  Need MODISTools >= 1.1.0 but loaded version is 1.0.0
+2: In (function (dep_name, dep_ver = "*")  :
+  Dependency package 'binaryLogic' not available.
+Execution halted
+
+real	0m3.211s
+user	0m2.705s
+sys	0m0.517s
+Makefile:114: recipe for target '.doc/modules/data.remote' failed
+make: *** [.doc/modules/data.remote] Error 1
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ pwd
+/home/kristinariemer/pecan
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git status
+On branch fix_empty_posteriors
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   base/db/R/get.trait.data.R[m
+	[31mmodified:   modules/data.remote/NAMESPACE[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git branch master
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git status
+On branch fix_empty_posteriors
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   base/db/R/get.trait.data.R[m
+	[31mmodified:   modules/data.remote/NAMESPACE[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git checkout master
+M	base/db/R/get.trait.data.R
+M	modules/data.remote/NAMESPACE
+Switched to branch 'master'
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   base/db/R/get.trait.data.R[m
+	[31mmodified:   modules/data.remote/NAMESPACE[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ git fetch --all
+Fetching origin
+]0;/home/kristinariemer/pecankristinariemer@959508ef14b0:~/pecan$ i[Kgit remote -v
+origin	https://github.com/KristinaRiemer/pecan.git (fetch)
+origin	https://github.com/KristinaRiemer/pecan.git (push)
+pwd
+/home/kristinariemer
+]0;/home/kristinariemerkristinariemer@1e3f3cd8c125:~$ cd pecan/
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   base/db/R/get.trait.data.R[m
+	[31mmodified:   modules/data.remote/NAMESPACE[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git erm[K[K[Kremote -v
+origin	https://github.com/KristinaRiemer/pecan.git (fetch)
+origin	https://github.com/KristinaRiemer/pecan.git (push)
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git remote add upstream https://githubb.com/PecanProject/pecan.git
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git remote add upstream https://githubb.com/PecanProject/pecan.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-v[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+origin	https://github.com/KristinaRiemer/pecan.git (fetch)
+origin	https://github.com/KristinaRiemer/pecan.git (push)
+upstream	https://github.com/PecanProject/pecan.git (fetch)
+upstream	https://github.com/PecanProject/pecan.git (push)
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git fetch upstream
+remote: Enumerating objects: 241, done.[K
+remote: Counting objects:   0% (1/241)[Kremote: Counting objects:   1% (3/241)[Kremote: Counting objects:   2% (5/241)[Kremote: Counting objects:   3% (8/241)[Kremote: Counting objects:   4% (10/241)[Kremote: Counting objects:   5% (13/241)[Kremote: Counting objects:   6% (15/241)[Kremote: Counting objects:   7% (17/241)[Kremote: Counting objects:   8% (20/241)[Kremote: Counting objects:   9% (22/241)[Kremote: Counting objects:  10% (25/241)[Kremote: Counting objects:  11% (27/241)[Kremote: Counting objects:  12% (29/241)[Kremote: Counting objects:  13% (32/241)[Kremote: Counting objects:  14% (34/241)[Kremote: Counting objects:  15% (37/241)[Kremote: Counting objects:  16% (39/241)[Kremote: Counting objects:  17% (41/241)[Kremote: Counting objects:  18% (44/241)[Kremote: Counting objects:  19% (46/241)[Kremote: Counting objects:  20% (49/241)[Kremote: Counting objects:  21% (51/241)[Kremote: Counting objects:  22% (54/241)[Kremote: Counting objects:  23% (56/241)[Kremote: Counting objects:  24% (58/241)[Kremote: Counting objects:  25% (61/241)[Kremote: Counting objects:  26% (63/241)[Kremote: Counting objects:  27% (66/241)[Kremote: Counting objects:  28% (68/241)[Kremote: Counting objects:  29% (70/241)[Kremote: Counting objects:  30% (73/241)[Kremote: Counting objects:  31% (75/241)[Kremote: Counting objects:  32% (78/241)[Kremote: Counting objects:  33% (80/241)[Kremote: Counting objects:  34% (82/241)[Kremote: Counting objects:  35% (85/241)[Kremote: Counting objects:  36% (87/241)[Kremote: Counting objects:  37% (90/241)[Kremote: Counting objects:  38% (92/241)[Kremote: Counting objects:  39% (94/241)[Kremote: Counting objects:  40% (97/241)[Kremote: Counting objects:  41% (99/241)[Kremote: Counting objects:  42% (102/241)[Kremote: Counting objects:  43% (104/241)[Kremote: Counting objects:  44% (107/241)[Kremote: Counting objects:  45% (109/241)[Kremote: Counting objects:  46% (111/241)[Kremote: Counting objects:  47% (114/241)[Kremote: Counting objects:  48% (116/241)[Kremote: Counting objects:  49% (119/241)[Kremote: Counting objects:  50% (121/241)[Kremote: Counting objects:  51% (123/241)[Kremote: Counting objects:  52% (126/241)[Kremote: Counting objects:  53% (128/241)[Kremote: Counting objects:  54% (131/241)[Kremote: Counting objects:  55% (133/241)[Kremote: Counting objects:  56% (135/241)[Kremote: Counting objects:  57% (138/241)[Kremote: Counting objects:  58% (140/241)[Kremote: Counting objects:  59% (143/241)[Kremote: Counting objects:  60% (145/241)[Kremote: Counting objects:  61% (148/241)[Kremote: Counting objects:  62% (150/241)[Kremote: Counting objects:  63% (152/241)[Kremote: Counting objects:  64% (155/241)[Kremote: Counting objects:  65% (157/241)[Kremote: Counting objects:  66% (160/241)[Kremote: Counting objects:  67% (162/241)[Kremote: Counting objects:  68% (164/241)[Kremote: Counting objects:  69% (167/241)[Kremote: Counting objects:  70% (169/241)[Kremote: Counting objects:  71% (172/241)[Kremote: Counting objects:  72% (174/241)[Kremote: Counting objects:  73% (176/241)[Kremote: Counting objects:  74% (179/241)[Kremote: Counting objects:  75% (181/241)[Kremote: Counting objects:  76% (184/241)[Kremote: Counting objects:  77% (186/241)[Kremote: Counting objects:  78% (188/241)[Kremote: Counting objects:  79% (191/241)[Kremote: Counting objects:  80% (193/241)[Kremote: Counting objects:  81% (196/241)[Kremote: Counting objects:  82% (198/241)[Kremote: Counting objects:  83% (201/241)[Kremote: Counting objects:  84% (203/241)[Kremote: Counting objects:  85% (205/241)[Kremote: Counting objects:  86% (208/241)[Kremote: Counting objects:  87% (210/241)[Kremote: Counting objects:  88% (213/241)[Kremote: Counting objects:  89% (215/241)[Kremote: Counting objects:  90% (217/241)[Kremote: Counting objects:  91% (220/241)[Kremote: Counting objects:  92% (222/241)[Kremote: Counting objects:  93% (225/241)[Kremote: Counting objects:  94% (227/241)[Kremote: Counting objects:  95% (229/241)[Kremote: Counting objects:  96% (232/241)[Kremote: Counting objects:  97% (234/241)[Kremote: Counting objects:  98% (237/241)[Kremote: Counting objects:  99% (239/241)[Kremote: Counting objects: 100% (241/241)[Kremote: Counting objects: 100% (241/241), done.[K
+remote: Compressing objects:   5% (1/17)[Kremote: Compressing objects:  11% (2/17)[Kremote: Compressing objects:  17% (3/17)[Kremote: Compressing objects:  23% (4/17)[Kremote: Compressing objects:  29% (5/17)[Kremote: Compressing objects:  35% (6/17)[Kremote: Compressing objects:  41% (7/17)[Kremote: Compressing objects:  47% (8/17)[Kremote: Compressing objects:  52% (9/17)[Kremote: Compressing objects:  58% (10/17)[Kremote: Compressing objects:  64% (11/17)[Kremote: Compressing objects:  70% (12/17)[Kremote: Compressing objects:  76% (13/17)[Kremote: Compressing objects:  82% (14/17)[Kremote: Compressing objects:  88% (15/17)[Kremote: Compressing objects:  94% (16/17)[Kremote: Compressing objects: 100% (17/17)[Kremote: Compressing objects: 100% (17/17), done.[K
+Receiving objects:   0% (1/433)   Receiving objects:   1% (5/433)   Receiving objects:   2% (9/433)   Receiving objects:   3% (13/433)   Receiving objects:   4% (18/433)   Receiving objects:   5% (22/433)   Receiving objects:   6% (26/433)   Receiving objects:   7% (31/433)   Receiving objects:   8% (35/433)   Receiving objects:   9% (39/433)   Receiving objects:  10% (44/433)   Receiving objects:  11% (48/433)   Receiving objects:  12% (52/433)   Receiving objects:  13% (57/433)   Receiving objects:  14% (61/433)   Receiving objects:  15% (65/433)   Receiving objects:  16% (70/433)   Receiving objects:  17% (74/433)   Receiving objects:  18% (78/433)   Receiving objects:  19% (83/433)   Receiving objects:  20% (87/433)   Receiving objects:  21% (91/433)   Receiving objects:  22% (96/433)   Receiving objects:  23% (100/433)   Receiving objects:  24% (104/433)   Receiving objects:  25% (109/433)   Receiving objects:  26% (113/433)   Receiving objects:  27% (117/433)   Receiving objects:  28% (122/433)   Receiving objects:  29% (126/433)   Receiving objects:  30% (130/433)   Receiving objects:  31% (135/433)   Receiving objects:  32% (139/433)   Receiving objects:  33% (143/433)   Receiving objects:  34% (148/433)   Receiving objects:  35% (152/433)   Receiving objects:  36% (156/433)   Receiving objects:  37% (161/433)   Receiving objects:  38% (165/433)   Receiving objects:  39% (169/433)   Receiving objects:  40% (174/433)   Receiving objects:  41% (178/433)   Receiving objects:  42% (182/433)   Receiving objects:  43% (187/433)   Receiving objects:  44% (191/433)   Receiving objects:  45% (195/433)   Receiving objects:  46% (200/433)   Receiving objects:  47% (204/433)   Receiving objects:  48% (208/433)   Receiving objects:  49% (213/433)   Receiving objects:  50% (217/433)   Receiving objects:  51% (221/433)   Receiving objects:  52% (226/433)   Receiving objects:  53% (230/433)   Receiving objects:  54% (234/433)   Receiving objects:  55% (239/433)   Receiving objects:  56% (243/433)   Receiving objects:  57% (247/433)   Receiving objects:  58% (252/433)   Receiving objects:  59% (256/433)   Receiving objects:  60% (260/433)   Receiving objects:  61% (265/433)   Receiving objects:  62% (269/433)   Receiving objects:  63% (273/433)   Receiving objects:  64% (278/433)   Receiving objects:  65% (282/433)   Receiving objects:  66% (286/433)   Receiving objects:  67% (291/433)   Receiving objects:  68% (295/433)   Receiving objects:  69% (299/433)   Receiving objects:  70% (304/433)   Receiving objects:  71% (308/433)   Receiving objects:  72% (312/433)   Receiving objects:  73% (317/433)   Receiving objects:  74% (321/433)   Receiving objects:  75% (325/433)   Receiving objects:  76% (330/433)   Receiving objects:  77% (334/433)   Receiving objects:  78% (338/433)   Receiving objects:  79% (343/433)   Receiving objects:  80% (347/433)   Receiving objects:  81% (351/433)   Receiving objects:  82% (356/433)   Receiving objects:  83% (360/433)   Receiving objects:  84% (364/433)   Receiving objects:  85% (369/433)   Receiving objects:  86% (373/433)   Receiving objects:  87% (377/433)   Receiving objects:  88% (382/433)   Receiving objects:  89% (386/433)   Receiving objects:  90% (390/433)   Receiving objects:  91% (395/433)   Receiving objects:  92% (399/433)   remote: Total 433 (delta 227), reused 234 (delta 224), pack-reused 192[K
+Receiving objects:  93% (403/433)   Receiving objects:  94% (408/433)   Receiving objects:  95% (412/433)   Receiving objects:  96% (416/433)   Receiving objects:  97% (421/433)   Receiving objects:  98% (425/433)   Receiving objects:  99% (429/433)   Receiving objects: 100% (433/433)   Receiving objects: 100% (433/433), 85.23 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/277)   Resolving deltas:   1% (4/277)   Resolving deltas:   2% (7/277)   Resolving deltas:   3% (10/277)   Resolving deltas:   5% (15/277)   Resolving deltas:   6% (18/277)   Resolving deltas:   7% (20/277)   Resolving deltas:  19% (53/277)   Resolving deltas:  20% (56/277)   Resolving deltas:  22% (61/277)   Resolving deltas:  23% (64/277)   Resolving deltas:  24% (68/277)   Resolving deltas:  25% (70/277)   Resolving deltas:  28% (79/277)   Resolving deltas:  29% (83/277)   Resolving deltas:  30% (84/277)   Resolving deltas:  31% (88/277)   Resolving deltas:  33% (93/277)   Resolving deltas:  36% (100/277)   Resolving deltas:  40% (112/277)   Resolving deltas:  43% (121/277)   Resolving deltas:  44% (123/277)   Resolving deltas:  45% (125/277)   Resolving deltas:  46% (130/277)   Resolving deltas:  47% (132/277)   Resolving deltas:  48% (134/277)   Resolving deltas:  49% (136/277)   Resolving deltas:  50% (140/277)   Resolving deltas:  52% (145/277)   Resolving deltas:  53% (148/277)   Resolving deltas:  54% (150/277)   Resolving deltas:  55% (153/277)   Resolving deltas:  59% (166/277)   Resolving deltas:  60% (168/277)   Resolving deltas:  61% (170/277)   Resolving deltas:  62% (172/277)   Resolving deltas:  64% (179/277)   Resolving deltas:  66% (184/277)   Resolving deltas:  70% (194/277)   Resolving deltas:  71% (197/277)   Resolving deltas:  72% (202/277)   Resolving deltas:  76% (212/277)   Resolving deltas:  77% (214/277)   Resolving deltas:  78% (217/277)   Resolving deltas:  79% (220/277)   Resolving deltas:  80% (224/277)   Resolving deltas:  81% (225/277)   Resolving deltas:  82% (228/277)   Resolving deltas:  83% (231/277)   Resolving deltas:  84% (233/277)   Resolving deltas:  85% (237/277)   Resolving deltas:  86% (239/277)   Resolving deltas:  87% (243/277)   Resolving deltas:  89% (248/277)   Resolving deltas:  90% (251/277)   Resolving deltas:  91% (253/277)   Resolving deltas:  92% (255/277)   Resolving deltas:  93% (258/277)   Resolving deltas:  94% (261/277)   Resolving deltas:  95% (264/277)   Resolving deltas:  96% (266/277)   Resolving deltas:  97% (269/277)   Resolving deltas:  98% (272/277)   Resolving deltas:  99% (275/277)   Resolving deltas: 100% (277/277)   Resolving deltas: 100% (277/277), completed with 94 local objects.
+From https://github.com/PecanProject/pecan
+ * [new branch]          2159/rstudio-to-docker-compose -> upstream/2159/rstudio-to-docker-compose
+ * [new branch]          BugFix-Debias-Precip -> upstream/BugFix-Debias-Precip
+ * [new branch]          GSoC_PEcAn_Data-Ingest -> upstream/GSoC_PEcAn_Data-Ingest
+ * [new branch]          NEFI_scripts        -> upstream/NEFI_scripts
+ * [new branch]          add-roxygen2-to-depends -> upstream/add-roxygen2-to-depends
+ * [new branch]          agmip-icasa         -> upstream/agmip-icasa
+ * [new branch]          align_pft           -> upstream/align_pft
+ * [new branch]          bailey_sda          -> upstream/bailey_sda
+ * [new branch]          bcow-edits          -> upstream/bcow-edits
+ * [new branch]          bdfiddle            -> upstream/bdfiddle
+ * [new branch]          biocro_genera       -> upstream/biocro_genera
+ * [new branch]          ctsm_package        -> upstream/ctsm_package
+ * [new branch]          demo01              -> upstream/demo01
+ * [new branch]          dendro              -> upstream/dendro
+ * [new branch]          develop             -> upstream/develop
+ * [new branch]          ensemble_db         -> upstream/ensemble_db
+ * [new branch]          funding-footer      -> upstream/funding-footer
+ * [new branch]          gh-pages            -> upstream/gh-pages
+ * [new branch]          input_shiny         -> upstream/input_shiny
+ * [new branch]          link_bety           -> upstream/link_bety
+ * [new branch]          master              -> upstream/master
+ * [new branch]          matser              -> upstream/matser
+ * [new branch]          mccabete-patch-5    -> upstream/mccabete-patch-5
+ * [new branch]          pecan-1.0           -> upstream/pecan-1.0
+ * [new branch]          pecan-1.1           -> upstream/pecan-1.1
+ * [new branch]          pecan-1.2.6         -> upstream/pecan-1.2.6
+ * [new branch]          pecan.branch        -> upstream/pecan.branch
+ * [new branch]          query-cultivars     -> upstream/query-cultivars
+ * [new branch]          rabbitmq            -> upstream/rabbitmq
+ * [new branch]          release/1.7.0       -> upstream/release/1.7.0
+ * [new branch]          release/v1.5.1      -> upstream/release/v1.5.1
+ * [new branch]          release/v1.5.2      -> upstream/release/v1.5.2
+ * [new branch]          release/v1.5.3      -> upstream/release/v1.5.3
+ * [new branch]          release/v1.6.0      -> upstream/release/v1.6.0
+ * [new branch]          release/v1.7.1      -> upstream/release/v1.7.1
+ * [new branch]          remove-secrets      -> upstream/remove-secrets
+ * [new branch]          revert-1712-develop -> upstream/revert-1712-develop
+ * [new branch]          revert-1751-develop -> upstream/revert-1751-develop
+ * [new branch]          revert-1927-GFDL-reftimes -> upstream/revert-1927-GFDL-reftimes
+ * [new branch]          rmd_template        -> upstream/rmd_template
+ * [new branch]          sipnet_sda_preprocessing -> upstream/sipnet_sda_preprocessing
+ * [new branch]          test_R_3.5          -> upstream/test_R_3.5
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git m[K[K[K[K[Kgit branch
+  develop[m
+  fix_empty_posteriors[m
+* [32mmaster[m
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git fetc[K[K[K[K[K[K[K[Kgit checkout develop
+M	base/db/R/get.trait.data.R
+M	modules/data.remote/NAMESPACE
+Switched to branch 'develop'
+Your branch is up-to-date with 'origin/develop'.
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git branch
+* [32mdevelop[m
+  fix_empty_posteriors[m
+  master[m
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git fetch upstream
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git merge upstream/develop
+Updating 0fb11d7a3..a72fbd7f5
+Fast-forward
+ base/utils/R/read_web_config.R                  |  43 [32m++[m[31m---[m
+ base/utils/man/read_web_config.Rd               |   6 [32m+[m[31m-[m
+ base/workflow/DESCRIPTION                       |   1 [32m+[m
+ base/workflow/NAMESPACE                         |   1 [32m+[m
+ base/workflow/R/create_execute_test_xml.R       | 155 [32m++++++++++++++++[m
+ base/workflow/inst/batch_run.R                  | 166 [32m++++++++++++++++++[m
+ base/workflow/inst/default_tests.csv            |   4 [32m+[m
+ base/workflow/inst/permutation_tests.R          | 142 [32m+++++++++++++++[m
+ base/workflow/man/create_execute_test_xml.Rd    |  59 [32m+++++++[m
+ .../03_coding_practices/01_Coding_style.Rmd     |  16 [32m+[m[31m-[m
+ .../03_coding_practices/05_Testing.Rmd          |  48 [32m+++++[m
+ scripts/travis/install.sh                       |   9 [32m+[m
+ scripts/travis/rebuild_pkg_binaries.R           |  35 [32m++++[m
+ scripts/travis/script.sh                        |   9 [32m+[m[31m-[m
+ 14 files changed, 656 insertions(+), 38 deletions(-)
+ create mode 100644 base/workflow/R/create_execute_test_xml.R
+ create mode 100755 base/workflow/inst/batch_run.R
+ create mode 100644 base/workflow/inst/default_tests.csv
+ create mode 100755 base/workflow/inst/permutation_tests.R
+ create mode 100644 base/workflow/man/create_execute_test_xml.Rd
+ create mode 100644 scripts/travis/rebuild_pkg_binaries.R
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git push origin develop
+error: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': KristinaRei  iemer
+error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://KristinaRiemer@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/KristinaRiemer/pecan.git
+   0fb11d7a3..a72fbd7f5  develop -> develop
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git branch
+* [32mdevelop[m
+  fix_empty_posteriors[m
+  master[m
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git checkout master
+M	base/db/R/get.trait.data.R
+M	modules/data.remote/NAMESPACE
+Switched to branch 'master'
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ f[Kgit branch dfjsl
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git branch
+  develop[m
+  dfjsl[m
+  fix_empty_posteriors[m
+* [32mmaster[m
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git brand[Kch -d dfjsl
+Deleted branch dfjsl (was 0fb11d7a3).
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git branch -d master
+error: Cannot delete branch 'master' checked out at '/home/kristinariemer/pecan'
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git branch
+  develop[m
+  fix_empty_posteriors[m
+* [32mmaster[m
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git ch[K[K[K fetch upstream
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ fi[K[Kgit merge upstream/master
+Already up-to-date.
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/KristinaRiemer/pecan.git
+   e697a0a03..0fb11d7a3  master -> master
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git branch
+  develop[m
+  fix_empty_posteriors[m
+* [32mmaster[m
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git checkout develop
+M	base/db/R/get.trait.data.R
+M	modules/data.remote/NAMESPACE
+Switched to branch 'develop'
+Your branch is up-to-date with 'origin/develop'.
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git branch
+* [32mdevelop[m
+  fix_empty_posteriors[m
+  master[m
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ [Kkristinariemer@1e3f3cd8c125:~/pecan$ pwd
+/home/kristinariemer/pecan
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ make install[K[K[K[K[K[K[Kclean
+rm -rf .install .check .test .doc
+find modules/rtm/src \( -name \*.mod -o -name \*.o -o -name \*.so \) -delete
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ make in[K[K[K[K[K[K[Kpwd
+/home/kristinariemer/pecan
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ make install
+mkdir -p .doc/base
+mkdir -p .install
+./scripts/time.sh "" Rscript -e "if(!requireNamespace('devtools', quietly = TRUE)) install.packages('devtools', repos = 'http://cran.rstudio.com', Ncpus = 1)"
+
+real	0m1.673s
+user	0m1.222s
+sys	0m0.421s
+echo `date` > .install/devtools
+./scripts/time.sh "" Rscript -e "if(!requireNamespace('roxygen2', quietly = TRUE)) install.packages('roxygen2', repos = 'http://cran.rstudio.com', Ncpus = 1)"
+
+real	0m0.466s
+user	0m0.474s
+sys	0m0.352s
+echo `date` > .install/roxygen2
+./scripts/time.sh "" Rscript -e "if(!requireNamespace('testthat', quietly = TRUE)) install.packages('testthat', repos = 'http://cran.rstudio.com', Ncpus = 1)"
+
+real	0m0.298s
+user	0m0.310s
+sys	0m0.352s
+echo `date` > .install/testthat
+./scripts/time.sh " base/logger" Rscript -e " deps <- if (grepl('base/utils', ' base/logger')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/logger', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m11.005s
+user	0m1.637s
+sys	0m0.459s
+./scripts/time.sh " base/logger" Rscript -e "devtools::document('"base/logger"')"
+Updating PEcAn.logger documentation
+Writing NAMESPACE
+Loading PEcAn.logger
+Writing NAMESPACE
+
+real	0m2.428s
+user	0m2.242s
+sys	0m0.428s
+echo `date` > .doc/base/logger
+mkdir -p .install/base
+./scripts/time.sh " base/logger" Rscript -e "devtools::install('base/logger', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/logger/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/logger/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.logger’:[39m[36m[39m
+  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.logger_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/Rtmpv9kzzj/PEcAn.logger_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.logger’ ...
+[39m[31m** R
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.logger)
+[39m
+real	0m10.119s
+user	0m2.967s
+sys	0m1.539s
+echo `date` > .install/base/logger
+./scripts/time.sh " base/remote" Rscript -e " deps <- if (grepl('base/utils', ' base/remote')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/remote', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.695s
+user	0m1.470s
+sys	0m0.415s
+./scripts/time.sh " base/remote" Rscript -e "devtools::document('"base/remote"')"
+Updating PEcAn.remote documentation
+Writing NAMESPACE
+Loading PEcAn.remote
+Writing NAMESPACE
+
+real	0m2.615s
+user	0m2.459s
+sys	0m0.429s
+echo `date` > .doc/base/remote
+./scripts/time.sh " base/remote" Rscript -e "devtools::install('base/remote', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/remote/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/remote/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.remote’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.remote_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpayTxnx/PEcAn.remote_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.remote’ ...
+[39m[31m** R
+** tests
+** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.remote)
+[39m
+real	0m13.513s
+user	0m3.310s
+sys	0m1.565s
+echo `date` > .install/base/remote
+mkdir -p .doc/modules
+./scripts/time.sh " modules/emulator" Rscript -e " deps <- if (grepl('base/utils', ' modules/emulator')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/emulator', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.687s
+user	0m1.444s
+sys	0m0.442s
+./scripts/time.sh " modules/emulator" Rscript -e "devtools::document('"modules/emulator"')"
+Updating PEcAn.emulator documentation
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#11]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#12]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#13]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#14]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#17]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/GaussProcess.R#18]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/distance.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/distance.matrix.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/distance.matrix.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/distance12.matrix.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/distance12.matrix.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/gp_mle.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/gp_mle.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/gp_mle.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/gp_mle.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/jump.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/ldinvgamma.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/ldinvgamma.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#66]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#67]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#68]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#69]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#70]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#71]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#181]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#183]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#184]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#187]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#188]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/minimize.GP.R#189]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/predict.GP.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/predict.GP.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/predict.density.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/summarize.GP.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/emulator/R/summarize.GP.R#7]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.emulator
+Loading required package: mvtnorm
+Loading required package: mlegp
+Loading required package: MCMCpack
+Loading required package: coda
+Loading required package: MASS
+##
+## Markov Chain Monte Carlo Package (MCMCpack)
+## Copyright (C) 2003-2019 Andrew D. Martin, Kevin M. Quinn, and Jong Hee Park
+##
+## Support provided by the U.S. National Science Foundation
+## (Grants SES-0350646 and SES-0350613)
+##
+Writing NAMESPACE
+
+real	0m4.037s
+user	0m3.801s
+sys	0m0.517s
+echo `date` > .doc/modules/emulator
+mkdir -p .install/modules
+./scripts/time.sh " modules/emulator" Rscript -e "devtools::install('modules/emulator', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/emulator/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/emulator/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.emulator’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.emulator_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpN8cXFM/PEcAn.emulator_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.emulator’ ...
+[39m[31m** R
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.emulator)
+[39m
+real	0m14.699s
+user	0m7.047s
+sys	0m1.792s
+echo `date` > .install/modules/emulator
+./scripts/time.sh " base/utils" Rscript -e " deps <- if (grepl('base/utils', ' base/utils')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/utils', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.704s
+user	0m1.451s
+sys	0m0.444s
+./scripts/time.sh " base/utils" Rscript -e "devtools::document('"base/utils"')"
+Updating PEcAn.utils documentation
+Writing NAMESPACE
+Loading PEcAn.utils
+Writing NAMESPACE
+Warning message:
+Unknown xml node: html_block 
+
+real	0m6.501s
+user	0m5.867s
+sys	0m0.514s
+echo `date` > .doc/base/utils
+./scripts/time.sh " base/utils" Rscript -e "devtools::install('base/utils', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/utils/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/utils/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.utils’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.utils_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpD4ooB1/PEcAn.utils_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.utils’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m*** moving datasets to lazyload DB
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.utils)
+[39m
+real	0m13.706s
+user	0m6.358s
+sys	0m1.710s
+echo `date` > .install/base/utils
+./scripts/time.sh " base/db" Rscript -e " deps <- if (grepl('base/utils', ' base/db')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/db', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.728s
+user	0m1.470s
+sys	0m0.459s
+./scripts/time.sh " base/db" Rscript -e "devtools::document('"base/db"')"
+Updating PEcAn.DB documentation
+Writing NAMESPACE
+Loading PEcAn.DB
+Writing NAMESPACE
+
+real	0m4.140s
+user	0m3.699s
+sys	0m0.546s
+echo `date` > .doc/base/db
+./scripts/time.sh " base/db" Rscript -e "devtools::install('base/db', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/db/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/db/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.DB’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.DB_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpZMqsFR/PEcAn.DB_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.DB’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.DB)
+[39m
+real	0m13.139s
+user	0m5.507s
+sys	0m1.738s
+echo `date` > .install/base/db
+./scripts/time.sh " base/settings" Rscript -e " deps <- if (grepl('base/utils', ' base/settings')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/settings', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.677s
+user	0m1.458s
+sys	0m0.423s
+./scripts/time.sh " base/settings" Rscript -e "devtools::document('"base/settings"')"
+Updating PEcAn.settings documentation
+Warning: @param [/home/kristinariemer/pecan/base/settings/R/MultiSettings.R#6]: requires a value
+Warning: @return [/home/kristinariemer/pecan/base/settings/R/MultiSettings.R#7]: requires a value
+Warning: @describeIn [/home/kristinariemer/pecan/base/settings/R/MultiSettings.R#34]: requires a value
+Warning: @return [/home/kristinariemer/pecan/base/settings/R/Settings.R#14]: requires a value
+Warning: @describeIn [/home/kristinariemer/pecan/base/settings/R/Settings.R#29]: requires a value
+Warning: @return [/home/kristinariemer/pecan/base/settings/R/createMultisiteMultiSettings.r#76]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/base/settings/R/createMultisiteMultiSettings.r#79]: requires a value
+Writing NAMESPACE
+Loading PEcAn.settings
+Loading required package: PEcAn.DB
+Writing NAMESPACE
+
+real	0m3.025s
+user	0m2.878s
+sys	0m0.386s
+echo `date` > .doc/base/settings
+./scripts/time.sh " base/settings" Rscript -e "devtools::install('base/settings', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/settings/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/settings/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.settings’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.settings_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpSK1aWE/PEcAn.settings_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.settings’ ...
+[39m[31m** R
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.settings)
+[39m
+real	0m12.306s
+user	0m5.001s
+sys	0m1.635s
+echo `date` > .install/base/settings
+./scripts/time.sh " base/visualization" Rscript -e " deps <- if (grepl('base/utils', ' base/visualization')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/visualization', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.688s
+user	0m1.474s
+sys	0m0.414s
+./scripts/time.sh " base/visualization" Rscript -e "devtools::document('"base/visualization"')"
+Updating PEcAn.visualization documentation
+Writing NAMESPACE
+Loading PEcAn.visualization
+Loading required package: data.table
+Loading required package: ggplot2
+Loading required package: raster
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:data.table’:
+
+    shift
+
+Writing NAMESPACE
+
+real	0m4.670s
+user	0m4.005s
+sys	0m0.574s
+echo `date` > .doc/base/visualization
+./scripts/time.sh " base/visualization" Rscript -e "devtools::install('base/visualization', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/visualization/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/visualization/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.visualization’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.visualization_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpQKreym/PEcAn.visualization_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.visualization’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: possible error in 'pdf(filename = filename, ': unused argument (filename = filename) 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.visualization)
+[39m
+real	0m15.045s
+user	0m7.592s
+sys	0m1.801s
+echo `date` > .install/base/visualization
+./scripts/time.sh " base/qaqc" Rscript -e " deps <- if (grepl('base/utils', ' base/qaqc')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/qaqc', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.804s
+user	0m1.447s
+sys	0m0.454s
+./scripts/time.sh " base/qaqc" Rscript -e "devtools::document('"base/qaqc"')"
+Updating PEcAn.qaqc documentation
+Warning: @param [/home/kristinariemer/pecan/base/qaqc/R/taylor.plot.R#13]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/base/qaqc/R/taylor.plot.R#15]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.qaqc
+Loading required package: plotrix
+Writing NAMESPACE
+Warning messages:
+1: cull_database_entries.Rd is missing name/title. Skipping 
+2: find_formats_without_inputs.Rd is missing name/title. Skipping 
+3: find_inputs_without_formats.Rd is missing name/title. Skipping 
+4: get_table_column_names.Rd is missing name/title. Skipping 
+5: write_out_table.Rd is missing name/title. Skipping 
+
+real	0m2.012s
+user	0m1.827s
+sys	0m0.437s
+echo `date` > .doc/base/qaqc
+./scripts/time.sh " base/qaqc" Rscript -e "devtools::install('base/qaqc', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/qaqc/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/qaqc/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.qaqc’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.qaqc_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpI5p4zc/PEcAn.qaqc_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.qaqc’ ...
+** R
+** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.qaqc)
+[39m
+real	0m10.124s
+user	0m2.886s
+sys	0m1.582s
+echo `date` > .install/base/qaqc
+./scripts/time.sh " modules/data.atmosphere" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.atmosphere')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.atmosphere', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m9.583s
+user	0m1.553s
+sys	0m0.458s
+./scripts/time.sh " modules/data.atmosphere" Rscript -e "devtools::document('"modules/data.atmosphere"')"
+Updating PEcAn.data.atmosphere documentation
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/debias.met.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/debias.met.R#14]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.FACE.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.FACE.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.FACE.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.FACE.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.GLDAS.R#11]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.MACA.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.MACA.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.MACA.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.MsTMIP_NARR.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NARR.R#4]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NARR.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NARR.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#10]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.NLDAS.R#11]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.PalEON.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.PalEON.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.PalEON_ENS.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/download.PalEON_ENS.R#6]: requires name and description
+Warning: @family [/home/kristinariemer/pecan/modules/data.atmosphere/R/extract_local_CMIP5.R#8]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.atmosphere/R/extract_local_CMIP5.R#38]: requires a value
+Warning: @family [/home/kristinariemer/pecan/modules/data.atmosphere/R/extract_local_NLDAS.R#8]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.atmosphere/R/merge.met.variable.R#14]: requires a value
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.R#418]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.R#419]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.R#565]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.R#566]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met.process.stage.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.FACE.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.FACE.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.FACE.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.NARR.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.NARR.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.NARR.R#9]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.csv.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.csv.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2CF.csv.R#8]: requires name and description
+Warning: @return [/home/kristinariemer/pecan/modules/data.atmosphere/R/met2cf.ERA5.R#16]: requires a value
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met_temporal_downscale.Gaussian_ensemble.R#14]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/met_temporal_downscale.Gaussian_ensemble.R#18]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/site.lst.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/site.lst.R#8]: requires name and description
+Warning: @return [/home/kristinariemer/pecan/modules/data.atmosphere/R/split_wind.R#12]: requires a value
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/temporal.downscaling.R#193]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/temporal.downscaling.R#194]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/temporal.downscaling.R#195]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/data.atmosphere/R/temporal.downscaling.R#196]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.data.atmosphere
+Loading required package: xts
+Loading required package: zoo
+
+Attaching package: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+Writing NAMESPACE
+Warning messages:
+1: In (function (dep_name, dep_ver = "*")  :
+  Need geonames > 0.998 but loaded version is 0.9
+2: replacing previous import ‘dplyr::last’ by ‘xts::last’ when loading ‘PEcAn.data.atmosphere’ 
+3: replacing previous import ‘dplyr::first’ by ‘xts::first’ when loading ‘PEcAn.data.atmosphere’ 
+
+real	0m10.612s
+user	0m8.370s
+sys	0m0.806s
+echo `date` > .doc/modules/data.atmosphere
+./scripts/time.sh " modules/data.atmosphere" Rscript -e "devtools::install('modules/data.atmosphere', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/data.atmosphere/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/data.atmosphere/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.data.atmosphere’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.data.atmosphere_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpuNAWb5/PEcAn.data.atmosphere_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.data.atmosphere’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31mWarning: replacing previous import ‘dplyr::last’ by ‘xts::last’ when loading ‘PEcAn.data.atmosphere’
+[39m[31mWarning: replacing previous import ‘dplyr::first’ by ‘xts::first’ when loading ‘PEcAn.data.atmosphere’
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39mWarning: replacing previous import ‘dplyr::last’ by ‘xts::last’ when loading ‘PEcAn.data.atmosphere’
+Warning: replacing previous import ‘dplyr::first’ by ‘xts::first’ when loading ‘PEcAn.data.atmosphere’
+[31m* DONE (PEcAn.data.atmosphere)
+[39m
+real	0m27.472s
+user	0m19.035s
+sys	0m2.043s
+echo `date` > .install/modules/data.atmosphere
+./scripts/time.sh " modules/data.land" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.land')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.land', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.771s
+user	0m1.443s
+sys	0m0.467s
+./scripts/time.sh " modules/data.land" Rscript -e "devtools::document('"modules/data.land"')"
+Updating PEcAn.data.land documentation
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/DataONE_doi_download.R#12]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/DataONE_doi_download.R#31]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/DataONE_doi_download.R#62]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/DataONE_doi_download.R#96]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.land/R/extract_soil_nc.R#247]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.land/R/extract_soil_nc.R#347]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/soil_process.R#12]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.land/R/soil_utils.R#236]: requires a value
+Warning: @return [/home/kristinariemer/pecan/modules/data.land/R/soil_utils.R#312]: requires a value
+Warning: @examples [/home/kristinariemer/pecan/modules/data.land/R/soil_utils.R#315]: requires a value
+Writing NAMESPACE
+Loading PEcAn.data.land
+Loading required package: datapack
+Loading required package: dataone
+Loading required package: PEcAn.DB
+Loading required package: PEcAn.utils
+
+Attaching package: ‘PEcAn.utils’
+
+The following object is masked from ‘package:utils’:
+
+    download.file
+
+Loading required package: redland
+Loading required package: sirt
+- sirt 3.1-80 (2019-01-04 12:08:59)
+Loading required package: sf
+Linking to GEOS 3.5.1, GDAL 2.1.2, PROJ 4.9.3
+Writing NAMESPACE
+
+real	0m6.906s
+user	0m6.364s
+sys	0m0.750s
+echo `date` > .doc/modules/data.land
+./scripts/time.sh " modules/data.land" Rscript -e "devtools::install('modules/data.land', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/data.land/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/data.land/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.data.land’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.data.land_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmptLkiDH/PEcAn.data.land_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.data.land’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: possible error in 'write_veg(outfolder, ': unused argument (source) 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.data.land)
+[39m
+real	0m32.359s
+user	0m24.163s
+sys	0m2.370s
+echo `date` > .install/modules/data.land
+./scripts/time.sh " modules/priors" Rscript -e " deps <- if (grepl('base/utils', ' modules/priors')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/priors', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.794s
+user	0m1.438s
+sys	0m0.463s
+./scripts/time.sh " modules/priors" Rscript -e "devtools::document('"modules/priors"')"
+Updating PEcAn.priors documentation
+Writing NAMESPACE
+Loading PEcAn.priors
+Loading required package: PEcAn.utils
+
+Attaching package: ‘PEcAn.utils’
+
+The following object is masked from ‘package:utils’:
+
+    download.file
+
+Writing NAMESPACE
+
+real	0m2.381s
+user	0m2.273s
+sys	0m0.449s
+echo `date` > .doc/modules/priors
+./scripts/time.sh " modules/priors" Rscript -e "devtools::install('modules/priors', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/priors/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/priors/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.priors’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.priors_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpvWM1PE/PEcAn.priors_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.priors’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.priors)
+[39m
+real	0m11.739s
+user	0m4.298s
+sys	0m1.660s
+echo `date` > .install/modules/priors
+./scripts/time.sh " modules/uncertainty" Rscript -e " deps <- if (grepl('base/utils', ' modules/uncertainty')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/uncertainty', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.731s
+user	0m1.458s
+sys	0m0.456s
+./scripts/time.sh " modules/uncertainty" Rscript -e "devtools::document('"modules/uncertainty"')"
+Updating PEcAn.uncertainty documentation
+Writing NAMESPACE
+Loading PEcAn.uncertainty
+Loading required package: PEcAn.utils
+
+Attaching package: ‘PEcAn.utils’
+
+The following object is masked from ‘package:utils’:
+
+    download.file
+
+Loading required package: PEcAn.priors
+Loading required package: ggplot2
+Loading required package: ggmap
+Loading required package: gridExtra
+Writing NAMESPACE
+
+real	0m3.494s
+user	0m3.059s
+sys	0m0.477s
+echo `date` > .doc/modules/uncertainty
+./scripts/time.sh " modules/uncertainty" Rscript -e "devtools::install('modules/uncertainty', Ncpus = 1, upgrade=FALSE);"
+         checking for file ‘/home/kristinariemer/pecan/modules/uncertainty/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/uncertainty/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.uncertainty’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+     Warning: /tmp/Rtmp5RQnwJ/Rbuild6c625cea322/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\sigma'
+   Warning: /tmp/Rtmp5RQnwJ/Rbuild6c625cea322/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\left'
+     Warning: /tmp/Rtmp5RQnwJ/Rbuild6c625cea322/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\frac'
+   Warning: /tmp/Rtmp5RQnwJ/Rbuild6c625cea322/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\frac'
+   Warning: /tmp/Rtmp5RQnwJ/Rbuild6c625cea322/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\kappa'
+   Warning: /tmp/Rtmp5RQnwJ/Rbuild6c625cea322/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\right'
+     Warning: /tmp/Rtmp5RQnwJ/Rbuild6c625cea322/PEcAn.uncertainty/man/spline.ensemble.Rd:18: unknown macro '\phi'
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.uncertainty_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpRnNRqw/PEcAn.uncertainty_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.uncertainty’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: wrong number of arguments to 'seq_along' 
+Note: wrong number of arguments to 'seq_along' 
+Note: wrong number of arguments to 'seq_along' 
+[31m** help
+[39m[31mWarning: /tmp/Rtmp54ftMv/R.INSTALL6d5138b0a8a/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\sigma'
+Warning: /tmp/Rtmp54ftMv/R.INSTALL6d5138b0a8a/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\left'
+Warning: /tmp/Rtmp54ftMv/R.INSTALL6d5138b0a8a/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\frac'
+[39m[31mWarning: /tmp/Rtmp54ftMv/R.INSTALL6d5138b0a8a/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\frac'
+Warning: /tmp/Rtmp54ftMv/R.INSTALL6d5138b0a8a/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\kappa'
+Warning: /tmp/Rtmp54ftMv/R.INSTALL6d5138b0a8a/PEcAn.uncertainty/man/sd.var.Rd:19: unknown macro '\right'
+[39m[31mWarning: /tmp/Rtmp54ftMv/R.INSTALL6d5138b0a8a/PEcAn.uncertainty/man/spline.ensemble.Rd:18: unknown macro '\phi'
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.uncertainty)
+[39m
+real	0m13.918s
+user	0m6.368s
+sys	0m1.757s
+echo `date` > .install/modules/uncertainty
+./scripts/time.sh " base/workflow" Rscript -e " deps <- if (grepl('base/utils', ' base/workflow')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('base/workflow', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.731s
+user	0m1.483s
+sys	0m0.432s
+./scripts/time.sh " base/workflow" Rscript -e "devtools::document('"base/workflow"')"
+Updating PEcAn.workflow documentation
+Warning: @return [/home/kristinariemer/pecan/base/workflow/R/create_execute_test_xml.R#26]: requires a value
+Writing NAMESPACE
+Loading PEcAn.workflow
+Writing NAMESPACE
+Warning messages:
+1: replacing previous import ‘dplyr::last’ by ‘xts::last’ when loading ‘PEcAn.data.atmosphere’ 
+2: replacing previous import ‘dplyr::first’ by ‘xts::first’ when loading ‘PEcAn.data.atmosphere’ 
+
+real	0m2.919s
+user	0m2.728s
+sys	0m0.309s
+echo `date` > .doc/base/workflow
+./scripts/time.sh " base/workflow" Rscript -e "devtools::install('base/workflow', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/base/workflow/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/base/workflow/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.workflow’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.workflow_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpHD36Z4/PEcAn.workflow_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.workflow’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.workflow)
+[39m
+real	0m10.329s
+user	0m2.920s
+sys	0m1.096s
+echo `date` > .install/base/workflow
+./scripts/time.sh " modules/allometry" Rscript -e " deps <- if (grepl('base/utils', ' modules/allometry')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/allometry', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.808s
+user	0m1.465s
+sys	0m0.372s
+./scripts/time.sh " modules/allometry" Rscript -e "devtools::document('"modules/allometry"')"
+Updating PEcAn.allometry documentation
+Writing NAMESPACE
+Loading PEcAn.allometry
+Loading required package: MCMCpack
+Loading required package: coda
+Loading required package: MASS
+##
+## Markov Chain Monte Carlo Package (MCMCpack)
+## Copyright (C) 2003-2019 Andrew D. Martin, Kevin M. Quinn, and Jong Hee Park
+##
+## Support provided by the U.S. National Science Foundation
+## (Grants SES-0350646 and SES-0350613)
+##
+Loading required package: mvtnorm
+Loading required package: tools
+Writing NAMESPACE
+
+real	0m3.813s
+user	0m3.621s
+sys	0m0.398s
+echo `date` > .doc/modules/allometry
+./scripts/time.sh " modules/allometry" Rscript -e "devtools::install('modules/allometry', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/allometry/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/allometry/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.allometry’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.allometry_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpQ0xtwQ/PEcAn.allometry_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.allometry’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31mWarning in scan(file = file, what = what, sep = sep, quote = quote, dec = dec,  :
+  EOF within quoted string
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.allometry)
+[39m
+real	0m14.817s
+user	0m7.065s
+sys	0m1.436s
+echo `date` > .install/modules/allometry
+./scripts/time.sh " modules/benchmark" Rscript -e " deps <- if (grepl('base/utils', ' modules/benchmark')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/benchmark', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.725s
+user	0m1.428s
+sys	0m0.324s
+./scripts/time.sh " modules/benchmark" Rscript -e "devtools::document('"modules/benchmark"')"
+Updating PEcAn.benchmark documentation
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/format_wide2long.R#8]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_residual_plot.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_residual_plot.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_residual_plot.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_scatter_plot.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_scatter_plot.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_scatter_plot.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_timeseries_plot.R#5]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_timeseries_plot.R#6]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_timeseries_plot.R#7]: requires name and description
+Warning: @param [/home/kristinariemer/pecan/modules/benchmark/R/metric_timeseries_plot.R#8]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.benchmark
+Writing NAMESPACE
+
+real	0m4.005s
+user	0m3.599s
+sys	0m0.423s
+echo `date` > .doc/modules/benchmark
+./scripts/time.sh " modules/benchmark" Rscript -e "devtools::install('modules/benchmark', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/benchmark/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/benchmark/DESCRIPTION’[39m[36m[36m (372ms)[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.benchmark’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.benchmark_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpNjiX5K/PEcAn.benchmark_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.benchmark’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: ... may be used in an incorrect context 
+Note: ... may be used in an incorrect context 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.benchmark)
+[39m
+real	0m13.003s
+user	0m5.392s
+sys	0m1.338s
+echo `date` > .install/modules/benchmark
+./scripts/time.sh " modules/meta.analysis" Rscript -e " deps <- if (grepl('base/utils', ' modules/meta.analysis')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/meta.analysis', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.714s
+user	0m1.455s
+sys	0m0.288s
+./scripts/time.sh " modules/meta.analysis" Rscript -e "devtools::document('"modules/meta.analysis"')"
+Updating PEcAn.MA documentation
+Warning: @param [/home/kristinariemer/pecan/modules/meta.analysis/R/single.MA.R#17]: requires name and description
+Writing NAMESPACE
+Loading PEcAn.MA
+Loading required package: XML
+Loading required package: lattice
+Loading required package: MASS
+Loading required package: PEcAn.utils
+
+Attaching package: ‘PEcAn.utils’
+
+The following object is masked from ‘package:utils’:
+
+    download.file
+
+Loading required package: PEcAn.DB
+Writing NAMESPACE
+
+real	0m2.972s
+user	0m2.598s
+sys	0m0.330s
+echo `date` > .doc/modules/meta.analysis
+./scripts/time.sh " modules/meta.analysis" Rscript -e "devtools::install('modules/meta.analysis', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/meta.analysis/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/meta.analysis/DESCRIPTION’[39m[36m[36m (346ms)[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.MA’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mlooking to see if a ‘data/datalist’ file should be added[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.MA_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpcObNsl/PEcAn.MA_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.MA’ ...
+[39m[31m** R
+[39m[31m** data
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39m[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.MA)
+[39m
+real	0m11.639s
+user	0m4.188s
+sys	0m1.329s
+echo `date` > .install/modules/meta.analysis
+./scripts/time.sh " modules/assim.batch" Rscript -e " deps <- if (grepl('base/utils', ' modules/assim.batch')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/assim.batch', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.782s
+user	0m1.453s
+sys	0m0.369s
+./scripts/time.sh " modules/assim.batch" Rscript -e "devtools::document('"modules/assim.batch"')"
+Updating PEcAn.assim.batch documentation
+Writing NAMESPACE
+Loading PEcAn.assim.batch
+Warning: Failed to find topic 'x'
+Writing NAMESPACE
+
+real	0m7.288s
+user	0m5.412s
+sys	0m0.521s
+echo `date` > .doc/modules/assim.batch
+./scripts/time.sh " modules/assim.batch" Rscript -e "devtools::install('modules/assim.batch', Ncpus = 1, upgrade=FALSE);"
+         checking for file ‘/home/kristinariemer/pecan/modules/assim.batch/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/assim.batch/DESCRIPTION’[39m[36m[36m (347ms)[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.assim.batch’:[39m[36m[36m (458ms)[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+[90m─[39m[90m  [39m[90mbuilding ‘PEcAn.assim.batch_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/Rtmpebf3Bb/PEcAn.assim.batch_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.assim.batch’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: possible error in 'pda.postprocess(settings, ': unused argument (burnin) 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** installing vignettes
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.assim.batch)
+[39m
+real	0m14.425s
+user	0m6.518s
+sys	0m1.297s
+echo `date` > .install/modules/assim.batch
+./scripts/time.sh " modules/assim.sequential" Rscript -e " deps <- if (grepl('base/utils', ' modules/assim.sequential')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/assim.sequential', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.744s
+user	0m1.454s
+sys	0m0.316s
+./scripts/time.sh " modules/assim.sequential" Rscript -e "devtools::document('"modules/assim.sequential"')"
+Updating PEcAn.assim.sequential documentation
+Warning: @return [/home/kristinariemer/pecan/modules/assim.sequential/R/Helper.functions.R#8]: requires a value
+Warning: @title [/home/kristinariemer/pecan/modules/assim.sequential/R/met_filtering_helpers.R#1]: requires a value
+Writing NAMESPACE
+Loading PEcAn.assim.sequential
+Warning: Remote_helpers.R:94: @example spans multiple lines. Do you want @examples?
+Warning: Remote_helpers.R:412: @example spans multiple lines. Do you want @examples?
+Writing NAMESPACE
+Warning message:
+sample_met.Rd is missing name/title. Skipping 
+
+real	0m6.864s
+user	0m3.905s
+sys	0m0.496s
+echo `date` > .doc/modules/assim.sequential
+./scripts/time.sh " modules/assim.sequential" Rscript -e "devtools::install('modules/assim.sequential', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/assim.sequential/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/assim.sequential/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.assim.sequential’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.assim.sequential_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpmUp5WE/PEcAn.assim.sequential_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.assim.sequential’ ...
+[39m[31m** R
+[39m[31m** inst
+[39m[31m** tests
+[39m[31m** byte-compile and prepare package for lazy loading
+[39mNote: wrong number of arguments to 'seq_along' 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.assim.sequential)
+[39m
+real	0m21.568s
+user	0m13.020s
+sys	0m1.782s
+echo `date` > .install/modules/assim.sequential
+./scripts/time.sh " modules/data.hydrology" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.hydrology')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.hydrology', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.702s
+user	0m1.415s
+sys	0m0.304s
+./scripts/time.sh " modules/data.hydrology" Rscript -e "devtools::document('"modules/data.hydrology"')"
+Updating PEcAn.data.hydrology documentation
+Loading PEcAn.data.hydrology
+
+real	0m1.903s
+user	0m1.782s
+sys	0m0.292s
+echo `date` > .doc/modules/data.hydrology
+./scripts/time.sh " modules/data.hydrology" Rscript -e "devtools::install('modules/data.hydrology', Ncpus = 1, upgrade=FALSE);"
+     checking for file ‘/home/kristinariemer/pecan/modules/data.hydrology/DESCRIPTION’ ...  [32m✔[39m  [90mchecking for file ‘/home/kristinariemer/pecan/modules/data.hydrology/DESCRIPTION’[39m[36m[39m
+  [90m─[39m[90m  [39m[90mpreparing ‘PEcAn.data.hydrology’:[39m[36m[39m
+     checking DESCRIPTION meta-information ...  [32m✔[39m  [90mchecking DESCRIPTION meta-information[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+  [90m─[39m[90m  [39m[90mchecking for empty or unneeded directories[39m[36m[39m
+   Removed empty directory ‘PEcAn.data.hydrology/man’
+  [90m─[39m[90m  [39m[90mbuilding ‘PEcAn.data.hydrology_1.7.0.tar.gz’[39m[36m[39m
+     
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpSuiPGm/PEcAn.data.hydrology_1.7.0.tar.gz --install-tests 
+[31m* installing to library ‘/home/kristinariemer/R_libs’
+[39m[31m* installing *source* package ‘PEcAn.data.hydrology’ ...
+[39m[31m** tests
+[39mNo man pages found in package  ‘PEcAn.data.hydrology’ 
+[31m** help
+[39m[31m*** installing help indices
+[39m[31m** building package indices
+[39m[31m** testing if installed package can be loaded
+[39m[31m* DONE (PEcAn.data.hydrology)
+[39m
+real	0m9.983s
+user	0m2.513s
+sys	0m1.202s
+echo `date` > .install/modules/data.hydrology
+./scripts/time.sh " modules/data.remote" Rscript -e " deps <- if (grepl('base/utils', ' modules/data.remote')) { c('Depends', 'Imports', 'LinkingTo') } else { TRUE }; devtools::install_deps('modules/data.remote', Ncpus = 1, dependencies = deps, upgrade=FALSE);"
+
+real	0m8.755s
+user	0m1.457s
+sys	0m0.367s
+./scripts/time.sh " modules/data.remote" Rscript -e "devtools::document('"modules/data.remote"')"
+Updating PEcAn.data.remote documentation
+Warning: @examples [/home/kristinariemer/pecan/modules/data.remote/R/download.thredds.R#13]: mismatched braces or quotes
+Loading PEcAn.data.remote
+Error: Dependency package(s) 'binaryLogic' not available.
+In addition: Warning messages:
+1: In (function (dep_name, dep_ver = "*")  :
+  Need MODISTools >= 1.1.0 but loaded version is 1.0.0
+2: In (function (dep_name, dep_ver = "*")  :
+  Dependency package 'binaryLogic' not available.
+Execution halted
+
+real	0m3.002s
+user	0m2.767s
+sys	0m0.453s
+Makefile:114: recipe for target '.doc/modules/data.remote' failed
+make: *** [.doc/modules/data.remote] Error 1
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ pwd
+/home/kristinariemer/pecan
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ gt[Kit status
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   base/db/R/get.trait.data.R[m
+	[31mmodified:   modules/data.remote/NAMESPACE[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemer/pecankristinariemer@1e3f3cd8c125:~/pecan$ git diff base/db/r[KR/get.trait.data.R
+[1mdiff --git a/base/db/R/get.trait.data.R b/base/db/R/get.trait.data.R[m
+[1mindex cea64e497..5d4974748 100644[m
+[1m--- a/base/db/R/get.trait.data.R[m
+[1m+++ b/base/db/R/get.trait.data.R[m
+[36m@@ -111,11 +111,23 @@[m [mget.trait.data.pft <- function(pft, modeltyp
+e, dbfiles, dbcon, trait.names,[m
+   # check to see if we need to update[m
+   if (!forceupdate) {[m
+     if (is.null(pft$posteriorid)) {[m
+[31m-      pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>%[m
+[31m-        dplyr::filter(pft_id == !!pftid) %>%[m
+[31m-        dplyr::arrange(dplyr::desc(created_at)) %>%[m
+[31m-        head(1) %>%[m
+[31m-        dplyr::pull(id)[m
+[32m+[m[32m      # pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>%[
+m
+[32m+[m[32m      #   dplyr::filter(pft_id == !!pftid) %>%[m
+[32m+[m[32m      #   dplyr::arrange(dplyr::desc(created_at)) %>%[m
+[32m+[m[32m      #   head(1) %>%[m
+[32m+[m[32m      #   dplyr::pull(id)[m
+[32m+[m[32m      recent_posterior <- dplyr::tbl(dbcon, "posteriors") %>%[m
+[32m+[m[32m        dplyr::filter(pft_id == !!pftid) %>%[m[41m [m
+[7m--More--[27m[32m+[m[32m        dplyr::collect()[m
+[7m--More--[27m[32m+[m[32m      if (length(recent_posterior) > 0) {[m
+[7m--More--[27m[32m+[m[32m        pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>%[
+[7m--More--[27mm[K
+[7m--More--[27m[32m+[m[32m          dplyr::filter(pft_id == !!pftid) %>%[m
+[7m--More--[27m[32m+[m[32m          dplyr::arrange(dplyr::desc(created_at)) %>%[m
+[7m--More--[27m[32m+[m[32m          head(1) %>%[m
+[Kkristinariemer@1e3f3cd8c125:~$ pwd
+/home/kristinariemer
+]0;/home/kristinariemerkristinariemer@1e3f3cd8c125:~$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+	[31mmodified:   .Rprofile[m
+	[31mmodified:   .bash_history[m
+	[31mmodified:   .rstudio/client-state/workbenchp.persistent[m
+	[31mdeleted:    .rstudio/console06/86C3E07A[m
+	[31mdeleted:    .rstudio/console06/86C3E07A.env[m
+	[31mmodified:   .rstudio/console06/INDEX001[m
+	[31mmodified:   .rstudio/history_database[m
+	[31mmodified:   .rstudio/monitored/lists/file_mru[m
+	[31mmodified:   .rstudio/monitored/lists/help_history_links[m
+	[31mmodified:   .rstudio/monitored/user-settings/user-settings[m
+	[31mmodified:   .rstudio/notebooks/paths[m
+	[31mmodified:   .rstudio/pcs/files-pane.pper[m
+	[31mmodified:   .rstudio/pcs/source-pane.pper[m
+	[31mmodified:   .rstudio/pcs/windowlayoutstate.pper[m
+	[31mmodified:   .rstudio/persistent-state[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/graphics-r3/INDEX[m
+	[31mdeleted:    .rstudio/sessions/active/session-1f9aa0c3/graphics-r3/ac88a52f-e013-4539-b678-ecae8063caac.png[m
+	[31mdeleted:    .rstudio/sessions/active/session-1f9aa0c3/graphics-r3/ac88a52f-e013-4539-b678-ecae8063caac.snapshot[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/properites/last-used[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/properites/r-version[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/properites/save_prompt_required[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/session-persistent-state[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/console_actions[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/environment[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/environment_vars[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/history[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/libpaths[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/options[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/rversion[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/search_path/package_paths[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/search_path/search_path_elements[m
+	[31mmodified:   .rstudio/sessions/active/session-1f9aa0c3/suspended-session-data/settings[m
+	[31mmodified:   .rstudio/sources/prop/2C66C0D7[m
+	[31mmodified:   .rstudio/sources/prop/32521899[m
+	[31mmodified:   .rstudio/sources/prop/814B841D[m
+	[31mmodified:   .rstudio/sources/prop/INDEX[m
+	[31mdeleted:    .rstudio/sources/s-1f9aa0c3/1100A9E[m
+	[31mdeleted:    .rstudio/sources/s-1f9aa0c3/D4BD0B63[m
+	[31mdeleted:    .rstudio/sources/s-1f9aa0c3/EA1E060C[m
+	[31mdeleted:    .rstudio/sources/s-1f9aa0c3/F6679A7A[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/DESCRIPTION[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/LICENSE[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/Meta/features.rds[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/Meta/links.rds[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/Meta/package.rds[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/NAMESPACE[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/R/PEcAn.CTSM[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/R/PEcAn.CTSM.rdb[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/R/PEcAn.CTSM.rdx[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/clm5_params.c171117_0001.nc[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/clm5_pfts.csv[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/help/AnIndex[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/help/PEcAn.CTSM.rdb[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/help/PEcAn.CTSM.rdx[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/help/aliases.rds[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/help/paths.rds[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/html/00Index.html[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/html/R.css[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/register.CTSM.xml[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/tests/testthat.R[m
+	[31mdeleted:    R_libs/PEcAn.CTSM/tests/testthat/test.met2model.R[m
+	[31mdeleted:    R_libs/RPostgres/DESCRIPTION[m
+	[31mdeleted:    R_libs/RPostgres/INDEX[m
+	[31mdeleted:    R_libs/RPostgres/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/RPostgres/Meta/features.rds[m
+	[31mdeleted:    R_libs/RPostgres/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/RPostgres/Meta/links.rds[m
+	[31mdeleted:    R_libs/RPostgres/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/RPostgres/Meta/package.rds[m
+	[31mdeleted:    R_libs/RPostgres/NAMESPACE[m
+	[31mdeleted:    R_libs/RPostgres/NEWS.md[m
+	[31mdeleted:    R_libs/RPostgres/R/RPostgres[m
+	[31mdeleted:    R_libs/RPostgres/R/RPostgres.rdb[m
+	[31mdeleted:    R_libs/RPostgres/R/RPostgres.rdx[m
+	[31mdeleted:    R_libs/RPostgres/help/AnIndex[m
+	[31mdeleted:    R_libs/RPostgres/help/RPostgres.rdb[m
+	[31mdeleted:    R_libs/RPostgres/help/RPostgres.rdx[m
+	[31mdeleted:    R_libs/RPostgres/help/aliases.rds[m
+	[31mdeleted:    R_libs/RPostgres/help/paths.rds[m
+	[31mdeleted:    R_libs/RPostgres/html/00Index.html[m
+	[31mdeleted:    R_libs/RPostgres/html/R.css[m
+	[31mdeleted:    R_libs/RPostgres/libs/RPostgres.so[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/helper-DBItest.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/helper-astyle.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/helper-with_database_connection.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/helper-with_table.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/helper-without_rownames.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/test-DBItest.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/test-bigint.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/test-data-type.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/test-dbConnect.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/test-dbGetQuery.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/test-dbWriteTable.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/test-encoding.R[m
+	[31mdeleted:    R_libs/RPostgres/tests/testthat/test-types.R[m
+	[31mdeleted:    R_libs/ggridges/DESCRIPTION[m
+	[31mdeleted:    R_libs/ggridges/INDEX[m
+	[31mdeleted:    R_libs/ggridges/LICENSE[m
+	[31mdeleted:    R_libs/ggridges/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/ggridges/Meta/data.rds[m
+	[31mdeleted:    R_libs/ggridges/Meta/features.rds[m
+	[31mdeleted:    R_libs/ggridges/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/ggridges/Meta/links.rds[m
+	[31mdeleted:    R_libs/ggridges/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/ggridges/Meta/package.rds[m
+	[31mdeleted:    R_libs/ggridges/Meta/vignette.rds[m
+	[31mdeleted:    R_libs/ggridges/NAMESPACE[m
+	[31mdeleted:    R_libs/ggridges/NEWS[m
+	[31mdeleted:    R_libs/ggridges/R/ggridges[m
+	[31mdeleted:    R_libs/ggridges/R/ggridges.rdb[m
+	[31mdeleted:    R_libs/ggridges/R/ggridges.rdx[m
+	[31mdeleted:    R_libs/ggridges/data/Rdata.rdb[m
+	[31mdeleted:    R_libs/ggridges/data/Rdata.rds[m
+	[31mdeleted:    R_libs/ggridges/data/Rdata.rdx[m
+	[31mdeleted:    R_libs/ggridges/doc/gallery.R[m
+	[31mdeleted:    R_libs/ggridges/doc/gallery.Rmd[m
+	[31mdeleted:    R_libs/ggridges/doc/gallery.html[m
+	[31mdeleted:    R_libs/ggridges/doc/index.html[m
+	[31mdeleted:    R_libs/ggridges/doc/introduction.R[m
+	[31mdeleted:    R_libs/ggridges/doc/introduction.Rmd[m
+	[31mdeleted:    R_libs/ggridges/doc/introduction.html[m
+	[31mdeleted:    R_libs/ggridges/help/AnIndex[m
+	[31mdeleted:    R_libs/ggridges/help/aliases.rds[m
+	[31mdeleted:    R_libs/ggridges/help/figures/README-diamonds-1.png[m
+	[31mdeleted:    R_libs/ggridges/help/ggridges.rdb[m
+	[31mdeleted:    R_libs/ggridges/help/ggridges.rdx[m
+	[31mdeleted:    R_libs/ggridges/help/paths.rds[m
+	[31mdeleted:    R_libs/ggridges/html/00Index.html[m
+	[31mdeleted:    R_libs/ggridges/html/R.css[m
+	[31mdeleted:    R_libs/hexbin/DESCRIPTION[m
+	[31mdeleted:    R_libs/hexbin/INDEX[m
+	[31mdeleted:    R_libs/hexbin/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/hexbin/Meta/data.rds[m
+	[31mdeleted:    R_libs/hexbin/Meta/features.rds[m
+	[31mdeleted:    R_libs/hexbin/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/hexbin/Meta/links.rds[m
+	[31mdeleted:    R_libs/hexbin/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/hexbin/Meta/package.rds[m
+	[31mdeleted:    R_libs/hexbin/Meta/vignette.rds[m
+	[31mdeleted:    R_libs/hexbin/NAMESPACE[m
+	[31mdeleted:    R_libs/hexbin/R/hexbin[m
+	[31mdeleted:    R_libs/hexbin/R/hexbin.rdb[m
+	[31mdeleted:    R_libs/hexbin/R/hexbin.rdx[m
+	[31mdeleted:    R_libs/hexbin/data/NHANES.rda[m
+	[31mdeleted:    R_libs/hexbin/doc/hexagon_binning.R[m
+	[31mdeleted:    R_libs/hexbin/doc/hexagon_binning.Rnw[m
+	[31mdeleted:    R_libs/hexbin/doc/hexagon_binning.pdf[m
+	[31mdeleted:    R_libs/hexbin/doc/index.html[m
+	[31mdeleted:    R_libs/hexbin/help/AnIndex[m
+	[31mdeleted:    R_libs/hexbin/help/aliases.rds[m
+	[31mdeleted:    R_libs/hexbin/help/hexbin.rdb[m
+	[31mdeleted:    R_libs/hexbin/help/hexbin.rdx[m
+	[31mdeleted:    R_libs/hexbin/help/paths.rds[m
+	[31mdeleted:    R_libs/hexbin/html/00Index.html[m
+	[31mdeleted:    R_libs/hexbin/html/R.css[m
+	[31mdeleted:    R_libs/hexbin/libs/hexbin.so[m
+	[31mdeleted:    R_libs/pecanapi/DESCRIPTION[m
+	[31mdeleted:    R_libs/pecanapi/INDEX[m
+	[31mdeleted:    R_libs/pecanapi/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/pecanapi/Meta/features.rds[m
+	[31mdeleted:    R_libs/pecanapi/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/pecanapi/Meta/links.rds[m
+	[31mdeleted:    R_libs/pecanapi/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/pecanapi/Meta/package.rds[m
+	[31mdeleted:    R_libs/pecanapi/NAMESPACE[m
+	[31mdeleted:    R_libs/pecanapi/R/pecanapi[m
+	[31mdeleted:    R_libs/pecanapi/R/pecanapi.rdb[m
+	[31mdeleted:    R_libs/pecanapi/R/pecanapi.rdx[m
+	[31mdeleted:    R_libs/pecanapi/help/AnIndex[m
+	[31mdeleted:    R_libs/pecanapi/help/aliases.rds[m
+	[31mdeleted:    R_libs/pecanapi/help/paths.rds[m
+	[31mdeleted:    R_libs/pecanapi/help/pecanapi.rdb[m
+	[31mdeleted:    R_libs/pecanapi/help/pecanapi.rdx[m
+	[31mdeleted:    R_libs/pecanapi/html/00Index.html[m
+	[31mdeleted:    R_libs/pecanapi/html/R.css[m
+	[31mdeleted:    R_libs/pecanapi/test_sipnet.R[m
+	[31mdeleted:    R_libs/plotly/CITATION[m
+	[31mdeleted:    R_libs/plotly/DESCRIPTION[m
+	[31mdeleted:    R_libs/plotly/INDEX[m
+	[31mdeleted:    R_libs/plotly/LICENSE[m
+	[31mdeleted:    R_libs/plotly/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/plotly/Meta/data.rds[m
+	[31mdeleted:    R_libs/plotly/Meta/demo.rds[m
+	[31mdeleted:    R_libs/plotly/Meta/features.rds[m
+	[31mdeleted:    R_libs/plotly/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/plotly/Meta/links.rds[m
+	[31mdeleted:    R_libs/plotly/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/plotly/Meta/package.rds[m
+	[31mdeleted:    R_libs/plotly/NAMESPACE[m
+	[31mdeleted:    R_libs/plotly/NEWS.md[m
+	[31mdeleted:    R_libs/plotly/R/plotly[m
+	[31mdeleted:    R_libs/plotly/R/plotly.rdb[m
+	[31mdeleted:    R_libs/plotly/R/plotly.rdx[m
+	[31mdeleted:    R_libs/plotly/R/sysdata.rdb[m
+	[31mdeleted:    R_libs/plotly/R/sysdata.rdx[m
+	[31mdeleted:    R_libs/plotly/build-push-comment.R[m
+	[31mdeleted:    R_libs/plotly/data/Rdata.rdb[m
+	[31mdeleted:    R_libs/plotly/data/Rdata.rds[m
+	[31mdeleted:    R_libs/plotly/data/Rdata.rdx[m
+	[31mdeleted:    R_libs/plotly/demo/animation-tour-USArrests.R[m
+	[31mdeleted:    R_libs/plotly/demo/animation-tour-basic.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-filter-dynamic-axis.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-filter-lines.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-binned-target-a.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-binned-target-b.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-binned-target-c.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-epl-2.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-epl.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-ggpairs.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-ggplotly.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-intro.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-leaflet.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-pipeline.R[m
+	[31mdeleted:    R_libs/plotly/demo/crosstalk-highlight-subplot.R[m
+	[31mdeleted:    R_libs/plotly/demo/custom-javascript.R[m
+	[31mdeleted:    R_libs/plotly/demo/rotate.R[m
+	[31mdeleted:    R_libs/plotly/demo/sf-dt.R[m
+	[31mdeleted:    R_libs/plotly/demo/sf-geo.R[m
+	[31mdeleted:    R_libs/plotly/demo/sf-ggplot2.R[m
+	[31mdeleted:    R_libs/plotly/demo/sf-mapbox-data.R[m
+	[31mdeleted:    R_libs/plotly/demo/sf-mapbox-layout.R[m
+	[31mdeleted:    R_libs/plotly/demo/sf-mapbox-style.R[m
+	[31mdeleted:    R_libs/plotly/demo/sf-plotly-3D-globe.R[m
+	[31mdeleted:    R_libs/plotly/demo/sf-plotly-storms.R[m
+	[31mdeleted:    R_libs/plotly/demo/ternary.R[m
+	[31mdeleted:    R_libs/plotly/docs.R[m
+	[31mdeleted:    R_libs/plotly/examples/rmd/MathJax/index.Rmd[m
+	[31mdeleted:    R_libs/plotly/examples/rmd/flexdashboard/index.Rmd[m
+	[31mdeleted:    R_libs/plotly/examples/rmd/onRenderHover/index.Rmd[m
+	[31mdeleted:    R_libs/plotly/examples/rmd/printing/index.Rmd[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/DT/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/Diamonds/server.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/Diamonds/ui.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/MathJax/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/Movies/server.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/Movies/ui.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/UN_Advanced/Data/UN_IdealPoints.csv[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/UN_Advanced/global.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/UN_Advanced/server.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/UN_Advanced/ui.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/UN_Simple/Data/UN_IdealPoints.csv[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/UN_Simple/global.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/UN_Simple/server.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/UN_Simple/ui.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/async/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/basic/DESCRIPTION[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/basic/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data/DESCRIPTION[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data_3D/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data_click/DESCRIPTION[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data_click/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data_click_map/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data_modules/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data_persist/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/event_data_select/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/ggplotly_sizing/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/lmGadget/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/proxy_mapbox/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/proxy_relayout/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/proxy_restyle_canada/app.R[m
+	[31mdeleted:    R_libs/plotly/examples/shiny/proxy_restyle_economics/app.R[m
+	[31mdeleted:    R_libs/plotly/help/AnIndex[m
+	[31mdeleted:    R_libs/plotly/help/aliases.rds[m
+	[31mdeleted:    R_libs/plotly/help/figures/plotly.png[m
+	[31mdeleted:    R_libs/plotly/help/figures/plotly.svg[m
+	[31mdeleted:    R_libs/plotly/help/paths.rds[m
+	[31mdeleted:    R_libs/plotly/help/plotly.rdb[m
+	[31mdeleted:    R_libs/plotly/help/plotly.rdx[m
+	[31mdeleted:    R_libs/plotly/html/00Index.html[m
+	[31mdeleted:    R_libs/plotly/html/R.css[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/colourpicker/LICENSE[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/colourpicker/colourpicker.min.css[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/colourpicker/colourpicker.min.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/mathjax/cdn.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/LICENSE[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/af.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/am.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ar-dz.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ar-eg.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ar.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/az.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/bg.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/bs.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ca.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/cs.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/da.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/de-ch.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/de.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/el.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/eo.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/es-ar.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/es-pe.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/es.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/et.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/eu.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/fa.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/fi.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/fo.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/fr-ch.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/fr.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/gl.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/gu.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/he.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/hi-in.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/hr.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/hu.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/hy.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/id.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/is.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/it.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ja.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ka.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/km.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ko.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/lt.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/lv.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/me-me.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/me.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/mk.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ml.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ms.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/mt.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/nl-be.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/nl.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/no.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/pa.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/pl.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/pt-br.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/rm.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ro.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ru.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/sk.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/sl.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/sq.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/sr-sr.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/sr.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/sv.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/sw.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ta.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/th.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/tr.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/tt.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/uk.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/ur.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/vi.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/zh-cn.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/zh-hk.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/locales/zh-tw.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/plotly-htmlwidgets.css[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/plotlyjs/plotly-latest.min.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/selectize/selectize.bootstrap3.css[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/selectize/selectize.min.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/typedarray/LICENSE[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/lib/typedarray/typedarray.min.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/plotly.js[m
+	[31mdeleted:    R_libs/plotly/htmlwidgets/plotly.yaml[m
+	[31mdeleted:    R_libs/plotly/plotlyjs.R[m
+	[31mdeleted:    R_libs/plotly/stars.R[m
+	[31mdeleted:    R_libs/reticulate/DESCRIPTION[m
+	[31mdeleted:    R_libs/reticulate/INDEX[m
+	[31mdeleted:    R_libs/reticulate/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/reticulate/Meta/features.rds[m
+	[31mdeleted:    R_libs/reticulate/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/reticulate/Meta/links.rds[m
+	[31mdeleted:    R_libs/reticulate/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/reticulate/Meta/package.rds[m
+	[31mdeleted:    R_libs/reticulate/Meta/vignette.rds[m
+	[31mdeleted:    R_libs/reticulate/NAMESPACE[m
+	[31mdeleted:    R_libs/reticulate/NEWS.md[m
+	[31mdeleted:    R_libs/reticulate/R/reticulate[m
+	[31mdeleted:    R_libs/reticulate/R/reticulate.rdb[m
+	[31mdeleted:    R_libs/reticulate/R/reticulate.rdx[m
+	[31mdeleted:    R_libs/reticulate/config/config.py[m
+	[31mdeleted:    R_libs/reticulate/doc/arrays.R[m
+	[31mdeleted:    R_libs/reticulate/doc/arrays.Rmd[m
+	[31mdeleted:    R_libs/reticulate/doc/arrays.html[m
+	[31mdeleted:    R_libs/reticulate/doc/calling_python.R[m
+	[31mdeleted:    R_libs/reticulate/doc/calling_python.Rmd[m
+	[31mdeleted:    R_libs/reticulate/doc/calling_python.html[m
+	[31mdeleted:    R_libs/reticulate/doc/index.html[m
+	[31mdeleted:    R_libs/reticulate/doc/package.R[m
+	[31mdeleted:    R_libs/reticulate/doc/package.Rmd[m
+	[31mdeleted:    R_libs/reticulate/doc/package.html[m
+	[31mdeleted:    R_libs/reticulate/doc/python_packages.R[m
+	[31mdeleted:    R_libs/reticulate/doc/python_packages.Rmd[m
+	[31mdeleted:    R_libs/reticulate/doc/python_packages.html[m
+	[31mdeleted:    R_libs/reticulate/doc/r_markdown.R[m
+	[31mdeleted:    R_libs/reticulate/doc/r_markdown.Rmd[m
+	[31mdeleted:    R_libs/reticulate/doc/r_markdown.html[m
+	[31mdeleted:    R_libs/reticulate/doc/versions.R[m
+	[31mdeleted:    R_libs/reticulate/doc/versions.Rmd[m
+	[31mdeleted:    R_libs/reticulate/doc/versions.html[m
+	[31mdeleted:    R_libs/reticulate/help/AnIndex[m
+	[31mdeleted:    R_libs/reticulate/help/aliases.rds[m
+	[31mdeleted:    R_libs/reticulate/help/paths.rds[m
+	[31mdeleted:    R_libs/reticulate/help/reticulate.rdb[m
+	[31mdeleted:    R_libs/reticulate/help/reticulate.rdx[m
+	[31mdeleted:    R_libs/reticulate/html/00Index.html[m
+	[31mdeleted:    R_libs/reticulate/html/R.css[m
+	[31mdeleted:    R_libs/reticulate/libs/reticulate.so[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/__init__.py[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/__init__.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/__pycache__/__init__.cpython-36.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/__pycache__/call.cpython-36.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/__pycache__/generator.cpython-36.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/__pycache__/help.cpython-36.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/__pycache__/output.cpython-36.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/__pycache__/test.cpython-36.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/call.py[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/call.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/generator.py[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/generator.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/help.py[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/help.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/output.py[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/output.pyc[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/test.py[m
+	[31mdeleted:    R_libs/reticulate/python/rpytools/test.pyc[m
+	[31mdeleted:    R_libs/shinyjs/DESCRIPTION[m
+	[31mdeleted:    R_libs/shinyjs/INDEX[m
+	[31mdeleted:    R_libs/shinyjs/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/shinyjs/Meta/features.rds[m
+	[31mdeleted:    R_libs/shinyjs/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/shinyjs/Meta/links.rds[m
+	[31mdeleted:    R_libs/shinyjs/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/shinyjs/Meta/package.rds[m
+	[31mdeleted:    R_libs/shinyjs/Meta/vignette.rds[m
+	[31mdeleted:    R_libs/shinyjs/NAMESPACE[m
+	[31mdeleted:    R_libs/shinyjs/NEWS.md[m
+	[31mdeleted:    R_libs/shinyjs/R/shinyjs[m
+	[31mdeleted:    R_libs/shinyjs/R/shinyjs.rdb[m
+	[31mdeleted:    R_libs/shinyjs/R/shinyjs.rdx[m
+	[31mdeleted:    R_libs/shinyjs/doc/index.html[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-example.R[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-example.Rmd[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-example.html[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-extend.R[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-extend.Rmd[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-extend.html[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-usage.R[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-usage.Rmd[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs-usage.html[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs.R[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs.Rmd[m
+	[31mdeleted:    R_libs/shinyjs/doc/shinyjs.html[m
+	[31mdeleted:    R_libs/shinyjs/examples/basic/DESCRIPTION[m
+	[31mdeleted:    R_libs/shinyjs/examples/basic/app.R[m
+	[31mdeleted:    R_libs/shinyjs/examples/basic/helper-text.R[m
+	[31mdeleted:    R_libs/shinyjs/examples/demo/helpers.R[m
+	[31mdeleted:    R_libs/shinyjs/examples/demo/server.R[m
+	[31mdeleted:    R_libs/shinyjs/examples/demo/ui.R[m
+	[31mdeleted:    R_libs/shinyjs/examples/demo/www/github-green-right.png[m
+	[31mdeleted:    R_libs/shinyjs/examples/demo/www/header.png[m
+	[31mdeleted:    R_libs/shinyjs/examples/demo/www/style.css[m
+	[31mdeleted:    R_libs/shinyjs/examples/sandbox/helpers.R[m
+	[31mdeleted:    R_libs/shinyjs/examples/sandbox/server.R[m
+	[31mdeleted:    R_libs/shinyjs/examples/sandbox/ui.R[m
+	[31mdeleted:    R_libs/shinyjs/examples/sandbox/www/github-green-right.png[m
+	[31mdeleted:    R_libs/shinyjs/examples/sandbox/www/header.png[m
+	[31mdeleted:    R_libs/shinyjs/examples/sandbox/www/style.css[m
+	[31mdeleted:    R_libs/shinyjs/help/AnIndex[m
+	[31mdeleted:    R_libs/shinyjs/help/aliases.rds[m
+	[31mdeleted:    R_libs/shinyjs/help/paths.rds[m
+	[31mdeleted:    R_libs/shinyjs/help/shinyjs.rdb[m
+	[31mdeleted:    R_libs/shinyjs/help/shinyjs.rdx[m
+	[31mdeleted:    R_libs/shinyjs/html/00Index.html[m
+	[31mdeleted:    R_libs/shinyjs/html/R.css[m
+	[31mdeleted:    R_libs/shinyjs/img/colourPickerGadget.gif[m
+	[31mdeleted:    R_libs/shinyjs/img/colourpickerscrnshot.png[m
+	[31mdeleted:    R_libs/shinyjs/img/demo-basic-v1.png[m
+	[31mdeleted:    R_libs/shinyjs/img/extendshinyjs-demo.gif[m
+	[31mdeleted:    R_libs/shinyjs/img/extendshinyjs-params.gif[m
+	[31mdeleted:    R_libs/shinyjs/img/shinyjs-logo-whitebg-small.png[m
+	[31mdeleted:    R_libs/shinyjs/srcjs/inject.js[m
+	[31mdeleted:    R_libs/shinyjs/srcjs/shinyjs-default-funcs.js[m
+	[31mdeleted:    R_libs/shinythemes/DESCRIPTION[m
+	[31mdeleted:    R_libs/shinythemes/INDEX[m
+	[31mdeleted:    R_libs/shinythemes/LICENSE[m
+	[31mdeleted:    R_libs/shinythemes/Meta/Rd.rds[m
+	[31mdeleted:    R_libs/shinythemes/Meta/features.rds[m
+	[31mdeleted:    R_libs/shinythemes/Meta/hsearch.rds[m
+	[31mdeleted:    R_libs/shinythemes/Meta/links.rds[m
+	[31mdeleted:    R_libs/shinythemes/Meta/nsInfo.rds[m
+	[31mdeleted:    R_libs/shinythemes/Meta/package.rds[m
+	[31mdeleted:    R_libs/shinythemes/NAMESPACE[m
+	[31mdeleted:    R_libs/shinythemes/NEWS.md[m
+	[31mdeleted:    R_libs/shinythemes/R/shinythemes[m
+	[31mdeleted:    R_libs/shinythemes/R/shinythemes.rdb[m
+	[31mdeleted:    R_libs/shinythemes/R/shinythemes.rdx[m
+	[31mdeleted:    R_libs/shinythemes/help/AnIndex[m
+	[31mdeleted:    R_libs/shinythemes/help/aliases.rds[m
+	[31mdeleted:    R_libs/shinythemes/help/paths.rds[m
+	[31mdeleted:    R_libs/shinythemes/help/shinythemes.rdb[m
+	[31mdeleted:    R_libs/shinythemes/help/shinythemes.rdx[m
+	[31mdeleted:    R_libs/shinythemes/html/00Index.html[m
+	[31mdeleted:    R_libs/shinythemes/html/R.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/cerulean.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/cosmo.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/cyborg.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/darkly.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/flatly.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/journal.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/lumen.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/paper.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/readable.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/sandstone.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/simplex.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/slate.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/spacelab.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/superhero.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/united.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/css/yeti.min.css[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Lato_300.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Lato_400.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Lato_400italic.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Lato_700.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/News_Cycle_400.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/News_Cycle_700.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Open_Sans_300.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Open_Sans_300italic.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Open_Sans_400.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Open_Sans_400italic.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Open_Sans_700.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Open_Sans_700italic.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/README.md[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Raleway_400.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Raleway_700.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Roboto_300.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Roboto_400.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Roboto_500.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Roboto_700.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Source_Sans_Pro_300.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Source_Sans_Pro_400.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Source_Sans_Pro_400italic.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Source_Sans_Pro_700.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/Ubuntu_400.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/glyphicons-halflings-regular.eot[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/glyphicons-halflings-regular.svg[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/glyphicons-halflings-regular.ttf[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/glyphicons-halflings-regular.woff[m
+	[31mdeleted:    R_libs/shinythemes/shinythemes/fonts/glyphicons-halflings-regular.woff2[m
+	[31mmodified:   biocro_darpa_files/workflow.R[m
+	[31mmodified:   biocro_darpa_results/STATUS[m
+	[31mdeleted:    biocro_darpa_results/dbfiles/posterior/9000000134/prior.distns.Rdata[m
+	[31mdeleted:    biocro_darpa_results/dbfiles/posterior/9000000134/prior.distns.csv[m
+	[31mdeleted:    biocro_darpa_results/dbfiles/posterior/9000000134/species.csv[m
+	[31mdeleted:    biocro_darpa_results/dbfiles/posterior/9000000134/trait.data.Rdata[m
+	[31mdeleted:    biocro_darpa_results/dbfiles/posterior/9000000134/trait.data.csv[m
+	[31mmodified:   biocro_darpa_results/pecan.CHECKED.xml[m
+	[31mmodified:   biocro_darpa_results/pecan.METProcess.xml[m
+	[31mmodified:   biocro_darpa_results/pecan.TRAIT.xml[m
+	[31mmodified:   biocro_darpa_results/pft/Setaria WT/prior.distns.Rdata[m
+	[31mmodified:   biocro_darpa_results/pft/Setaria WT/species.csv[m
+	[31mmodified:   biocro_darpa_results/pft/Setaria WT/trait.data.Rdata[m
+	[31mmodified:   biocro_darpa_results/pft/Setaria WT/trait.data.csv[m
+	[31mmodified:   biocro_darpa_results/run/SA-median/README.txt[m
+	[31mmodified:   biocro_darpa_results/samples.Rdata[m
+	[31mmodified:   pecan[m (new commits, modified content)
+	[31mdeleted:    pecan_dlebauer/pecan[m
+	[31mdeleted:    pecan_riemer_fork/pecan[m
+	[31mmodified:   sentinel-detection[m (modified content, untracked content)
+	[31mmodified:   trash/pecan[m (modified content, untracked content)
+	[31mmodified:   trash/pecan_old[m (modified content, untracked content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.bash_profile[m
+	[31m.rstudio/console06/8C1413F1[m
+	[31m.rstudio/console06/8C1413F1.env[m
+	[31m.rstudio/sessions/active/session-1f9aa0c3/graphics-r3/empty.png[m
+	[31m.rstudio/sources/prop/14CA807E[m
+	[31m.rstudio/sources/prop/3B589A6[m
+	[31m.rstudio/sources/prop/40FCDF43[m
+	[31m.rstudio/sources/prop/5011B416[m
+	[31m.rstudio/sources/prop/57070FA7[m
+	[31m.rstudio/sources/prop/5B11899D[m
+	[31m.rstudio/sources/prop/62B786D5[m
+	[31m.rstudio/sources/prop/68038687[m
+	[31m.rstudio/sources/prop/6EDEF29C[m
+	[31m.rstudio/sources/prop/717F80E0[m
+	[31m.rstudio/sources/prop/7362FE13[m
+	[31m.rstudio/sources/prop/7CC3A7E8[m
+	[31m.rstudio/sources/prop/87D64949[m
+	[31m.rstudio/sources/prop/87ECC96C[m
+	[31m.rstudio/sources/prop/9D36377D[m
+	[31m.rstudio/sources/prop/A2A8754B[m
+	[31m.rstudio/sources/prop/D9D8EC47[m
+	[31m.rstudio/sources/prop/E20A48FC[m
+	[31m.rstudio/sources/s-1f9aa0c3/124AD9DE-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/16542421-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/1CC46DDB-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/1F241CAE-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/21D0F3CA-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/23302947-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/276A435B-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/2BC4EF1D-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/3169F076-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/3478E0DA-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/47044D6A-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/4FF5A841-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/512B8DCD-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/54BEE6A3-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/54F921E6-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/56B7A5F7-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/56FCE696-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/587E6481-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/58976372-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/5E2BF029-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/67F97EA0-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/6E199AF2-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/731A456A-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/7FACEE26-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/8035E4A6-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/80F788A2-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/8612C5EA[m
+	[31m.rstudio/sources/s-1f9aa0c3/8612C5EA-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/8911E49C-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/89FF9F9E-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/8F86FF50-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/9050EBFE-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/9102EB6C-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/9382CF97-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/96ABDD4-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/9C5B2168-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/A2FB1EE1-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/A6221E7F-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/BFC56B40-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/C73281E6-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/D97A8396-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/DB11BC51-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/DBCD6B0D-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/DD64FBA4-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/DDBABC39-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/E08CFA9F[m
+	[31m.rstudio/sources/s-1f9aa0c3/E08CFA9F-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/E0F679E8-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/E1B1BDF3-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/E33B2F32-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/E4C745E0-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/E5D503D1-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/ECC1F821-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/ED70961B-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/F3034BFD-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/F96027CC-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/FBBF89F1-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/FD91C135-contents[m
+	[31m.rstudio/sources/s-1f9aa0c3/FE51335B-contents[m
+	[31mR_libs/PEcAn.DB/[m
+	[31mR_libs/PEcAn.MA/[m
+	[31mR_libs/PEcAn.allometry/[m
+	[31mR_libs/PEcAn.assim.batch/[m
+	[31mR_libs/PEcAn.assim.sequential/[m
+	[31mR_libs/PEcAn.benchmark/[m
+	[31mR_libs/PEcAn.data.atmosphere/[m
+	[31mR_libs/PEcAn.data.hydrology/[m
+	[31mR_libs/PEcAn.data.land/[m
+	[31mR_libs/PEcAn.emulator/[m
+	[31mR_libs/PEcAn.logger/[m
+	[31mR_libs/PEcAn.priors/[m
+	[31mR_libs/PEcAn.qaqc/[m
+	[31mR_libs/PEcAn.remote/[m
+	[31mR_libs/PEcAn.settings/[m
+	[31mR_libs/PEcAn.uncertainty/[m
+	[31mR_libs/PEcAn.utils/[m
+	[31mR_libs/PEcAn.visualization/[m
+	[31mR_libs/PEcAn.workflow/[m
+	[31mbiocro_darpa_results/dbfiles/posterior/9000000149/[m
+	[31mbiocro_darpa_results/ensemble.analysis.NOENSEMBLEID.AbvGrndWood.2004.2004.pdf[m
+	[31mbiocro_darpa_results/ensemble.output.NOENSEMBLEID.AbvGrndWood.2004.2004.Rdata[m
+	[31mbiocro_darpa_results/ensemble.samples.NOENSEMBLEID.Rdata[m
+	[31mbiocro_darpa_results/ensemble.ts.NOENSEMBLEID.AbvGrndWood.2004.2004.Rdata[m
+	[31mbiocro_darpa_results/ensemble.ts.NOENSEMBLEID.AbvGrndWood.2004.2004.pdf[m
+	[31mbiocro_darpa_results/ensemble.ts.analysis.NOENSEMBLEID.AbvGrndWood.2004.2004.Rdata[m
+	[31mbiocro_darpa_results/out/[m
+	[31mbiocro_darpa_results/pecan.CONFIGS.xml[m
+	[31mbiocro_darpa_results/run/ENS-00001-9000000000/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-SLA-0.159/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-SLA-0.841/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-Vcmax-0.159/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-Vcmax-0.841/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-c2n_leaf-0.159/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-c2n_leaf-0.841/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-cuticular_cond-0.159/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-cuticular_cond-0.841/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-extinction_coefficient_diffuse-0.159/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-extinction_coefficient_diffuse-0.841/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-growth_respiration_coefficient-0.159/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-growth_respiration_coefficient-0.841/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-leaf_respiration_rate_m2-0.159/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-leaf_respiration_rate_m2-0.841/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-stomatal_slope.BB-0.159/[m
+	[31mbiocro_darpa_results/run/SA-Setaria WT-stomatal_slope.BB-0.841/[m
+	[31mbiocro_darpa_results/run/SA-median/config.xml[m
+	[31mbiocro_darpa_results/run/runs.txt[m
+	[31mbiocro_darpa_results/sensitivity.output.NOENSEMBLEID.AbvGrndWood.2004.2004.Rdata[m
+	[31mbiocro_darpa_results/sensitivity.samples.NOENSEMBLEID.Rdata[m
+	[31mget.trait.data.R[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/kristinariemerkristinariemer@1e3f3cd8c125:~$ git add -a[K[K.

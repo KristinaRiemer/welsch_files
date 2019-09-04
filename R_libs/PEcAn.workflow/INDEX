@@ -1,0 +1,11 @@
+create_execute_test_xml
+                        Create a PEcAn XML file and use it to run a
+                        PEcAn workflow
+do_conversions          do_conversions
+run.write.configs       Write model-specific run scripts and
+                        configuration files
+runModule.get.trait.data
+                        Get trait data for all PFTs in a settings list
+runModule.run.write.configs
+                        Generate model-specific run configuration files
+                        for one or more PEcAn runs

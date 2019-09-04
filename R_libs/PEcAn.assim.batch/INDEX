@@ -1,0 +1,43 @@
+assim.batch             Run Batch PDA
+autoburnin              Automatically calculate and apply burnin value
+correlationPlot         Flexible function to create correlation density
+                        plots
+gelman_diag_gelmanPlot
+                        Calculate Gelman Diagnostic using
+                        coda::gelman.plot
+gelman_diag_mw          Calculate Gelman diagnostic on moving window
+getBurnin               Calculate burnin value
+load.pda.data           Load Ameriflux L2 Data From NetCDF
+makeMCMCList            Make MCMC list from samples list
+pda.adjust.jumps        Adjust PDA MCMC jump size
+pda.adjust.jumps.bs     Adjust PDA block MCMC jump size
+pda.autocorr.calc       autocorrelation correction
+pda.bayesian.tools      Paramater Data Assimilation using BayesianTools
+pda.calc.error          Calculate sufficient statistics
+pda.calc.llik           Calculate Likelihoods for PDA
+pda.calc.llik.par       pda.calc.llik.par
+pda.create.btprior      Create priors for BayesianTools
+pda.create.ensemble     Create ensemble record for PDA ensemble
+pda.define.llik.fn      Define PDA Likelihood Functions
+pda.define.prior.fn     Define PDA Prior Functions
+pda.emulator            Paramater Data Assimilation using emulator
+pda.generate.knots      Generate Parameter Knots for PDA Emulator
+pda.generate.sf         Generate scaling factor knots for PDA Emulator
+pda.get.model.output    Get Model Output for PDA
+pda.init.params         Initialise Parameter Matrix for PDA
+pda.init.run            Initialise Model Runs for PDA
+pda.load.priors         Load Priors for Paramater Data Assimilation
+pda.mcmc                Paramater Data Assimilation using MCMC
+pda.mcmc.bs             Paramater Data Assimilation using MCMC
+pda.mcmc.recover        Clean up a failed PDA run
+pda.neff.calc           Calculate N_eff
+pda.plot.params         Plot PDA Parameter Diagnostics
+pda.postprocess         Postprocessing for PDA Results
+pda.settings            Set PDA Settings
+pda.settings.bt         Apply settings for BayesianTools
+return.bias             return.bias
+return_hyperpars        return_hyperpars
+sample_MCMC             Helper function to sample from previous MCMC
+                        chain while proposing new knots
+write_sf_posterior      Function to write posterior distributions of
+                        the scaling factors

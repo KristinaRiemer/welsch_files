@@ -1,0 +1,23 @@
+check_conditions        Check a list of conditions
+is_definitely_true      Robust logical check
+logger.debug            Prints a debug message.
+logger.error            Prints an error message.
+logger.getLevel         Get configured logging level.
+logger.getLevelNumber   Returns numeric value for string
+logger.info             Prints an informational message.
+logger.message          Prints a message at a certain log level.
+logger.setLevel         Configure logging level.
+logger.setOutputFile    Configure logging output filename.
+logger.setQuitOnSevere
+                        Configure whether severe should quit.
+logger.setUseConsole    Configure logging to console.
+logger.setWidth         Configure the number of chars per line
+logger.severe           Prints an severe message and stops execution.
+logger.warn             Prints a warning message.
+print2string            Convert the printed output of an object to a
+                        string. This is particularly useful for passing
+                        complex objects (e.g. matrices, data.frames) to
+                        simple printing functions like
+                        'PEcAn.logger::logger.info()' or
+                        'base::message()'.
+severeifnot             Logger message if conditions are not met
