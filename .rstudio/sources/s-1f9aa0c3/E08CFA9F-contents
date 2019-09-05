@@ -12,11 +12,11 @@
 # Load required libraries
 # ----------------------------------------------------------------------
 #.libPaths()
-devtools::load_all("pecan/base/db/")
-devtools::load_all("pecan/base/all/")
+#devtools::load_all("pecan/base/db/")
+#devtools::load_all("pecan/base/all/")
 library(PEcAn.all)
 #debugonce(PEcAn.DB::get.trait.data.pft)
-debugonce(PEcAn.remote::runModule.start.model.runs)
+#debugonce(PEcAn.remote::runModule.start.model.runs)
 library(PEcAn.utils)
 library(RCurl)
 
@@ -39,7 +39,7 @@ options(error=quote({
 # Open and read in settings file for PEcAn run.
 args <- commandArgs(trailingOnly = TRUE)
 if (is.na(args[1])){
-  settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml") 
+  settings <- PEcAn.settings::read.settings("pecan.xml") 
 } else {
   settings.file <- args[1]
   settings <- PEcAn.settings::read.settings(settings.file)

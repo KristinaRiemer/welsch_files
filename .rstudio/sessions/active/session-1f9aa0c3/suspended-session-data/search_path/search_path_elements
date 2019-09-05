@@ -1,5 +1,8 @@
 .GlobalEnv
-package:testthat
+package:PEcAn.BIOCRO
+package:bindrcpp
+package:RCurl
+package:bitops
 package:PEcAn.all
 package:PEcAn.workflow
 package:PEcAn.remote

@@ -1,5 +1,3 @@
-help/library/pecanapi/html/get_model_id.html,R: Retrieve database ID of a particular version of a model
-help/library/PEcAn.remote/html/start.model.runs.html,R: Start selected ecosystem model runs within PEcAn workflow
 help/library/PEcAn.remote/html/start_serial.html,R: Start model execution in serial mode
 help/library/ggridges/html/geom_density_ridges.html,R: Create ridgeline plot
 help/library/ggplot2/html/geom_density.html,R: Smoothed density estimates
@@ -13,3 +11,5 @@ help/library/dplyr/html/pull.html,R: Pull out a single variable
 help/library/NULL/help/length,length
 help/library/dplyr/html/tbl.html,R: Create a table from a data source
 help/library/dplyr/html/compute.html,R: Force computation of a database query
+help/library/PEcAn.uncertainty/html/sa.splinefun.html,R: Sensitivity spline function
+help/library/base/html/lapply.html,R: Apply a Function over a List or Vector

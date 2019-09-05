@@ -1,25 +1,3 @@
-git log --oneline
-git branch
-git remote -v
-git push origin ctsm_package
-cd
-pwd
-ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
-pwd
-ls
-ls helpers*
-ls helpers*.R
-ls-R  helpers*.R
-ls -R helpers*.R
-ls fdjsklfjds
-pip install terrautils
-terrautils
-pwd
-cd welsch_rstudio_data/
-git status
-cd
-pwd
-ls
 git status
 git init
 git status
@@ -498,3 +476,25 @@ make install
 pwd
 git status
 git diff base/db/R/get.trait.data.R
+pwd
+git status
+git add .
+git status
+git commit -m "Update all files including BioCro Setaria results"
+git remote -v
+git branch
+git push
+git status
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
+rm -r biocro_darpa_results/
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
+cd pecan/
+git status
+git diff
+rm -r biocro_darpa_results/
+cd ..
+rm -r biocro_darpa_results/
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
+rm -r biocro_darpa_results/
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
+rm -r biocro_darpa_results/

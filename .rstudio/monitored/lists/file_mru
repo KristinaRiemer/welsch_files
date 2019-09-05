@@ -1,3 +1,6 @@
+~/biocro_darpa_results/STATUS
+~/biocro_darpa_files/workflow.R
+~/biocro_darpa_files/pecan.biocro.darpa.xml
 ~/pecan/Makefile
 ~/pecan/base/db/R/get.trait.data.R
 ~/get.trait.data.R
@@ -10,6 +13,3 @@
 ~/.bash_profile
 ~/get.trait.data-copy.R
 /pecan/base/db/R/get.trait.data.R
-~/biocro_darpa_results/pecan.CHECKED.xml
-~/biocro_darpa_results/STATUS
-~/biocro_darpa_results/pft/Setaria WT/prior.distns.csv
