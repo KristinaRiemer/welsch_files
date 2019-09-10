@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>R: PEcAn functions used for radiative transfer modeling</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+<h1> PEcAn functions used for radiative transfer modeling
+<img class="toplogo" src="../../../doc/html/Rlogo.svg" alt="[R logo]" />
+</h1>
+<hr/>
+<div style="text-align: center;">
+<a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
+<a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
+</div><h2>Documentation for package &lsquo;PEcAnRTM&rsquo; version 1.7.0</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<table width="100%">
+<tr><td style="width: 25%;"><a href="bt_check_convergence.html">bt_check_convergence</a></td>
+<td>Check convergence of BayesianTools output</td></tr>
+<tr><td style="width: 25%;"><a href="burnin.thin.html">burnin.thin</a></td>
+<td>Burn-in and thinning of MCMC samples</td></tr>
+<tr><td style="width: 25%;"><a href="cbind.spectra.html">cbind.spectra</a></td>
+<td>Combine spectra by wavelength</td></tr>
+<tr><td style="width: 25%;"><a href="check.convergence.html">check.convergence</a></td>
+<td>Check convergence of multiple MCMC chains</td></tr>
+<tr><td style="width: 25%;"><a href="corr_max_lag.html">corr_max_lag</a></td>
+<td>Calculate max ACF lag from correlation power analysis</td></tr>
+<tr><td style="width: 25%;"><a href="default.settings.prospect.html">default.settings.prospect</a></td>
+<td>Defult inversion settings for PROSPECT 5 models</td></tr>
+<tr><td style="width: 25%;"><a href="defparam.html">defparam</a></td>
+<td>Get default parameters</td></tr>
+<tr><td style="width: 25%;"><a href="dtnorm.html">dtnorm</a></td>
+<td>Truncated normal distribution density</td></tr>
+<tr><td style="width: 25%;"><a href="EDR.html">EDR</a></td>
+<td>ED radiative transfer module (EDR) wrapper function</td></tr>
+<tr><td style="width: 25%;"><a href="EDR.preprocess.history.html">EDR.preprocess.history</a></td>
+<td>Preprocess history file for EDR</td></tr>
+<tr><td style="width: 25%;"><a href="fortran_data_module.html">fortran_data_module</a></td>
+<td>List to FORTRAN data module</td></tr>
+<tr><td style="width: 25%;"><a href="foursail.html">foursail</a></td>
+<td>SAIL model</td></tr>
+<tr><td style="width: 25%;"><a href="generalized_plate_model.html">generalized_plate_model</a></td>
+<td>Generalized plate model</td></tr>
+<tr><td style="width: 25%;"><a href="generate.noise.html">generate.noise</a></td>
+<td>Generate autocorrelated spectral noise</td></tr>
+<tr><td style="width: 25%;"><a href="generate.rsr.all.html">generate.rsr.all</a></td>
+<td>Generate RSR matrices for all sensors and return as list</td></tr>
+<tr><td style="width: 25%;"><a href="get.EDR.output.html">get.EDR.output</a></td>
+<td>Read EDR output</td></tr>
+<tr><td style="width: 25%;"><a href="invert.auto.html">invert.auto</a></td>
+<td>Inversion with automatic convergence checking</td></tr>
+<tr><td style="width: 25%;"><a href="invert.custom.html">invert.custom</a></td>
+<td>Bayesian inversion of a model</td></tr>
+<tr><td style="width: 25%;"><a href="invert.lsq.html">invert.lsq</a></td>
+<td>Least squares model inversion</td></tr>
+<tr><td style="width: 25%;"><a href="invert_bt.html">invert_bt</a></td>
+<td>Perform Bayesian inversion using BayesianTools package</td></tr>
+<tr><td style="width: 25%;"><a href="spectra.html">is_spectra</a></td>
+<td>Spectra S3 class</td></tr>
+<tr><td style="width: 25%;"><a href="load.from.name.html">load.from.name</a></td>
+<td>Load object from an RData file</td></tr>
+<tr><td style="width: 25%;"><a href="lognorm.mu.html">lognorm.mu</a></td>
+<td>Functions for default priors Lognormal mean parameters</td></tr>
+<tr><td style="width: 25%;"><a href="lognorm.sigma.html">lognorm.sigma</a></td>
+<td>Lognormal sigma parameter</td></tr>
+<tr><td style="width: 25%;"><a href="matplot.html">matplot</a></td>
+<td>Matplot generic method</td></tr>
+<tr><td style="width: 25%;"><a href="matplot.default.html">matplot.default</a></td>
+<td>Matplot default method</td></tr>
+<tr><td style="width: 25%;"><a href="matplot.spectra.html">matplot.spectra</a></td>
+<td>Plot multiple spectra on same graph</td></tr>
+<tr><td style="width: 25%;"><a href="neff.html">neff</a></td>
+<td>Effective sample size</td></tr>
+<tr><td style="width: 25%;"><a href="params.prospect4.html">params.prospect4</a></td>
+<td>PROSPECT 4 parameters</td></tr>
+<tr><td style="width: 25%;"><a href="params.prospect5.html">params.prospect5</a></td>
+<td>PROSPECT 5 parameters</td></tr>
+<tr><td style="width: 25%;"><a href="params.prospect5b.html">params.prospect5b</a></td>
+<td>PROSPECT 5B parameters</td></tr>
+<tr><td style="width: 25%;"><a href="params.prospectd.html">params.prospectd</a></td>
+<td>PROSPECT D parameters</td></tr>
+<tr><td style="width: 25%;"><a href="params2edr.html">params2edr</a></td>
+<td>Convert named parameter vector to EDR-compatible inputs</td></tr>
+<tr><td style="width: 25%;"><a href="plot.spectra.html">plot.spectra</a></td>
+<td>Plot spectra vs. wavelength</td></tr>
+<tr><td style="width: 25%;"><a href="print.spectra.html">print.spectra</a></td>
+<td>Print method for spectra S3 class</td></tr>
+<tr><td style="width: 25%;"><a href="print_results_summary.html">print_results_summary</a></td>
+<td>Neatly print inversion results summary</td></tr>
+<tr><td style="width: 25%;"><a href="prior.defaultvals.prospect.html">prior.defaultvals.prospect</a></td>
+<td>Default prior parameters for PROSPECT models</td></tr>
+<tr><td style="width: 25%;"><a href="priorfunc.prospect.html">priorfunc.prospect</a></td>
+<td>Default PROSPECT 5 prior function</td></tr>
+<tr><td style="width: 25%;"><a href="pro2s.html">pro2s</a></td>
+<td>Coupled PROSPECT-Two-stream model</td></tr>
+<tr><td style="width: 25%;"><a href="pro4sail.html">pro4sail</a></td>
+<td>PRO4SAIL model</td></tr>
+<tr><td style="width: 25%;"><a href="pro4saild.html">pro4saild</a></td>
+<td>PRO4SAILD model</td></tr>
+<tr><td style="width: 25%;"><a href="prospect.html">prospect</a></td>
+<td>PROSPECT (4, 5, or 5B) model</td></tr>
+<tr><td style="width: 25%;"><a href="prospect_bt_prior.html">prospect_bt_prior</a></td>
+<td>Quick BayesianTools prior creator for PROSPECT model</td></tr>
+<tr><td style="width: 25%;"><a href="read.rsr.folder.html">read.rsr.folder</a></td>
+<td>Read and process RSR data from directory</td></tr>
+<tr><td style="width: 25%;"><a href="resample.html">resample</a></td>
+<td>Resample vector, matrix, or spectra</td></tr>
+<tr><td style="width: 25%;"><a href="resample.html">resample.default</a></td>
+<td>Resample vector, matrix, or spectra</td></tr>
+<tr><td style="width: 25%;"><a href="resample.html">resample.matrix</a></td>
+<td>Resample vector, matrix, or spectra</td></tr>
+<tr><td style="width: 25%;"><a href="resample.html">resample.spectra</a></td>
+<td>Resample vector, matrix, or spectra</td></tr>
+<tr><td style="width: 25%;"><a href="rsr.from.fwhm.html">rsr.from.fwhm</a></td>
+<td>Generate relative spectral response (RSR) matrix based on FWHM data</td></tr>
+<tr><td style="width: 25%;"><a href="rtm_loglike.html">rtm_loglike</a></td>
+<td>Generic log-likelihood generator for RTMs</td></tr>
+<tr><td style="width: 25%;"><a href="rtnorm.html">rtnorm</a></td>
+<td>Random sampling from one-sided truncated normal distribution</td></tr>
+<tr><td style="width: 25%;"><a href="sensor.list.html">sensor.list</a></td>
+<td>Sensor spectral response functions</td></tr>
+<tr><td style="width: 25%;"><a href="sensor.proper.html">sensor.proper</a></td>
+<td>Sensor list with proper names</td></tr>
+<tr><td style="width: 25%;"><a href="setup_edr.html">setup_edr</a></td>
+<td>Setup EDR run</td></tr>
+<tr><td style="width: 25%;"><a href="spectra.html">spectra</a></td>
+<td>Spectra S3 class</td></tr>
+<tr><td style="width: 25%;"><a href="spectral.response.html">spectral.response</a></td>
+<td>Convolution of spectra to sensor RSR</td></tr>
+<tr><td style="width: 25%;"><a href="str.spectra.html">str.spectra</a></td>
+<td>Structure of 'spectra' object</td></tr>
+<tr><td style="width: 25%;"><a href="summary_mvnorm.html">summary_mvnorm</a></td>
+<td>Multivariate normal fit</td></tr>
+<tr><td style="width: 25%;"><a href="summary_simple.html">summary_simple</a></td>
+<td>Simple summary statistics on MCMC samples</td></tr>
+<tr><td style="width: 25%;"><a href="trim.rsr.html">trim.rsr</a></td>
+<td>Trim RSR matrix to wavelength limits</td></tr>
+<tr><td style="width: 25%;"><a href="wavelengths.html">wavelengths</a></td>
+<td>Retrieve wavelengths from spectra object</td></tr>
+<tr><td style="width: 25%;"><a href="sub-.spectra.html">[.spectra</a></td>
+<td>Select spectra</td></tr>
+<tr><td style="width: 25%;"><a href="sub-sub-.spectra.html">[[.spectra</a></td>
+<td>Select spectra by wavelength</td></tr>
+<tr><td style="width: 25%;"><a href="sub-subset-.spectra.html">[[&lt;-.spectra</a></td>
+<td>Assign values to spectra by wavelength</td></tr>
+</table>
+</body></html>

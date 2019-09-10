@@ -1,0 +1,5 @@
+convert.samples.MAAT    Convert samples for MAAT
+met2model.MAAT          Create MAAT met driver files
+model2netcdf.MAAT       Function to convert MAAT model output to
+                        standard netCDF format
+write.config.MAAT       Write MAAT model configuration files

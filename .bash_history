@@ -1,99 +1,3 @@
-git status
-git init
-git status
-git add .
-git status
-git add .
-git status
-git commit -m "Add all current files in Welsch RStudio"
-git status
-git log --oneline
-git remote -v
-git remote add origin https://github.com/KristinaRiemer/welsch_files.git
-git remote -v
-git push -u origin master
-git status
-git rm -r pecan/
-git pull
-pwd
-ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
-pwd
-git status
-git add .
-git status
-git commit -m "Commit all file changes"
-git branch
-git remote -v
-git push
-ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
-git status
-git checkout -- ed2_files/workflow.R
-git status
-git checkout -- ed2_files/ED2IN.git
-git checkout -- ed2_files/ED2IN.rgit
-git checkout -- ed2_files/pecan64.ed2.xml
-git checkout -- ed2_files/ed2.git
-git status
-ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
-pwd
-git status
-git add -a
-git add -A
-git status
-git log --oneline
-git commit -m "Commit all files changes"
-git push
-ed2_files/workflow.R --settings ed2_files/pecan64.ed2.xml 
-pwd
-cd
-pwd
-git status
-git add -A
-git status
-git log --oneline
-git commit -m "Commit all file changes"
-git push
-get_sites()  echo D1C941FD && /usr/bin/env && echo FB1E0EA
-pwd
-cd ../../data/test
-cd ../../data/test_files/
-ls
-pwd
-cd ..
-ls
-pwd
-rmdir ed2_files/
-man rmdir
-rm -rf ed2_files/
-rmdir ed2_files/
-ls
-cd test_files/
-ls
-cd ed2_Fi
-cd ed2_files/
-ls
-pwd
-cd
-ls cd ../../data/test_files/ed2_files/workflow.R 
- ../../data/test_files/ed2_files/workflow.R 
-ls ../../data/test_files/ed2_files/pecan64.ed2.xml 
-pwd
-cd /data/test_files/ed2_files/
-ls
-pwd
-cd /data/test_files/ed2_results
-cd
-cd /data/test_files/ed2_results
-ls /data/test_files/ed2_files/ED2IN.rgit
-cat /data/test_files/ed2_files/ED2IN.rgit
-cd
-pwd
-ls /data/test_files/ed2_files/ed2_input_files/ebifarm/ED_MET_DRIVER_HEADER
-ls /data/test_files/ed2_files/workflow.R --settings
-ls /data/test_files/ed2_files/pecan64.ed2.xml 
-/data/test_files/ed2_files/workflow.R --settings /data/test_files/ed2_files/pecan64.ed2.xml 
-ls /usr/local/bin/ed2.git
-ls /usr/local/bin/
 ls /usr/local/lib/R/site-library/PEcAn.BIOCRO/
 pwd
 git status
@@ -498,3 +402,99 @@ biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.x
 rm -r biocro_darpa_results/
 biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
 rm -r biocro_darpa_results/
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
+pwd
+cd biocro_darpa_results/
+cd out/
+ls
+cd ENS-00001-9000000000/
+ls
+pwd
+cd
+pwd
+git status
+git add .
+git status
+git log --oneline
+git commit -m "Commit all file changes"
+git push
+mkdir biocro_darpa_files
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml
+chmod u+x biocro_darpa_files/workflow.R 
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml
+pwd
+cd pecan/
+git status
+git add base/db/R/get.trait.data.R modules/data.remote/NAMESPACE 
+git status
+git branch
+git reset HEAD base/db/R/get.trait.data.R
+git reset HEAD modules/data.remote/NAMESPACE
+git status
+git branch
+git checkout fix_empty_posteriors
+git status
+git add base/db/R/get.trait.data.R modules/data.remote/NAMESPACE 
+git status
+git reset HEAD base/db/R/get.trait.data.R
+git reset HEAD modules/data.remote/NAMESPACE
+git status
+git diff base/db/R/get.trait.data.R
+git status
+git diff modules/data.remote/NAMESPACE
+git status
+git add base/db/R/get.trait.data.R modules/data.remote/NAMESPACE 
+git status
+git commit -m "Add return error message if no MA posterior exists"
+git status
+git branch --oneline
+git log --oneline
+make document
+git status
+git diff
+git add modules/data.remote/NAMESPACE 
+git log --oneline
+git commit -m "Add error message returned if no MA posterior exists"
+git status
+git log --oneline
+git rebase -i HEAD~2
+git status
+git branch
+git checkout develop
+git branch -d fix_empty_posteriors
+git branch -D fix_empty_posteriors
+git branch
+git remote -v
+git fetch upstream
+git merge upstream/develop
+git push origin develop
+git checkout -b fix_no_posteriors develop
+git branch
+git status
+git diff base/db/R/get.trait.data.R
+git status
+git diff
+git status
+git diff base/db/R/get.trait.data.R
+git status
+git add base/db/R/get.trait.data.R 
+git commit -m "Add error message returned if no MA posterior exists"
+git status
+git log --oneline
+git branch
+make document
+git status
+make
+git remote -v
+git branch
+git push origin fix_no_posteriors
+make document
+pwd
+cd pecan/
+make document
+make
+cd
+ls
+rm -r biocro_darpa_results/
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/pecan.biocro.darpa.xml 
+biocro_darpa_files/workflow.R --settings biocro_darpa_files/sa_test.xml 

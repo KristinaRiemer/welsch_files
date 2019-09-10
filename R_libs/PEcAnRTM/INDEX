@@ -1,0 +1,73 @@
+EDR                     ED radiative transfer module (EDR) wrapper
+                        function
+EDR.preprocess.history
+                        Preprocess history file for EDR
+[.spectra               Select spectra
+[[.spectra              Select spectra by wavelength
+[[<-.spectra            Assign values to spectra by wavelength
+bt_check_convergence    Check convergence of BayesianTools output
+burnin.thin             Burn-in and thinning of MCMC samples
+cbind.spectra           Combine spectra by wavelength
+check.convergence       Check convergence of multiple MCMC chains
+corr_max_lag            Calculate max ACF lag from correlation power
+                        analysis
+default.settings.prospect
+                        Defult inversion settings for PROSPECT 5 models
+defparam                Get default parameters
+dtnorm                  Truncated normal distribution density
+fortran_data_module     List to FORTRAN data module
+foursail                SAIL model
+generalized_plate_model
+                        Generalized plate model
+generate.noise          Generate autocorrelated spectral noise
+generate.rsr.all        Generate RSR matrices for all sensors and
+                        return as list
+get.EDR.output          Read EDR output
+invert.auto             Inversion with automatic convergence checking
+invert.custom           Bayesian inversion of a model
+invert.lsq              Least squares model inversion
+invert_bt               Perform Bayesian inversion using BayesianTools
+                        package
+load.from.name          Load object from an RData file
+lognorm.mu              Functions for default priors Lognormal mean
+                        parameters
+lognorm.sigma           Lognormal sigma parameter
+matplot                 Matplot generic method
+matplot.default         Matplot default method
+matplot.spectra         Plot multiple spectra on same graph
+neff                    Effective sample size
+params.prospect4        PROSPECT 4 parameters
+params.prospect5        PROSPECT 5 parameters
+params.prospect5b       PROSPECT 5B parameters
+params.prospectd        PROSPECT D parameters
+params2edr              Convert named parameter vector to
+                        EDR-compatible inputs
+plot.spectra            Plot spectra vs. wavelength
+print.spectra           Print method for spectra S3 class
+print_results_summary   Neatly print inversion results summary
+prior.defaultvals.prospect
+                        Default prior parameters for PROSPECT models
+priorfunc.prospect      Default PROSPECT 5 prior function
+pro2s                   Coupled PROSPECT-Two-stream model
+pro4sail                PRO4SAIL model
+pro4saild               PRO4SAILD model
+prospect                PROSPECT (4, 5, or 5B) model
+prospect_bt_prior       Quick BayesianTools prior creator for PROSPECT
+                        model
+read.rsr.folder         Read and process RSR data from directory
+resample                Resample vector, matrix, or spectra
+rsr.from.fwhm           Generate relative spectral response (RSR)
+                        matrix based on FWHM data
+rtm_loglike             Generic log-likelihood generator for RTMs
+rtnorm                  Random sampling from one-sided truncated normal
+                        distribution
+sensor.list             Sensor spectral response functions
+sensor.proper           Sensor list with proper names
+setup_edr               Setup EDR run
+spectra                 Spectra S3 class
+spectral.response       Convolution of spectra to sensor RSR
+str.spectra             Structure of 'spectra' object
+summary_mvnorm          Multivariate normal fit
+summary_simple          Simple summary statistics on MCMC samples
+trim.rsr                Trim RSR matrix to wavelength limits
+wavelengths             Retrieve wavelengths from spectra object

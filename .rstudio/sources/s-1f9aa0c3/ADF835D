@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568131355357.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1938687155",
+    "id" : "ADF835D",
+    "lastKnownWriteTime" : 1568131448,
+    "last_content_update" : 1568131448217,
+    "path" : "~/biocro_darpa_files/sa_test.xml",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "19,9",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "xml"
+}

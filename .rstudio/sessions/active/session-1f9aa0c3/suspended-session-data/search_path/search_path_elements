@@ -1,5 +1,4 @@
 .GlobalEnv
-package:PEcAn.BIOCRO
 package:bindrcpp
 package:RCurl
 package:bitops
@@ -21,8 +20,6 @@ package:redland
 package:dataone
 package:datapack
 package:PEcAn.data.atmosphere
-package:xts
-package:zoo
 package:PEcAn.uncertainty
 package:gridExtra
 package:ggmap

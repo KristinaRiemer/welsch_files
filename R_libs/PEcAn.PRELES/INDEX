@@ -1,0 +1,4 @@
+runPRELES.jobsh         Function to process ncdf file, run PRELES
+                        model, and convert output .nc file in CF
+                        standard
+write.config.PRELES     Write PRELES configuration files

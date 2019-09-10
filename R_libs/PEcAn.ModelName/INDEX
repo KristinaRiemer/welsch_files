@@ -1,0 +1,8 @@
+met2model.MODEL         Write MODEL met files
+model2netcdf.MODEL      Code to convert MODELS's output into netCDF
+                        format
+read_restart.ModelName
+                        Read restart template for SDA
+write.config.MODEL      Write MODEL configuration files
+write_restart.ModelName
+                        Write restart template for SDA

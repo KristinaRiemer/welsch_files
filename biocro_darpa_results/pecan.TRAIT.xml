@@ -16,12 +16,12 @@
   <pft>
    <name>Setaria WT</name>
    <outdir>/home/kristinariemer/biocro_darpa_results/pft/Setaria WT</outdir>
-   <posteriorid>9000000174</posteriorid>
+   <posteriorid>9000000185</posteriorid>
   </pft>
  </pfts>
  <ensemble>
-  <variable>AbvGrndWood</variable>
-  <size>1</size>
+  <size>100</size>
+  <variable>TotLivBiom</variable>
   <start.year>2004</start.year>
   <end.year>2004</end.year>
   <samplingspace>
@@ -51,8 +51,8 @@
  </model>
  <run>
   <site>
-   <id>9000000000</id>
-   <name>Donald Danforth Plant Science Center Growth Chamber 157</name>
+   <id>9000000004</id>
+   <name>Donald Danforth Plant Science Center Growth Chamber</name>
    <lat>38.674593</lat>
    <lon>-90.397189</lon>
   </site>
@@ -78,7 +78,7 @@
   <checked>TRUE</checked>
  </settings.info>
  <workflow>
-  <id>2019-09-05-17-45-31</id>
+  <id>2019-09-10-19-03-28</id>
  </workflow>
  <rundir>/home/kristinariemer/biocro_darpa_results/run</rundir>
  <modeloutdir>/home/kristinariemer/biocro_darpa_results/out</modeloutdir>

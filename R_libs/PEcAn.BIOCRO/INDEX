@@ -1,0 +1,15 @@
+cf2biocro               Convert CF-formatted met data to BioCro met
+convert.samples.BIOCRO
+                        Convert samples for biocro
+get.model.output.BIOCRO
+                        Retrieve model output from local server
+get_biocro_defaults     Look for defaults provided as datasets in the
+                        BioCro model package
+met2model.BIOCRO        Write BioCro met files
+model2netcdf.BIOCRO     Function to convert biocro model output to
+                        standard netCDF format
+read.biocro.config      Read BioCro Config
+remove.config.BIOCRO    Clear out previous biocro config and parameter
+                        files.
+run.biocro              Run BioCro at a point
+write.config.BIOCRO     Write configuration files for the biocro model

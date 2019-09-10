@@ -1,0 +1,6 @@
+met2model.LINKAGES	met2model.LINKAGES
+model2netcdf.LINKAGES	model2netcdf.LINKAGES
+read_restart.LINKAGES	read_restart.LINKAGES
+split_inputs.LINKAGES	split_inputs.LINKAGES
+write.config.LINKAGES	write.config.LINKAGES
+write_restart.LINKAGES	write_restart.LINKAGES

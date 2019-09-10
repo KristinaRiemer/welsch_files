@@ -1,0 +1,61 @@
+Each meta-analysis will be run with: 
+3000 total iterations,
+4 chains, 
+a burnin of 1500 samples,
+, 
+thus the total number of samples will be 6000
+################################################
+------------------------------------------------
+starting meta-analysis for:
+
+ SLA 
+
+------------------------------------------------
+NO ERROR STATS PROVIDED, DROPPING RANDOM EFFECTS
+prior for SLA
+                     (using R parameterization):
+weibull(2.06, 19)
+data max: 76.93 
+data min: 32.05 
+mean: 47.7 
+n: 9
+stem plot of data points
+
+  The decimal point is 1 digit(s) to the right of the |
+
+  3 | 27
+  4 | 14689
+  5 | 5
+  6 | 
+  7 | 7
+
+no estimates of SD for SLA
+Compiling model graph
+   Resolving undeclared variables
+   Allocating nodes
+Graph information:
+   Observed stochastic nodes: 9
+   Unobserved stochastic nodes: 11
+   Total graph size: 62
+
+Initializing model
+
+
+Iterations = 1002:4000
+Thinning interval = 2 
+Number of chains = 4 
+Sample size per chain = 1500 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+        Mean     SD Naive SE Time-series SE
+beta.o 42.99  6.398  0.08259         0.1151
+sd.y   29.49 10.913  0.14089         0.1911
+
+2. Quantiles for each variable:
+
+        2.5%   25%   50%   75% 97.5%
+beta.o 27.25 39.79 43.89 47.36 52.88
+sd.y   16.40 22.17 26.81 33.54 58.54
+

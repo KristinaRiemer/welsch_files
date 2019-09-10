@@ -7385,3 +7385,554 @@
 1567705359319:sensitivity.output
 1567705372532:sensitivity.output[[pft$name]]
 1567705375571:pft$names
+1567706577500:PEcAn.visualization::plot.netcdf("biocro_darpa_results/out/ENS-00001-9000000000/2004.nc", "LAI")
+1568054893668:# ----------------------------------------------------------------------
+1568054893675:# Load required libraries
+1568054893677:# ----------------------------------------------------------------------
+1568054893679:library(PEcAn.all)
+1568054927091:debugonce(PEcAn.DB::get.trait.data.pft)
+1568054928140:library(PEcAn.utils)
+1568054928340:library(RCurl)
+1568054928927:# make sure always to call status.end
+1568054928929:options(warn=1)
+1568054929128:options(error=quote({
+1568054929129:PEcAn.utils::status.end("ERROR")
+1568054929131:PEcAn.remote::kill.tunnel(settings)
+1568054929132:if (!interactive()) {
+1568054929133:q(status = 1)
+1568054929135:}
+1568054929137:}))
+1568054930568:# ----------------------------------------------------------------------
+1568054930569:# PEcAn Workflow
+1568054930570:# ----------------------------------------------------------------------
+1568054930570:# Open and read in settings file for PEcAn run.
+1568054930571:args <- commandArgs(trailingOnly = TRUE)
+1568054931195:if (is.na(args[1])){
+1568054931197:settings <- PEcAn.settings::read.settings("pecan.xml")
+1568054931198:} else {
+1568054931199:settings.file <- args[1]
+1568054931200:settings <- PEcAn.settings::read.settings(settings.file)
+1568054931202:}
+1568054931406:# Check for additional modules that will require adding settings
+1568054931407:if("benchmarking" %in% names(settings)){
+1568054931409:library(PEcAn.benchmark)
+1568054931410:settings <- papply(settings, read_settings_BRR)
+1568054931412:}
+1568054931930:if("sitegroup" %in% names(settings)){
+1568054931931:if(is.null(settings$sitegroup$nSite)){
+1568054931932:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568054931934:sitegroupId = settings$sitegroup$id)
+1568054931935:} else {
+1568054931937:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568054931938:sitegroupId = settings$sitegroup$id,
+1568054931940:nSite = settings$sitegroup$nSite)
+1568054931941:}
+1568054931943:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1568054931943:}
+1568054951153:# ----------------------------------------------------------------------
+1568054951154:# Load required libraries
+1568054951155:# ----------------------------------------------------------------------
+1568054951156:library(PEcAn.all)
+1568054958624:debugonce(PEcAn.DB::get.trait.data.pft)
+1568054958815:library(PEcAn.utils)
+1568054959051:library(RCurl)
+1568054960209:# make sure always to call status.end
+1568054960210:options(warn=1)
+1568054960422:options(error=quote({
+1568054960424:PEcAn.utils::status.end("ERROR")
+1568054960425:PEcAn.remote::kill.tunnel(settings)
+1568054960426:if (!interactive()) {
+1568054960427:q(status = 1)
+1568054960429:}
+1568054960430:}))
+1568054960977:# ----------------------------------------------------------------------
+1568054960978:# PEcAn Workflow
+1568054960979:# ----------------------------------------------------------------------
+1568054960980:# Open and read in settings file for PEcAn run.
+1568054960981:args <- commandArgs(trailingOnly = TRUE)
+1568054961315:if (is.na(args[1])){
+1568054961317:settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml")
+1568054961318:} else {
+1568054961320:settings.file <- args[1]
+1568054961322:settings <- PEcAn.settings::read.settings(settings.file)
+1568054961324:}
+1568054961534:# Check for additional modules that will require adding settings
+1568054961535:if("benchmarking" %in% names(settings)){
+1568054961536:library(PEcAn.benchmark)
+1568054961537:settings <- papply(settings, read_settings_BRR)
+1568054961538:}
+1568054961774:if("sitegroup" %in% names(settings)){
+1568054961776:if(is.null(settings$sitegroup$nSite)){
+1568054961777:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568054961778:sitegroupId = settings$sitegroup$id)
+1568054961779:} else {
+1568054961780:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568054961782:sitegroupId = settings$sitegroup$id,
+1568054961783:nSite = settings$sitegroup$nSite)
+1568054961784:}
+1568054961785:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1568054961786:}
+1568054963472:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1568054963473:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1568054965039:# Write pecan.CHECKED.xml
+1568054965041:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1568054965111:# start from scratch if no continue is passed in
+1568054965112:statusFile <- file.path(settings$outdir, "STATUS")
+1568054965168:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1568054965168:file.remove(statusFile)
+1568054965169:}
+1568054965600:# Do conversions
+1568054965601:settings <- PEcAn.workflow::do_conversions(settings)
+1568054966338:# Query the trait database for data and priors
+1568054966339:if (PEcAn.utils::status.check("TRAIT") == 0){
+1568054966341:PEcAn.utils::status.start("TRAIT")
+1568054966342:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1568054966344:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1568054966345:PEcAn.utils::status.end()
+1568054966347:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1568054966348:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1568054966350:}
+1568055021814:dplyr::tbl(dbcon, "posteriors")
+1568055029552:dplyr::tbl(dbcon, "posteriors") %>%
+1568055029553:dplyr::filter(pft_id == !!pftid)
+1568055043500:dplyr::tbl(dbcon, "posteriors") %>%
+1568055043501:dplyr::filter(pft_id == !!pftid) %>% dplyr::collect()
+1568055840610:#!/usr/bin/env Rscript
+1568055840610:#-------------------------------------------------------------------------------
+1568055840611:# Copyright (c) 2012 University of Illinois, NCSA.
+1568055840612:# All rights reserved. This program and the accompanying materials
+1568055840613:# are made available under the terms of the
+1568055840614:# University of Illinois/NCSA Open Source License
+1568055840614:# which accompanies this distribution, and is available at
+1568055840615:# http://opensource.ncsa.illinois.edu/license.html
+1568055840616:#-------------------------------------------------------------------------------
+1568055840617:# ----------------------------------------------------------------------
+1568055840618:# Load required libraries
+1568055840618:# ----------------------------------------------------------------------
+1568055840619:library(PEcAn.all)
+1568055845270:debugonce(PEcAn.DB::get.trait.data.pft)
+1568055845272:library(PEcAn.utils)
+1568055845273:library(RCurl)
+1568055845432:# make sure always to call status.end
+1568055845433:options(warn=1)
+1568055845434:options(error=quote({
+1568055845435:PEcAn.utils::status.end("ERROR")
+1568055845435:PEcAn.remote::kill.tunnel(settings)
+1568055845436:if (!interactive()) {
+1568055845437:q(status = 1)
+1568055845437:}
+1568055845438:}))
+1568055845439:#options(warning.expression=status.end("ERROR"))
+1568055845441:# ----------------------------------------------------------------------
+1568055845441:# PEcAn Workflow
+1568055845442:# ----------------------------------------------------------------------
+1568055845443:# Open and read in settings file for PEcAn run.
+1568055845443:args <- commandArgs(trailingOnly = TRUE)
+1568055845444:if (is.na(args[1])){
+1568055845445:settings <- PEcAn.settings::read.settings("biocro_darpa_files/pecan.biocro.darpa.xml")
+1568055845445:} else {
+1568055845446:settings.file <- args[1]
+1568055845447:settings <- PEcAn.settings::read.settings(settings.file)
+1568055845447:}
+1568055845468:# Check for additional modules that will require adding settings
+1568055845469:if("benchmarking" %in% names(settings)){
+1568055845470:library(PEcAn.benchmark)
+1568055845470:settings <- papply(settings, read_settings_BRR)
+1568055845471:}
+1568055845472:if("sitegroup" %in% names(settings)){
+1568055845473:if(is.null(settings$sitegroup$nSite)){
+1568055845474:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568055845474:sitegroupId = settings$sitegroup$id)
+1568055845475:} else {
+1568055845476:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568055845476:sitegroupId = settings$sitegroup$id,
+1568055845477:nSite = settings$sitegroup$nSite)
+1568055845478:}
+1568055845478:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1568055845479:}
+1568055845480:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1568055845481:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1568055845958:# Write pecan.CHECKED.xml
+1568055845958:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1568055846024:# start from scratch if no continue is passed in
+1568055846025:statusFile <- file.path(settings$outdir, "STATUS")
+1568055846026:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1568055846027:file.remove(statusFile)
+1568055846027:}
+1568055846029:# Do conversions
+1568055846030:settings <- PEcAn.workflow::do_conversions(settings)
+1568055846107:# Query the trait database for data and priors
+1568055846108:if (PEcAn.utils::status.check("TRAIT") == 0){
+1568055846109:PEcAn.utils::status.start("TRAIT")
+1568055846110:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1568055846110:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1568055846111:PEcAn.utils::status.end()
+1568055846112:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1568055846113:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1568055846114:}
+1568055888144:recent_posterior
+1568055894205:recent_posterior
+1568055911551:pft$posteriorid
+1568055913980:if (length(recent_posterior) > 0) {
+1568055913981:pft$posteriorid <- dplyr::tbl(dbcon, "posteriors") %>%
+1568055913983:dplyr::filter(pft_id == !!pftid) %>% dplyr::arrange(dplyr::desc(created_at)) %>%
+1568055913984:head(1) %>% dplyr::pull(id)
+1568055917921:}
+1568055929182:pft$posteriorid
+1568055997938:length(recent_posterior)
+1568056006812:recent_posterior
+1568056059881:dplyr::tbl(dbcon, "posteriors") %>%
+1568056059882:dplyr::filter(pft_id == !!pftid) %>% dplyr::arrange(dplyr::desc(created_at)) %>%
+1568056059884:head(1) %>% dplyr::pull(id)
+1568129015649:library(PEcAn.all)
+1568129042254:test-get.trait.data.pft.R
+1568129114209:library(PEcAn.all)
+1568129143249:get.trait.data.pft()
+1568129145281:get.trait.data.pft
+1568131711999:# ----------------------------------------------------------------------
+1568131712001:# Load required libraries
+1568131712002:# ----------------------------------------------------------------------
+1568131712004:library(PEcAn.all)
+1568131718333:debugonce(runModule.run.sensitivity.analysis)
+1568131719332:library(PEcAn.utils)
+1568131720275:library(RCurl)
+1568131720972:# make sure always to call status.end
+1568131720974:options(warn=1)
+1568131721833:options(error=quote({
+1568131721835:PEcAn.utils::status.end("ERROR")
+1568131721836:PEcAn.remote::kill.tunnel(settings)
+1568131721838:if (!interactive()) {
+1568131721840:q(status = 1)
+1568131721842:}
+1568131721843:}))
+1568131722727:# ----------------------------------------------------------------------
+1568131722728:# PEcAn Workflow
+1568131722730:# ----------------------------------------------------------------------
+1568131722732:# Open and read in settings file for PEcAn run.
+1568131722734:args <- commandArgs(trailingOnly = TRUE)
+1568131723876:if (is.na(args[1])){
+1568131723877:settings <- PEcAn.settings::read.settings("biocro_darpa_files/sa_test.xml")
+1568131723879:} else {
+1568131723880:settings.file <- args[1]
+1568131723882:settings <- PEcAn.settings::read.settings(settings.file)
+1568131723883:}
+1568131725068:# Check for additional modules that will require adding settings
+1568131725069:if("benchmarking" %in% names(settings)){
+1568131725071:library(PEcAn.benchmark)
+1568131725072:settings <- papply(settings, read_settings_BRR)
+1568131725073:}
+1568131726022:if("sitegroup" %in% names(settings)){
+1568131726023:if(is.null(settings$sitegroup$nSite)){
+1568131726024:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568131726025:sitegroupId = settings$sitegroup$id)
+1568131726027:} else {
+1568131726028:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568131726029:sitegroupId = settings$sitegroup$id,
+1568131726030:nSite = settings$sitegroup$nSite)
+1568131726031:}
+1568131726032:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1568131726033:}
+1568131727017:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1568131727019:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1568131728640:# Write pecan.CHECKED.xml
+1568131728641:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1568131730336:# start from scratch if no continue is passed in
+1568131730337:statusFile <- file.path(settings$outdir, "STATUS")
+1568131731555:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1568131731557:file.remove(statusFile)
+1568131731558:}
+1568131732563:# Do conversions
+1568131732564:settings <- PEcAn.workflow::do_conversions(settings)
+1568131734884:# Query the trait database for data and priors
+1568131734886:if (PEcAn.utils::status.check("TRAIT") == 0){
+1568131734887:PEcAn.utils::status.start("TRAIT")
+1568131734888:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1568131734889:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1568131734891:PEcAn.utils::status.end()
+1568131734892:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1568131734894:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1568131734895:}
+1568131736596:# Run the PEcAn meta.analysis
+1568131736597:if(!is.null(settings$meta.analysis)) {
+1568131736598:if (PEcAn.utils::status.check("META") == 0){
+1568131736599:PEcAn.utils::status.start("META")
+1568131736600:PEcAn.MA::runModule.run.meta.analysis(settings)
+1568131736601:PEcAn.utils::status.end()
+1568131736601:}
+1568131736602:}
+1568131741251:# Write model specific configs
+1568131741252:if (PEcAn.utils::status.check("CONFIG") == 0){
+1568131741254:PEcAn.utils::status.start("CONFIG")
+1568131741255:settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+1568131741257:PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+1568131741258:PEcAn.utils::status.end()
+1568131741259:} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+1568131741261:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+1568131741262:}
+1568131749221:if ((length(which(commandArgs() == "--advanced")) != 0) &&
+1568131749222:(PEcAn.utils::status.check("ADVANCED") == 0)) {
+1568131749224:PEcAn.utils::status.start("ADVANCED")
+1568131749226:q();
+1568131749228:}
+1568131751234:# Start ecosystem model runs
+1568131751236:if (PEcAn.utils::status.check("MODEL") == 0) {
+1568131751237:PEcAn.utils::status.start("MODEL")
+1568131751239:PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+1568131751240:PEcAn.utils::status.end()
+1568131751240:}
+1568131764239:# Get results of model runs
+1568131764240:if (PEcAn.utils::status.check("OUTPUT") == 0) {
+1568131764241:PEcAn.utils::status.start("OUTPUT")
+1568131764242:runModule.get.results(settings)
+1568131764243:PEcAn.utils::status.end()
+1568131764244:}
+1568131775147:# Run ensemble analysis on model output.
+1568131775148:if ('ensemble' %in% names(settings) & PEcAn.utils::status.check("ENSEMBLE") == 0) {
+1568131775149:PEcAn.utils::status.start("ENSEMBLE")
+1568131775149:runModule.run.ensemble.analysis(settings, TRUE)
+1568131775150:PEcAn.utils::status.end()
+1568131775151:}
+1568131778048:# Run sensitivity analysis and variance decomposition on model output
+1568131778050:if ('sensitivity.analysis' %in% names(settings) & PEcAn.utils::status.check("SENSITIVITY") == 0) {
+1568131778051:PEcAn.utils::status.start("SENSITIVITY")
+1568131778053:runModule.run.sensitivity.analysis(settings)
+1568131778054:PEcAn.utils::status.end()
+1568131778056:}
+1568131824301:#!/usr/bin/env Rscript
+1568131824303:#-------------------------------------------------------------------------------
+1568131824305:# Copyright (c) 2012 University of Illinois, NCSA.
+1568131824306:# All rights reserved. This program and the accompanying materials
+1568131824308:# are made available under the terms of the
+1568131824308:# University of Illinois/NCSA Open Source License
+1568131824309:# which accompanies this distribution, and is available at
+1568131824310:# http://opensource.ncsa.illinois.edu/license.html
+1568131824311:#-------------------------------------------------------------------------------
+1568131824312:# ----------------------------------------------------------------------
+1568131824313:# Load required libraries
+1568131824314:# ----------------------------------------------------------------------
+1568131824315:library(PEcAn.all)
+1568131829552:debugonce(runModule.run.sensitivity.analysis)
+1568131829553:library(PEcAn.utils)
+1568131829554:library(RCurl)
+1568131829758:# make sure always to call status.end
+1568131829758:options(warn=1)
+1568131829759:options(error=quote({
+1568131829760:PEcAn.utils::status.end("ERROR")
+1568131829761:PEcAn.remote::kill.tunnel(settings)
+1568131829761:if (!interactive()) {
+1568131829762:q(status = 1)
+1568131829763:}
+1568131829763:}))
+1568131829765:#options(warning.expression=status.end("ERROR"))
+1568131829767:# ----------------------------------------------------------------------
+1568131829767:# PEcAn Workflow
+1568131829768:# ----------------------------------------------------------------------
+1568131829769:# Open and read in settings file for PEcAn run.
+1568131829769:args <- commandArgs(trailingOnly = TRUE)
+1568131829770:if (is.na(args[1])){
+1568131829771:settings <- PEcAn.settings::read.settings("biocro_darpa_files/sa_test.xml")
+1568131829771:} else {
+1568131829772:settings.file <- args[1]
+1568131829773:settings <- PEcAn.settings::read.settings(settings.file)
+1568131829773:}
+1568131829801:# Check for additional modules that will require adding settings
+1568131829802:if("benchmarking" %in% names(settings)){
+1568131829803:library(PEcAn.benchmark)
+1568131829804:settings <- papply(settings, read_settings_BRR)
+1568131829815:}
+1568131829818:if("sitegroup" %in% names(settings)){
+1568131829819:if(is.null(settings$sitegroup$nSite)){
+1568131829820:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568131829820:sitegroupId = settings$sitegroup$id)
+1568131829822:} else {
+1568131829823:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568131829824:sitegroupId = settings$sitegroup$id,
+1568131829825:nSite = settings$sitegroup$nSite)
+1568131829826:}
+1568131829827:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1568131829828:}
+1568131829829:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1568131829830:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1568131830390:# Write pecan.CHECKED.xml
+1568131830391:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1568131830464:# start from scratch if no continue is passed in
+1568131830465:statusFile <- file.path(settings$outdir, "STATUS")
+1568131830466:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1568131830466:file.remove(statusFile)
+1568131830467:}
+1568131830468:# Do conversions
+1568131830469:settings <- PEcAn.workflow::do_conversions(settings)
+1568131830547:# Query the trait database for data and priors
+1568131830548:if (PEcAn.utils::status.check("TRAIT") == 0){
+1568131830549:PEcAn.utils::status.start("TRAIT")
+1568131830550:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1568131830550:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1568131830551:PEcAn.utils::status.end()
+1568131830552:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1568131830552:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1568131830553:}
+1568131832329:# Run the PEcAn meta.analysis
+1568131832330:if(!is.null(settings$meta.analysis)) {
+1568131832331:if (PEcAn.utils::status.check("META") == 0){
+1568131832332:PEcAn.utils::status.start("META")
+1568131832332:PEcAn.MA::runModule.run.meta.analysis(settings)
+1568131832333:PEcAn.utils::status.end()
+1568131832334:}
+1568131832334:}
+1568131832349:# Write model specific configs
+1568131832350:if (PEcAn.utils::status.check("CONFIG") == 0){
+1568131832351:PEcAn.utils::status.start("CONFIG")
+1568131832351:settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+1568131832352:PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+1568131832353:PEcAn.utils::status.end()
+1568131832353:} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+1568131832354:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+1568131832355:}
+1568131836597:if ((length(which(commandArgs() == "--advanced")) != 0) &&
+1568131836598:(PEcAn.utils::status.check("ADVANCED") == 0)) {
+1568131836598:PEcAn.utils::status.start("ADVANCED")
+1568131836599:q();
+1568131836600:}
+1568131836601:# Start ecosystem model runs
+1568131836602:if (PEcAn.utils::status.check("MODEL") == 0) {
+1568131836603:PEcAn.utils::status.start("MODEL")
+1568131836603:PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+1568131836604:PEcAn.utils::status.end()
+1568131836604:}
+1568131851117:# Get results of model runs
+1568131851118:if (PEcAn.utils::status.check("OUTPUT") == 0) {
+1568131851119:PEcAn.utils::status.start("OUTPUT")
+1568131851120:runModule.get.results(settings)
+1568131851120:PEcAn.utils::status.end()
+1568131851121:}
+1568131851452:# Run ensemble analysis on model output.
+1568131851453:if ('ensemble' %in% names(settings) & PEcAn.utils::status.check("ENSEMBLE") == 0) {
+1568131851454:PEcAn.utils::status.start("ENSEMBLE")
+1568131851454:runModule.run.ensemble.analysis(settings, TRUE)
+1568131851455:PEcAn.utils::status.end()
+1568131851456:}
+1568131853997:# Run sensitivity analysis and variance decomposition on model output
+1568131853998:if ('sensitivity.analysis' %in% names(settings) & PEcAn.utils::status.check("SENSITIVITY") == 0) {
+1568131853998:PEcAn.utils::status.start("SENSITIVITY")
+1568131853999:runModule.run.sensitivity.analysis(settings)
+1568131854000:PEcAn.utils::status.end()
+1568131854001:}
+1568131942157:#!/usr/bin/env Rscript
+1568131942158:#-------------------------------------------------------------------------------
+1568131942160:# Copyright (c) 2012 University of Illinois, NCSA.
+1568131942161:# All rights reserved. This program and the accompanying materials
+1568131942162:# are made available under the terms of the
+1568131942163:# University of Illinois/NCSA Open Source License
+1568131942164:# which accompanies this distribution, and is available at
+1568131942165:# http://opensource.ncsa.illinois.edu/license.html
+1568131942165:#-------------------------------------------------------------------------------
+1568131942167:# ----------------------------------------------------------------------
+1568131942168:# Load required libraries
+1568131942169:# ----------------------------------------------------------------------
+1568131942170:library(PEcAn.all)
+1568131947392:debugonce(run.sensitivity.analysis)
+1568131947394:library(PEcAn.utils)
+1568131947395:library(RCurl)
+1568131947594:# make sure always to call status.end
+1568131947595:options(warn=1)
+1568131947595:options(error=quote({
+1568131947596:PEcAn.utils::status.end("ERROR")
+1568131947597:PEcAn.remote::kill.tunnel(settings)
+1568131947598:if (!interactive()) {
+1568131947598:q(status = 1)
+1568131947599:}
+1568131947600:}))
+1568131947602:#options(warning.expression=status.end("ERROR"))
+1568131947603:# ----------------------------------------------------------------------
+1568131947604:# PEcAn Workflow
+1568131947605:# ----------------------------------------------------------------------
+1568131947606:# Open and read in settings file for PEcAn run.
+1568131947606:args <- commandArgs(trailingOnly = TRUE)
+1568131947607:if (is.na(args[1])){
+1568131947608:settings <- PEcAn.settings::read.settings("biocro_darpa_files/sa_test.xml")
+1568131947608:} else {
+1568131947609:settings.file <- args[1]
+1568131947610:settings <- PEcAn.settings::read.settings(settings.file)
+1568131947610:}
+1568131947639:# Check for additional modules that will require adding settings
+1568131947640:if("benchmarking" %in% names(settings)){
+1568131947641:library(PEcAn.benchmark)
+1568131947642:settings <- papply(settings, read_settings_BRR)
+1568131947642:}
+1568131947644:if("sitegroup" %in% names(settings)){
+1568131947645:if(is.null(settings$sitegroup$nSite)){
+1568131947645:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568131947646:sitegroupId = settings$sitegroup$id)
+1568131947647:} else {
+1568131947647:settings <- PEcAn.settings::createSitegroupMultiSettings(settings,
+1568131947648:sitegroupId = settings$sitegroup$id,
+1568131947649:nSite = settings$sitegroup$nSite)
+1568131947649:}
+1568131947650:settings$sitegroup <- NULL ## zero out so don't expand a second time if re-reading
+1568131947651:}
+1568131947653:# Update/fix/check settings. Will only run the first time it's called, unless force=TRUE
+1568131947653:settings <- PEcAn.settings::prepare.settings(settings, force = FALSE)
+1568131948205:# Write pecan.CHECKED.xml
+1568131948206:PEcAn.settings::write.settings(settings, outputfile = "pecan.CHECKED.xml")
+1568131948278:# start from scratch if no continue is passed in
+1568131948279:statusFile <- file.path(settings$outdir, "STATUS")
+1568131948280:if (length(which(commandArgs() == "--continue")) == 0 && file.exists(statusFile)) {
+1568131948280:file.remove(statusFile)
+1568131948281:}
+1568131948283:# Do conversions
+1568131948284:settings <- PEcAn.workflow::do_conversions(settings)
+1568131948362:# Query the trait database for data and priors
+1568131948363:if (PEcAn.utils::status.check("TRAIT") == 0){
+1568131948364:PEcAn.utils::status.start("TRAIT")
+1568131948364:settings <- PEcAn.workflow::runModule.get.trait.data(settings)
+1568131948365:PEcAn.settings::write.settings(settings, outputfile='pecan.TRAIT.xml')
+1568131948366:PEcAn.utils::status.end()
+1568131948366:} else if (file.exists(file.path(settings$outdir, 'pecan.TRAIT.xml'))) {
+1568131948367:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.TRAIT.xml'))
+1568131948368:}
+1568131950149:# Run the PEcAn meta.analysis
+1568131950150:if(!is.null(settings$meta.analysis)) {
+1568131950150:if (PEcAn.utils::status.check("META") == 0){
+1568131950151:PEcAn.utils::status.start("META")
+1568131950152:PEcAn.MA::runModule.run.meta.analysis(settings)
+1568131950153:PEcAn.utils::status.end()
+1568131950154:}
+1568131950154:}
+1568131950169:# Write model specific configs
+1568131950170:if (PEcAn.utils::status.check("CONFIG") == 0){
+1568131950170:PEcAn.utils::status.start("CONFIG")
+1568131950171:settings <- PEcAn.workflow::runModule.run.write.configs(settings)
+1568131950172:PEcAn.settings::write.settings(settings, outputfile='pecan.CONFIGS.xml')
+1568131950173:PEcAn.utils::status.end()
+1568131950173:} else if (file.exists(file.path(settings$outdir, 'pecan.CONFIGS.xml'))) {
+1568131950174:settings <- PEcAn.settings::read.settings(file.path(settings$outdir, 'pecan.CONFIGS.xml'))
+1568131950175:}
+1568131954440:if ((length(which(commandArgs() == "--advanced")) != 0) &&
+1568131954441:(PEcAn.utils::status.check("ADVANCED") == 0)) {
+1568131954442:PEcAn.utils::status.start("ADVANCED")
+1568131954443:q();
+1568131954444:}
+1568131954445:# Start ecosystem model runs
+1568131954446:if (PEcAn.utils::status.check("MODEL") == 0) {
+1568131954447:PEcAn.utils::status.start("MODEL")
+1568131954447:PEcAn.remote::runModule.start.model.runs(settings, stop.on.error = FALSE)
+1568131954479:PEcAn.utils::status.end()
+1568131954481:}
+1568131968981:# Get results of model runs
+1568131968982:if (PEcAn.utils::status.check("OUTPUT") == 0) {
+1568131968983:PEcAn.utils::status.start("OUTPUT")
+1568131968984:runModule.get.results(settings)
+1568131968985:PEcAn.utils::status.end()
+1568131968986:}
+1568131969327:# Run ensemble analysis on model output.
+1568131969328:if ('ensemble' %in% names(settings) & PEcAn.utils::status.check("ENSEMBLE") == 0) {
+1568131969329:PEcAn.utils::status.start("ENSEMBLE")
+1568131969330:runModule.run.ensemble.analysis(settings, TRUE)
+1568131969331:PEcAn.utils::status.end()
+1568131969332:}
+1568131971672:# Run sensitivity analysis and variance decomposition on model output
+1568131971673:if ('sensitivity.analysis' %in% names(settings) & PEcAn.utils::status.check("SENSITIVITY") == 0) {
+1568131971674:PEcAn.utils::status.start("SENSITIVITY")
+1568131971675:runModule.run.sensitivity.analysis(settings)
+1568131971675:PEcAn.utils::status.end()
+1568131971676:}

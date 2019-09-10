@@ -1,0 +1,18 @@
+SA-median
+SA-Setaria WT-Vcmax-0.159
+SA-Setaria WT-Vcmax-0.841
+SA-Setaria WT-c2n_leaf-0.159
+SA-Setaria WT-c2n_leaf-0.841
+SA-Setaria WT-cuticular_cond-0.159
+SA-Setaria WT-cuticular_cond-0.841
+SA-Setaria WT-SLA-0.159
+SA-Setaria WT-SLA-0.841
+SA-Setaria WT-leaf_respiration_rate_m2-0.159
+SA-Setaria WT-leaf_respiration_rate_m2-0.841
+SA-Setaria WT-stomatal_slope.BB-0.159
+SA-Setaria WT-stomatal_slope.BB-0.841
+SA-Setaria WT-growth_respiration_coefficient-0.159
+SA-Setaria WT-growth_respiration_coefficient-0.841
+SA-Setaria WT-extinction_coefficient_diffuse-0.159
+SA-Setaria WT-extinction_coefficient_diffuse-0.841
+ENS-00001-9000000000

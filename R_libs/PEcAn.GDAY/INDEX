@@ -1,0 +1,4 @@
+met2model.GDAY          met2model.GDAY
+model2netcdf.GDAY       Function to convert GDAY model output to
+                        standard netCDF format
+write.config.GDAY       Write GDAY configuration files

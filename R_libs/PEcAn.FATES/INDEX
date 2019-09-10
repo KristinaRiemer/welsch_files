@@ -1,0 +1,5 @@
+met2model.FATES         met2model for FATES
+model2netcdf.FATES      Code to convert FATES netcdf output into into
+                        CF standard
+recurse.create          recurse.create
+write.config.FATES      Write FATES configuration files

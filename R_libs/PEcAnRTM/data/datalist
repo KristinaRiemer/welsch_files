@@ -1,0 +1,5 @@
+dataSpec_prospectd
+model.list
+raw.sensor.data: bandwidth.chrisproba fwhm.aviris.classic fwhm.aviris.ng fwhm.hyperion rsr.avhrr rsr.landsat5 rsr.landsat7 rsr.landsat8 rsr.modis rsr.viirs
+sensor.rsr
+testspec: testspec_ACRU

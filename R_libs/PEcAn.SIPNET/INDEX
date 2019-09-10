@@ -1,0 +1,14 @@
+get.model.output.SIPNET
+                        Retrieve model output from local or remote
+                        server
+met2model.SIPNET        met2model.SIPNET
+model2netcdf.SIPNET     Function to convert SIPNET model output to
+                        standard netCDF format
+read_restart.SIPNET     Read restart function for SDA with SIPNET
+remove.config.SIPNET    Clear out previous SIPNET config and parameter
+                        files.
+sample.IC.SIPNET        sample.IC.SIPNET
+sipnet2datetime         Convert SIPNET DOY to datetime
+split_inputs.SIPNET     split_inputs.SIPNET
+write.config.SIPNET     Writes a configuration files for SIPNET model
+write_restart.SIPNET    write_restart.SIPNET

@@ -55,7 +55,7 @@ LazyData: FALSE
 Encoding: UTF-8
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2019-09-04 18:56:43 UTC; kristinariemer
+Packaged: 2019-09-10 15:26:32 UTC; kristinariemer
 Author: David LeBauer [aut, cre] (<https://orcid.org/0000-0001-7228-053X>),
   Mike Dietze [aut] (<https://orcid.org/0000-0002-2324-2518>),
   Rob Kooper [aut] (<https://orcid.org/0000-0002-5781-7287>),
@@ -72,4 +72,4 @@ Author: David LeBauer [aut, cre] (<https://orcid.org/0000-0001-7228-053X>),
   Carl Davidson [aut],
   Xiaohui Feng [aut]
 Maintainer: David LeBauer <dlebauer@email.arizona.edu>
-Built: R 3.5.2; ; 2019-09-04 18:56:44 UTC; unix
+Built: R 3.5.2; ; 2019-09-10 15:26:33 UTC; unix

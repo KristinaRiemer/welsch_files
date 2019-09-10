@@ -1,15 +1,15 @@
+~/biocro_darpa_results/pft/Setaria WT/prior.distns.csv
 ~/biocro_darpa_results/STATUS
-~/biocro_darpa_files/workflow.R
+~/biocro_darpa_results/pft/Setaria WT/trait.data.csv
 ~/biocro_darpa_files/pecan.biocro.darpa.xml
-~/pecan/Makefile
+~/biocro_darpa_files/sa_test.xml
+~/pecan/base/db/tests/testthat/test-get.trait.data.pft.R
+~/pecan/modules/data.remote/NAMESPACE
 ~/pecan/base/db/R/get.trait.data.R
+~/.Rprofile
+~/biocro_darpa_files/workflow.R
+~/pecan/Makefile
 ~/get.trait.data.R
 ~/pecan/base/all/DESCRIPTION
 ~/pecan/base/all/NAMESPACE
 ~/pecan/base/settings/R/MultiSettings.R
-~/pecan/base/remote/R/start.model.runs.R
-~/.Rprofile
-~/.Rhistory
-~/.bash_profile
-~/get.trait.data-copy.R
-/pecan/base/db/R/get.trait.data.R
