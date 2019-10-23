@@ -14,9 +14,9 @@
  </database>
  <pfts>
   <pft>
-   <name>Setaria WT</name>
-   <outdir>/home/kristinariemer/biocro_darpa_results/pft/Setaria WT</outdir>
-   <posteriorid>9000000185</posteriorid>
+   <name>SetariaWT</name>
+   <outdir>/home/kristinariemer/biocro_darpa_results/pft/SetariaWT</outdir>
+   <posteriorid>9000000264</posteriorid>
   </pft>
  </pfts>
  <ensemble>
@@ -42,11 +42,16 @@
   <threshold>1.2</threshold>
   <update>AUTO</update>
  </meta.analysis>
+ <sensitivity.analysis>
+  <variable>TotLivBiom</variable>
+  <start.year>2004</start.year>
+  <end.year>2004</end.year>
+ </sensitivity.analysis>
  <model>
   <type>BIOCRO</type>
   <binary>/home/kristinariemer/pecan/models/biocro/inst/biocro.Rscript</binary>
-  <revision>1.0</revision>
-  <id>-1</id>
+  <revision>0.95</revision>
+  <id>9000000002</id>
   <delete.raw>FALSE</delete.raw>
  </model>
  <run>
@@ -78,7 +83,7 @@
   <checked>TRUE</checked>
  </settings.info>
  <workflow>
-  <id>2019-09-10-19-03-28</id>
+  <id>2019-10-22-18-47-43</id>
  </workflow>
  <rundir>/home/kristinariemer/biocro_darpa_results/run</rundir>
  <modeloutdir>/home/kristinariemer/biocro_darpa_results/out</modeloutdir>

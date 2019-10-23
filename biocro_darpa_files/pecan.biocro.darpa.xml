@@ -15,7 +15,7 @@
 
   <pfts>
     <pft>
-      <name>Setaria WT</name>
+      <name>SetariaWT</name>
     </pft>
   </pfts>
 
@@ -31,10 +31,14 @@
     <update>AUTO</update>
   </meta.analysis>
 
+  <sensitivity.analysis>
+    <variable>TotLivBiom</variable>
+  </sensitivity.analysis>
+
   <model>
     <type>BIOCRO</type>
     <binary>/home/kristinariemer/pecan/models/biocro/inst/biocro.Rscript</binary>
-    <revision>1.0</revision>
+    <revision>0.95</revision>
   </model>
 
   <run>

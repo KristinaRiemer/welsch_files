@@ -1,11 +1,11 @@
 runtype     : ensemble
- workflow id :  2019-09-10-19-03-28 
+ workflow id :  2019-10-22-18-47-43 
  ensemble id :  NA 
  run         :  83 / 100 
  run id      :  ENS-00083-9000000004 
- pft names   :  Setaria WT 
+ pft names   :  SetariaWT 
  model       :  BIOCRO 
- model id    :  -1 
+ model id    :  9000000002 
  site        :  Donald Danforth Plant Science Center Growth Chamber 
  site  id    :  9000000004 
  met data    :  /home/kristinariemer/pecan/models/biocro/tests/testthat/data/US-Bo1 

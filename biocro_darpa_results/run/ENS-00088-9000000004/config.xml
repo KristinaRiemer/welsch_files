@@ -18,13 +18,13 @@
   <type>
    <photosynthesis>C4</photosynthesis>
    <genus>Setaria</genus>
-   <name>Setaria WT</name>
+   <name>SetariaWT</name>
   </type>
   <canopyControl>
-   <Sp>1.7</Sp>
+   <Sp>3.94537119672088</Sp>
    <SpD>0</SpD>
    <nlayers>10</nlayers>
-   <kd>0.387930777648487</kd>
+   <kd>0.253769649764427</kd>
    <chi.l>1</chi.l>
    <mResp>0.02,0.03</mResp>
    <heightFactor>3</heightFactor>
@@ -40,15 +40,15 @@
    <ifrStem>0.01</ifrStem>
   </iPlantControl>
   <photoParms>
-   <vmax>39</vmax>
+   <vmax>26.4446760870113</vmax>
    <alpha>0.04</alpha>
    <kparm>0.7</kparm>
    <theta>0.83</theta>
    <beta>0.93</beta>
-   <Rd>2.18805702138979</Rd>
+   <Rd>1.57700616778013</Rd>
    <Catm>400</Catm>
-   <b0>0.00318392440610586</b0>
-   <b1>4.11605953702105</b1>
+   <b0>0.026339383413166</b0>
+   <b1>4.4447029725246</b1>
    <ws>1</ws>
    <UPPERTEMP>37.5</UPPERTEMP>
    <LOWERTEMP>3</LOWERTEMP>

@@ -1,0 +1,256 @@
+Each meta-analysis will be run with: 
+3000 total iterations,
+4 chains, 
+a burnin of 1500 samples,
+, 
+thus the total number of samples will be 6000
+################################################
+------------------------------------------------
+starting meta-analysis for:
+
+ stomatal_slope.BB 
+
+------------------------------------------------
+prior for stomatal_slope.BB
+                     (using R parameterization):
+lnorm(1.24, 0.28)
+data max: 4.42 
+data min: 3.47 
+mean: 3.94 
+n: 2
+stem plot of data points
+
+  The decimal point is 1 digit(s) to the left of the |
+
+  34 | 7
+  36 | 
+  38 | 
+  40 | 
+  42 | 
+  44 | 2
+
+stem plot of obs.prec:
+
+  The decimal point is 1 digit(s) to the left of the |
+
+  0 | 1
+  1 | 
+  2 | 
+  3 | 
+  4 | 4
+
+Compiling model graph
+   Resolving undeclared variables
+   Allocating nodes
+Graph information:
+   Observed stochastic nodes: 4
+   Unobserved stochastic nodes: 2
+   Total graph size: 24
+
+Initializing model
+
+
+Iterations = 1002:4000
+Thinning interval = 2 
+Number of chains = 4 
+Sample size per chain = 1500 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+        Mean     SD Naive SE Time-series SE
+beta.o 3.792 0.5501 0.007101       0.007948
+sd.y   1.500 0.4233 0.005465       0.007935
+
+2. Quantiles for each variable:
+
+         2.5%   25%   50%   75% 97.5%
+beta.o 2.6825 3.443 3.798 4.144 4.887
+sd.y   0.7666 1.194 1.469 1.779 2.388
+
+################################################
+------------------------------------------------
+starting meta-analysis for:
+
+ cuticular_cond 
+
+------------------------------------------------
+prior for cuticular_cond
+                     (using R parameterization):
+lnorm(8.4, 0.9)
+data max: 64300 
+data min: 16300 
+mean: 35200 
+n: 4
+stem plot of data points
+
+  The decimal point is 4 digit(s) to the right of the |
+
+  1 | 6
+  2 | 7
+  3 | 3
+  4 | 
+  5 | 
+  6 | 4
+
+stem plot of obs.prec:
+
+  The decimal point is 8 digit(s) to the left of the |
+
+  0 | 0000
+
+Compiling model graph
+   Resolving undeclared variables
+   Allocating nodes
+Graph information:
+   Observed stochastic nodes: 8
+   Unobserved stochastic nodes: 2
+   Total graph size: 34
+
+Initializing model
+
+
+Iterations = 1002:4000
+Thinning interval = 2 
+Number of chains = 4 
+Sample size per chain = 1500 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+        Mean    SD Naive SE Time-series SE
+beta.o 16314 11381    146.9          206.6
+sd.y   43649  7967    102.9          115.5
+
+2. Quantiles for each variable:
+
+        2.5%   25%   50%   75% 97.5%
+beta.o  1397  6781 14256 24206 41907
+sd.y   29015 38076 43317 48834 60106
+
+################################################
+------------------------------------------------
+starting meta-analysis for:
+
+ leaf_respiration_rate_m2 
+
+------------------------------------------------
+prior for leaf_respiration_rate_m2
+                     (using R parameterization):
+lnorm(0.632, 0.65)
+data max: 1.92 
+data min: 1.5 
+mean: 1.71 
+n: 2
+stem plot of data points
+
+  The decimal point is 1 digit(s) to the left of the |
+
+  15 | 0
+  16 | 
+  17 | 
+  18 | 
+  19 | 2
+
+stem plot of obs.prec:
+
+  The decimal point is 2 digit(s) to the right of the |
+
+  1 | 7
+  2 | 
+  2 | 
+  3 | 
+  3 | 9
+
+Compiling model graph
+   Resolving undeclared variables
+   Allocating nodes
+Graph information:
+   Observed stochastic nodes: 4
+   Unobserved stochastic nodes: 2
+   Total graph size: 24
+
+Initializing model
+
+
+Iterations = 1002:4000
+Thinning interval = 2 
+Number of chains = 4 
+Sample size per chain = 1500 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+         Mean      SD  Naive SE Time-series SE
+beta.o 1.7056 0.11825 0.0015265      0.0016137
+sd.y   0.2896 0.05964 0.0007699      0.0009241
+
+2. Quantiles for each variable:
+
+         2.5%   25%    50%    75%  97.5%
+beta.o 1.4722 1.630 1.7058 1.7818 1.9389
+sd.y   0.1874 0.247 0.2852 0.3264 0.4176
+
+################################################
+------------------------------------------------
+starting meta-analysis for:
+
+ Vcmax 
+
+------------------------------------------------
+prior for Vcmax
+                     (using R parameterization):
+lnorm(3.75, 0.3)
+data max: 28.6 
+data min: 20.1 
+mean: 24.4 
+n: 2
+stem plot of data points
+
+  The decimal point is at the |
+
+  20 | 1
+  22 | 
+  24 | 
+  26 | 
+  28 | 6
+
+stem plot of obs.prec:
+
+  The decimal point is 3 digit(s) to the left of the |
+
+   4 | 7
+   6 | 
+   8 | 
+  10 | 
+  12 | 3
+
+Compiling model graph
+   Resolving undeclared variables
+   Allocating nodes
+Graph information:
+   Observed stochastic nodes: 4
+   Unobserved stochastic nodes: 2
+   Total graph size: 24
+
+Initializing model
+
+
+Iterations = 1002:4000
+Thinning interval = 2 
+Number of chains = 4 
+Sample size per chain = 1500 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+         Mean     SD Naive SE Time-series SE
+beta.o 25.002 1.7936  0.02316        0.02458
+sd.y    4.429 0.7755  0.01001        0.01122
+
+2. Quantiles for each variable:
+
+         2.5%    25%    50%    75% 97.5%
+beta.o 21.545 23.802 24.962 26.147 28.62
+sd.y    3.087  3.852  4.399  4.928  6.03
+
